@@ -1,0 +1,23 @@
+{
+  "brand": "DYOU Agency",
+  "date": "2026-09-21",
+  "sequence": "J03",
+  "topic": "SEO — comment Google découvre réellement une page",
+  "status": "ready_for_claude",
+  "dimensions": {
+    "width": 1080,
+    "height": 1080
+  },
+  "format": "jpg",
+  "slides": [
+    "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-09-21-j03-seo-google/slide-01.jpg",
+    "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-09-21-j03-seo-google/slide-02.jpg",
+    "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-09-21-j03-seo-google/slide-03.jpg",
+    "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-09-21-j03-seo-google/slide-04.jpg",
+    "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-09-21-j03-seo-google/slide-05.jpg",
+    "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-09-21-j03-seo-google/slide-06.jpg",
+    "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-09-21-j03-seo-google/slide-07.jpg"
+  ],
+  "caption": "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-09-21-j03-seo-google/caption.txt",
+  "repository": "https://github.com/dropandyoucontact-commits/dyou-posts"
+}
