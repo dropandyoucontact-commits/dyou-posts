@@ -1,0 +1,24 @@
+{
+  "brand": "DYOU Agency",
+  "date": "2026-09-24",
+  "sequence": "J06",
+  "topic": "Coach sportif — le mini-bilan qui qualifie les prospects",
+  "status": "ready_for_claude",
+  "approved_by": "Youssef",
+  "dimensions": {
+    "width": 1080,
+    "height": 1080
+  },
+  "format": "jpg",
+  "slides": [
+    "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-09-24-j06-coach-mini-bilan/slide-01.jpg",
+    "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-09-24-j06-coach-mini-bilan/slide-02.jpg",
+    "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-09-24-j06-coach-mini-bilan/slide-03.jpg",
+    "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-09-24-j06-coach-mini-bilan/slide-04.jpg",
+    "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-09-24-j06-coach-mini-bilan/slide-05.jpg",
+    "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-09-24-j06-coach-mini-bilan/slide-06.jpg",
+    "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-09-24-j06-coach-mini-bilan/slide-07.jpg"
+  ],
+  "caption": "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-09-24-j06-coach-mini-bilan/caption.txt",
+  "repository": "https://github.com/dropandyoucontact-commits/dyou-posts"
+}
