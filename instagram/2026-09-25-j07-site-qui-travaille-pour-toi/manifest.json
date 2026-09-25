@@ -1,0 +1,21 @@
+{
+  "brand": "DYOU Agency",
+  "date": "2026-09-25",
+  "sequence": "J07",
+  "topic": "Un site qui travaille pour toi",
+  "status": "ready_for_claude",
+  "approved_by": "Youssef",
+  "dimensions": {"width": 1080, "height": 1080},
+  "format": "jpg",
+  "slides": [
+    "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-09-25-j07-site-qui-travaille-pour-toi/slide-01.jpg",
+    "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-09-25-j07-site-qui-travaille-pour-toi/slide-02.jpg",
+    "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-09-25-j07-site-qui-travaille-pour-toi/slide-03.jpg",
+    "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-09-25-j07-site-qui-travaille-pour-toi/slide-04.jpg",
+    "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-09-25-j07-site-qui-travaille-pour-toi/slide-05.jpg",
+    "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-09-25-j07-site-qui-travaille-pour-toi/slide-06.jpg",
+    "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-09-25-j07-site-qui-travaille-pour-toi/slide-07.jpg"
+  ],
+  "caption": "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-09-25-j07-site-qui-travaille-pour-toi/caption.txt",
+  "repository": "https://github.com/dropandyoucontact-commits/dyou-posts"
+}
