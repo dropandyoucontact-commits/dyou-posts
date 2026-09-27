@@ -1,0 +1,21 @@
+{
+  "brand": "DYOU Agency",
+  "date": "2026-09-27",
+  "sequence": "J08",
+  "topic": "Commerce local : aidez Google à comprendre votre activité",
+  "status": "ready_for_claude",
+  "approved_by": "Youssef",
+  "dimensions": {"width": 1080, "height": 1080},
+  "format": "jpg",
+  "slides": [
+    "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-09-27-j08-commerce-local/slide-01.jpg",
+    "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-09-27-j08-commerce-local/slide-02.jpg",
+    "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-09-27-j08-commerce-local/slide-03.jpg",
+    "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-09-27-j08-commerce-local/slide-04.jpg",
+    "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-09-27-j08-commerce-local/slide-05.jpg",
+    "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-09-27-j08-commerce-local/slide-06.jpg",
+    "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-09-27-j08-commerce-local/slide-07.jpg"
+  ],
+  "caption": "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-09-27-j08-commerce-local/caption.txt",
+  "repository": "https://github.com/dropandyoucontact-commits/dyou-posts"
+}
