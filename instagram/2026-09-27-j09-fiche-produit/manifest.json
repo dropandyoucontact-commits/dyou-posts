@@ -1,0 +1,24 @@
+{
+  "brand": "DYOU Agency",
+  "date": "2026-09-27",
+  "sequence": "J09",
+  "topic": "Une fiche produit doit répondre à cinq doutes",
+  "status": "ready_for_claude",
+  "approved_by": "Youssef",
+  "dimensions": {
+    "width": 1080,
+    "height": 1080
+  },
+  "format": "jpg",
+  "slides": [
+    "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-09-27-j09-fiche-produit/slide-01.jpg",
+    "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-09-27-j09-fiche-produit/slide-02.jpg",
+    "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-09-27-j09-fiche-produit/slide-03.jpg",
+    "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-09-27-j09-fiche-produit/slide-04.jpg",
+    "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-09-27-j09-fiche-produit/slide-05.jpg",
+    "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-09-27-j09-fiche-produit/slide-06.jpg",
+    "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-09-27-j09-fiche-produit/slide-07.jpg"
+  ],
+  "caption": "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-09-27-j09-fiche-produit/caption.txt",
+  "repository": "https://github.com/dropandyoucontact-commits/dyou-posts"
+}
