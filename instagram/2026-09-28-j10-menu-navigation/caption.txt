@@ -1,0 +1,9 @@
+Un visiteur arrive sur votre site pour trouver une réponse. Si le menu affiche toute votre organisation interne au même niveau, il doit faire le tri à votre place.
+
+Commencez par les destinations vraiment utiles : vos offres, vos réalisations, une présentation claire et un moyen de vous contacter. Les informations secondaires ont leur place dans le pied de page.
+
+Sur mobile, vérifiez aussi que le menu s’ouvre et se ferme facilement. Puis faites tester une tâche simple : trouver un tarif, une prestation et le contact, sans donner d’indice.
+
+#UXDesign #NavigationWeb #CreationSiteWeb #EntrepreneurFrance
+
+Enregistrez ce test et envoyez-le à quelqu’un dont le site mérite un parcours plus clair.
