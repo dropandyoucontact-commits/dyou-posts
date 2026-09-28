@@ -1,0 +1,24 @@
+{
+  "brand": "DYOU Agency",
+  "date": "2026-09-28",
+  "sequence": "J11",
+  "topic": "Coach sportif : afficher ses tarifs ou écrire « sur devis » ?",
+  "status": "ready_for_claude",
+  "approved_by": "Youssef",
+  "dimensions": {
+    "width": 1080,
+    "height": 1080
+  },
+  "format": "jpg",
+  "slides": [
+    "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-09-28-j11-tarifs-coach-sportif/slide-01.jpg",
+    "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-09-28-j11-tarifs-coach-sportif/slide-02.jpg",
+    "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-09-28-j11-tarifs-coach-sportif/slide-03.jpg",
+    "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-09-28-j11-tarifs-coach-sportif/slide-04.jpg",
+    "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-09-28-j11-tarifs-coach-sportif/slide-05.jpg",
+    "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-09-28-j11-tarifs-coach-sportif/slide-06.jpg",
+    "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-09-28-j11-tarifs-coach-sportif/slide-07.jpg"
+  ],
+  "caption": "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-09-28-j11-tarifs-coach-sportif/caption.txt",
+  "repository": "https://github.com/dropandyoucontact-commits/dyou-posts"
+}
