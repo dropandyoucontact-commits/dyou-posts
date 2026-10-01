@@ -3,7 +3,7 @@
   "date": "2026-09-24",
   "sequence": "J06",
   "topic": "Coach sportif — le mini-bilan qui qualifie les prospects",
-  "status": "paused_incident_2026-09-30",
+  "status": "ready_for_claude",
   "approved_by": "Youssef",
   "dimensions": {
     "width": 1080,
@@ -20,6 +20,5 @@
     "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-09-24-j06-coach-mini-bilan/slide-07.jpg"
   ],
   "caption": "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-09-24-j06-coach-mini-bilan/caption.txt",
-  "repository": "https://github.com/dropandyoucontact-commits/dyou-posts",
-  "status_before_pause": "ready_for_claude"
+  "repository": "https://github.com/dropandyoucontact-commits/dyou-posts"
 }

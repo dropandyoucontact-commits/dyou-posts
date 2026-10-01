@@ -3,7 +3,7 @@
   "date": "2026-09-27",
   "sequence": "J09",
   "topic": "Une fiche produit doit répondre à cinq doutes",
-  "status": "paused_incident_2026-09-30",
+  "status": "ready_for_claude",
   "approved_by": "Youssef",
   "dimensions": {
     "width": 1080,
@@ -20,6 +20,5 @@
     "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-09-27-j09-fiche-produit/slide-07.jpg"
   ],
   "caption": "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-09-27-j09-fiche-produit/caption.txt",
-  "repository": "https://github.com/dropandyoucontact-commits/dyou-posts",
-  "status_before_pause": "ready_for_claude"
+  "repository": "https://github.com/dropandyoucontact-commits/dyou-posts"
 }
