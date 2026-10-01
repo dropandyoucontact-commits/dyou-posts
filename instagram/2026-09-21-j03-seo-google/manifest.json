@@ -3,7 +3,7 @@
   "date": "2026-09-21",
   "sequence": "J03",
   "topic": "SEO — comment Google découvre réellement une page",
-  "status": "ready_for_claude",
+  "status": "paused_incident_2026-09-30",
   "dimensions": {
     "width": 1080,
     "height": 1080
@@ -19,5 +19,6 @@
     "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-09-21-j03-seo-google/slide-07.jpg"
   ],
   "caption": "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-09-21-j03-seo-google/caption.txt",
-  "repository": "https://github.com/dropandyoucontact-commits/dyou-posts"
+  "repository": "https://github.com/dropandyoucontact-commits/dyou-posts",
+  "status_before_pause": "ready_for_claude"
 }

@@ -3,7 +3,7 @@
   "date": "2026-09-28",
   "sequence": "J11",
   "topic": "Coach sportif : afficher ses tarifs ou écrire « sur devis » ?",
-  "status": "ready_for_claude",
+  "status": "paused_incident_2026-09-30",
   "approved_by": "Youssef",
   "dimensions": {
     "width": 1080,
@@ -20,5 +20,6 @@
     "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-09-28-j11-tarifs-coach-sportif/slide-07.jpg"
   ],
   "caption": "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-09-28-j11-tarifs-coach-sportif/caption.txt",
-  "repository": "https://github.com/dropandyoucontact-commits/dyou-posts"
+  "repository": "https://github.com/dropandyoucontact-commits/dyou-posts",
+  "status_before_pause": "ready_for_claude"
 }
