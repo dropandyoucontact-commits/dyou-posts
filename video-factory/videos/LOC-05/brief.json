@@ -4,7 +4,7 @@
   "profession": "Location de voitures",
   "angle": "Les demandes vagues font perdre du temps",
   "format": "moyen",
-  "voice_text": "« La voiture est dispo ? » Sans modèle. Sans date. Sans ville. Tu connais ces messages qui t'obligent à poser quatre questions avant même de commencer. Un formulaire de location peut demander directement le modèle souhaité, la période et les détails utiles. Le client fait sa demande facilement, et ton équipe sait de quoi il parle. DYOU Agency construit ce type de parcours autour de ta flotte. Remplis notre formulaire et demande une maquette.",
+  "voice_text": "« La voiture est dispo ? » Sans modèle. Sans date. Sans ville. Tu connais ces messages qui t'obligent à poser quatre questions avant même de commencer. Un formulaire de location peut demander directement le modèle souhaité, la période et les détails utiles. Le client fait sa demande facilement, et ton équipe sait de quoi il parle. D-YOU Agency construit ce type de parcours autour de ta flotte. Remplis notre formulaire et demande une maquette.",
   "audio_filename": "audio/LOC-05.mp3",
   "final_video_filename": "video/LOC-05.mp4",
   "images": [

@@ -58,3 +58,23 @@ Relevé sur le disque au 03/10/2026 : **39 dossiers ont 1 image sur les 3 prévu
 11 n'en ont aucune, **aucun MP3 n'est déposé**, et une seule capture vidéo existe
 (la navigation POLYRA dans RES-01). Les briefs annoncent trois images par vidéo :
 c'est un objectif, pas un état. Lire `availability.json` avant chaque montage.
+
+## Règles ajoutées le 03/10/2026
+
+**Le logo est le sigle seul, détouré, sans fond.** `brand-DYOU-sigle.png`
+(293 × 132, RGBA) — extrait du logo horizontal officiel. Ne plus poser
+`brand-DYOU-original.png` : sa vignette carrée noire à bord violet fait un
+timbre collé sur l'image. Le sigle détouré se pose aussi bien sur une photo
+que sur un carton violet.
+
+**Dans les textes de voix off, écrire « D-YOU Agency », jamais « DYOU Agency ».**
+ElevenLabs lit « DYOU » comme un mot ; le tiret lui fait épeler les initiales.
+Appliqué aux 30 `script.txt` et aux 30 `voice_text` des briefs concernés.
+À l'écran, en revanche, on écrit « D-YOU Agency » dans l'en-tête, et l'URL reste
+« DYOU-AGENCY.COM ».
+
+**Le mockup téléphone montre le site dont parle la voix.** Quand elle dit
+D-YOU Agency, c'est `captures-communes/DYOU-site-navigation.mp4` — la vraie
+navigation sur dyou-agency.com. La capture POLYRA reste pour les vidéos qui
+citent le site d'un client résine. Pour tenir dans un plan plus court,
+accélérer (`setpts=PTS/<facteur>`) plutôt que couper : le parcours reste entier.

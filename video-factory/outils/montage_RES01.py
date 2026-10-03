@@ -9,7 +9,7 @@ MARGE = 108
 RAC = pathlib.Path(__file__).resolve().parent.parent
 V = RAC/"videos/RES-01"
 TRAV = pathlib.Path(__file__).parent/"_travail/RES-01"
-LOGO = Image.open(RAC/"brand-DYOU-original.png").convert("RGB")
+LOGO = Image.open(RAC/"brand-DYOU-sigle.png").convert("RGBA")   # sigle detoure, sans fond
 
 VIOLET=(124,58,237); VIO_CLAIR=(167,139,250); BLANC=(248,248,251)
 NOIR=(8,9,13); CARTE=(26,23,37); BORD=(60,54,86); ROUGE=(224,96,96)
@@ -41,8 +41,9 @@ def entete(img,prog):
         x=MARGE+i*(lg+10); p=cl(prog*n-i)
         d.rounded_rectangle([x,96,x+lg,102],3,fill=(255,255,255,46))
         if p>0: d.rounded_rectangle([x,96,x+lg*p,102],3,fill=VIO_CLAIR+(235,))
-    lo=LOGO.resize((62,62),Image.LANCZOS); img.paste(lo,(MARGE,136))
-    d.text((MARGE+78,152),"DYOU Agency",font=med(30),fill=(226,226,236,228))
+    lw=98; lo=LOGO.resize((lw,int(LOGO.height*lw/LOGO.width)),Image.LANCZOS)
+    img.paste(lo,(MARGE,142),lo)
+    d.text((MARGE+lw+22,150),"D-YOU Agency",font=med(30),fill=(226,226,236,228))
 
 def titre(img,t,d0,lignes,y=252):
     d=ImageDraw.Draw(img,"RGBA")
@@ -134,11 +135,10 @@ def p5(t,d):
 def p6(t,d):
     img=Image.new("RGB",(W,H),NOIR); img.paste(FOND)
     dr=ImageDraw.Draw(img,"RGBA")
-    a=eo(ph(t,0.02,0.36)); s=int(260*(0.9+0.1*a))
-    lo=LOGO.resize((s,s),Image.LANCZOS)
-    tmp=Image.new("RGB",(W,H),(0,0,0)); tmp.paste(lo,((W-s)//2,560))
-    msk=Image.new("L",(W,H),0); ImageDraw.Draw(msk).rectangle([(W-s)//2,560,(W-s)//2+s,560+s],fill=int(255*a))
-    img.paste(tmp,(0,0),msk)
+    a=eo(ph(t,0.02,0.36)); lw=int(430*(0.9+0.1*a))
+    lo=LOGO.resize((lw,int(LOGO.height*lw/LOGO.width)),Image.LANCZOS)
+    al=lo.split()[3].point(lambda v:int(v*a))
+    img.paste(lo,((W-lw)//2,640),al)
     b=eo(ph(t,0.30,0.68)); f=cond(96)
     for i,txt in enumerate(["REMPLIS","LE FORMULAIRE"]):
         dr.text((W//2-dr.textlength(txt,font=f)/2,900+i*106),txt,font=f,fill=BLANC+(int(255*b),))
