@@ -1,0 +1,30 @@
+{
+  "id": "LOC-03",
+  "brand": "DYOU Agency",
+  "profession": "Location de voitures",
+  "angle": "Le désir ne doit pas attendre une réponse en DM",
+  "format": "moyen",
+  "voice_text": "Un prospect voit ta voiture un samedi soir. Il se projette déjà au volant. S'il doit attendre une réponse en message pour connaître les modalités, ce moment peut passer. Sur ton site, il découvre le modèle, comprend les conditions et t'envoie sa demande immédiatement. Tu répondras ensuite avec toutes les informations nécessaires. DYOU Agency peut créer ce parcours pour ta flotte. Va sur notre site et remplis le formulaire pour demander ta maquette.",
+  "audio_filename": "audio/LOC-03.mp3",
+  "final_video_filename": "video/LOC-03.mp4",
+  "images": [
+    {
+      "filename": "images/01.webp",
+      "prompt": "Image 1. Prospect admirant une voiture sportive générique en vidéo le soir dans son salon. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/02.webp",
+      "prompt": "Image 2. Voiture premium garée de nuit avec reflets sur carrosserie et téléphone à écran neutre. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/03.webp",
+      "prompt": "Image 3. Main envoyant une demande depuis un téléphone noir, voiture floue derrière. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "status": "pending"
+    }
+  ],
+  "real_asset_requirement": "Vraie fiche modèle et demande avec dates",
+  "motion_direction": "Impulsion visuelle, attente DM barrée, demande immédiate",
+  "real_asset_status": "pending"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "LOC-09",
+  "brand": "DYOU Agency",
+  "profession": "Location de voitures",
+  "angle": "Le client compare aussi la présentation",
+  "format": "moyen",
+  "voice_text": "Deux agences proposent une voiture similaire. La première répond « passe en DM ». La deuxième montre le véhicule, explique les conditions et permet de demander ses dates en quelques gestes. À ton avis, laquelle semble la plus simple à contacter ? La présentation fait partie de l'expérience de location. DYOU Agency crée des sites qui donnent envie d'aller jusqu'à la demande. Si tu veux voir une maquette pour ton agence, remplis le formulaire sur notre site.",
+  "audio_filename": "audio/LOC-09.mp3",
+  "final_video_filename": "video/LOC-09.mp4",
+  "images": [
+    {
+      "filename": "images/01.webp",
+      "prompt": "Image 1. Prospect comparant deux téléphones aux écrans noirs dans une pièce neutre. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/02.webp",
+      "prompt": "Image 2. Voiture premium générique de face, cadrage frontal symétrique. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/03.webp",
+      "prompt": "Image 3. Responsable remettant les clés à un client dans un espace premium. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "status": "pending"
+    }
+  ],
+  "real_asset_requirement": "Vraies fiches de flotte, conditions et formulaire",
+  "motion_direction": "Split screen DM flou contre parcours clair",
+  "real_asset_status": "pending"
+}

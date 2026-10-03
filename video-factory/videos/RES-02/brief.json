@@ -1,0 +1,30 @@
+{
+  "id": "RES-02",
+  "brand": "DYOU Agency",
+  "profession": "Résine au sol",
+  "angle": "Le prix arrive avant la valeur",
+  "format": "moyen",
+  "voice_text": "Quand le premier message que tu reçois, c'est « c'est combien le mètre carré ? », ton travail vient d'être réduit à un chiffre. Le client n'a vu ni la préparation, ni les finitions, ni le rendu possible chez lui. Un site bien construit lui montre tout ça avant de demander un devis. Tu ne vends plus une surface : tu présentes un vrai projet. Écris à DYOU Agency sur WhatsApp et on te montre une maquette pour ton activité.",
+  "audio_filename": "audio/RES-02.mp3",
+  "final_video_filename": "video/RES-02.mp4",
+  "images": [
+    {
+      "filename": "images/01.webp",
+      "prompt": "Image 1. Gros plan macro de résine marbrée et texture réfléchissante sous une lumière rasante. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/02.webp",
+      "prompt": "Image 2. Artisan face à un message de prix sur un téléphone illisible, échantillons de finitions sur la table. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/03.webp",
+      "prompt": "Image 3. Échantillons ivoire, anthracite et sable soigneusement disposés dans un intérieur premium. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "status": "pending"
+    }
+  ],
+  "real_asset_requirement": "Vraies photos de préparation et de finitions + page prestations POLYRA",
+  "motion_direction": "Le prix apparaît petit, les étapes et finitions prennent le cadre",
+  "real_asset_status": "pending"
+}

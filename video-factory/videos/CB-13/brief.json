@@ -1,0 +1,30 @@
+{
+  "id": "CB-13",
+  "brand": "ChinaBook",
+  "profession": "Revendeurs / sourcing Chine",
+  "angle": "Marché immense, recherche mal ciblée",
+  "format": "moyen",
+  "voice_text": "Tu arrives dans un immense marché en Chine. Des milliers de produits, des dizaines de stands, tout le monde te dit « meilleure qualité ». Comment tu sais qui contacter pour ta catégorie ? Le difficile, ce n'est pas de trouver quelqu'un qui vend. C'est d'identifier un contact avec lequel travailler et de vérifier ce qu'il propose. C'est le temps de recherche derrière le ChinaBook. Si tu hésites entre les packs, écris-moi sur WhatsApp.",
+  "audio_filename": "audio/CB-13.mp3",
+  "final_video_filename": "video/CB-13.mp4",
+  "images": [
+    {
+      "filename": "images/01.webp",
+      "prompt": "Image 1. Grande allée de marché de gros en Chine avec dizaines de stands génériques. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/02.webp",
+      "prompt": "Image 2. Revendeur regardant deux échantillons apparemment identiques. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/03.webp",
+      "prompt": "Image 3. Fournisseur local dans un showroom de chaussures génériques sans marques. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "status": "pending"
+    }
+  ],
+  "real_asset_requirement": "Vraies photos fournisseurs et échanges autorisés",
+  "motion_direction": "La foule de stands se filtre vers catégorie et critères",
+  "real_asset_status": "pending"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "CB-10",
+  "brand": "ChinaBook",
+  "profession": "Revendeurs / sourcing Chine",
+  "angle": "Commencer par une petite commande",
+  "format": "moyen",
+  "voice_text": "Tu n'as pas besoin de préparer un container pour comprendre comment fonctionne le sourcing. Commence par choisir une catégorie, parler à un fournisseur, demander les détails du produit et faire tes vérifications avant une première commande adaptée à ton budget. Le pack Test du ChinaBook existe justement pour découvrir un contact et le circuit d'expédition. Si tu veux avancer étape par étape, regarde cette option sur le site.",
+  "audio_filename": "audio/CB-10.mp3",
+  "final_video_filename": "video/CB-10.mp4",
+  "images": [
+    {
+      "filename": "images/01.webp",
+      "prompt": "Image 1. Petit lot de produits génériques emballé proprement sur table. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/02.webp",
+      "prompt": "Image 2. Débutant en revente discutant avec un fournisseur dans une boutique chinoise. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/03.webp",
+      "prompt": "Image 3. Un seul carton en transit dans un entrepôt réaliste. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "status": "pending"
+    }
+  ],
+  "real_asset_requirement": "Vraie page pack Test et explication transitaire",
+  "motion_direction": "Une catégorie → un contact → une première vérification",
+  "real_asset_status": "pending"
+}

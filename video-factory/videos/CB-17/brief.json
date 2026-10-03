@@ -1,0 +1,30 @@
+{
+  "id": "CB-17",
+  "brand": "ChinaBook",
+  "profession": "Revendeurs / sourcing Chine",
+  "angle": "Le réseau dans le téléphone",
+  "format": "court",
+  "voice_text": "Ton prochain contact fournisseur peut être dans ton téléphone avant même que tu réserves un billet pour la Chine. Choisis ton domaine, découvre le réseau ChinaBook et commence par poser les bonnes questions. Les packs sont sur le site.",
+  "audio_filename": "audio/CB-17.mp3",
+  "final_video_filename": "video/CB-17.mp4",
+  "images": [
+    {
+      "filename": "images/01.webp",
+      "prompt": "Image 1. Revendeur dans un café avec téléphone à écran neutre et carnet. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/02.webp",
+      "prompt": "Image 2. Rue de Guangzhou en lumière de jour, scène documentaire réaliste. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/03.webp",
+      "prompt": "Image 3. Téléphone à écran noir en gros plan près d'un colis neutre. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "status": "pending"
+    }
+  ],
+  "real_asset_requirement": "Vraie capture espace ChinaBook montrant catégories sans exposer contacts",
+  "motion_direction": "Rue lointaine se rapproche en fenêtre de téléphone",
+  "real_asset_status": "pending"
+}

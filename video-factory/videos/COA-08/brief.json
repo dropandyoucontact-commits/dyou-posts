@@ -1,0 +1,30 @@
+{
+  "id": "COA-08",
+  "brand": "DYOU Agency",
+  "profession": "Coach sportif",
+  "angle": "Les recommandations qui s'évaporent",
+  "format": "moyen",
+  "voice_text": "Un client dit à son ami : « Ce coach m'a vraiment aidé. » Son ami demande un lien. Là, tout se joue. S'il arrive sur un profil où il doit deviner tes offres, la recommandation perd de sa force. S'il voit qui tu accompagnes, comment tu travailles et comment prendre contact, il peut avancer. DYOU Agency crée ce point d'arrivée. Envoie-nous « coach » sur WhatsApp et parlons de ton site.",
+  "audio_filename": "audio/COA-08.mp3",
+  "final_video_filename": "video/COA-08.mp4",
+  "images": [
+    {
+      "filename": "images/01.webp",
+      "prompt": "Image 1. Client racontant son expérience sportive à un ami après entraînement. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/02.webp",
+      "prompt": "Image 2. Ami recevant un lien sur téléphone à écran noir dans un café lumineux. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/03.webp",
+      "prompt": "Image 3. Coach préparant une séance dans une salle, portrait professionnel naturel. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "status": "pending"
+    }
+  ],
+  "real_asset_requirement": "Vraie page partageable du coach et bouton contact",
+  "motion_direction": "Message recommandé transmis, arrivée fluide sur le site",
+  "real_asset_status": "pending"
+}

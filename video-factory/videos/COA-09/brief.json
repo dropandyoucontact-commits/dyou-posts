@@ -1,0 +1,30 @@
+{
+  "id": "COA-09",
+  "brand": "DYOU Agency",
+  "profession": "Coach sportif",
+  "angle": "Le temps passé à qualifier",
+  "format": "moyen",
+  "voice_text": "« Ton objectif ? » « Tu t'entraînes où ? » « Tu veux commencer quand ? » Si tu poses les mêmes questions à chaque nouveau contact, ton premier échange peut être bien mieux préparé. Un formulaire adapté recueille les informations utiles, et ton site explique déjà comment tu accompagnes les gens. Tu arrives à la conversation avec du contexte. C'est ce qu'on peut bâtir chez DYOU Agency. Remplis notre formulaire et demande ta maquette.",
+  "audio_filename": "audio/COA-09.mp3",
+  "final_video_filename": "video/COA-09.mp4",
+  "images": [
+    {
+      "filename": "images/01.webp",
+      "prompt": "Image 1. Coach répondant à son téléphone entre deux séances avec matériel au sol. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/02.webp",
+      "prompt": "Image 2. Trois personnes adultes aux objectifs sportifs différents dans des scènes séparées. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/03.webp",
+      "prompt": "Image 3. Tablette à écran noir près d'un carnet contenant des cases visuellement vides. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "status": "pending"
+    }
+  ],
+  "real_asset_requirement": "Vrai formulaire de qualification ATLAS / ATHLA si disponible",
+  "motion_direction": "Questions répétées qui se regroupent en formulaire",
+  "real_asset_status": "pending"
+}

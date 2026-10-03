@@ -1,0 +1,552 @@
+[
+  {
+    "id": "RES-01",
+    "metier": "Résine au sol",
+    "prompts": [
+      "Image 1. Sol résine ivoire dans un salon minimaliste terminé, reflet subtil au premier plan. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "Image 2. Artisan en tenue de chantier le soir, pouce cherchant dans une longue galerie photo sur son téléphone. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "Image 3. Main du prospect devant un écran de téléphone noir prêt à recevoir une capture, sol fini en arrière-plan. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane."
+    ],
+    "real": "Capture réelle POLYRA : galerie de réalisations et formulaire de devis",
+    "motion": "Photos éparpillées qui s'alignent en galerie, puis zoom dans le téléphone"
+  },
+  {
+    "id": "RES-02",
+    "metier": "Résine au sol",
+    "prompts": [
+      "Image 1. Gros plan macro de résine marbrée et texture réfléchissante sous une lumière rasante. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "Image 2. Artisan face à un message de prix sur un téléphone illisible, échantillons de finitions sur la table. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "Image 3. Échantillons ivoire, anthracite et sable soigneusement disposés dans un intérieur premium. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane."
+    ],
+    "real": "Vraies photos de préparation et de finitions + page prestations POLYRA",
+    "motion": "Le prix apparaît petit, les étapes et finitions prennent le cadre"
+  },
+  {
+    "id": "RES-03",
+    "metier": "Résine au sol",
+    "prompts": [
+      "Image 1. Artisan tirant la dernière passe de résine dans un garage à la fin de journée. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "Image 2. Même artisan rentrant chez lui à la nuit tombée, téléphone vibrant près d'une tasse. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "Image 3. Vue de chantier organisé avec trois échantillons au sol et espace vide à droite pour une interface. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane."
+    ],
+    "real": "Capture réelle des réponses pratiques et du formulaire de devis",
+    "motion": "Notifications en rafale, puis formulaire qui capte les questions"
+  },
+  {
+    "id": "RES-04",
+    "metier": "Résine au sol",
+    "prompts": [
+      "Image 1. Client dans son salon non rénové regardant un sol brut et hésitant. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "Image 2. Artisan appliquant la résine avec gestes précis, protections, outils et surface préparée. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "Image 3. Détail rassurant d'un sol fini et des raccords près d'un mur, photo documentaire. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane."
+    ],
+    "real": "Vraies étapes chantier et témoignages uniquement si autorisés",
+    "motion": "Point de vue client, puis étapes en séquence avant l'appel à contact"
+  },
+  {
+    "id": "RES-05",
+    "metier": "Résine au sol",
+    "prompts": [
+      "Image 1. Grand salon contemporain avec sol résine perle, lumière douce de fin d'après-midi. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "Image 2. Photographies de chantier imprimées en désordre sur une table d'atelier. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "Image 3. Vue architecturale pleine hauteur d'un sol résine élégant avec grand espace sombre en haut. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane."
+    ],
+    "real": "Galerie réelle POLYRA et logo DYOU fourni",
+    "motion": "Les photos dispersées s'effacent devant une vitrine plein écran"
+  },
+  {
+    "id": "RES-06",
+    "metier": "Résine au sol",
+    "prompts": [
+      "Image 1. Artisan photographiant un sol résine fini depuis l'angle d'une pièce. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "Image 2. Un écran de téléphone neutre dans une main, fil de publications abstrait flouté sans faux texte. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "Image 3. Même réalisation cadrée en portfolio sur ordinateur avec écran noir pour incrustation. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane."
+    ],
+    "real": "Vraies photos avant-après et capture du portfolio",
+    "motion": "Publication qui glisse hors cadre, réalisation qui reste épinglée"
+  },
+  {
+    "id": "RES-07",
+    "metier": "Résine au sol",
+    "prompts": [
+      "Image 1. Prospect assis à sa table comparant deux téléphones aux écrans neutres. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "Image 2. Un chantier résine vu de dessus, montrant une finition impeccable. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "Image 3. Main qui sélectionne un échantillon près d'un téléphone à écran vide. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane."
+    ],
+    "real": "Vraies réalisations, explications et bouton devis de POLYRA",
+    "motion": "Écran partagé : recherche laborieuse puis parcours clair"
+  },
+  {
+    "id": "RES-08",
+    "metier": "Résine au sol",
+    "prompts": [
+      "Image 1. Trois échantillons de résine posés sur une table d'atelier avec lumière latérale. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "Image 2. Client face à un sol brut, regardant son téléphone à écran neutre. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "Image 3. Artisan travaillant sur un sol de garage avec outil de lissage. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane."
+    ],
+    "real": "Captures réelles de rendus, prestations et demande de devis",
+    "motion": "Trois questions entrent en pop et sont résolues par trois sections"
+  },
+  {
+    "id": "RES-09",
+    "metier": "Résine au sol",
+    "prompts": [
+      "Image 1. Garage contemporain avec sol résine gris doux et voiture générique sans logo. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "Image 2. Salon raffiné avec sol marbré ivoire entièrement différent du garage. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "Image 3. Petit commerce minimaliste avec sol résine sable et lumière du matin. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane."
+    ],
+    "real": "Vraies catégories garage, salon et commerce si présentes sur le site",
+    "motion": "Trois lieux en rafale, chaque usage devient un chemin distinct"
+  },
+  {
+    "id": "RES-10",
+    "metier": "Résine au sol",
+    "prompts": [
+      "Image 1. Client admirant son nouveau sol résine dans une maison lumineuse. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "Image 2. Un voisin montre un téléphone à écran noir à une autre personne dans une entrée. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "Image 3. Gros plan du sol fini avec détail de finition et espace de composition pour CTA. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane."
+    ],
+    "real": "Vrai lien du site POLYRA et galerie partageable",
+    "motion": "Le bouche-à-oreille devient un lien partagé puis une demande"
+  },
+  {
+    "id": "COA-01",
+    "metier": "Coach sportif",
+    "prompts": [
+      "Image 1. Coach sportif homme dans une salle sobre montrant un mouvement à un client adulte. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "Image 2. Coach le soir assis avec son téléphone, nombreuses bulles abstraites sans texte lisible. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "Image 3. Plan organisé d'un carnet d'entraînement, tablette à écran noir et haltère. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane."
+    ],
+    "real": "Vraies pages offres et prise de contact du concept coach",
+    "motion": "DM en rafale, puis programmes se rangent en trois blocs"
+  },
+  {
+    "id": "COA-02",
+    "metier": "Coach sportif",
+    "prompts": [
+      "Image 1. Coach filmant une courte séance de sport dans une salle réaliste. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "Image 2. Écran de téléphone à affichage neutre devant salle vide, composition pour compteur animé. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "Image 3. Personne adulte consultant sur mobile une page noire prête à recevoir la vraie capture. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane."
+    ],
+    "real": "Vraie capture du programme et lien de prise de rendez-vous",
+    "motion": "Vues qui montent puis flux dirigé vers une seule action"
+  },
+  {
+    "id": "COA-03",
+    "metier": "Coach sportif",
+    "prompts": [
+      "Image 1. Coach corrigeant la posture d'un client pendant une séance. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "Image 2. Bureau avec carnet de bilan, notes d'entraînement non lisibles et bouteille d'eau. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "Image 3. Coach analysant un programme sur tablette à écran noir après séance. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane."
+    ],
+    "real": "Captures réelles de méthode, programmes et suivi si présents",
+    "motion": "Le reel de séance s'ouvre sur les étapes cachées du coaching"
+  },
+  {
+    "id": "COA-04",
+    "metier": "Coach sportif",
+    "prompts": [
+      "Image 1. Débutant adulte remettant ses chaussures de sport avant séance. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "Image 2. Athlète amateur s'entraînant en force avec coach à proximité. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "Image 3. Couloir de salle de sport avec trois chemins visuels vers objectifs distincts. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane."
+    ],
+    "real": "Vraies pages ou cartes d'offres ATHLA / ATLAS",
+    "motion": "Trois objectifs s'ouvrent comme un menu, puis une prise de contact"
+  },
+  {
+    "id": "COA-05",
+    "metier": "Coach sportif",
+    "prompts": [
+      "Image 1. Débutant adulte hésitant à entrer dans une salle de sport vide. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "Image 2. Coach accueillant chaleureusement un nouveau client, scène naturelle non posée. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "Image 3. Entretien initial à une table de salle de sport, carnet et gourde. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane."
+    ],
+    "real": "Vrai parcours de premier rendez-vous du concept coach",
+    "motion": "Questions intérieures en texte, puis réponses simples"
+  },
+  {
+    "id": "COA-06",
+    "metier": "Coach sportif",
+    "prompts": [
+      "Image 1. Téléphone à écran neutre près de poids, cadré pour incruster un message de prix. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "Image 2. Coach mesurant les objectifs d'un client avec carnet de bilan. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "Image 3. Coach ajustant un programme après séance dans une lumière du soir. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane."
+    ],
+    "real": "Vraie page décrivant le bilan et l'accompagnement",
+    "motion": "Le prix rétrécit, le suivi prend de l'ampleur"
+  },
+  {
+    "id": "COA-07",
+    "metier": "Coach sportif",
+    "prompts": [
+      "Image 1. Coach filmant du contenu sportif tôt le matin dans une salle calme. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "Image 2. Grille de publications abstraite et floue sur téléphone sans texte ni logos. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "Image 3. Coach tendant une carte avec téléphone à écran neutre à un prospect. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane."
+    ],
+    "real": "Vraie page d'accueil et programmes de l'agence",
+    "motion": "Courbe de portée instable, puis adresse stable ancrée"
+  },
+  {
+    "id": "COA-08",
+    "metier": "Coach sportif",
+    "prompts": [
+      "Image 1. Client racontant son expérience sportive à un ami après entraînement. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "Image 2. Ami recevant un lien sur téléphone à écran noir dans un café lumineux. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "Image 3. Coach préparant une séance dans une salle, portrait professionnel naturel. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane."
+    ],
+    "real": "Vraie page partageable du coach et bouton contact",
+    "motion": "Message recommandé transmis, arrivée fluide sur le site"
+  },
+  {
+    "id": "COA-09",
+    "metier": "Coach sportif",
+    "prompts": [
+      "Image 1. Coach répondant à son téléphone entre deux séances avec matériel au sol. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "Image 2. Trois personnes adultes aux objectifs sportifs différents dans des scènes séparées. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "Image 3. Tablette à écran noir près d'un carnet contenant des cases visuellement vides. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane."
+    ],
+    "real": "Vrai formulaire de qualification ATLAS / ATHLA si disponible",
+    "motion": "Questions répétées qui se regroupent en formulaire"
+  },
+  {
+    "id": "COA-10",
+    "metier": "Coach sportif",
+    "prompts": [
+      "Image 1. Coach guidant un client sur une première séance en salle. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "Image 2. Calendrier d'entraînement papier sans texte lisible et matériel varié. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "Image 3. Client et coach regardant ensemble un plan d'accompagnement sur écran noir. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane."
+    ],
+    "real": "Vrais programmes et parcours de prise de contact",
+    "motion": "Une séance isolée devient un parcours dans la durée"
+  },
+  {
+    "id": "LOC-01",
+    "metier": "Location de voitures",
+    "prompts": [
+      "Image 1. Voiture sportive premium générique photographiée de nuit sous lumières de ville. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "Image 2. Téléphone à écran neutre perdu parmi des photos de voitures sur une table. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "Image 3. Alignement sobre de trois voitures premium génériques devant bâtiment moderne. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane."
+    ],
+    "real": "Vraies photos autorisées des modèles de la flotte et fiches du site",
+    "motion": "La flotte désordonnée se réorganise en catalogue"
+  },
+  {
+    "id": "LOC-02",
+    "metier": "Location de voitures",
+    "prompts": [
+      "Image 1. Responsable d'agence de location recevant plusieurs notifications près des clés. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "Image 2. Gros plan d'un carnet de conditions de location sans texte lisible près du comptoir. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "Image 3. Client désignant un modèle sur téléphone à écran noir face à l'agence. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane."
+    ],
+    "real": "Vraies conditions et formulaire de location du site",
+    "motion": "Questions caution, kilométrage, livraison en cascade puis réponse structurée"
+  },
+  {
+    "id": "LOC-03",
+    "metier": "Location de voitures",
+    "prompts": [
+      "Image 1. Prospect admirant une voiture sportive générique en vidéo le soir dans son salon. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "Image 2. Voiture premium garée de nuit avec reflets sur carrosserie et téléphone à écran neutre. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "Image 3. Main envoyant une demande depuis un téléphone noir, voiture floue derrière. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane."
+    ],
+    "real": "Vraie fiche modèle et demande avec dates",
+    "motion": "Impulsion visuelle, attente DM barrée, demande immédiate"
+  },
+  {
+    "id": "LOC-04",
+    "metier": "Location de voitures",
+    "prompts": [
+      "Image 1. Détail de carrosserie bordeaux d'une sportive générique sous lumière rasante. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "Image 2. Intérieur haut de gamme sans logo, cuir et volant cadrés en cinématique. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "Image 3. Voiture élégante devant hôtel contemporain au coucher du soleil. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane."
+    ],
+    "real": "Vraies photos intérieures et extérieures de la flotte",
+    "motion": "Match cuts de détails vers fiche modèle"
+  },
+  {
+    "id": "LOC-05",
+    "metier": "Location de voitures",
+    "prompts": [
+      "Image 1. Téléphone à écran noir devant une agence de location, cadrage pour message vague. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "Image 2. Responsable d'agence tenant un jeu de clés avec expression concentrée. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "Image 3. Client choisissant une période sur calendrier papier vierge près d'une voiture. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane."
+    ],
+    "real": "Vrai formulaire : modèle, dates, ville et détails nécessaires",
+    "motion": "DM incomplet qui se transforme en formulaire clair"
+  },
+  {
+    "id": "LOC-06",
+    "metier": "Location de voitures",
+    "prompts": [
+      "Image 1. Client prudent inspectant une voiture sportive générique sur parking lumineux. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "Image 2. Détail propre de carrosserie et de l'habitacle photographiés sans retouche trompeuse. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "Image 3. Échange professionnel de clés au comptoir d'une agence moderne. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane."
+    ],
+    "real": "Vraies photos de véhicules et conditions réelles",
+    "motion": "Questions de confiance révélées puis résolues par les preuves"
+  },
+  {
+    "id": "LOC-07",
+    "metier": "Location de voitures",
+    "prompts": [
+      "Image 1. Voiture de tourisme élégante sur route de week-end au lever du soleil. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "Image 2. Voiture sportive générique devant un lieu d'événement au crépuscule. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "Image 3. Prospect faisant défiler des modèles sur téléphone à écran noir. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane."
+    ],
+    "real": "Vraies fiches de plusieurs modèles et catégories de flotte",
+    "motion": "Occasions distinctes reliées à des fiches dédiées"
+  },
+  {
+    "id": "LOC-08",
+    "metier": "Location de voitures",
+    "prompts": [
+      "Image 1. Personne filmant une voiture élégante en vertical pour un réseau social. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "Image 2. Téléphone à écran neutre sur lequel une story abstraite s'efface sans UI de marque. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "Image 3. Même voiture photographiée comme fiche catalogue avec fond sombre. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane."
+    ],
+    "real": "Vrai reel autorisé et vraie fiche modèle",
+    "motion": "Story s'évapore, modèle reste accessible dans le site"
+  },
+  {
+    "id": "LOC-09",
+    "metier": "Location de voitures",
+    "prompts": [
+      "Image 1. Prospect comparant deux téléphones aux écrans noirs dans une pièce neutre. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "Image 2. Voiture premium générique de face, cadrage frontal symétrique. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "Image 3. Responsable remettant les clés à un client dans un espace premium. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane."
+    ],
+    "real": "Vraies fiches de flotte, conditions et formulaire",
+    "motion": "Split screen DM flou contre parcours clair"
+  },
+  {
+    "id": "LOC-10",
+    "metier": "Location de voitures",
+    "prompts": [
+      "Image 1. Voiture sportive générique roulant doucement en ville, caméra ras du sol. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "Image 2. Spectateur regardant un reel automobile sur téléphone à écran neutre. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "Image 3. Téléphone noir sur tableau de bord à l'arrêt, place pour incruster la vraie fiche. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane."
+    ],
+    "real": "Vrai reel et vraie page du modèle présenté",
+    "motion": "Dernier plan du reel se raccorde à la page de demande"
+  },
+  {
+    "id": "CB-01",
+    "metier": "ChinaBook",
+    "prompts": [
+      "Image 1. Revendeur français préparant des colis dans son petit local. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "Image 2. Passeport et valise près d'un billet d'avion non lisible sur une table. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "Image 3. Téléphone à écran noir tenu devant des rayonnages de produits non marqués. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane."
+    ],
+    "real": "Vraie capture de la catégorie ChinaBook et contact fournisseur si autorisé",
+    "motion": "Voyage projeté qui se replie dans le téléphone"
+  },
+  {
+    "id": "CB-02",
+    "metier": "ChinaBook",
+    "prompts": [
+      "Image 1. Revendeur triant ses produits non marqués sur une table d'emballage. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "Image 2. Deux mains se passent un carton de produit, une marge abstraite entre elles. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "Image 3. Revendeur tenant un téléphone à écran neutre devant son stock. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane."
+    ],
+    "real": "Vrai comparatif de prix vérifié, préciser transport hors prix article",
+    "motion": "Deux prix en overlay code, marge qui se décompose"
+  },
+  {
+    "id": "CB-03",
+    "metier": "ChinaBook",
+    "prompts": [
+      "Image 1. Revendeur devant une application de traduction sur téléphone à écran noir. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "Image 2. Plan documentaire d'un marché de gros à Guangzhou, allées sans marque lisible. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "Image 3. Téléphone neutre au premier plan, interlocuteur fournisseur flou derrière. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane."
+    ],
+    "real": "Vrais extraits de guide WeChat et échanges autorisés, informations sensibles masquées",
+    "motion": "Blocages anglais et WeChat se transforment en étapes"
+  },
+  {
+    "id": "CB-04",
+    "metier": "ChinaBook",
+    "prompts": [
+      "Image 1. Aéroport : voyageur avec valise regardant un départ pour la Chine sans panneau lisible. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "Image 2. Marché de gros chinois immense et dense, vue de haut documentaire. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "Image 3. Échantillons non marqués en comparaison sur une table d'hôtel. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane."
+    ],
+    "real": "Vraies photos de repérage fournisseur si disponibles",
+    "motion": "Billet, hôtel, échantillons s'accumulent puis dossiers de contacts"
+  },
+  {
+    "id": "CB-05",
+    "metier": "ChinaBook",
+    "prompts": [
+      "Image 1. Fondateur cagoulé d'après référence autorisée, de dos dans une allée de marché. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "Image 2. Table de travail avec plusieurs échantillons non marqués et carnet. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "Image 3. Main fermant une valise et ouvrant un téléphone à écran noir. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane."
+    ],
+    "real": "Vraies photos du fondateur et captures d'échanges autorisés",
+    "motion": "Recherche longue compressée en réseau classé"
+  },
+  {
+    "id": "CB-06",
+    "metier": "ChinaBook",
+    "prompts": [
+      "Image 1. Carte de visite fournisseur sans donnée lisible abandonnée sur une table. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "Image 2. Deux personnes discutant produits non marqués dans un showroom de Chine. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "Image 3. Téléphone à écran neutre près de cartons d'expédition. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane."
+    ],
+    "real": "Vraies conversations WeChat autorisées, noms et numéros protégés",
+    "motion": "Numéro seul se déplie en preuves, catégories et méthode"
+  },
+  {
+    "id": "CB-07",
+    "metier": "ChinaBook",
+    "prompts": [
+      "Image 1. Cartons neutres empilés dans un entrepôt de transit en Chine. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "Image 2. Personnel de logistique contrôlant un carton ouvert de produits génériques. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "Image 3. Palette filmée prête à l'expédition dans un entrepôt documentaire. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane."
+    ],
+    "real": "Vrai contact transitaire et schéma du circuit si publiables",
+    "motion": "Fournisseur → transitaire → réception en motion, sans fausse promesse douane"
+  },
+  {
+    "id": "CB-08",
+    "metier": "ChinaBook",
+    "prompts": [
+      "Image 1. Deux produits génériques identiques côte à côte sur fond violet sombre. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "Image 2. Main tenant un produit neutre sur un comptoir de revendeur. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "Image 3. Carton d'expédition et échantillon de contrôle qualité sur table. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane."
+    ],
+    "real": "Vrais exemples de prix du site avec coût de transport précisé",
+    "motion": "Comparatif prix revendeur / prix fournisseur créé en texte code"
+  },
+  {
+    "id": "CB-09",
+    "metier": "ChinaBook",
+    "prompts": [
+      "Image 1. Échantillons de vêtements sans logos sous lumière d'atelier. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "Image 2. Main inspectant coutures et détails matière en macro. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "Image 3. Contrôle d'un carton d'échantillons dans un showroom fournisseur. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane."
+    ],
+    "real": "Vrais échanges, photos d'échantillons et tarifs autorisés",
+    "motion": "Checklist qualité, quantité, transport s'anime au rythme de la voix"
+  },
+  {
+    "id": "CB-10",
+    "metier": "ChinaBook",
+    "prompts": [
+      "Image 1. Petit lot de produits génériques emballé proprement sur table. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "Image 2. Débutant en revente discutant avec un fournisseur dans une boutique chinoise. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "Image 3. Un seul carton en transit dans un entrepôt réaliste. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane."
+    ],
+    "real": "Vraie page pack Test et explication transitaire",
+    "motion": "Une catégorie → un contact → une première vérification"
+  },
+  {
+    "id": "CB-11",
+    "metier": "ChinaBook",
+    "prompts": [
+      "Image 1. Revendeur attendant une réponse devant son stock presque vide. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "Image 2. Intermédiaire tenant un catalogue neutre à moitié fermé. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "Image 3. Revendeur consultant son téléphone à écran noir avec stock derrière. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane."
+    ],
+    "real": "Vraies catégories et méthode de contact direct",
+    "motion": "Trois fils prix, modèles, réponse se relient à l'intermédiaire puis se délient"
+  },
+  {
+    "id": "CB-12",
+    "metier": "ChinaBook",
+    "prompts": [
+      "Image 1. Passeport, carnet de budget et billets d'avion sans texte lisible. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "Image 2. Taxi dans une rue de Guangzhou vu depuis siège arrière. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "Image 3. Échantillons génériques et facture floutée sur table. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane."
+    ],
+    "real": "Vraies images de voyage et page packs, sans inventer de montant",
+    "motion": "Addition du voyage vs point de départ réseau, sans chiffre non vérifié"
+  },
+  {
+    "id": "CB-13",
+    "metier": "ChinaBook",
+    "prompts": [
+      "Image 1. Grande allée de marché de gros en Chine avec dizaines de stands génériques. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "Image 2. Revendeur regardant deux échantillons apparemment identiques. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "Image 3. Fournisseur local dans un showroom de chaussures génériques sans marques. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane."
+    ],
+    "real": "Vraies photos fournisseurs et échanges autorisés",
+    "motion": "La foule de stands se filtre vers catégorie et critères"
+  },
+  {
+    "id": "CB-14",
+    "metier": "ChinaBook",
+    "prompts": [
+      "Image 1. Téléphone à écran noir sur bureau de revendeur avec produits non marqués. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "Image 2. Cahier de contacts classé par catégories, textes non lisibles. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "Image 3. Main fermant une facture d'abonnement générique barrée en postproduction. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane."
+    ],
+    "real": "Vraie capture de l'accès à vie et des mises à jour sur le site",
+    "motion": "Paiement unique et réseau durable en typographie claire"
+  },
+  {
+    "id": "CB-15",
+    "metier": "ChinaBook",
+    "prompts": [
+      "Image 1. Revendeur expédiant plusieurs colis dans son local. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "Image 2. Gros plan de calcul de coût sur papier vierge et calculatrice sans chiffres lisibles. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "Image 3. Produits génériques sur table à côté d'un téléphone à écran noir. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane."
+    ],
+    "real": "Vrais comparatifs de prix avec mention frais de transport",
+    "motion": "Chaîne des intermédiaires se contracte puis calcul complet"
+  },
+  {
+    "id": "CB-16",
+    "metier": "ChinaBook",
+    "prompts": [
+      "Image 1. Débutant consultant trois catégories produits non marqués sur étagère. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "Image 2. Un fournisseur tenant un échantillon générique dans son showroom. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "Image 3. Petit carton sécurisé prêt à être confié à un transitaire. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane."
+    ],
+    "real": "Vraie page pack Test et contacts redigés selon autorisation",
+    "motion": "Une porte test s'ouvre avant les autres catégories"
+  },
+  {
+    "id": "CB-17",
+    "metier": "ChinaBook",
+    "prompts": [
+      "Image 1. Revendeur dans un café avec téléphone à écran neutre et carnet. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "Image 2. Rue de Guangzhou en lumière de jour, scène documentaire réaliste. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "Image 3. Téléphone à écran noir en gros plan près d'un colis neutre. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane."
+    ],
+    "real": "Vraie capture espace ChinaBook montrant catégories sans exposer contacts",
+    "motion": "Rue lointaine se rapproche en fenêtre de téléphone"
+  },
+  {
+    "id": "CB-18",
+    "metier": "ChinaBook",
+    "prompts": [
+      "Image 1. Deux produits génériques vus de loin comme identiques sur fond sombre. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "Image 2. Macro de différence de coutures et de finition entre deux échantillons. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "Image 3. Table de vérification avec produit, balance d'expédition et carnet. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane."
+    ],
+    "real": "Vrais échanges tarifaires et mention article hors livraison",
+    "motion": "Prix séduisant stoppé par qualité, quantité et transport"
+  },
+  {
+    "id": "CB-19",
+    "metier": "ChinaBook",
+    "prompts": [
+      "Image 1. Revendeur regardant un catalogue restreint derrière un comptoir. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "Image 2. Fournisseur chinois montrant plusieurs variantes génériques dans un showroom. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "Image 3. Main du revendeur choisissant des échantillons sur table d'atelier. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane."
+    ],
+    "real": "Vrai catalogue fournisseur ou captures autorisées, coordonnées protégées",
+    "motion": "Choix imposé devient choix demandé en direct"
+  },
+  {
+    "id": "CB-20",
+    "metier": "ChinaBook",
+    "prompts": [
+      "Image 1. Fondateur cagoulé d'après référence autorisée travaillant au téléphone en voyage. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "Image 2. Vue de train ou d'aéroport, téléphone à écran neutre et carnet. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "Image 3. Entrepôt de cartons neutres avec travailleur vérifiant une expédition. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane."
+    ],
+    "real": "Vraies photos de voyage du fondateur et vrai échange fournisseur/transitaire",
+    "motion": "Trois lieux différents, même fil de conversation et suivi commande"
+  }
+]

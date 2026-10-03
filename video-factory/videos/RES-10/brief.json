@@ -1,0 +1,30 @@
+{
+  "id": "RES-10",
+  "brand": "DYOU Agency",
+  "profession": "Résine au sol",
+  "angle": "Le bouche-à-oreille doit pouvoir se transmettre",
+  "format": "moyen",
+  "voice_text": "Imagine : un ancien client parle de toi à son voisin. Le voisin répond « envoie-moi son site ». Qu'est-ce qu'il reçoit aujourd'hui ? Un profil avec des photos à chercher, ou une page qui montre immédiatement tes plus beaux chantiers et comment obtenir un devis ? Le bouche-à-oreille fonctionne encore mieux quand on peut partager une vraie vitrine. DYOU Agency peut te la créer. Écris-nous sur WhatsApp pour en parler.",
+  "audio_filename": "audio/RES-10.mp3",
+  "final_video_filename": "video/RES-10.mp4",
+  "images": [
+    {
+      "filename": "images/01.webp",
+      "prompt": "Image 1. Client admirant son nouveau sol résine dans une maison lumineuse. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/02.webp",
+      "prompt": "Image 2. Un voisin montre un téléphone à écran noir à une autre personne dans une entrée. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/03.webp",
+      "prompt": "Image 3. Gros plan du sol fini avec détail de finition et espace de composition pour CTA. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "status": "pending"
+    }
+  ],
+  "real_asset_requirement": "Vrai lien du site POLYRA et galerie partageable",
+  "motion_direction": "Le bouche-à-oreille devient un lien partagé puis une demande",
+  "real_asset_status": "pending"
+}

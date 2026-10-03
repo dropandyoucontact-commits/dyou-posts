@@ -1,0 +1,30 @@
+{
+  "id": "CB-11",
+  "brand": "ChinaBook",
+  "profession": "Revendeurs / sourcing Chine",
+  "angle": "Dépendance à un intermédiaire",
+  "format": "moyen",
+  "voice_text": "Quand ton seul fournisseur est lui-même un revendeur, tu dépends de ses modèles, de ses prix et de ses réponses. S'il change ses conditions, ton activité bouge avec lui. Avoir un contact plus proche de la source te permet au moins de poser tes questions directement, de comparer et de mieux comprendre ce que tu achètes. Le ChinaBook est conçu pour ouvrir cette porte. Choisis la catégorie qui t'intéresse sur le site.",
+  "audio_filename": "audio/CB-11.mp3",
+  "final_video_filename": "video/CB-11.mp4",
+  "images": [
+    {
+      "filename": "images/01.webp",
+      "prompt": "Image 1. Revendeur attendant une réponse devant son stock presque vide. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/02.webp",
+      "prompt": "Image 2. Intermédiaire tenant un catalogue neutre à moitié fermé. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/03.webp",
+      "prompt": "Image 3. Revendeur consultant son téléphone à écran noir avec stock derrière. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "status": "pending"
+    }
+  ],
+  "real_asset_requirement": "Vraies catégories et méthode de contact direct",
+  "motion_direction": "Trois fils prix, modèles, réponse se relient à l'intermédiaire puis se délient",
+  "real_asset_status": "pending"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "CB-03",
+  "brand": "ChinaBook",
+  "profession": "Revendeurs / sourcing Chine",
+  "angle": "La langue comme obstacle",
+  "format": "court",
+  "voice_text": "Tu veux sourcer en Chine, mais l'anglais et WeChat te freinent ? Le ChinaBook te montre qui contacter, quoi demander et comment expédier. Écris-moi sur WhatsApp pour choisir ton pack.",
+  "audio_filename": "audio/CB-03.mp3",
+  "final_video_filename": "video/CB-03.mp4",
+  "images": [
+    {
+      "filename": "images/01.webp",
+      "prompt": "Image 1. Revendeur devant une application de traduction sur téléphone à écran noir. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/02.webp",
+      "prompt": "Image 2. Plan documentaire d'un marché de gros à Guangzhou, allées sans marque lisible. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/03.webp",
+      "prompt": "Image 3. Téléphone neutre au premier plan, interlocuteur fournisseur flou derrière. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "status": "pending"
+    }
+  ],
+  "real_asset_requirement": "Vrais extraits de guide WeChat et échanges autorisés, informations sensibles masquées",
+  "motion_direction": "Blocages anglais et WeChat se transforment en étapes",
+  "real_asset_status": "pending"
+}

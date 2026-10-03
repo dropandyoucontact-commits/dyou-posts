@@ -1,0 +1,30 @@
+{
+  "id": "CB-12",
+  "brand": "ChinaBook",
+  "profession": "Revendeurs / sourcing Chine",
+  "angle": "Le budget caché du voyage",
+  "format": "moyen",
+  "voice_text": "Tu calcules le billet pour la Chine. Puis il faut ajouter l'hôtel, les déplacements, les échantillons et le temps passé à chercher. Et au retour, il te reste encore à tester les contacts. Si tu veux d'abord vérifier ton idée de revente, commencer avec un réseau déjà organisé peut être plus simple qu'un voyage de sourcing improvisé. Regarde les différents accès ChinaBook et choisis selon les produits que tu veux travailler.",
+  "audio_filename": "audio/CB-12.mp3",
+  "final_video_filename": "video/CB-12.mp4",
+  "images": [
+    {
+      "filename": "images/01.webp",
+      "prompt": "Image 1. Passeport, carnet de budget et billets d'avion sans texte lisible. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/02.webp",
+      "prompt": "Image 2. Taxi dans une rue de Guangzhou vu depuis siège arrière. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/03.webp",
+      "prompt": "Image 3. Échantillons génériques et facture floutée sur table. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "status": "pending"
+    }
+  ],
+  "real_asset_requirement": "Vraies images de voyage et page packs, sans inventer de montant",
+  "motion_direction": "Addition du voyage vs point de départ réseau, sans chiffre non vérifié",
+  "real_asset_status": "pending"
+}

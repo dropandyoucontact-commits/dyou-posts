@@ -1,0 +1,82 @@
+[
+  {
+    "id":"CB-01","duree":"court","angle":"Le voyage reporté","mecanique":"Question directe et renversement","cta":"Voir les packs",
+    "script":"Ça fait combien de temps que tu repousses ton voyage en Chine ? Si tu veux surtout trouver des fournisseurs, commence depuis ton téléphone. Mon réseau est dans le ChinaBook. Choisis ta catégorie sur le site."
+  },
+  {
+    "id":"CB-02","duree":"court","angle":"La marge du revendeur","mecanique":"Coût invisible","cta":"Voir les packs",
+    "script":"Tu revends déjà, mais tu achètes à un autre revendeur ? Sa marge sort de la tienne. Compare avec des contacts fournisseurs en Chine. Le réseau ChinaBook et les packs sont sur le site."
+  },
+  {
+    "id":"CB-03","duree":"court","angle":"La langue comme obstacle","mecanique":"Objection levée","cta":"WhatsApp",
+    "script":"Tu veux sourcer en Chine, mais l'anglais et WeChat te freinent ? Le ChinaBook te montre qui contacter, quoi demander et comment expédier. Écris-moi sur WhatsApp pour choisir ton pack."
+  },
+  {
+    "id":"CB-04","duree":"long","angle":"Deux semaines sur place ne suffisent pas","mecanique":"Récit du vrai coût de recherche","cta":"Voir les packs",
+    "script":"Tu veux aller en Chine pour trouver des fournisseurs ? Le billet et l'hôtel, c'est la partie facile à prévoir. Le vrai travail commence quand tu arrives : tu visites des boutiques, tu compares les produits, tu commandes des échantillons, tu vérifies la qualité, tu testes la communication et la livraison. En quinze jours, tu peux repartir avec des cartes de visite. Ça ne te dit pas encore avec qui tu peux vraiment travailler. Moi, cette sélection, je l'ai faite dans la durée. Le ChinaBook te donne accès aux contacts et aux explications pour démarrer sans faire ce voyage à l'aveugle. Regarde les packs sur le site."
+  },
+  {
+    "id":"CB-05","duree":"long","angle":"Pourquoi partager son réseau","mecanique":"Transparence du fondateur","cta":"WhatsApp",
+    "script":"Pourquoi je vends mes fournisseurs ? Parce que tu pourrais partir en Chine, chercher par toi-même et finir par en trouver. Mais tu vas payer le voyage, passer du temps sur place, te tromper parfois et recommencer avec un autre contact. Moi, j'ai déjà fait ce travail sur les catégories que je connais. En partageant mon réseau, tu gagnes un point de départ concret et je suis payé pour les mois de recherche que j'ai investis. Ça ne remplace pas tes vérifications sur chaque commande. Ça t'évite de démarrer de zéro. Si tu veux savoir quel accès te correspond, écris-moi sur WhatsApp."
+  },
+  {
+    "id":"CB-06","duree":"moyen","angle":"Un numéro seul ne vaut rien","mecanique":"Recadrage de l'offre","cta":"Voir les preuves",
+    "script":"Un contact WeChat trouvé au hasard, ça ne te dit rien sur ses produits, sa façon de répondre ou le circuit d'expédition. C'est pour ça que je ne présente pas le ChinaBook comme une liste magique de numéros. Je te montre les catégories, mes échanges et comment parler aux contacts. Ensuite, tu compares et tu vérifies avant de commander. Va voir les preuves et les packs sur le site."
+  },
+  {
+    "id":"CB-07","duree":"moyen","angle":"Le transitaire oublié","mecanique":"Chaînon manquant","cta":"Voir les packs",
+    "script":"Tu as trouvé un fournisseur. Très bien. Maintenant, comment le produit part de Chine et arrive chez toi ? C'est là que beaucoup de débutants se bloquent. Le circuit ne s'arrête pas au contact du vendeur : il faut aussi comprendre le rôle du transitaire, le contrôle et l'expédition. Le ChinaBook rassemble les contacts et les étapes pour que tu voies le chemin complet. Regarde les packs sur le site."
+  },
+  {
+    "id":"CB-08","duree":"court","angle":"Même produit, deux prix d'achat","mecanique":"Comparaison visuelle","cta":"Voir les exemples",
+    "script":"Même produit, deux prix d'achat. Le revendeur prend sa marge ; le fournisseur te donne son prix. Compare aussi qualité et transport. Tu veux voir des exemples concrets ? Va sur le site ChinaBook."
+  },
+  {
+    "id":"CB-09","duree":"long","angle":"Tester un fournisseur avant de lui faire confiance","mecanique":"Éducation pratique","cta":"Voir les preuves",
+    "script":"Un fournisseur ne devient pas fiable parce qu'il t'envoie un beau catalogue. Tu dois lui demander des photos précises, regarder les détails, comparer un échantillon, comprendre ses quantités et vérifier comment la commande sera expédiée. C'est un travail. Si tu pars de zéro, tu vas apprendre en payant parfois tes erreurs. Dans le ChinaBook, je te partage les contacts avec lesquels j'ai déjà échangé et les étapes que j'utilise pour avancer. Le but, c'est de commencer avec une méthode, pas avec une promesse de marge garantie. Va regarder les conversations et les packs sur le site."
+  },
+  {
+    "id":"CB-10","duree":"moyen","angle":"Commencer par une petite commande","mecanique":"Réduction du risque perçu","cta":"Découvrir le Test",
+    "script":"Tu n'as pas besoin de préparer un container pour comprendre comment fonctionne le sourcing. Commence par choisir une catégorie, parler à un fournisseur, demander les détails du produit et faire tes vérifications avant une première commande adaptée à ton budget. Le pack Test du ChinaBook existe justement pour découvrir un contact et le circuit d'expédition. Si tu veux avancer étape par étape, regarde cette option sur le site."
+  },
+  {
+    "id":"CB-11","duree":"moyen","angle":"Dépendance à un intermédiaire","mecanique":"Perte de contrôle","cta":"Voir les packs",
+    "script":"Quand ton seul fournisseur est lui-même un revendeur, tu dépends de ses modèles, de ses prix et de ses réponses. S'il change ses conditions, ton activité bouge avec lui. Avoir un contact plus proche de la source te permet au moins de poser tes questions directement, de comparer et de mieux comprendre ce que tu achètes. Le ChinaBook est conçu pour ouvrir cette porte. Choisis la catégorie qui t'intéresse sur le site."
+  },
+  {
+    "id":"CB-12","duree":"moyen","angle":"Le budget caché du voyage","mecanique":"Addition qui s'accumule","cta":"Voir les packs",
+    "script":"Tu calcules le billet pour la Chine. Puis il faut ajouter l'hôtel, les déplacements, les échantillons et le temps passé à chercher. Et au retour, il te reste encore à tester les contacts. Si tu veux d'abord vérifier ton idée de revente, commencer avec un réseau déjà organisé peut être plus simple qu'un voyage de sourcing improvisé. Regarde les différents accès ChinaBook et choisis selon les produits que tu veux travailler."
+  },
+  {
+    "id":"CB-13","duree":"moyen","angle":"Marché immense, recherche mal ciblée","mecanique":"Fausse évidence démontée","cta":"WhatsApp",
+    "script":"Tu arrives dans un immense marché en Chine. Des milliers de produits, des dizaines de stands, tout le monde te dit « meilleure qualité ». Comment tu sais qui contacter pour ta catégorie ? Le difficile, ce n'est pas de trouver quelqu'un qui vend. C'est d'identifier un contact avec lequel travailler et de vérifier ce qu'il propose. C'est le temps de recherche derrière le ChinaBook. Si tu hésites entre les packs, écris-moi sur WhatsApp."
+  },
+  {
+    "id":"CB-14","duree":"court","angle":"Accès durable au réseau","mecanique":"Simplicité de l'offre","cta":"Voir les packs",
+    "script":"Tu veux des contacts fournisseurs, pas un abonnement de plus. Avec ChinaBook, tu choisis ton accès et tu gardes le réseau. Regarde les catégories sur le site et prends le pack adapté à ton projet."
+  },
+  {
+    "id":"CB-15","duree":"moyen","angle":"Le revendeur déjà actif plafonne","mecanique":"Diagnostic de marge","cta":"Voir les preuves",
+    "script":"Tu fais déjà des ventes, mais ton prix d'achat te laisse peu de place. Avant de chercher un nouveau produit, regarde le chemin de celui que tu vends déjà. Combien d'intermédiaires se trouvent entre toi et la source ? Comparer des contacts et des prix de touche, transport compris, peut changer ta lecture de la marge. C'est exactement le point de départ du ChinaBook. Les exemples et les conversations sont sur le site."
+  },
+  {
+    "id":"CB-16","duree":"moyen","angle":"Tester avant de choisir un gros pack","mecanique":"Petite première décision","cta":"Découvrir le Test",
+    "script":"Tu veux voir comment fonctionne le réseau, mais tu ne sais pas encore quelle catégorie développer. Le pack Test te donne un premier fournisseur dans le domaine que tu choisis et le contact de la logistique avion. Tu peux comprendre les échanges, demander les conditions et décider de la suite avec plus de contexte. Pas besoin de choisir une grande gamme de produits dès le premier jour. Le détail est sur le site ChinaBook."
+  },
+  {
+    "id":"CB-17","duree":"court","angle":"Le réseau dans le téléphone","mecanique":"Portabilité du travail","cta":"Voir les packs",
+    "script":"Ton prochain contact fournisseur peut être dans ton téléphone avant même que tu réserves un billet pour la Chine. Choisis ton domaine, découvre le réseau ChinaBook et commence par poser les bonnes questions. Les packs sont sur le site."
+  },
+  {
+    "id":"CB-18","duree":"long","angle":"Le prix seul ne suffit pas","mecanique":"Recadrage de la comparaison","cta":"Voir les preuves",
+    "script":"Tu vois deux prix pour un produit et tu penses avoir trouvé la meilleure affaire. Attends. Est-ce que la qualité est la même ? La quantité demandée ? Le prix inclut-il le transport ? Tu peux gagner sur l'achat et perdre sur une commande mal vérifiée. C'est pour ça que je montre les échanges réels et que j'explique comment parler aux fournisseurs et au transitaire. Le ChinaBook sert à trouver des contacts, mais aussi à comprendre les questions à poser avant de payer. Regarde les preuves sur le site, compare les catégories, puis choisis ton accès."
+  },
+  {
+    "id":"CB-19","duree":"moyen","angle":"Reprendre les décisions d'achat","mecanique":"Passage de passif à actif","cta":"WhatsApp",
+    "script":"Quand tu passes uniquement par un revendeur, tu achètes ce qu'il a décidé de te montrer. Quand tu échanges avec un fournisseur, tu peux demander les modèles, les variantes, les quantités et les photos dont tu as besoin. Tu dois toujours vérifier ce que tu commandes, mais tu reprends la conversation en main. C'est la logique du ChinaBook : des contacts et une méthode. Dis-moi sur WhatsApp ce que tu veux sourcer et je t'oriente vers le bon pack."
+  },
+  {
+    "id":"CB-20","duree":"long","angle":"Le commerce portable","mecanique":"Histoire personnelle et aspiration","cta":"WhatsApp",
+    "script":"Ce que j'aime dans ce business, c'est qu'une grande partie du travail se fait depuis mon téléphone. Je parle aux fournisseurs, je compare les produits, je suis les commandes et j'échange avec le transitaire, même quand je suis loin de la Chine. Ça m'a permis de voyager tout en continuant à travailler. Mais cette liberté n'est pas tombée du ciel : il a fallu construire les bons contacts et apprendre à vérifier chaque étape. C'est cette base que je partage dans le ChinaBook. Si tu veux démarrer dans une catégorie précise, écris-moi sur WhatsApp et explique-moi ton projet."
+  }
+]

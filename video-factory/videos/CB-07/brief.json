@@ -1,0 +1,30 @@
+{
+  "id": "CB-07",
+  "brand": "ChinaBook",
+  "profession": "Revendeurs / sourcing Chine",
+  "angle": "Le transitaire oublié",
+  "format": "moyen",
+  "voice_text": "Tu as trouvé un fournisseur. Très bien. Maintenant, comment le produit part de Chine et arrive chez toi ? C'est là que beaucoup de débutants se bloquent. Le circuit ne s'arrête pas au contact du vendeur : il faut aussi comprendre le rôle du transitaire, le contrôle et l'expédition. Le ChinaBook rassemble les contacts et les étapes pour que tu voies le chemin complet. Regarde les packs sur le site.",
+  "audio_filename": "audio/CB-07.mp3",
+  "final_video_filename": "video/CB-07.mp4",
+  "images": [
+    {
+      "filename": "images/01.webp",
+      "prompt": "Image 1. Cartons neutres empilés dans un entrepôt de transit en Chine. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/02.webp",
+      "prompt": "Image 2. Personnel de logistique contrôlant un carton ouvert de produits génériques. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/03.webp",
+      "prompt": "Image 3. Palette filmée prête à l'expédition dans un entrepôt documentaire. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "status": "pending"
+    }
+  ],
+  "real_asset_requirement": "Vrai contact transitaire et schéma du circuit si publiables",
+  "motion_direction": "Fournisseur → transitaire → réception en motion, sans fausse promesse douane",
+  "real_asset_status": "pending"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "CB-09",
+  "brand": "ChinaBook",
+  "profession": "Revendeurs / sourcing Chine",
+  "angle": "Tester un fournisseur avant de lui faire confiance",
+  "format": "long",
+  "voice_text": "Un fournisseur ne devient pas fiable parce qu'il t'envoie un beau catalogue. Tu dois lui demander des photos précises, regarder les détails, comparer un échantillon, comprendre ses quantités et vérifier comment la commande sera expédiée. C'est un travail. Si tu pars de zéro, tu vas apprendre en payant parfois tes erreurs. Dans le ChinaBook, je te partage les contacts avec lesquels j'ai déjà échangé et les étapes que j'utilise pour avancer. Le but, c'est de commencer avec une méthode, pas avec une promesse de marge garantie. Va regarder les conversations et les packs sur le site.",
+  "audio_filename": "audio/CB-09.mp3",
+  "final_video_filename": "video/CB-09.mp4",
+  "images": [
+    {
+      "filename": "images/01.webp",
+      "prompt": "Image 1. Échantillons de vêtements sans logos sous lumière d'atelier. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/02.webp",
+      "prompt": "Image 2. Main inspectant coutures et détails matière en macro. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/03.webp",
+      "prompt": "Image 3. Contrôle d'un carton d'échantillons dans un showroom fournisseur. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "status": "pending"
+    }
+  ],
+  "real_asset_requirement": "Vrais échanges, photos d'échantillons et tarifs autorisés",
+  "motion_direction": "Checklist qualité, quantité, transport s'anime au rythme de la voix",
+  "real_asset_status": "pending"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "CB-14",
+  "brand": "ChinaBook",
+  "profession": "Revendeurs / sourcing Chine",
+  "angle": "Accès durable au réseau",
+  "format": "court",
+  "voice_text": "Tu veux des contacts fournisseurs, pas un abonnement de plus. Avec ChinaBook, tu choisis ton accès et tu gardes le réseau. Regarde les catégories sur le site et prends le pack adapté à ton projet.",
+  "audio_filename": "audio/CB-14.mp3",
+  "final_video_filename": "video/CB-14.mp4",
+  "images": [
+    {
+      "filename": "images/01.webp",
+      "prompt": "Image 1. Téléphone à écran noir sur bureau de revendeur avec produits non marqués. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/02.webp",
+      "prompt": "Image 2. Cahier de contacts classé par catégories, textes non lisibles. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/03.webp",
+      "prompt": "Image 3. Main fermant une facture d'abonnement générique barrée en postproduction. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "status": "pending"
+    }
+  ],
+  "real_asset_requirement": "Vraie capture de l'accès à vie et des mises à jour sur le site",
+  "motion_direction": "Paiement unique et réseau durable en typographie claire",
+  "real_asset_status": "pending"
+}

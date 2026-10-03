@@ -1,0 +1,30 @@
+{
+  "id": "COA-06",
+  "brand": "DYOU Agency",
+  "profession": "Coach sportif",
+  "angle": "Défendre la valeur sans casser le prix",
+  "format": "moyen",
+  "voice_text": "Quand quelqu'un te demande seulement « combien la séance ? », il compare un prix sans comprendre ce qu'il achète. Ton coaching, c'est peut-être un bilan, un programme adapté et du suivi entre les séances. Il faut que cette valeur soit visible avant le premier échange. Un site bien pensé peut la montrer, sans discours compliqué. DYOU Agency construit des vitrines pour les coachs qui veulent être compris. Écris-nous sur WhatsApp pour voir une maquette.",
+  "audio_filename": "audio/COA-06.mp3",
+  "final_video_filename": "video/COA-06.mp4",
+  "images": [
+    {
+      "filename": "images/01.webp",
+      "prompt": "Image 1. Téléphone à écran neutre près de poids, cadré pour incruster un message de prix. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/02.webp",
+      "prompt": "Image 2. Coach mesurant les objectifs d'un client avec carnet de bilan. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/03.webp",
+      "prompt": "Image 3. Coach ajustant un programme après séance dans une lumière du soir. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "status": "pending"
+    }
+  ],
+  "real_asset_requirement": "Vraie page décrivant le bilan et l'accompagnement",
+  "motion_direction": "Le prix rétrécit, le suivi prend de l'ampleur",
+  "real_asset_status": "pending"
+}

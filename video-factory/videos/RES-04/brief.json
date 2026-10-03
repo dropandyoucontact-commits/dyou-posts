@@ -1,0 +1,30 @@
+{
+  "id": "RES-04",
+  "brand": "DYOU Agency",
+  "profession": "Résine au sol",
+  "angle": "La peur d'un artisan inconnu",
+  "format": "moyen",
+  "voice_text": "Mets-toi deux secondes à la place du client. Il va confier son sol à quelqu'un qu'il ne connaît pas. Trois photos sur un réseau social, ça ne lui dit pas comment tu travailles. Des réalisations détaillées, les étapes du chantier et un moyen simple de te joindre, si. C'est ce parcours qu'on crée pour les artisans chez DYOU Agency. Envoie-nous « résine » sur WhatsApp et parlons de ton site.",
+  "audio_filename": "audio/RES-04.mp3",
+  "final_video_filename": "video/RES-04.mp4",
+  "images": [
+    {
+      "filename": "images/01.webp",
+      "prompt": "Image 1. Client dans son salon non rénové regardant un sol brut et hésitant. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/02.webp",
+      "prompt": "Image 2. Artisan appliquant la résine avec gestes précis, protections, outils et surface préparée. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/03.webp",
+      "prompt": "Image 3. Détail rassurant d'un sol fini et des raccords près d'un mur, photo documentaire. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "status": "pending"
+    }
+  ],
+  "real_asset_requirement": "Vraies étapes chantier et témoignages uniquement si autorisés",
+  "motion_direction": "Point de vue client, puis étapes en séquence avant l'appel à contact",
+  "real_asset_status": "pending"
+}

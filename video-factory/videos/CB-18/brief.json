@@ -1,0 +1,30 @@
+{
+  "id": "CB-18",
+  "brand": "ChinaBook",
+  "profession": "Revendeurs / sourcing Chine",
+  "angle": "Le prix seul ne suffit pas",
+  "format": "long",
+  "voice_text": "Tu vois deux prix pour un produit et tu penses avoir trouvé la meilleure affaire. Attends. Est-ce que la qualité est la même ? La quantité demandée ? Le prix inclut-il le transport ? Tu peux gagner sur l'achat et perdre sur une commande mal vérifiée. C'est pour ça que je montre les échanges réels et que j'explique comment parler aux fournisseurs et au transitaire. Le ChinaBook sert à trouver des contacts, mais aussi à comprendre les questions à poser avant de payer. Regarde les preuves sur le site, compare les catégories, puis choisis ton accès.",
+  "audio_filename": "audio/CB-18.mp3",
+  "final_video_filename": "video/CB-18.mp4",
+  "images": [
+    {
+      "filename": "images/01.webp",
+      "prompt": "Image 1. Deux produits génériques vus de loin comme identiques sur fond sombre. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/02.webp",
+      "prompt": "Image 2. Macro de différence de coutures et de finition entre deux échantillons. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/03.webp",
+      "prompt": "Image 3. Table de vérification avec produit, balance d'expédition et carnet. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "status": "pending"
+    }
+  ],
+  "real_asset_requirement": "Vrais échanges tarifaires et mention article hors livraison",
+  "motion_direction": "Prix séduisant stoppé par qualité, quantité et transport",
+  "real_asset_status": "pending"
+}

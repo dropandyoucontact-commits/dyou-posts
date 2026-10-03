@@ -1,0 +1,30 @@
+{
+  "id": "CB-05",
+  "brand": "ChinaBook",
+  "profession": "Revendeurs / sourcing Chine",
+  "angle": "Pourquoi partager son réseau",
+  "format": "long",
+  "voice_text": "Pourquoi je vends mes fournisseurs ? Parce que tu pourrais partir en Chine, chercher par toi-même et finir par en trouver. Mais tu vas payer le voyage, passer du temps sur place, te tromper parfois et recommencer avec un autre contact. Moi, j'ai déjà fait ce travail sur les catégories que je connais. En partageant mon réseau, tu gagnes un point de départ concret et je suis payé pour les mois de recherche que j'ai investis. Ça ne remplace pas tes vérifications sur chaque commande. Ça t'évite de démarrer de zéro. Si tu veux savoir quel accès te correspond, écris-moi sur WhatsApp.",
+  "audio_filename": "audio/CB-05.mp3",
+  "final_video_filename": "video/CB-05.mp4",
+  "images": [
+    {
+      "filename": "images/01.webp",
+      "prompt": "Image 1. Fondateur cagoulé d'après référence autorisée, de dos dans une allée de marché. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/02.webp",
+      "prompt": "Image 2. Table de travail avec plusieurs échantillons non marqués et carnet. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/03.webp",
+      "prompt": "Image 3. Main fermant une valise et ouvrant un téléphone à écran noir. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "status": "pending"
+    }
+  ],
+  "real_asset_requirement": "Vraies photos du fondateur et captures d'échanges autorisés",
+  "motion_direction": "Recherche longue compressée en réseau classé",
+  "real_asset_status": "pending"
+}

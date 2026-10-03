@@ -1,0 +1,30 @@
+{
+  "id": "CB-06",
+  "brand": "ChinaBook",
+  "profession": "Revendeurs / sourcing Chine",
+  "angle": "Un numéro seul ne vaut rien",
+  "format": "moyen",
+  "voice_text": "Un contact WeChat trouvé au hasard, ça ne te dit rien sur ses produits, sa façon de répondre ou le circuit d'expédition. C'est pour ça que je ne présente pas le ChinaBook comme une liste magique de numéros. Je te montre les catégories, mes échanges et comment parler aux contacts. Ensuite, tu compares et tu vérifies avant de commander. Va voir les preuves et les packs sur le site.",
+  "audio_filename": "audio/CB-06.mp3",
+  "final_video_filename": "video/CB-06.mp4",
+  "images": [
+    {
+      "filename": "images/01.webp",
+      "prompt": "Image 1. Carte de visite fournisseur sans donnée lisible abandonnée sur une table. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/02.webp",
+      "prompt": "Image 2. Deux personnes discutant produits non marqués dans un showroom de Chine. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/03.webp",
+      "prompt": "Image 3. Téléphone à écran neutre près de cartons d'expédition. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "status": "pending"
+    }
+  ],
+  "real_asset_requirement": "Vraies conversations WeChat autorisées, noms et numéros protégés",
+  "motion_direction": "Numéro seul se déplie en preuves, catégories et méthode",
+  "real_asset_status": "pending"
+}

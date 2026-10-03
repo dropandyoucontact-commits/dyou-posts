@@ -1,0 +1,30 @@
+{
+  "id": "CB-08",
+  "brand": "ChinaBook",
+  "profession": "Revendeurs / sourcing Chine",
+  "angle": "Même produit, deux prix d'achat",
+  "format": "court",
+  "voice_text": "Même produit, deux prix d'achat. Le revendeur prend sa marge ; le fournisseur te donne son prix. Compare aussi qualité et transport. Tu veux voir des exemples concrets ? Va sur le site ChinaBook.",
+  "audio_filename": "audio/CB-08.mp3",
+  "final_video_filename": "video/CB-08.mp4",
+  "images": [
+    {
+      "filename": "images/01.webp",
+      "prompt": "Image 1. Deux produits génériques identiques côte à côte sur fond violet sombre. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/02.webp",
+      "prompt": "Image 2. Main tenant un produit neutre sur un comptoir de revendeur. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/03.webp",
+      "prompt": "Image 3. Carton d'expédition et échantillon de contrôle qualité sur table. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "status": "pending"
+    }
+  ],
+  "real_asset_requirement": "Vrais exemples de prix du site avec coût de transport précisé",
+  "motion_direction": "Comparatif prix revendeur / prix fournisseur créé en texte code",
+  "real_asset_status": "pending"
+}

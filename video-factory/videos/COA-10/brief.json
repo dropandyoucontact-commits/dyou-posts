@@ -1,0 +1,30 @@
+{
+  "id": "COA-10",
+  "brand": "DYOU Agency",
+  "profession": "Coach sportif",
+  "angle": "Le coach vend une transformation, pas une séance",
+  "format": "moyen",
+  "voice_text": "Si ton site dit seulement « coaching sportif, contactez-moi », le prospect ne voit qu'une séance de plus. Ce qu'il cherche vraiment, c'est un accompagnement adapté à son objectif et quelqu'un capable de le guider dans la durée. Ton site doit rendre ce parcours concret : pour qui, comment, et quelle première étape. C'est le travail de DYOU Agency. Écris-nous sur WhatsApp et voyons comment présenter ton coaching.",
+  "audio_filename": "audio/COA-10.mp3",
+  "final_video_filename": "video/COA-10.mp4",
+  "images": [
+    {
+      "filename": "images/01.webp",
+      "prompt": "Image 1. Coach guidant un client sur une première séance en salle. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/02.webp",
+      "prompt": "Image 2. Calendrier d'entraînement papier sans texte lisible et matériel varié. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/03.webp",
+      "prompt": "Image 3. Client et coach regardant ensemble un plan d'accompagnement sur écran noir. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "status": "pending"
+    }
+  ],
+  "real_asset_requirement": "Vrais programmes et parcours de prise de contact",
+  "motion_direction": "Une séance isolée devient un parcours dans la durée",
+  "real_asset_status": "pending"
+}

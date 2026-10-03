@@ -1,0 +1,30 @@
+{
+  "id": "LOC-08",
+  "brand": "DYOU Agency",
+  "profession": "Location de voitures",
+  "angle": "Les annonces sociales expirent",
+  "format": "moyen",
+  "voice_text": "Tu filmes une voiture, tu postes la vidéo, les gens réagissent. Puis la story disparaît. Le prochain client qui cherche ce modèle ne voit plus ni les photos, ni les informations essentielles. Une page dédiée reste accessible depuis chaque publication et peut transformer l'intérêt en demande. Tes réseaux attirent le regard ; ton site organise la suite. Si tu gères une agence de location, écris à DYOU Agency sur WhatsApp.",
+  "audio_filename": "audio/LOC-08.mp3",
+  "final_video_filename": "video/LOC-08.mp4",
+  "images": [
+    {
+      "filename": "images/01.webp",
+      "prompt": "Image 1. Personne filmant une voiture élégante en vertical pour un réseau social. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/02.webp",
+      "prompt": "Image 2. Téléphone à écran neutre sur lequel une story abstraite s'efface sans UI de marque. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/03.webp",
+      "prompt": "Image 3. Même voiture photographiée comme fiche catalogue avec fond sombre. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "status": "pending"
+    }
+  ],
+  "real_asset_requirement": "Vrai reel autorisé et vraie fiche modèle",
+  "motion_direction": "Story s'évapore, modèle reste accessible dans le site",
+  "real_asset_status": "pending"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "LOC-07",
+  "brand": "DYOU Agency",
+  "profession": "Location de voitures",
+  "angle": "Le mauvais modèle dans le mauvais post",
+  "format": "moyen",
+  "voice_text": "Le client qui prépare un week-end n'a pas la même envie que celui qui organise un événement. Pourtant, sur un profil social, toutes tes voitures se mélangent dans le même fil. Sur ton site, il peut parcourir la flotte, ouvrir le modèle qui lui plaît et t'envoyer une demande avec son projet. Tu rends le choix plus simple sans forcer une vente. DYOU Agency peut construire cette vitrine. Décris ta flotte dans notre formulaire.",
+  "audio_filename": "audio/LOC-07.mp3",
+  "final_video_filename": "video/LOC-07.mp4",
+  "images": [
+    {
+      "filename": "images/01.webp",
+      "prompt": "Image 1. Voiture de tourisme élégante sur route de week-end au lever du soleil. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/02.webp",
+      "prompt": "Image 2. Voiture sportive générique devant un lieu d'événement au crépuscule. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/03.webp",
+      "prompt": "Image 3. Prospect faisant défiler des modèles sur téléphone à écran noir. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "status": "pending"
+    }
+  ],
+  "real_asset_requirement": "Vraies fiches de plusieurs modèles et catégories de flotte",
+  "motion_direction": "Occasions distinctes reliées à des fiches dédiées",
+  "real_asset_status": "pending"
+}

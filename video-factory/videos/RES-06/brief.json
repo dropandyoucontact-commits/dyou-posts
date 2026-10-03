@@ -1,0 +1,30 @@
+{
+  "id": "RES-06",
+  "brand": "DYOU Agency",
+  "profession": "Résine au sol",
+  "angle": "Le chantier disparaît du fil",
+  "format": "moyen",
+  "voice_text": "Tu publies ton meilleur chantier. Il fait quelques vues. Deux semaines plus tard, il est enterré sous les nouvelles publications. Pourtant, ce sol pourrait convaincre le prochain client pendant des mois. Sur ton site, chaque réalisation reste visible, avec les informations qui aident à passer à la demande de devis. Ton travail ne devrait pas disparaître dans un fil d'actualité. Écris à DYOU Agency sur WhatsApp pour voir la maquette de ta vitrine.",
+  "audio_filename": "audio/RES-06.mp3",
+  "final_video_filename": "video/RES-06.mp4",
+  "images": [
+    {
+      "filename": "images/01.webp",
+      "prompt": "Image 1. Artisan photographiant un sol résine fini depuis l'angle d'une pièce. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/02.webp",
+      "prompt": "Image 2. Un écran de téléphone neutre dans une main, fil de publications abstrait flouté sans faux texte. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/03.webp",
+      "prompt": "Image 3. Même réalisation cadrée en portfolio sur ordinateur avec écran noir pour incrustation. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "status": "pending"
+    }
+  ],
+  "real_asset_requirement": "Vraies photos avant-après et capture du portfolio",
+  "motion_direction": "Publication qui glisse hors cadre, réalisation qui reste épinglée",
+  "real_asset_status": "pending"
+}

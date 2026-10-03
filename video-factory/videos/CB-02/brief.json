@@ -1,0 +1,30 @@
+{
+  "id": "CB-02",
+  "brand": "ChinaBook",
+  "profession": "Revendeurs / sourcing Chine",
+  "angle": "La marge du revendeur",
+  "format": "court",
+  "voice_text": "Tu revends déjà, mais tu achètes à un autre revendeur ? Sa marge sort de la tienne. Compare avec des contacts fournisseurs en Chine. Le réseau ChinaBook et les packs sont sur le site.",
+  "audio_filename": "audio/CB-02.mp3",
+  "final_video_filename": "video/CB-02.mp4",
+  "images": [
+    {
+      "filename": "images/01.webp",
+      "prompt": "Image 1. Revendeur triant ses produits non marqués sur une table d'emballage. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/02.webp",
+      "prompt": "Image 2. Deux mains se passent un carton de produit, une marge abstraite entre elles. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/03.webp",
+      "prompt": "Image 3. Revendeur tenant un téléphone à écran neutre devant son stock. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "status": "pending"
+    }
+  ],
+  "real_asset_requirement": "Vrai comparatif de prix vérifié, préciser transport hors prix article",
+  "motion_direction": "Deux prix en overlay code, marge qui se décompose",
+  "real_asset_status": "pending"
+}

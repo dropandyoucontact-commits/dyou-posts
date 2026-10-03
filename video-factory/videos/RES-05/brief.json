@@ -1,0 +1,30 @@
+{
+  "id": "RES-05",
+  "brand": "DYOU Agency",
+  "profession": "Résine au sol",
+  "angle": "Un rendu haut de gamme mérite une vitrine",
+  "format": "moyen",
+  "voice_text": "Tu sais produire un sol qui change complètement l'ambiance d'une pièce. Alors pourquoi ta présentation en ligne ressemble-t-elle à un dossier de photos envoyé à la va-vite ? Un beau projet se découvre en grand, avec ses détails, sa finition et son contexte. Chez DYOU Agency, on construit cette vitrine autour de ton vrai savoir-faire. Si tu veux voir à quoi ton activité pourrait ressembler en ligne, demande ta maquette via le formulaire du site.",
+  "audio_filename": "audio/RES-05.mp3",
+  "final_video_filename": "video/RES-05.mp4",
+  "images": [
+    {
+      "filename": "images/01.webp",
+      "prompt": "Image 1. Grand salon contemporain avec sol résine perle, lumière douce de fin d'après-midi. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/02.webp",
+      "prompt": "Image 2. Photographies de chantier imprimées en désordre sur une table d'atelier. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/03.webp",
+      "prompt": "Image 3. Vue architecturale pleine hauteur d'un sol résine élégant avec grand espace sombre en haut. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "status": "pending"
+    }
+  ],
+  "real_asset_requirement": "Galerie réelle POLYRA et logo DYOU fourni",
+  "motion_direction": "Les photos dispersées s'effacent devant une vitrine plein écran",
+  "real_asset_status": "pending"
+}

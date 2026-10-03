@@ -1,0 +1,30 @@
+{
+  "id": "CB-19",
+  "brand": "ChinaBook",
+  "profession": "Revendeurs / sourcing Chine",
+  "angle": "Reprendre les décisions d'achat",
+  "format": "moyen",
+  "voice_text": "Quand tu passes uniquement par un revendeur, tu achètes ce qu'il a décidé de te montrer. Quand tu échanges avec un fournisseur, tu peux demander les modèles, les variantes, les quantités et les photos dont tu as besoin. Tu dois toujours vérifier ce que tu commandes, mais tu reprends la conversation en main. C'est la logique du ChinaBook : des contacts et une méthode. Dis-moi sur WhatsApp ce que tu veux sourcer et je t'oriente vers le bon pack.",
+  "audio_filename": "audio/CB-19.mp3",
+  "final_video_filename": "video/CB-19.mp4",
+  "images": [
+    {
+      "filename": "images/01.webp",
+      "prompt": "Image 1. Revendeur regardant un catalogue restreint derrière un comptoir. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/02.webp",
+      "prompt": "Image 2. Fournisseur chinois montrant plusieurs variantes génériques dans un showroom. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/03.webp",
+      "prompt": "Image 3. Main du revendeur choisissant des échantillons sur table d'atelier. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "status": "pending"
+    }
+  ],
+  "real_asset_requirement": "Vrai catalogue fournisseur ou captures autorisées, coordonnées protégées",
+  "motion_direction": "Choix imposé devient choix demandé en direct",
+  "real_asset_status": "pending"
+}

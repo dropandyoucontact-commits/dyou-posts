@@ -1,0 +1,30 @@
+{
+  "id": "CB-01",
+  "brand": "ChinaBook",
+  "profession": "Revendeurs / sourcing Chine",
+  "angle": "Le voyage reporté",
+  "format": "court",
+  "voice_text": "Ça fait combien de temps que tu repousses ton voyage en Chine ? Si tu veux surtout trouver des fournisseurs, commence depuis ton téléphone. Mon réseau est dans le ChinaBook. Choisis ta catégorie sur le site.",
+  "audio_filename": "audio/CB-01.mp3",
+  "final_video_filename": "video/CB-01.mp4",
+  "images": [
+    {
+      "filename": "images/01.webp",
+      "prompt": "Image 1. Revendeur français préparant des colis dans son petit local. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/02.webp",
+      "prompt": "Image 2. Passeport et valise près d'un billet d'avion non lisible sur une table. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/03.webp",
+      "prompt": "Image 3. Téléphone à écran noir tenu devant des rayonnages de produits non marqués. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "status": "pending"
+    }
+  ],
+  "real_asset_requirement": "Vraie capture de la catégorie ChinaBook et contact fournisseur si autorisé",
+  "motion_direction": "Voyage projeté qui se replie dans le téléphone",
+  "real_asset_status": "pending"
+}

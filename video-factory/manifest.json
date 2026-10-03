@@ -1,0 +1,802 @@
+[
+  {
+    "id": "RES-01",
+    "brand": "DYOU Agency",
+    "profession": "Résine au sol",
+    "angle": "Les photos perdues dans les messages",
+    "script": "videos/RES-01/script.txt",
+    "brief": "videos/RES-01/brief.json",
+    "images": [
+      "videos/RES-01/images/01.webp",
+      "videos/RES-01/images/02.webp",
+      "videos/RES-01/images/03.webp"
+    ],
+    "real_asset_requirement": "Capture réelle POLYRA : galerie de réalisations et formulaire de devis",
+    "audio": "videos/RES-01/audio/RES-01.mp3",
+    "video": "videos/RES-01/video/RES-01.mp4"
+  },
+  {
+    "id": "RES-02",
+    "brand": "DYOU Agency",
+    "profession": "Résine au sol",
+    "angle": "Le prix arrive avant la valeur",
+    "script": "videos/RES-02/script.txt",
+    "brief": "videos/RES-02/brief.json",
+    "images": [
+      "videos/RES-02/images/01.webp",
+      "videos/RES-02/images/02.webp",
+      "videos/RES-02/images/03.webp"
+    ],
+    "real_asset_requirement": "Vraies photos de préparation et de finitions + page prestations POLYRA",
+    "audio": "videos/RES-02/audio/RES-02.mp3",
+    "video": "videos/RES-02/video/RES-02.mp4"
+  },
+  {
+    "id": "RES-03",
+    "brand": "DYOU Agency",
+    "profession": "Résine au sol",
+    "angle": "La soirée passée à répondre",
+    "script": "videos/RES-03/script.txt",
+    "brief": "videos/RES-03/brief.json",
+    "images": [
+      "videos/RES-03/images/01.webp",
+      "videos/RES-03/images/02.webp",
+      "videos/RES-03/images/03.webp"
+    ],
+    "real_asset_requirement": "Capture réelle des réponses pratiques et du formulaire de devis",
+    "audio": "videos/RES-03/audio/RES-03.mp3",
+    "video": "videos/RES-03/video/RES-03.mp4"
+  },
+  {
+    "id": "RES-04",
+    "brand": "DYOU Agency",
+    "profession": "Résine au sol",
+    "angle": "La peur d'un artisan inconnu",
+    "script": "videos/RES-04/script.txt",
+    "brief": "videos/RES-04/brief.json",
+    "images": [
+      "videos/RES-04/images/01.webp",
+      "videos/RES-04/images/02.webp",
+      "videos/RES-04/images/03.webp"
+    ],
+    "real_asset_requirement": "Vraies étapes chantier et témoignages uniquement si autorisés",
+    "audio": "videos/RES-04/audio/RES-04.mp3",
+    "video": "videos/RES-04/video/RES-04.mp4"
+  },
+  {
+    "id": "RES-05",
+    "brand": "DYOU Agency",
+    "profession": "Résine au sol",
+    "angle": "Un rendu haut de gamme mérite une vitrine",
+    "script": "videos/RES-05/script.txt",
+    "brief": "videos/RES-05/brief.json",
+    "images": [
+      "videos/RES-05/images/01.webp",
+      "videos/RES-05/images/02.webp",
+      "videos/RES-05/images/03.webp"
+    ],
+    "real_asset_requirement": "Galerie réelle POLYRA et logo DYOU fourni",
+    "audio": "videos/RES-05/audio/RES-05.mp3",
+    "video": "videos/RES-05/video/RES-05.mp4"
+  },
+  {
+    "id": "RES-06",
+    "brand": "DYOU Agency",
+    "profession": "Résine au sol",
+    "angle": "Le chantier disparaît du fil",
+    "script": "videos/RES-06/script.txt",
+    "brief": "videos/RES-06/brief.json",
+    "images": [
+      "videos/RES-06/images/01.webp",
+      "videos/RES-06/images/02.webp",
+      "videos/RES-06/images/03.webp"
+    ],
+    "real_asset_requirement": "Vraies photos avant-après et capture du portfolio",
+    "audio": "videos/RES-06/audio/RES-06.mp3",
+    "video": "videos/RES-06/video/RES-06.mp4"
+  },
+  {
+    "id": "RES-07",
+    "brand": "DYOU Agency",
+    "profession": "Résine au sol",
+    "angle": "Le prospect compare plusieurs artisans",
+    "script": "videos/RES-07/script.txt",
+    "brief": "videos/RES-07/brief.json",
+    "images": [
+      "videos/RES-07/images/01.webp",
+      "videos/RES-07/images/02.webp",
+      "videos/RES-07/images/03.webp"
+    ],
+    "real_asset_requirement": "Vraies réalisations, explications et bouton devis de POLYRA",
+    "audio": "videos/RES-07/audio/RES-07.mp3",
+    "video": "videos/RES-07/video/RES-07.mp4"
+  },
+  {
+    "id": "RES-08",
+    "brand": "DYOU Agency",
+    "profession": "Résine au sol",
+    "angle": "Les questions avant le devis",
+    "script": "videos/RES-08/script.txt",
+    "brief": "videos/RES-08/brief.json",
+    "images": [
+      "videos/RES-08/images/01.webp",
+      "videos/RES-08/images/02.webp",
+      "videos/RES-08/images/03.webp"
+    ],
+    "real_asset_requirement": "Captures réelles de rendus, prestations et demande de devis",
+    "audio": "videos/RES-08/audio/RES-08.mp3",
+    "video": "videos/RES-08/video/RES-08.mp4"
+  },
+  {
+    "id": "RES-09",
+    "brand": "DYOU Agency",
+    "profession": "Résine au sol",
+    "angle": "Du garage au salon, différentes intentions",
+    "script": "videos/RES-09/script.txt",
+    "brief": "videos/RES-09/brief.json",
+    "images": [
+      "videos/RES-09/images/01.webp",
+      "videos/RES-09/images/02.webp",
+      "videos/RES-09/images/03.webp"
+    ],
+    "real_asset_requirement": "Vraies catégories garage, salon et commerce si présentes sur le site",
+    "audio": "videos/RES-09/audio/RES-09.mp3",
+    "video": "videos/RES-09/video/RES-09.mp4"
+  },
+  {
+    "id": "RES-10",
+    "brand": "DYOU Agency",
+    "profession": "Résine au sol",
+    "angle": "Le bouche-à-oreille doit pouvoir se transmettre",
+    "script": "videos/RES-10/script.txt",
+    "brief": "videos/RES-10/brief.json",
+    "images": [
+      "videos/RES-10/images/01.webp",
+      "videos/RES-10/images/02.webp",
+      "videos/RES-10/images/03.webp"
+    ],
+    "real_asset_requirement": "Vrai lien du site POLYRA et galerie partageable",
+    "audio": "videos/RES-10/audio/RES-10.mp3",
+    "video": "videos/RES-10/video/RES-10.mp4"
+  },
+  {
+    "id": "COA-01",
+    "brand": "DYOU Agency",
+    "profession": "Coach sportif",
+    "angle": "Les DM qui n'aboutissent pas",
+    "script": "videos/COA-01/script.txt",
+    "brief": "videos/COA-01/brief.json",
+    "images": [
+      "videos/COA-01/images/01.webp",
+      "videos/COA-01/images/02.webp",
+      "videos/COA-01/images/03.webp"
+    ],
+    "real_asset_requirement": "Vraies pages offres et prise de contact du concept coach",
+    "audio": "videos/COA-01/audio/COA-01.mp3",
+    "video": "videos/COA-01/video/COA-01.mp4"
+  },
+  {
+    "id": "COA-02",
+    "brand": "DYOU Agency",
+    "profession": "Coach sportif",
+    "angle": "Des vues sans demandes",
+    "script": "videos/COA-02/script.txt",
+    "brief": "videos/COA-02/brief.json",
+    "images": [
+      "videos/COA-02/images/01.webp",
+      "videos/COA-02/images/02.webp",
+      "videos/COA-02/images/03.webp"
+    ],
+    "real_asset_requirement": "Vraie capture du programme et lien de prise de rendez-vous",
+    "audio": "videos/COA-02/audio/COA-02.mp3",
+    "video": "videos/COA-02/video/COA-02.mp4"
+  },
+  {
+    "id": "COA-03",
+    "brand": "DYOU Agency",
+    "profession": "Coach sportif",
+    "angle": "Le coaching invisible derrière les posts",
+    "script": "videos/COA-03/script.txt",
+    "brief": "videos/COA-03/brief.json",
+    "images": [
+      "videos/COA-03/images/01.webp",
+      "videos/COA-03/images/02.webp",
+      "videos/COA-03/images/03.webp"
+    ],
+    "real_asset_requirement": "Captures réelles de méthode, programmes et suivi si présents",
+    "audio": "videos/COA-03/audio/COA-03.mp3",
+    "video": "videos/COA-03/video/COA-03.mp4"
+  },
+  {
+    "id": "COA-04",
+    "brand": "DYOU Agency",
+    "profession": "Coach sportif",
+    "angle": "Le prospect ne sait pas quel programme choisir",
+    "script": "videos/COA-04/script.txt",
+    "brief": "videos/COA-04/brief.json",
+    "images": [
+      "videos/COA-04/images/01.webp",
+      "videos/COA-04/images/02.webp",
+      "videos/COA-04/images/03.webp"
+    ],
+    "real_asset_requirement": "Vraies pages ou cartes d'offres ATHLA / ATLAS",
+    "audio": "videos/COA-04/audio/COA-04.mp3",
+    "video": "videos/COA-04/video/COA-04.mp4"
+  },
+  {
+    "id": "COA-05",
+    "brand": "DYOU Agency",
+    "profession": "Coach sportif",
+    "angle": "La confiance avant le premier rendez-vous",
+    "script": "videos/COA-05/script.txt",
+    "brief": "videos/COA-05/brief.json",
+    "images": [
+      "videos/COA-05/images/01.webp",
+      "videos/COA-05/images/02.webp",
+      "videos/COA-05/images/03.webp"
+    ],
+    "real_asset_requirement": "Vrai parcours de premier rendez-vous du concept coach",
+    "audio": "videos/COA-05/audio/COA-05.mp3",
+    "video": "videos/COA-05/video/COA-05.mp4"
+  },
+  {
+    "id": "COA-06",
+    "brand": "DYOU Agency",
+    "profession": "Coach sportif",
+    "angle": "Défendre la valeur sans casser le prix",
+    "script": "videos/COA-06/script.txt",
+    "brief": "videos/COA-06/brief.json",
+    "images": [
+      "videos/COA-06/images/01.webp",
+      "videos/COA-06/images/02.webp",
+      "videos/COA-06/images/03.webp"
+    ],
+    "real_asset_requirement": "Vraie page décrivant le bilan et l'accompagnement",
+    "audio": "videos/COA-06/audio/COA-06.mp3",
+    "video": "videos/COA-06/video/COA-06.mp4"
+  },
+  {
+    "id": "COA-07",
+    "brand": "DYOU Agency",
+    "profession": "Coach sportif",
+    "angle": "Dépendance à l'algorithme",
+    "script": "videos/COA-07/script.txt",
+    "brief": "videos/COA-07/brief.json",
+    "images": [
+      "videos/COA-07/images/01.webp",
+      "videos/COA-07/images/02.webp",
+      "videos/COA-07/images/03.webp"
+    ],
+    "real_asset_requirement": "Vraie page d'accueil et programmes de l'agence",
+    "audio": "videos/COA-07/audio/COA-07.mp3",
+    "video": "videos/COA-07/video/COA-07.mp4"
+  },
+  {
+    "id": "COA-08",
+    "brand": "DYOU Agency",
+    "profession": "Coach sportif",
+    "angle": "Les recommandations qui s'évaporent",
+    "script": "videos/COA-08/script.txt",
+    "brief": "videos/COA-08/brief.json",
+    "images": [
+      "videos/COA-08/images/01.webp",
+      "videos/COA-08/images/02.webp",
+      "videos/COA-08/images/03.webp"
+    ],
+    "real_asset_requirement": "Vraie page partageable du coach et bouton contact",
+    "audio": "videos/COA-08/audio/COA-08.mp3",
+    "video": "videos/COA-08/video/COA-08.mp4"
+  },
+  {
+    "id": "COA-09",
+    "brand": "DYOU Agency",
+    "profession": "Coach sportif",
+    "angle": "Le temps passé à qualifier",
+    "script": "videos/COA-09/script.txt",
+    "brief": "videos/COA-09/brief.json",
+    "images": [
+      "videos/COA-09/images/01.webp",
+      "videos/COA-09/images/02.webp",
+      "videos/COA-09/images/03.webp"
+    ],
+    "real_asset_requirement": "Vrai formulaire de qualification ATLAS / ATHLA si disponible",
+    "audio": "videos/COA-09/audio/COA-09.mp3",
+    "video": "videos/COA-09/video/COA-09.mp4"
+  },
+  {
+    "id": "COA-10",
+    "brand": "DYOU Agency",
+    "profession": "Coach sportif",
+    "angle": "Le coach vend une transformation, pas une séance",
+    "script": "videos/COA-10/script.txt",
+    "brief": "videos/COA-10/brief.json",
+    "images": [
+      "videos/COA-10/images/01.webp",
+      "videos/COA-10/images/02.webp",
+      "videos/COA-10/images/03.webp"
+    ],
+    "real_asset_requirement": "Vrais programmes et parcours de prise de contact",
+    "audio": "videos/COA-10/audio/COA-10.mp3",
+    "video": "videos/COA-10/video/COA-10.mp4"
+  },
+  {
+    "id": "LOC-01",
+    "brand": "DYOU Agency",
+    "profession": "Location de voitures",
+    "angle": "Une flotte premium dans un profil désordonné",
+    "script": "videos/LOC-01/script.txt",
+    "brief": "videos/LOC-01/brief.json",
+    "images": [
+      "videos/LOC-01/images/01.webp",
+      "videos/LOC-01/images/02.webp",
+      "videos/LOC-01/images/03.webp"
+    ],
+    "real_asset_requirement": "Vraies photos autorisées des modèles de la flotte et fiches du site",
+    "audio": "videos/LOC-01/audio/LOC-01.mp3",
+    "video": "videos/LOC-01/video/LOC-01.mp4"
+  },
+  {
+    "id": "LOC-02",
+    "brand": "DYOU Agency",
+    "profession": "Location de voitures",
+    "angle": "Les mêmes questions à chaque demande",
+    "script": "videos/LOC-02/script.txt",
+    "brief": "videos/LOC-02/brief.json",
+    "images": [
+      "videos/LOC-02/images/01.webp",
+      "videos/LOC-02/images/02.webp",
+      "videos/LOC-02/images/03.webp"
+    ],
+    "real_asset_requirement": "Vraies conditions et formulaire de location du site",
+    "audio": "videos/LOC-02/audio/LOC-02.mp3",
+    "video": "videos/LOC-02/video/LOC-02.mp4"
+  },
+  {
+    "id": "LOC-03",
+    "brand": "DYOU Agency",
+    "profession": "Location de voitures",
+    "angle": "Le désir ne doit pas attendre une réponse en DM",
+    "script": "videos/LOC-03/script.txt",
+    "brief": "videos/LOC-03/brief.json",
+    "images": [
+      "videos/LOC-03/images/01.webp",
+      "videos/LOC-03/images/02.webp",
+      "videos/LOC-03/images/03.webp"
+    ],
+    "real_asset_requirement": "Vraie fiche modèle et demande avec dates",
+    "audio": "videos/LOC-03/audio/LOC-03.mp3",
+    "video": "videos/LOC-03/video/LOC-03.mp4"
+  },
+  {
+    "id": "LOC-04",
+    "brand": "DYOU Agency",
+    "profession": "Location de voitures",
+    "angle": "Une voiture se choisit avec les yeux",
+    "script": "videos/LOC-04/script.txt",
+    "brief": "videos/LOC-04/brief.json",
+    "images": [
+      "videos/LOC-04/images/01.webp",
+      "videos/LOC-04/images/02.webp",
+      "videos/LOC-04/images/03.webp"
+    ],
+    "real_asset_requirement": "Vraies photos intérieures et extérieures de la flotte",
+    "audio": "videos/LOC-04/audio/LOC-04.mp3",
+    "video": "videos/LOC-04/video/LOC-04.mp4"
+  },
+  {
+    "id": "LOC-05",
+    "brand": "DYOU Agency",
+    "profession": "Location de voitures",
+    "angle": "Les demandes vagues font perdre du temps",
+    "script": "videos/LOC-05/script.txt",
+    "brief": "videos/LOC-05/brief.json",
+    "images": [
+      "videos/LOC-05/images/01.webp",
+      "videos/LOC-05/images/02.webp",
+      "videos/LOC-05/images/03.webp"
+    ],
+    "real_asset_requirement": "Vrai formulaire : modèle, dates, ville et détails nécessaires",
+    "audio": "videos/LOC-05/audio/LOC-05.mp3",
+    "video": "videos/LOC-05/video/LOC-05.mp4"
+  },
+  {
+    "id": "LOC-06",
+    "brand": "DYOU Agency",
+    "profession": "Location de voitures",
+    "angle": "La confiance avant l'acompte",
+    "script": "videos/LOC-06/script.txt",
+    "brief": "videos/LOC-06/brief.json",
+    "images": [
+      "videos/LOC-06/images/01.webp",
+      "videos/LOC-06/images/02.webp",
+      "videos/LOC-06/images/03.webp"
+    ],
+    "real_asset_requirement": "Vraies photos de véhicules et conditions réelles",
+    "audio": "videos/LOC-06/audio/LOC-06.mp3",
+    "video": "videos/LOC-06/video/LOC-06.mp4"
+  },
+  {
+    "id": "LOC-07",
+    "brand": "DYOU Agency",
+    "profession": "Location de voitures",
+    "angle": "Le mauvais modèle dans le mauvais post",
+    "script": "videos/LOC-07/script.txt",
+    "brief": "videos/LOC-07/brief.json",
+    "images": [
+      "videos/LOC-07/images/01.webp",
+      "videos/LOC-07/images/02.webp",
+      "videos/LOC-07/images/03.webp"
+    ],
+    "real_asset_requirement": "Vraies fiches de plusieurs modèles et catégories de flotte",
+    "audio": "videos/LOC-07/audio/LOC-07.mp3",
+    "video": "videos/LOC-07/video/LOC-07.mp4"
+  },
+  {
+    "id": "LOC-08",
+    "brand": "DYOU Agency",
+    "profession": "Location de voitures",
+    "angle": "Les annonces sociales expirent",
+    "script": "videos/LOC-08/script.txt",
+    "brief": "videos/LOC-08/brief.json",
+    "images": [
+      "videos/LOC-08/images/01.webp",
+      "videos/LOC-08/images/02.webp",
+      "videos/LOC-08/images/03.webp"
+    ],
+    "real_asset_requirement": "Vrai reel autorisé et vraie fiche modèle",
+    "audio": "videos/LOC-08/audio/LOC-08.mp3",
+    "video": "videos/LOC-08/video/LOC-08.mp4"
+  },
+  {
+    "id": "LOC-09",
+    "brand": "DYOU Agency",
+    "profession": "Location de voitures",
+    "angle": "Le client compare aussi la présentation",
+    "script": "videos/LOC-09/script.txt",
+    "brief": "videos/LOC-09/brief.json",
+    "images": [
+      "videos/LOC-09/images/01.webp",
+      "videos/LOC-09/images/02.webp",
+      "videos/LOC-09/images/03.webp"
+    ],
+    "real_asset_requirement": "Vraies fiches de flotte, conditions et formulaire",
+    "audio": "videos/LOC-09/audio/LOC-09.mp3",
+    "video": "videos/LOC-09/video/LOC-09.mp4"
+  },
+  {
+    "id": "LOC-10",
+    "brand": "DYOU Agency",
+    "profession": "Location de voitures",
+    "angle": "Une vidéo qui mène quelque part",
+    "script": "videos/LOC-10/script.txt",
+    "brief": "videos/LOC-10/brief.json",
+    "images": [
+      "videos/LOC-10/images/01.webp",
+      "videos/LOC-10/images/02.webp",
+      "videos/LOC-10/images/03.webp"
+    ],
+    "real_asset_requirement": "Vrai reel et vraie page du modèle présenté",
+    "audio": "videos/LOC-10/audio/LOC-10.mp3",
+    "video": "videos/LOC-10/video/LOC-10.mp4"
+  },
+  {
+    "id": "CB-01",
+    "brand": "ChinaBook",
+    "profession": "Revendeurs / sourcing Chine",
+    "angle": "Le voyage reporté",
+    "script": "videos/CB-01/script.txt",
+    "brief": "videos/CB-01/brief.json",
+    "images": [
+      "videos/CB-01/images/01.webp",
+      "videos/CB-01/images/02.webp",
+      "videos/CB-01/images/03.webp"
+    ],
+    "real_asset_requirement": "Vraie capture de la catégorie ChinaBook et contact fournisseur si autorisé",
+    "audio": "videos/CB-01/audio/CB-01.mp3",
+    "video": "videos/CB-01/video/CB-01.mp4"
+  },
+  {
+    "id": "CB-02",
+    "brand": "ChinaBook",
+    "profession": "Revendeurs / sourcing Chine",
+    "angle": "La marge du revendeur",
+    "script": "videos/CB-02/script.txt",
+    "brief": "videos/CB-02/brief.json",
+    "images": [
+      "videos/CB-02/images/01.webp",
+      "videos/CB-02/images/02.webp",
+      "videos/CB-02/images/03.webp"
+    ],
+    "real_asset_requirement": "Vrai comparatif de prix vérifié, préciser transport hors prix article",
+    "audio": "videos/CB-02/audio/CB-02.mp3",
+    "video": "videos/CB-02/video/CB-02.mp4"
+  },
+  {
+    "id": "CB-03",
+    "brand": "ChinaBook",
+    "profession": "Revendeurs / sourcing Chine",
+    "angle": "La langue comme obstacle",
+    "script": "videos/CB-03/script.txt",
+    "brief": "videos/CB-03/brief.json",
+    "images": [
+      "videos/CB-03/images/01.webp",
+      "videos/CB-03/images/02.webp",
+      "videos/CB-03/images/03.webp"
+    ],
+    "real_asset_requirement": "Vrais extraits de guide WeChat et échanges autorisés, informations sensibles masquées",
+    "audio": "videos/CB-03/audio/CB-03.mp3",
+    "video": "videos/CB-03/video/CB-03.mp4"
+  },
+  {
+    "id": "CB-04",
+    "brand": "ChinaBook",
+    "profession": "Revendeurs / sourcing Chine",
+    "angle": "Deux semaines sur place ne suffisent pas",
+    "script": "videos/CB-04/script.txt",
+    "brief": "videos/CB-04/brief.json",
+    "images": [
+      "videos/CB-04/images/01.webp",
+      "videos/CB-04/images/02.webp",
+      "videos/CB-04/images/03.webp"
+    ],
+    "real_asset_requirement": "Vraies photos de repérage fournisseur si disponibles",
+    "audio": "videos/CB-04/audio/CB-04.mp3",
+    "video": "videos/CB-04/video/CB-04.mp4"
+  },
+  {
+    "id": "CB-05",
+    "brand": "ChinaBook",
+    "profession": "Revendeurs / sourcing Chine",
+    "angle": "Pourquoi partager son réseau",
+    "script": "videos/CB-05/script.txt",
+    "brief": "videos/CB-05/brief.json",
+    "images": [
+      "videos/CB-05/images/01.webp",
+      "videos/CB-05/images/02.webp",
+      "videos/CB-05/images/03.webp"
+    ],
+    "real_asset_requirement": "Vraies photos du fondateur et captures d'échanges autorisés",
+    "audio": "videos/CB-05/audio/CB-05.mp3",
+    "video": "videos/CB-05/video/CB-05.mp4"
+  },
+  {
+    "id": "CB-06",
+    "brand": "ChinaBook",
+    "profession": "Revendeurs / sourcing Chine",
+    "angle": "Un numéro seul ne vaut rien",
+    "script": "videos/CB-06/script.txt",
+    "brief": "videos/CB-06/brief.json",
+    "images": [
+      "videos/CB-06/images/01.webp",
+      "videos/CB-06/images/02.webp",
+      "videos/CB-06/images/03.webp"
+    ],
+    "real_asset_requirement": "Vraies conversations WeChat autorisées, noms et numéros protégés",
+    "audio": "videos/CB-06/audio/CB-06.mp3",
+    "video": "videos/CB-06/video/CB-06.mp4"
+  },
+  {
+    "id": "CB-07",
+    "brand": "ChinaBook",
+    "profession": "Revendeurs / sourcing Chine",
+    "angle": "Le transitaire oublié",
+    "script": "videos/CB-07/script.txt",
+    "brief": "videos/CB-07/brief.json",
+    "images": [
+      "videos/CB-07/images/01.webp",
+      "videos/CB-07/images/02.webp",
+      "videos/CB-07/images/03.webp"
+    ],
+    "real_asset_requirement": "Vrai contact transitaire et schéma du circuit si publiables",
+    "audio": "videos/CB-07/audio/CB-07.mp3",
+    "video": "videos/CB-07/video/CB-07.mp4"
+  },
+  {
+    "id": "CB-08",
+    "brand": "ChinaBook",
+    "profession": "Revendeurs / sourcing Chine",
+    "angle": "Même produit, deux prix d'achat",
+    "script": "videos/CB-08/script.txt",
+    "brief": "videos/CB-08/brief.json",
+    "images": [
+      "videos/CB-08/images/01.webp",
+      "videos/CB-08/images/02.webp",
+      "videos/CB-08/images/03.webp"
+    ],
+    "real_asset_requirement": "Vrais exemples de prix du site avec coût de transport précisé",
+    "audio": "videos/CB-08/audio/CB-08.mp3",
+    "video": "videos/CB-08/video/CB-08.mp4"
+  },
+  {
+    "id": "CB-09",
+    "brand": "ChinaBook",
+    "profession": "Revendeurs / sourcing Chine",
+    "angle": "Tester un fournisseur avant de lui faire confiance",
+    "script": "videos/CB-09/script.txt",
+    "brief": "videos/CB-09/brief.json",
+    "images": [
+      "videos/CB-09/images/01.webp",
+      "videos/CB-09/images/02.webp",
+      "videos/CB-09/images/03.webp"
+    ],
+    "real_asset_requirement": "Vrais échanges, photos d'échantillons et tarifs autorisés",
+    "audio": "videos/CB-09/audio/CB-09.mp3",
+    "video": "videos/CB-09/video/CB-09.mp4"
+  },
+  {
+    "id": "CB-10",
+    "brand": "ChinaBook",
+    "profession": "Revendeurs / sourcing Chine",
+    "angle": "Commencer par une petite commande",
+    "script": "videos/CB-10/script.txt",
+    "brief": "videos/CB-10/brief.json",
+    "images": [
+      "videos/CB-10/images/01.webp",
+      "videos/CB-10/images/02.webp",
+      "videos/CB-10/images/03.webp"
+    ],
+    "real_asset_requirement": "Vraie page pack Test et explication transitaire",
+    "audio": "videos/CB-10/audio/CB-10.mp3",
+    "video": "videos/CB-10/video/CB-10.mp4"
+  },
+  {
+    "id": "CB-11",
+    "brand": "ChinaBook",
+    "profession": "Revendeurs / sourcing Chine",
+    "angle": "Dépendance à un intermédiaire",
+    "script": "videos/CB-11/script.txt",
+    "brief": "videos/CB-11/brief.json",
+    "images": [
+      "videos/CB-11/images/01.webp",
+      "videos/CB-11/images/02.webp",
+      "videos/CB-11/images/03.webp"
+    ],
+    "real_asset_requirement": "Vraies catégories et méthode de contact direct",
+    "audio": "videos/CB-11/audio/CB-11.mp3",
+    "video": "videos/CB-11/video/CB-11.mp4"
+  },
+  {
+    "id": "CB-12",
+    "brand": "ChinaBook",
+    "profession": "Revendeurs / sourcing Chine",
+    "angle": "Le budget caché du voyage",
+    "script": "videos/CB-12/script.txt",
+    "brief": "videos/CB-12/brief.json",
+    "images": [
+      "videos/CB-12/images/01.webp",
+      "videos/CB-12/images/02.webp",
+      "videos/CB-12/images/03.webp"
+    ],
+    "real_asset_requirement": "Vraies images de voyage et page packs, sans inventer de montant",
+    "audio": "videos/CB-12/audio/CB-12.mp3",
+    "video": "videos/CB-12/video/CB-12.mp4"
+  },
+  {
+    "id": "CB-13",
+    "brand": "ChinaBook",
+    "profession": "Revendeurs / sourcing Chine",
+    "angle": "Marché immense, recherche mal ciblée",
+    "script": "videos/CB-13/script.txt",
+    "brief": "videos/CB-13/brief.json",
+    "images": [
+      "videos/CB-13/images/01.webp",
+      "videos/CB-13/images/02.webp",
+      "videos/CB-13/images/03.webp"
+    ],
+    "real_asset_requirement": "Vraies photos fournisseurs et échanges autorisés",
+    "audio": "videos/CB-13/audio/CB-13.mp3",
+    "video": "videos/CB-13/video/CB-13.mp4"
+  },
+  {
+    "id": "CB-14",
+    "brand": "ChinaBook",
+    "profession": "Revendeurs / sourcing Chine",
+    "angle": "Accès durable au réseau",
+    "script": "videos/CB-14/script.txt",
+    "brief": "videos/CB-14/brief.json",
+    "images": [
+      "videos/CB-14/images/01.webp",
+      "videos/CB-14/images/02.webp",
+      "videos/CB-14/images/03.webp"
+    ],
+    "real_asset_requirement": "Vraie capture de l'accès à vie et des mises à jour sur le site",
+    "audio": "videos/CB-14/audio/CB-14.mp3",
+    "video": "videos/CB-14/video/CB-14.mp4"
+  },
+  {
+    "id": "CB-15",
+    "brand": "ChinaBook",
+    "profession": "Revendeurs / sourcing Chine",
+    "angle": "Le revendeur déjà actif plafonne",
+    "script": "videos/CB-15/script.txt",
+    "brief": "videos/CB-15/brief.json",
+    "images": [
+      "videos/CB-15/images/01.webp",
+      "videos/CB-15/images/02.webp",
+      "videos/CB-15/images/03.webp"
+    ],
+    "real_asset_requirement": "Vrais comparatifs de prix avec mention frais de transport",
+    "audio": "videos/CB-15/audio/CB-15.mp3",
+    "video": "videos/CB-15/video/CB-15.mp4"
+  },
+  {
+    "id": "CB-16",
+    "brand": "ChinaBook",
+    "profession": "Revendeurs / sourcing Chine",
+    "angle": "Tester avant de choisir un gros pack",
+    "script": "videos/CB-16/script.txt",
+    "brief": "videos/CB-16/brief.json",
+    "images": [
+      "videos/CB-16/images/01.webp",
+      "videos/CB-16/images/02.webp",
+      "videos/CB-16/images/03.webp"
+    ],
+    "real_asset_requirement": "Vraie page pack Test et contacts redigés selon autorisation",
+    "audio": "videos/CB-16/audio/CB-16.mp3",
+    "video": "videos/CB-16/video/CB-16.mp4"
+  },
+  {
+    "id": "CB-17",
+    "brand": "ChinaBook",
+    "profession": "Revendeurs / sourcing Chine",
+    "angle": "Le réseau dans le téléphone",
+    "script": "videos/CB-17/script.txt",
+    "brief": "videos/CB-17/brief.json",
+    "images": [
+      "videos/CB-17/images/01.webp",
+      "videos/CB-17/images/02.webp",
+      "videos/CB-17/images/03.webp"
+    ],
+    "real_asset_requirement": "Vraie capture espace ChinaBook montrant catégories sans exposer contacts",
+    "audio": "videos/CB-17/audio/CB-17.mp3",
+    "video": "videos/CB-17/video/CB-17.mp4"
+  },
+  {
+    "id": "CB-18",
+    "brand": "ChinaBook",
+    "profession": "Revendeurs / sourcing Chine",
+    "angle": "Le prix seul ne suffit pas",
+    "script": "videos/CB-18/script.txt",
+    "brief": "videos/CB-18/brief.json",
+    "images": [
+      "videos/CB-18/images/01.webp",
+      "videos/CB-18/images/02.webp",
+      "videos/CB-18/images/03.webp"
+    ],
+    "real_asset_requirement": "Vrais échanges tarifaires et mention article hors livraison",
+    "audio": "videos/CB-18/audio/CB-18.mp3",
+    "video": "videos/CB-18/video/CB-18.mp4"
+  },
+  {
+    "id": "CB-19",
+    "brand": "ChinaBook",
+    "profession": "Revendeurs / sourcing Chine",
+    "angle": "Reprendre les décisions d'achat",
+    "script": "videos/CB-19/script.txt",
+    "brief": "videos/CB-19/brief.json",
+    "images": [
+      "videos/CB-19/images/01.webp",
+      "videos/CB-19/images/02.webp",
+      "videos/CB-19/images/03.webp"
+    ],
+    "real_asset_requirement": "Vrai catalogue fournisseur ou captures autorisées, coordonnées protégées",
+    "audio": "videos/CB-19/audio/CB-19.mp3",
+    "video": "videos/CB-19/video/CB-19.mp4"
+  },
+  {
+    "id": "CB-20",
+    "brand": "ChinaBook",
+    "profession": "Revendeurs / sourcing Chine",
+    "angle": "Le commerce portable",
+    "script": "videos/CB-20/script.txt",
+    "brief": "videos/CB-20/brief.json",
+    "images": [
+      "videos/CB-20/images/01.webp",
+      "videos/CB-20/images/02.webp",
+      "videos/CB-20/images/03.webp"
+    ],
+    "real_asset_requirement": "Vraies photos de voyage du fondateur et vrai échange fournisseur/transitaire",
+    "audio": "videos/CB-20/audio/CB-20.mp3",
+    "video": "videos/CB-20/video/CB-20.mp4"
+  }
+]

@@ -1,0 +1,30 @@
+{
+  "id": "LOC-04",
+  "brand": "DYOU Agency",
+  "profession": "Location de voitures",
+  "angle": "Une voiture se choisit avec les yeux",
+  "format": "moyen",
+  "voice_text": "Pour louer une belle voiture, on veut d'abord se projeter. La ligne de la carrosserie. L'intérieur. La sensation d'arriver avec ce modèle précis. Si ta vitrine se limite à une liste de noms et de tarifs, elle laisse cette envie de côté. Chez DYOU Agency, on crée des pages qui donnent à chaque voiture la place qu'elle mérite, puis guident vers une demande claire. Écris-nous sur WhatsApp pour parler de ton agence.",
+  "audio_filename": "audio/LOC-04.mp3",
+  "final_video_filename": "video/LOC-04.mp4",
+  "images": [
+    {
+      "filename": "images/01.webp",
+      "prompt": "Image 1. Détail de carrosserie bordeaux d'une sportive générique sous lumière rasante. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/02.webp",
+      "prompt": "Image 2. Intérieur haut de gamme sans logo, cuir et volant cadrés en cinématique. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/03.webp",
+      "prompt": "Image 3. Voiture élégante devant hôtel contemporain au coucher du soleil. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "status": "pending"
+    }
+  ],
+  "real_asset_requirement": "Vraies photos intérieures et extérieures de la flotte",
+  "motion_direction": "Match cuts de détails vers fiche modèle",
+  "real_asset_status": "pending"
+}

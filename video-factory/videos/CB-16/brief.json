@@ -1,0 +1,30 @@
+{
+  "id": "CB-16",
+  "brand": "ChinaBook",
+  "profession": "Revendeurs / sourcing Chine",
+  "angle": "Tester avant de choisir un gros pack",
+  "format": "moyen",
+  "voice_text": "Tu veux voir comment fonctionne le réseau, mais tu ne sais pas encore quelle catégorie développer. Le pack Test te donne un premier fournisseur dans le domaine que tu choisis et le contact de la logistique avion. Tu peux comprendre les échanges, demander les conditions et décider de la suite avec plus de contexte. Pas besoin de choisir une grande gamme de produits dès le premier jour. Le détail est sur le site ChinaBook.",
+  "audio_filename": "audio/CB-16.mp3",
+  "final_video_filename": "video/CB-16.mp4",
+  "images": [
+    {
+      "filename": "images/01.webp",
+      "prompt": "Image 1. Débutant consultant trois catégories produits non marqués sur étagère. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/02.webp",
+      "prompt": "Image 2. Un fournisseur tenant un échantillon générique dans son showroom. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/03.webp",
+      "prompt": "Image 3. Petit carton sécurisé prêt à être confié à un transitaire. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "status": "pending"
+    }
+  ],
+  "real_asset_requirement": "Vraie page pack Test et contacts redigés selon autorisation",
+  "motion_direction": "Une porte test s'ouvre avant les autres catégories",
+  "real_asset_status": "pending"
+}

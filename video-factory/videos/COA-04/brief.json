@@ -1,0 +1,30 @@
+{
+  "id": "COA-04",
+  "brand": "DYOU Agency",
+  "profession": "Coach sportif",
+  "angle": "Le prospect ne sait pas quel programme choisir",
+  "format": "moyen",
+  "voice_text": "« Tu fais du coaching ? » Oui. Mais pour qui ? Pour reprendre le sport ? Prendre du muscle ? Préparer une compétition ? Si tes offres tiennent dans une bio de deux lignes, le bon client risque de ne pas se reconnaître. Sur un site, chaque objectif peut mener au programme et au contact qui lui correspondent. On crée ce parcours chez DYOU Agency. Écris-nous sur WhatsApp, et voyons comment présenter tes offres.",
+  "audio_filename": "audio/COA-04.mp3",
+  "final_video_filename": "video/COA-04.mp4",
+  "images": [
+    {
+      "filename": "images/01.webp",
+      "prompt": "Image 1. Débutant adulte remettant ses chaussures de sport avant séance. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/02.webp",
+      "prompt": "Image 2. Athlète amateur s'entraînant en force avec coach à proximité. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/03.webp",
+      "prompt": "Image 3. Couloir de salle de sport avec trois chemins visuels vers objectifs distincts. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "status": "pending"
+    }
+  ],
+  "real_asset_requirement": "Vraies pages ou cartes d'offres ATHLA / ATLAS",
+  "motion_direction": "Trois objectifs s'ouvrent comme un menu, puis une prise de contact",
+  "real_asset_status": "pending"
+}

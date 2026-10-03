@@ -1,0 +1,30 @@
+{
+  "id": "COA-07",
+  "brand": "DYOU Agency",
+  "profession": "Coach sportif",
+  "angle": "Dépendance à l'algorithme",
+  "format": "moyen",
+  "voice_text": "Aujourd'hui, tes posts sont vus. Demain, peut-être beaucoup moins. Mais ta présentation, tes programmes et ton lien de prise de contact ne devraient pas dépendre de la portée d'une publication. Ton site, c'est l'adresse que tu peux donner partout, à chaque nouveau prospect. DYOU Agency te construit une vitrine fidèle à ta façon de coacher. Si tu veux voir ce que ça donne pour ton activité, demande ta maquette via le formulaire.",
+  "audio_filename": "audio/COA-07.mp3",
+  "final_video_filename": "video/COA-07.mp4",
+  "images": [
+    {
+      "filename": "images/01.webp",
+      "prompt": "Image 1. Coach filmant du contenu sportif tôt le matin dans une salle calme. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/02.webp",
+      "prompt": "Image 2. Grille de publications abstraite et floue sur téléphone sans texte ni logos. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/03.webp",
+      "prompt": "Image 3. Coach tendant une carte avec téléphone à écran neutre à un prospect. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "status": "pending"
+    }
+  ],
+  "real_asset_requirement": "Vraie page d'accueil et programmes de l'agence",
+  "motion_direction": "Courbe de portée instable, puis adresse stable ancrée",
+  "real_asset_status": "pending"
+}

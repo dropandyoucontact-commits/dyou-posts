@@ -1,0 +1,30 @@
+{
+  "id": "LOC-01",
+  "brand": "DYOU Agency",
+  "profession": "Location de voitures",
+  "angle": "Une flotte premium dans un profil désordonné",
+  "format": "moyen",
+  "voice_text": "Tes voitures font envie dès qu'on les voit. Mais si le client doit fouiller des stories pour trouver le bon modèle, les conditions et un moyen de demander une location, l'envie retombe. Une flotte haut de gamme mérite un parcours à la même hauteur : de belles fiches, les informations utiles et une demande simple. C'est ce que DYOU Agency peut construire pour ton agence. Décris-nous ta flotte dans le formulaire du site et demande une maquette.",
+  "audio_filename": "audio/LOC-01.mp3",
+  "final_video_filename": "video/LOC-01.mp4",
+  "images": [
+    {
+      "filename": "images/01.webp",
+      "prompt": "Image 1. Voiture sportive premium générique photographiée de nuit sous lumières de ville. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/02.webp",
+      "prompt": "Image 2. Téléphone à écran neutre perdu parmi des photos de voitures sur une table. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/03.webp",
+      "prompt": "Image 3. Alignement sobre de trois voitures premium génériques devant bâtiment moderne. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
+      "status": "pending"
+    }
+  ],
+  "real_asset_requirement": "Vraies photos autorisées des modèles de la flotte et fiches du site",
+  "motion_direction": "La flotte désordonnée se réorganise en catalogue",
+  "real_asset_status": "pending"
+}

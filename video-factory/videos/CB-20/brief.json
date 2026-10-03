@@ -1,0 +1,30 @@
+{
+  "id": "CB-20",
+  "brand": "ChinaBook",
+  "profession": "Revendeurs / sourcing Chine",
+  "angle": "Le commerce portable",
+  "format": "long",
+  "voice_text": "Ce que j'aime dans ce business, c'est qu'une grande partie du travail se fait depuis mon téléphone. Je parle aux fournisseurs, je compare les produits, je suis les commandes et j'échange avec le transitaire, même quand je suis loin de la Chine. Ça m'a permis de voyager tout en continuant à travailler. Mais cette liberté n'est pas tombée du ciel : il a fallu construire les bons contacts et apprendre à vérifier chaque étape. C'est cette base que je partage dans le ChinaBook. Si tu veux démarrer dans une catégorie précise, écris-moi sur WhatsApp et explique-moi ton projet.",
+  "audio_filename": "audio/CB-20.mp3",
+  "final_video_filename": "video/CB-20.mp4",
+  "images": [
+    {
+      "filename": "images/01.webp",
+      "prompt": "Image 1. Fondateur cagoulé d'après référence autorisée travaillant au téléphone en voyage. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/02.webp",
+      "prompt": "Image 2. Vue de train ou d'aéroport, téléphone à écran neutre et carnet. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "status": "pending"
+    },
+    {
+      "filename": "images/03.webp",
+      "prompt": "Image 3. Entrepôt de cartons neutres avec travailleur vérifiant une expédition. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
+      "status": "pending"
+    }
+  ],
+  "real_asset_requirement": "Vraies photos de voyage du fondateur et vrai échange fournisseur/transitaire",
+  "motion_direction": "Trois lieux différents, même fil de conversation et suivi commande",
+  "real_asset_status": "pending"
+}
