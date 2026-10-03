@@ -308,9 +308,7 @@
     "real_asset_requirement": "Vrai parcours de premier rendez-vous du concept coach",
     "audio": "videos/COA-05/audio/COA-05.mp3",
     "video": "videos/COA-05/video/COA-05.mp4",
-    "generated_images_available": [
-      "videos/COA-05/images/01.webp"
-    ],
+    "generated_images_available": [],
     "audio_available": false,
     "video_available": false
   },
@@ -812,7 +810,9 @@
     "real_asset_requirement": "Vrais échanges, photos d'échantillons et tarifs autorisés",
     "audio": "videos/CB-09/audio/CB-09.mp3",
     "video": "videos/CB-09/video/CB-09.mp4",
-    "generated_images_available": [],
+    "generated_images_available": [
+      "videos/CB-09/images/01.webp"
+    ],
     "audio_available": false,
     "video_available": false
   },
@@ -831,7 +831,9 @@
     "real_asset_requirement": "Vraie page pack Test et explication transitaire",
     "audio": "videos/CB-10/audio/CB-10.mp3",
     "video": "videos/CB-10/video/CB-10.mp4",
-    "generated_images_available": [],
+    "generated_images_available": [
+      "videos/CB-10/images/01.webp"
+    ],
     "audio_available": false,
     "video_available": false
   },
