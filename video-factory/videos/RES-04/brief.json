@@ -11,17 +11,17 @@
     {
       "filename": "images/01.webp",
       "prompt": "Image 1. Client dans son salon non rénové regardant un sol brut et hésitant. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
-      "status": "pending"
+      "status": "ready"
     },
     {
       "filename": "images/02.webp",
       "prompt": "Image 2. Artisan appliquant la résine avec gestes précis, protections, outils et surface préparée. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
-      "status": "pending"
+      "status": "ready"
     },
     {
       "filename": "images/03.webp",
       "prompt": "Image 3. Détail rassurant d'un sol fini et des raccords près d'un mur, photo documentaire. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
-      "status": "pending"
+      "status": "ready"
     }
   ],
   "real_asset_requirement": "Vraies étapes chantier et témoignages uniquement si autorisés",

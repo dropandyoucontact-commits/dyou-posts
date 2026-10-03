@@ -11,17 +11,17 @@
     {
       "filename": "images/01.webp",
       "prompt": "Image 1. Téléphone à écran noir devant une agence de location, cadrage pour message vague. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
-      "status": "pending"
+      "status": "ready"
     },
     {
       "filename": "images/02.webp",
       "prompt": "Image 2. Responsable d'agence tenant un jeu de clés avec expression concentrée. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
-      "status": "pending"
+      "status": "ready"
     },
     {
       "filename": "images/03.webp",
       "prompt": "Image 3. Client choisissant une période sur calendrier papier vierge près d'une voiture. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
-      "status": "pending"
+      "status": "ready"
     }
   ],
   "real_asset_requirement": "Vrai formulaire : modèle, dates, ville et détails nécessaires",

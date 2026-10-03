@@ -11,17 +11,17 @@
     {
       "filename": "images/01.webp",
       "prompt": "Image 1. Revendeur regardant un catalogue restreint derrière un comptoir. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
-      "status": "pending"
+      "status": "ready"
     },
     {
       "filename": "images/02.webp",
       "prompt": "Image 2. Fournisseur chinois montrant plusieurs variantes génériques dans un showroom. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
-      "status": "pending"
+      "status": "ready"
     },
     {
       "filename": "images/03.webp",
       "prompt": "Image 3. Main du revendeur choisissant des échantillons sur table d'atelier. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
-      "status": "pending"
+      "status": "ready"
     }
   ],
   "real_asset_requirement": "Vrai catalogue fournisseur ou captures autorisées, coordonnées protégées",

@@ -11,17 +11,17 @@
     {
       "filename": "images/01.webp",
       "prompt": "Image 1. Artisan tirant la dernière passe de résine dans un garage à la fin de journée. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
-      "status": "pending"
+      "status": "ready"
     },
     {
       "filename": "images/02.webp",
       "prompt": "Image 2. Même artisan rentrant chez lui à la nuit tombée, téléphone vibrant près d'une tasse. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
-      "status": "pending"
+      "status": "ready"
     },
     {
       "filename": "images/03.webp",
       "prompt": "Image 3. Vue de chantier organisé avec trois échantillons au sol et espace vide à droite pour une interface. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
-      "status": "pending"
+      "status": "ready"
     }
   ],
   "real_asset_requirement": "Capture réelle des réponses pratiques et du formulaire de devis",

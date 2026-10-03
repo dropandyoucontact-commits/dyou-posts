@@ -11,17 +11,17 @@
     {
       "filename": "images/01.webp",
       "prompt": "Image 1. Petit lot de produits génériques emballé proprement sur table. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
-      "status": "pending"
+      "status": "ready"
     },
     {
       "filename": "images/02.webp",
       "prompt": "Image 2. Débutant en revente discutant avec un fournisseur dans une boutique chinoise. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
-      "status": "pending"
+      "status": "ready"
     },
     {
       "filename": "images/03.webp",
       "prompt": "Image 3. Un seul carton en transit dans un entrepôt réaliste. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
-      "status": "pending"
+      "status": "ready"
     }
   ],
   "real_asset_requirement": "Vraie page pack Test et explication transitaire",

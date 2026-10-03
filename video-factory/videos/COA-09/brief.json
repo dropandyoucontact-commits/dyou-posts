@@ -11,17 +11,17 @@
     {
       "filename": "images/01.webp",
       "prompt": "Image 1. Coach répondant à son téléphone entre deux séances avec matériel au sol. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
-      "status": "pending"
+      "status": "ready"
     },
     {
       "filename": "images/02.webp",
       "prompt": "Image 2. Trois personnes adultes aux objectifs sportifs différents dans des scènes séparées. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
-      "status": "pending"
+      "status": "ready"
     },
     {
       "filename": "images/03.webp",
       "prompt": "Image 3. Tablette à écran noir près d'un carnet contenant des cases visuellement vides. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
-      "status": "pending"
+      "status": "ready"
     }
   ],
   "real_asset_requirement": "Vrai formulaire de qualification ATLAS / ATHLA si disponible",

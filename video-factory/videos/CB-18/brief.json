@@ -11,17 +11,17 @@
     {
       "filename": "images/01.webp",
       "prompt": "Image 1. Deux produits génériques vus de loin comme identiques sur fond sombre. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
-      "status": "pending"
+      "status": "ready"
     },
     {
       "filename": "images/02.webp",
       "prompt": "Image 2. Macro de différence de coutures et de finition entre deux échantillons. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
-      "status": "pending"
+      "status": "ready"
     },
     {
       "filename": "images/03.webp",
       "prompt": "Image 3. Table de vérification avec produit, balance d'expédition et carnet. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
-      "status": "pending"
+      "status": "ready"
     }
   ],
   "real_asset_requirement": "Vrais échanges tarifaires et mention article hors livraison",

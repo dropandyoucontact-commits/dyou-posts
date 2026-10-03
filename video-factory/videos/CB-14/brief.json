@@ -11,17 +11,17 @@
     {
       "filename": "images/01.webp",
       "prompt": "Image 1. Téléphone à écran noir sur bureau de revendeur avec produits non marqués. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
-      "status": "pending"
+      "status": "ready"
     },
     {
       "filename": "images/02.webp",
       "prompt": "Image 2. Cahier de contacts classé par catégories, textes non lisibles. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
-      "status": "pending"
+      "status": "ready"
     },
     {
       "filename": "images/03.webp",
       "prompt": "Image 3. Main fermant une facture d'abonnement générique barrée en postproduction. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
-      "status": "pending"
+      "status": "ready"
     }
   ],
   "real_asset_requirement": "Vraie capture de l'accès à vie et des mises à jour sur le site",

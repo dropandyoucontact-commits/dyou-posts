@@ -706,7 +706,8 @@
     "video": "videos/CB-01/video/CB-01.mp4",
     "generated_images_available": [
       "videos/CB-01/images/01.webp",
-      "videos/CB-01/images/02.webp"
+      "videos/CB-01/images/02.webp",
+      "videos/CB-01/images/03.webp"
     ],
     "audio_available": false,
     "video_available": false
@@ -728,7 +729,8 @@
     "video": "videos/CB-02/video/CB-02.mp4",
     "generated_images_available": [
       "videos/CB-02/images/01.webp",
-      "videos/CB-02/images/02.webp"
+      "videos/CB-02/images/02.webp",
+      "videos/CB-02/images/03.webp"
     ],
     "audio_available": false,
     "video_available": false
@@ -750,7 +752,8 @@
     "video": "videos/CB-03/video/CB-03.mp4",
     "generated_images_available": [
       "videos/CB-03/images/01.webp",
-      "videos/CB-03/images/02.webp"
+      "videos/CB-03/images/02.webp",
+      "videos/CB-03/images/03.webp"
     ],
     "audio_available": false,
     "video_available": false
@@ -772,7 +775,8 @@
     "video": "videos/CB-04/video/CB-04.mp4",
     "generated_images_available": [
       "videos/CB-04/images/01.webp",
-      "videos/CB-04/images/02.webp"
+      "videos/CB-04/images/02.webp",
+      "videos/CB-04/images/03.webp"
     ],
     "audio_available": false,
     "video_available": false
@@ -794,7 +798,8 @@
     "video": "videos/CB-05/video/CB-05.mp4",
     "generated_images_available": [
       "videos/CB-05/images/01.webp",
-      "videos/CB-05/images/02.webp"
+      "videos/CB-05/images/02.webp",
+      "videos/CB-05/images/03.webp"
     ],
     "audio_available": false,
     "video_available": false
@@ -816,7 +821,8 @@
     "video": "videos/CB-06/video/CB-06.mp4",
     "generated_images_available": [
       "videos/CB-06/images/01.webp",
-      "videos/CB-06/images/02.webp"
+      "videos/CB-06/images/02.webp",
+      "videos/CB-06/images/03.webp"
     ],
     "audio_available": false,
     "video_available": false
@@ -838,7 +844,8 @@
     "video": "videos/CB-07/video/CB-07.mp4",
     "generated_images_available": [
       "videos/CB-07/images/01.webp",
-      "videos/CB-07/images/02.webp"
+      "videos/CB-07/images/02.webp",
+      "videos/CB-07/images/03.webp"
     ],
     "audio_available": false,
     "video_available": false
@@ -860,7 +867,8 @@
     "video": "videos/CB-08/video/CB-08.mp4",
     "generated_images_available": [
       "videos/CB-08/images/01.webp",
-      "videos/CB-08/images/02.webp"
+      "videos/CB-08/images/02.webp",
+      "videos/CB-08/images/03.webp"
     ],
     "audio_available": false,
     "video_available": false
@@ -882,7 +890,8 @@
     "video": "videos/CB-09/video/CB-09.mp4",
     "generated_images_available": [
       "videos/CB-09/images/01.webp",
-      "videos/CB-09/images/02.webp"
+      "videos/CB-09/images/02.webp",
+      "videos/CB-09/images/03.webp"
     ],
     "audio_available": false,
     "video_available": false
@@ -904,7 +913,8 @@
     "video": "videos/CB-10/video/CB-10.mp4",
     "generated_images_available": [
       "videos/CB-10/images/01.webp",
-      "videos/CB-10/images/02.webp"
+      "videos/CB-10/images/02.webp",
+      "videos/CB-10/images/03.webp"
     ],
     "audio_available": false,
     "video_available": false
@@ -926,7 +936,8 @@
     "video": "videos/CB-11/video/CB-11.mp4",
     "generated_images_available": [
       "videos/CB-11/images/01.webp",
-      "videos/CB-11/images/02.webp"
+      "videos/CB-11/images/02.webp",
+      "videos/CB-11/images/03.webp"
     ],
     "audio_available": false,
     "video_available": false
@@ -948,7 +959,8 @@
     "video": "videos/CB-12/video/CB-12.mp4",
     "generated_images_available": [
       "videos/CB-12/images/01.webp",
-      "videos/CB-12/images/02.webp"
+      "videos/CB-12/images/02.webp",
+      "videos/CB-12/images/03.webp"
     ],
     "audio_available": false,
     "video_available": false
@@ -970,7 +982,8 @@
     "video": "videos/CB-13/video/CB-13.mp4",
     "generated_images_available": [
       "videos/CB-13/images/01.webp",
-      "videos/CB-13/images/02.webp"
+      "videos/CB-13/images/02.webp",
+      "videos/CB-13/images/03.webp"
     ],
     "audio_available": false,
     "video_available": false
@@ -992,7 +1005,8 @@
     "video": "videos/CB-14/video/CB-14.mp4",
     "generated_images_available": [
       "videos/CB-14/images/01.webp",
-      "videos/CB-14/images/02.webp"
+      "videos/CB-14/images/02.webp",
+      "videos/CB-14/images/03.webp"
     ],
     "audio_available": false,
     "video_available": false
@@ -1014,7 +1028,8 @@
     "video": "videos/CB-15/video/CB-15.mp4",
     "generated_images_available": [
       "videos/CB-15/images/01.webp",
-      "videos/CB-15/images/02.webp"
+      "videos/CB-15/images/02.webp",
+      "videos/CB-15/images/03.webp"
     ],
     "audio_available": false,
     "video_available": false
@@ -1036,7 +1051,8 @@
     "video": "videos/CB-16/video/CB-16.mp4",
     "generated_images_available": [
       "videos/CB-16/images/01.webp",
-      "videos/CB-16/images/02.webp"
+      "videos/CB-16/images/02.webp",
+      "videos/CB-16/images/03.webp"
     ],
     "audio_available": false,
     "video_available": false
@@ -1058,7 +1074,8 @@
     "video": "videos/CB-17/video/CB-17.mp4",
     "generated_images_available": [
       "videos/CB-17/images/01.webp",
-      "videos/CB-17/images/02.webp"
+      "videos/CB-17/images/02.webp",
+      "videos/CB-17/images/03.webp"
     ],
     "audio_available": false,
     "video_available": false
@@ -1080,7 +1097,8 @@
     "video": "videos/CB-18/video/CB-18.mp4",
     "generated_images_available": [
       "videos/CB-18/images/01.webp",
-      "videos/CB-18/images/02.webp"
+      "videos/CB-18/images/02.webp",
+      "videos/CB-18/images/03.webp"
     ],
     "audio_available": false,
     "video_available": false
@@ -1102,7 +1120,8 @@
     "video": "videos/CB-19/video/CB-19.mp4",
     "generated_images_available": [
       "videos/CB-19/images/01.webp",
-      "videos/CB-19/images/02.webp"
+      "videos/CB-19/images/02.webp",
+      "videos/CB-19/images/03.webp"
     ],
     "audio_available": false,
     "video_available": false
@@ -1124,7 +1143,8 @@
     "video": "videos/CB-20/video/CB-20.mp4",
     "generated_images_available": [
       "videos/CB-20/images/01.webp",
-      "videos/CB-20/images/02.webp"
+      "videos/CB-20/images/02.webp",
+      "videos/CB-20/images/03.webp"
     ],
     "audio_available": false,
     "video_available": false

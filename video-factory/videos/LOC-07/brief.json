@@ -11,17 +11,17 @@
     {
       "filename": "images/01.webp",
       "prompt": "Image 1. Voiture de tourisme élégante sur route de week-end au lever du soleil. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
-      "status": "pending"
+      "status": "ready"
     },
     {
       "filename": "images/02.webp",
       "prompt": "Image 2. Voiture sportive générique devant un lieu d'événement au crépuscule. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
-      "status": "pending"
+      "status": "ready"
     },
     {
       "filename": "images/03.webp",
       "prompt": "Image 3. Prospect faisant défiler des modèles sur téléphone à écran noir. Photo éditoriale photoréaliste haut de gamme, cadrage vertical 9:16, lumière naturelle crédible, composition nette, détail de matière, humains adultes naturels, espace pour la typographie en postproduction. Aucun texte, aucun logo, aucun faux écran lisible, aucun filigrane.",
-      "status": "pending"
+      "status": "ready"
     }
   ],
   "real_asset_requirement": "Vraies fiches de plusieurs modèles et catégories de flotte",
