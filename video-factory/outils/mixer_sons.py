@@ -54,27 +54,34 @@ def evenements_RES01():
 
 def evenements_CB08():
     """CB-08 : trame dense. Un tick par mot révélé, un pop par élément,
-    un whoosh à chaque coupe, un impact sur les quatre temps forts."""
-    deb = [0.000, 1.000, 2.233, 3.900, 5.800, 8.067, 9.800]
+    un whoosh à chaque coupe, un impact sur les temps forts.
+
+    Les bornes sont les cumuls d'images de PLANS dans montage_CB08.py
+    (22, 30, 43, 47, 63, 29, 26 à 30 i/s), pas des secondes arrondies à la
+    main : une demi-image de décalage s'entend sur un montage aussi serré.
+    """
+    deb = [0.000, 0.733, 1.733, 3.167, 4.733, 6.833, 7.800]
     ev = []
     for d in deb[1:]: ev.append((d, "whoosh", -11))
-    # un tick par mot de titre
-    titres = [(0.000, [0.04, 0.15]),
-              (1.000, [0.02, 0.12]),
-              (2.233, [0.02, 0.11, 0.22, 0.31]),
-              (3.900, [0.02, 0.10, 0.24, 0.31, 0.38, 0.45]),
-              (5.800, [0.02, 0.11, 0.20, 0.29]),
-              (8.067, [0.03, 0.12, 0.26, 0.35])]
+    # un tick par mot de titre, aux décalages de mots() dans le montage
+    titres = [(deb[0], [0.02, 0.12]),
+              (deb[1], [0.02, 0.11]),
+              (deb[2], [0.00, 0.08, 0.18, 0.26]),
+              (deb[3], [0.00, 0.07, 0.20, 0.26, 0.32, 0.38]),
+              (deb[4], [0.00, 0.08, 0.16, 0.24]),
+              (deb[5], [0.02, 0.14])]
     for base, offs in titres:
         for o in offs: ev.append((base+o, "tick", -12))
-    # éléments qui entrent
-    ev += [(1.000+0.26,"pop",-10), (1.000+0.42,"pop",-10)]            # les deux colonnes
-    ev += [(2.233+0.45,"pop",-11), (2.233+0.75,"impact",-10)]         # barre puis la marge
-    ev += [(3.900+0.50,"pop",-11)]                                    # barre prix usine
-    ev += [(5.800+q,"pop",-10) for q in (0.40, 0.78, 1.16)]           # les trois critères
-    ev += [(9.800+0.02,"impact",-8), (9.800+0.62,"pop",-9)]           # logo puis bouton
-    # accents sur les temps forts
-    ev += [(0.000,"impact",-11), (8.067,"impact",-13)]
+    ev += [(deb[0]+0.02,"pop",-11), (deb[0]+0.07,"pop",-11)]          # les deux valises
+    ev += [(deb[1]+0.26,"pop",-10), (deb[1]+0.40,"pop",-10)]          # revendeur / fournisseur
+    ev += [(deb[2]+0.32,"pop",-11), (deb[2]+0.62,"impact",-10)]       # barre puis la marge
+    ev += [(deb[3]+0.34,"pop",-11), (deb[3]+0.80,"pop",-12)]          # barre puis le trait
+    ev += [(deb[4]+q,"swipe",-17) for q in (0.10, 0.20, 0.30)]        # le mur qui défile
+    ev += [(deb[4]+0.70,"pop",-10), (deb[4]+1.20,"pop",-10)]          # qualité / transport
+    ev += [(deb[5]+0.14,"impact",-8), (deb[5]+0.42,"pop",-10)]        # CHINABOOK puis la bulle
+    ev += [(deb[6]+0.00,"impact",-9)]                                 # logo
+    ev += [(deb[6]+0.26,"pop",-10), (deb[6]+0.46,"pop",-10)]          # WhatsApp / Snapchat
+    ev += [(deb[0],"impact",-11)]                                     # accent d'ouverture
     return sorted(ev)
 
 if __name__ == "__main__":

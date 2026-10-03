@@ -4,27 +4,21 @@
   "profession": "Revendeurs / sourcing Chine",
   "angle": "Même produit, deux prix d'achat",
   "format": "court",
-  "voice_text": "Même produit, deux prix d'achat. Le revendeur prend sa marge ; le fournisseur te donne son prix. Compare aussi qualité et transport. Tu veux voir des exemples concrets ? Va sur le site ChinaBook.",
+  "voice_text": "Même produit, deux prix d'achat. Le revendeur prend sa marge ; le fournisseur te donne son prix. Compare aussi la qualité et le transport. Commente CHINABOOK et je t'envoie le lien.",
   "audio_filename": "audio/CB-08.mp3",
   "final_video_filename": "video/CB-08.mp4",
-  "images": [
-    {
-      "filename": "images/01.webp",
-      "prompt": "Image 1. Deux produits génériques identiques côte à côte sur fond violet sombre. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
-      "status": "pending"
+  "images": [],
+  "real_asset_requirement": "Aucun prix affiché à l'écran : l'appel est de commenter, le prix se donne en message privé.",
+  "motion_direction": "Sept plans calés sur les respirations de la voix. Hero produit détouré en double sur halo violet, barres de marge, mur de produits défilant, carton COMMENTE CHINABOOK, carte de contacts WhatsApp + Snapchat.",
+  "real_asset_status": "ok",
+  "visuels_source": "Banque produits DROP&YOU (full11), détourés par outils/detourer.py — pas d'image générée : les produits montrés sont ceux réellement proposés.",
+  "cta": {
+    "type": "commentaire",
+    "mot": "CHINABOOK",
+    "contacts": {
+      "whatsapp": "+1 480 569 1625",
+      "snapchat": "dropandyou1"
     },
-    {
-      "filename": "images/02.webp",
-      "prompt": "Image 2. Main tenant un produit neutre sur un comptoir de revendeur. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
-      "status": "pending"
-    },
-    {
-      "filename": "images/03.webp",
-      "prompt": "Image 3. Carton d'expédition et échantillon de contrôle qualité sur table. Photographie documentaire premium et réaliste, cadrage vertical 9:16, lumière ambiante crédible, Chine contemporaine lorsque la scène le demande, produits génériques légaux et non marqués, espace pour le motion violet en postproduction. Aucun texte, aucun logo de marque, aucune fausse preuve, aucun filigrane.",
-      "status": "pending"
-    }
-  ],
-  "real_asset_requirement": "Vrais exemples de prix du site avec coût de transport précisé",
-  "motion_direction": "Comparatif prix revendeur / prix fournisseur créé en texte code",
-  "real_asset_status": "pending"
+    "regle": "jamais de prix dans la vidéo"
+  }
 }
