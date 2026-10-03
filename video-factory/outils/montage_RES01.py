@@ -33,6 +33,8 @@ def _fond():
 FOND=_fond()
 IMG={n:Image.open(V/f"images/{n}.webp").convert("RGB") for n in ["01","02","03"]}
 ECR=sorted((TRAV/"phone").glob("p*.png"))
+# le cadre epouse l'image source : aucun recadrage, donc aucun texte coupe
+_e=Image.open(ECR[0]); ECR_W,ECR_H=_e.size; _e.close()
 
 def entete(img,prog):
     d=ImageDraw.Draw(img,"RGBA")
@@ -110,7 +112,7 @@ def p4(t,d,k):
     titre(img,t,0.05,[("TOUT EST RANGÉ.",0),("LE DEVIS EST LÀ.",1)])
     dr=ImageDraw.Draw(img,"RGBA")
     a=eo(ph(t,0.30,0.80))
-    pw,phh=390,820; px,py=(W-pw)//2,500+int(48*(1-a))
+    pw,phh=ECR_W,ECR_H; px,py=(W-pw)//2,520+int(48*(1-a))
     dr.rounded_rectangle([px-17,py-17,px+pw+17,py+phh+17],56,
                          fill=(18,17,24,int(255*a)),outline=(92,88,116,int(228*a)),width=3)
     ec=Image.open(ECR[min(k,len(ECR)-1)]).convert("RGB")
