@@ -52,11 +52,36 @@ def evenements_RES01():
     ev += [(20.467, "impact", -9), (20.467+0.60, "pop", -11)]
     return sorted(ev)
 
+def evenements_CB08():
+    """CB-08 : trame dense. Un tick par mot révélé, un pop par élément,
+    un whoosh à chaque coupe, un impact sur les quatre temps forts."""
+    deb = [0.000, 1.000, 2.233, 3.900, 5.800, 8.067, 9.800]
+    ev = []
+    for d in deb[1:]: ev.append((d, "whoosh", -11))
+    # un tick par mot de titre
+    titres = [(0.000, [0.04, 0.15]),
+              (1.000, [0.02, 0.12]),
+              (2.233, [0.02, 0.11, 0.22, 0.31]),
+              (3.900, [0.02, 0.10, 0.24, 0.31, 0.38, 0.45]),
+              (5.800, [0.02, 0.11, 0.20, 0.29]),
+              (8.067, [0.03, 0.12, 0.26, 0.35])]
+    for base, offs in titres:
+        for o in offs: ev.append((base+o, "tick", -12))
+    # éléments qui entrent
+    ev += [(1.000+0.26,"pop",-10), (1.000+0.42,"pop",-10)]            # les deux colonnes
+    ev += [(2.233+0.45,"pop",-11), (2.233+0.75,"impact",-10)]         # barre puis la marge
+    ev += [(3.900+0.50,"pop",-11)]                                    # barre prix usine
+    ev += [(5.800+q,"pop",-10) for q in (0.40, 0.78, 1.16)]           # les trois critères
+    ev += [(9.800+0.02,"impact",-8), (9.800+0.62,"pop",-9)]           # logo puis bouton
+    # accents sur les temps forts
+    ev += [(0.000,"impact",-11), (8.067,"impact",-13)]
+    return sorted(ev)
+
 if __name__ == "__main__":
     ident = sys.argv[1] if len(sys.argv) > 1 else "RES-01"
     voix = RAC/f"videos/{ident}/audio/{ident}.mp3"
     sortie = pathlib.Path(__file__).parent/f"_travail/{ident}/piste.wav"
     sortie.parent.mkdir(parents=True, exist_ok=True)
-    ev = {"RES-01": evenements_RES01}[ident]()
+    ev = {"RES-01": evenements_RES01, "CB-08": evenements_CB08}[ident]()
     mixer(voix, ev, sortie)
     print(f"{len(ev)} bruitages posés -> {sortie}")
