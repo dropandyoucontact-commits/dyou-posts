@@ -1,80 +1,61 @@
-# Exemple de montage à reproduire
+# Le standard minimum
 
-`EXEMPLE-montage-resine.mp4` — 1080 × 1920, 25,80 s, 774 images, 4,3 Mo.
-`render-exemple.py` est le moteur qui l'a produit : c'est le squelette à reprendre
-pour les 50 vidéos de la bibliothèque.
+`EXEMPLE-RES-01.mp4` est la référence à égaler ou dépasser pour les 49 autres
+vidéos. `montage-exemple.py` est le moteur qui l'a produite.
+Validé par Youssef le 03/10/2026 — en dessous de ce niveau, on ne livre pas.
 
-Cette vidéo n'appartient à aucun ID du manifeste : son texte vient d'un script
-antérieur à la factory. Elle sert de **référence de charte**, pas de livrable.
+## La règle du mockup : élargir le téléphone, jamais rogner le site
 
-## Les huit plans
+C'est le point qui a demandé trois essais.
 
-| # | Images | Durée | Contenu | Fond |
-|---|--------|-------|---------|------|
-| 1 | 82 | 2,73 s | « Tu poses des sols en résine / qui transforment une pièce. » | photo |
-| 2 | 50 | 1,67 s | « Mais pour décrocher un chantier… » + carte | violet |
-| 3 | 120 | 4,00 s | « Tes soirées dans les messages. » + conversation | photo |
-| 4 | 98 | 3,27 s | « Les mêmes questions. » + trois cartes | violet |
-| 5 | 49 | 1,63 s | signature DYOU Agency | violet |
-| 6 | 177 | 5,90 s | « Un site pour montrer ton travail. » + mockup | violet |
-| 7 | 117 | 3,90 s | « Ton savoir-faire mérite mieux. » + carte | photo |
-| 8 | 81 | 2,70 s | CTA « Écris résine » + bouton | violet |
+Les enregistrements d'écran n'ont pas tous le même rapport — de 0,515 pour ATHLA
+à 0,598 pour POLYRA. Avec un cadre de largeur fixe, le site est rogné sur les
+côtés : sur RES-01, « On ne pose pas un motif » s'affichait « n ne pose as un
+motif », et le prix du simulateur était coupé.
 
-L'alternance fond photo / fond violet du point 4 du contrat est tenue : 1 photo,
-2 violet, 3 photo, 4 violet, 5 violet, 6 violet, 7 photo, 8 violet.
+**Le cadre du téléphone s'adapte à la capture, pas l'inverse.** On extrait en
+`scale=-2:<hauteur>` **sans `crop`**, le montage lit la taille réelle des images
+et dessine le cadre autour. Un mockup large se lit très bien ; un site rogné, non.
 
-## Les règles que ce montage applique
+```python
+ECR = sorted((TRAV/"phone").glob("p*.png"))
+_e = Image.open(ECR[0]); ECR_W, ECR_H = _e.size; _e.close()
+...
+pw, phh = ECR_W, ECR_H          # jamais de valeur en dur
+px, py = (W-pw)//2, 520
+```
 
-**Durées posées en nombre d'images, jamais en secondes.** `-frames:v 82`, pas
-`-t 2.73`. Sinon les arrondis s'accumulent : 0,12 s de dérive sur sept plans au
-premier essai. Somme des plans = durée exacte du MP3.
+## Les autres règles tenues par cet exemple
 
-**Calage sur les respirations réelles du MP3**, pas sur une durée estimée :
-`ffmpeg -hide_banner -i voix.mp3 -af "silencedetect=noise=-35dB:d=0.20" -f null -`
-Attention : avec `-v error` les filtres n'affichent rien, il faut `-hide_banner`.
+**Zone de sécurité.** Marges latérales à 10 % (`MARGE = 108`), rien d'important
+sous 75 % de hauteur (`BAS_SUR = 1440`). Un fichier 9:16 n'est pas affiché en
+9:16 : les téléphones sont en 19,5:9, et Facebook agrandit de 22 % pour remplir
+la hauteur, donc il rogne 9 % de chaque côté.
 
-**Zone de sécurité 9:16.** Un fichier 9:16 n'est pas affiché en 9:16 : les écrans
-de téléphone sont en 19,5:9, et Facebook agrandit la vidéo de 22 % pour remplir la
-hauteur — il rogne **9 % à gauche et 9 % à droite**. D'où, dans `render-exemple.py` :
-- `MARGE = 108` px, soit 10 % — jamais moins ;
-- `BAS_SUR = 1440` px, soit 75 % — rien d'important en dessous, c'est là que se
-  posent la légende, le nom de la Page et les boutons.
-Mesuré le 03/10/2026 sur un cas réel : un texte s'arrêtant à 5 % du bord perdait
-une lettre de chaque côté à la publication.
+**Durées en nombre d'images, jamais en secondes.** `-frames:v 82`, pas `-t 2.73`.
+La somme des plans égale la durée du MP3 à l'image près.
 
-**Police** : Helvetica Neue, index 9 (Condensed Black) pour les titres,
-index 10 (Medium) pour le texte courant. **L'index 2 est l'italique** — piège déjà
-payé, les puces sortaient penchées.
+**Calage sur les respirations réelles du MP3.**
+`ffmpeg -hide_banner -i voix.mp3 -af "silencedetect=noise=-30dB:d=0.12" -f null -`
+(avec `-v error` les filtres n'affichent rien). Les frontières de phrase se
+choisissent parmi ces pauses, pondérées par le nombre de syllabes.
 
-**Preuves réelles en mockup, pas en image générée.** Le plan 6 affiche la vraie
-navigation POLYRA en vidéo dans le cadre du téléphone (177 images extraites de la
-capture), pas une suite de captures fixes.
+**Le mockup montre le site dont parle la voix**, et la queue d'enregistrement est
+retirée — voir `captures-communes/A-LIRE.md`.
 
-**Son** : voix normalisée à −16 LUFS, crête à −1,5 dBTP. Pas de musique de fond.
+**Police** : Helvetica Neue index 9 (Condensed Black) pour les titres, index 10
+(Medium) pour le texte. L'index 2 est l'italique : piège déjà payé.
 
-## Ce qu'il reste à faire pour les 50
+**Logo** : `brand-DYOU-sigle.png`, le sigle seul détouré. Pas la vignette carrée.
 
-Relevé sur le disque au 03/10/2026 : **39 dossiers ont 1 image sur les 3 prévues**,
-11 n'en ont aucune, **aucun MP3 n'est déposé**, et une seule capture vidéo existe
-(la navigation POLYRA dans RES-01). Les briefs annoncent trois images par vidéo :
-c'est un objectif, pas un état. Lire `availability.json` avant chaque montage.
+**Voix** : « D-YOU Agency » dans les scripts, sinon ElevenLabs le lit comme un mot.
 
-## Règles ajoutées le 03/10/2026
+**Son** : voix à −16 LUFS, bruitages de `sons/` posés par `outils/mixer_sons.py`,
+limiteur à 0,95, pas de musique de fond.
 
-**Le logo est le sigle seul, détouré, sans fond.** `brand-DYOU-sigle.png`
-(293 × 132, RGBA) — extrait du logo horizontal officiel. Ne plus poser
-`brand-DYOU-original.png` : sa vignette carrée noire à bord violet fait un
-timbre collé sur l'image. Le sigle détouré se pose aussi bien sur une photo
-que sur un carton violet.
+## Ce qui reste perfectible
 
-**Dans les textes de voix off, écrire « D-YOU Agency », jamais « DYOU Agency ».**
-ElevenLabs lit « DYOU » comme un mot ; le tiret lui fait épeler les initiales.
-Appliqué aux 30 `script.txt` et aux 30 `voice_text` des briefs concernés.
-À l'écran, en revanche, on écrit « D-YOU Agency » dans l'en-tête, et l'URL reste
-« DYOU-AGENCY.COM ».
-
-**Le mockup téléphone montre le site dont parle la voix.** Quand elle dit
-D-YOU Agency, c'est `captures-communes/DYOU-site-navigation.mp4` — la vraie
-navigation sur dyou-agency.com. La capture POLYRA reste pour les vidéos qui
-citent le site d'un client résine. Pour tenir dans un plan plus court,
-accélérer (`setpts=PTS/<facteur>`) plutôt que couper : le parcours reste entier.
+L'animation est sobre : fondus et translations. Il y a de la marge sans changer
+d'outil — typographie révélée mot à mot, courbes d'accélération plutôt que des
+fondus linéaires, flou de mouvement sur les entrées, masques qui suivent une
+forme, transitions qui portent le sens au lieu d'un simple whoosh.

@@ -1,1 +1,5 @@
-Capture réelle POLYRA : galerie de réalisations et formulaire de devis
+La capture POLYRA de ce dossier a ete retiree le 03/10/2026 : 592 x 1280 et
+9,77 s, contre 766 x 1280 et 12,30 s pour celle de captures-communes.
+
+Les captures de site vivent maintenant dans captures-communes/, une par metier.
+Pour cette video c'est site-POLYRA-resine.mp4. Voir captures-communes/A-LIRE.md.
