@@ -731,7 +731,7 @@
       "videos/CB-02/images/02.webp",
       "videos/CB-02/images/03.webp"
     ],
-    "audio_available": false,
+    "audio_available": true,
     "video_available": true,
     "famille": "prix"
   },

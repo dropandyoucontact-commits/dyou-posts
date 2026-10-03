@@ -33,8 +33,8 @@ def mixer(voix, evenements, sortie, gain_voix=0.0, duree=None):
     filtres.append("[v]" + "".join(etiquettes) +
                    f"amix=inputs={len(evenements)+1}:normalize=0:duration=first[m]")
     # sans voix, rien n'a fixé le niveau : les bruitages seuls sortent à -25 dB.
-    sortie_f = ("[m]alimiter=limit=0.95,aresample=44100[out]" if voix is not None else
-                "[m]loudnorm=I=-16:TP=-1.5:LRA=11,alimiter=limit=0.95,aresample=44100[out]")
+    sortie_f = ("[m]alimiter=limit=0.89,volume=-1.5dB,aresample=44100[out]" if voix is not None else
+                "[m]loudnorm=I=-16:TP=-1.5:LRA=11,alimiter=limit=0.89,volume=-1.5dB,aresample=44100[out]")
     filtres.append(sortie_f)
     cmd = ["ffmpeg","-v","error","-y"] + entrees + [
         "-filter_complex", ";".join(filtres), "-map","[out]",
@@ -96,38 +96,44 @@ def evenements_CB08():
 
 
 def evenements_CB02():
-    """CB-02 : rafale sans voix off. Le son porte tout le rythme, donc il est
-    plus dense qu'ailleurs — ticks pendant la montée des compteurs, impact sur
-    chaque chiffre posé, pop sur chaque fiche produit.
+    """CB-02 : les bruitages suivent les animations du montage, pas une grille.
 
-    Bornes = cumuls d'images de PLANS dans montage_CB02.py (38, 34, 96, 44,
-    40, 36, 30 à 30 i/s).
+    Les bornes de plan et les facteurs d'étirement sont lus directement dans
+    montage_CB02 : si la voix change, le montage se recale et les bruitages
+    suivent sans qu'on retouche ce fichier. Les décalages ci-dessous sont
+    exprimés dans le temps *nominal* des animations, donc divisés par l'échelle
+    du plan pour retomber sur le temps réel.
     """
-    deb = [0.000, 1.267, 2.400, 5.600, 7.067, 8.400, 9.600]
-    ev = []
-    for d in deb[1:]: ev.append((d, "whoosh", -11))
+    import sys
+    sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+    import montage_CB02 as M
+    deb, ech = M.bornes(), M.echelles()
+
+    def a(i, offset, son, gain):
+        return (deb[i] + offset/ech[i], son, gain)
+
+    ev = [(d, "whoosh", -14) for d in deb[1:]]
     # plan 1 : le compteur monte, le son monte avec lui
-    ev += [(deb[0]+0.02, "impact", -9)]
-    ev += [(deb[0]+0.02, "tick", -12), (deb[0]+0.11, "tick", -12)]
-    ev += [(deb[0]+0.32+k*0.075, "tick", -21) for k in range(11)]
-    ev += [(deb[0]+1.15, "impact", -10)]
+    ev += [a(0, 0.02, "impact", -13), a(0, 0.02, "tick", -16), a(0, 0.11, "tick", -16)]
+    ev += [a(0, 0.32+k*0.075, "tick", -24) for k in range(11)]
+    ev += [a(0, 1.15, "impact", -14)]
     # plan 2 : le compteur tombe
-    ev += [(deb[1]+0.02, "tick", -12), (deb[1]+0.11, "tick", -12)]
-    ev += [(deb[1]+0.28+k*0.065, "tick", -21) for k in range(10)]
-    ev += [(deb[1]+0.96, "impact", -9), (deb[1]+1.04, "pop", -11)]
+    ev += [a(1, 0.02, "tick", -16), a(1, 0.11, "tick", -16)]
+    ev += [a(1, 0.28+k*0.065, "tick", -24) for k in range(10)]
+    ev += [a(1, 0.96, "impact", -13), a(1, 1.04, "pop", -15)]
     # plan 3 : quatre fiches, une coupe sèche entre chaque
     for k in range(4):
-        b = deb[2]+k*0.80
-        ev += [(b, "swipe", -14), (b+0.06, "pop", -11), (b+0.30, "pop", -13)]
+        ev += [a(2, k*0.80, "swipe", -17), a(2, k*0.80+0.06, "pop", -15),
+               a(2, k*0.80+0.30, "pop", -17)]
     # plan 4 : la case réservée
-    ev += [(deb[3]+0.00, "tick", -12), (deb[3]+0.08, "tick", -12),
-           (deb[3]+0.30, "impact", -11), (deb[3]+0.70, "pop", -12)]
+    ev += [a(3, 0.00, "tick", -16), a(3, 0.08, "tick", -16),
+           a(3, 0.30, "impact", -15), a(3, 0.70, "pop", -16)]
     # plan 5 : le mur qui défile
-    ev += [(deb[4]+q, "swipe", -17) for q in (0.08, 0.18, 0.28)]
-    ev += [(deb[4]+0.00, "tick", -13), (deb[4]+0.24, "tick", -13)]
+    ev += [a(4, q, "swipe", -20) for q in (0.08, 0.18, 0.28)]
+    ev += [a(4, 0.00, "tick", -17), a(4, 0.24, "tick", -17)]
     # plans 6 et 7 : l'appel puis les contacts
-    ev += [(deb[5]+0.14, "impact", -8), (deb[5]+0.42, "pop", -10)]
-    ev += [(deb[6]+0.00, "impact", -9), (deb[6]+0.26, "pop", -10), (deb[6]+0.46, "pop", -10)]
+    ev += [a(5, 0.14, "impact", -12), a(5, 0.42, "pop", -14)]
+    ev += [a(6, 0.00, "impact", -13), a(6, 0.26, "pop", -14), a(6, 0.46, "pop", -14)]
     return sorted(ev)
 
 if __name__ == "__main__":
@@ -138,7 +144,5 @@ if __name__ == "__main__":
     table = {"RES-01": evenements_RES01, "CB-08": evenements_CB08,
              "CB-02": evenements_CB02}
     ev = table[ident]()
-    muet = {"CB-02": 10.600}                    # vidéos sans voix off
-    if ident in muet: mixer(None, ev, sortie, duree=muet[ident])
-    else:             mixer(voix, ev, sortie)
+    mixer(voix, ev, sortie)
     print(f"{len(ev)} bruitages posés -> {sortie}")

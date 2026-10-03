@@ -253,13 +253,40 @@ def p7(t, d):
         flash(img, t, quand, 0.05, (170, 130, 255), 0.2)
     return img
 
-PLANS = [(38, p1), (34, p2), (96, p3), (44, p4), (40, p5), (36, p6), (30, p7)]
+# Chaque plan tient une phrase de la voix off. Le premier nombre est la durée
+# réelle, calée sur les respirations détectées dans CB-02.mp3 ; le second est la
+# durée pour laquelle l'animation a été écrite. Le montage étire ou resserre le
+# temps entre les deux, ce qui évite de réécrire toutes les phases à chaque
+# nouvelle prise de voix — une rafale un peu plus serrée se lit mieux, un hook
+# un peu plus lent laisse voir le chiffre monter.
+PLANS = [(76, p1, 38),      # « Un Surron, en France, ça monte à sept mille euros. »
+         (64, p2, 34),      # « En Chine, le même : mille cinq cents. »
+         (79, p3, 96),      # « Un sac, des lunettes, une valise, c'est pareil. »
+         (57, p4, 44),      # « Le prix fournisseur, je ne l'écris pas. »
+         (42, p5, 40),      # « C'est comme ça sur tout le reste. »
+         (56, p6, 36),      # « Commente CHINABOOK et je te l'envoie. »
+         (30, p7, 30)]      # la carte de contacts, sur la queue de silence
+
+
+def bornes():
+    """Début de chaque plan en secondes, pour le mixage des bruitages."""
+    t, b = 0, []
+    for n, _, _ in PLANS:
+        b.append(t/FPS); t += n
+    return b
+
+
+def echelles():
+    """Facteur temps de chaque plan : nominal / réel."""
+    return [nom/n for n, _, nom in PLANS]
+
 
 if __name__ == "__main__":
     out = TRAV/"frames"; out.mkdir(parents=True, exist_ok=True)
     i = 0
-    for n, fn in PLANS:
+    for n, fn, nom in PLANS:
+        ech = nom/n
         for k in range(n):
-            fn(k/FPS, n/FPS).convert("RGB").save(out/f"f{i:04d}.png"); i += 1
-        print(f"  {fn.__name__}: {n}", flush=True)
+            fn(k/FPS*ech, nom/FPS).convert("RGB").save(out/f"f{i:04d}.png"); i += 1
+        print(f"  {fn.__name__}: {n} images  (x{ech:.2f})", flush=True)
     print(f"{i} images ({i/FPS:.3f} s)")
