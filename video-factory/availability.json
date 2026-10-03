@@ -19,8 +19,8 @@
       "videos/RES-01/images/02.webp",
       "videos/RES-01/images/03.webp"
     ],
-    "audio_available": false,
-    "video_available": false
+    "audio_available": true,
+    "video_available": true
   },
   {
     "id": "RES-02",
