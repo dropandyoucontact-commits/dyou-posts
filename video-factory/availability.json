@@ -705,7 +705,6 @@
     "audio": "videos/CB-01/audio/CB-01.mp3",
     "video": "videos/CB-01/video/CB-01.mp4",
     "generated_images_available": [
-      "videos/CB-01/images/01.webp",
       "videos/CB-01/images/02.webp"
     ],
     "audio_available": false,
@@ -727,7 +726,6 @@
     "audio": "videos/CB-02/audio/CB-02.mp3",
     "video": "videos/CB-02/video/CB-02.mp4",
     "generated_images_available": [
-      "videos/CB-02/images/01.webp",
       "videos/CB-02/images/02.webp"
     ],
     "audio_available": false,
@@ -749,7 +747,6 @@
     "audio": "videos/CB-03/audio/CB-03.mp3",
     "video": "videos/CB-03/video/CB-03.mp4",
     "generated_images_available": [
-      "videos/CB-03/images/01.webp",
       "videos/CB-03/images/02.webp"
     ],
     "audio_available": false,
@@ -793,7 +790,6 @@
     "audio": "videos/CB-05/audio/CB-05.mp3",
     "video": "videos/CB-05/video/CB-05.mp4",
     "generated_images_available": [
-      "videos/CB-05/images/01.webp",
       "videos/CB-05/images/02.webp"
     ],
     "audio_available": false,
@@ -837,7 +833,6 @@
     "audio": "videos/CB-07/audio/CB-07.mp3",
     "video": "videos/CB-07/video/CB-07.mp4",
     "generated_images_available": [
-      "videos/CB-07/images/01.webp",
       "videos/CB-07/images/02.webp"
     ],
     "audio_available": false,
@@ -881,7 +876,6 @@
     "audio": "videos/CB-09/audio/CB-09.mp3",
     "video": "videos/CB-09/video/CB-09.mp4",
     "generated_images_available": [
-      "videos/CB-09/images/01.webp",
       "videos/CB-09/images/02.webp"
     ],
     "audio_available": false,
@@ -903,7 +897,6 @@
     "audio": "videos/CB-10/audio/CB-10.mp3",
     "video": "videos/CB-10/video/CB-10.mp4",
     "generated_images_available": [
-      "videos/CB-10/images/01.webp",
       "videos/CB-10/images/02.webp"
     ],
     "audio_available": false,
