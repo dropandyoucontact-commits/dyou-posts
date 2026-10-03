@@ -693,7 +693,7 @@
     "id": "CB-01",
     "brand": "ChinaBook",
     "profession": "Revendeurs / sourcing Chine",
-    "angle": "Le voyage reporté",
+    "angle": "Le voyage dont tu n'as pas besoin",
     "script": "videos/CB-01/script.txt",
     "brief": "videos/CB-01/brief.json",
     "images": [
@@ -705,16 +705,18 @@
     "audio": "videos/CB-01/audio/CB-01.mp3",
     "video": "videos/CB-01/video/CB-01.mp4",
     "generated_images_available": [
-      "videos/CB-01/images/02.webp"
+      "videos/CB-01/images/02.webp",
+      "videos/CB-01/images/03.webp"
     ],
     "audio_available": false,
-    "video_available": false
+    "video_available": false,
+    "famille": "voyage"
   },
   {
     "id": "CB-02",
     "brand": "ChinaBook",
     "profession": "Revendeurs / sourcing Chine",
-    "angle": "La marge du revendeur",
+    "angle": "Le même objet, deux pays, deux prix",
     "script": "videos/CB-02/script.txt",
     "brief": "videos/CB-02/brief.json",
     "images": [
@@ -726,16 +728,18 @@
     "audio": "videos/CB-02/audio/CB-02.mp3",
     "video": "videos/CB-02/video/CB-02.mp4",
     "generated_images_available": [
-      "videos/CB-02/images/02.webp"
+      "videos/CB-02/images/02.webp",
+      "videos/CB-02/images/03.webp"
     ],
     "audio_available": false,
-    "video_available": false
+    "video_available": true,
+    "famille": "prix"
   },
   {
     "id": "CB-03",
     "brand": "ChinaBook",
     "profession": "Revendeurs / sourcing Chine",
-    "angle": "La langue comme obstacle",
+    "angle": "La langue n'est plus un obstacle",
     "script": "videos/CB-03/script.txt",
     "brief": "videos/CB-03/brief.json",
     "images": [
@@ -747,10 +751,12 @@
     "audio": "videos/CB-03/audio/CB-03.mp3",
     "video": "videos/CB-03/video/CB-03.mp4",
     "generated_images_available": [
-      "videos/CB-03/images/02.webp"
+      "videos/CB-03/images/02.webp",
+      "videos/CB-03/images/03.webp"
     ],
     "audio_available": false,
-    "video_available": false
+    "video_available": false,
+    "famille": "intermediaire"
   },
   {
     "id": "CB-04",
@@ -769,16 +775,18 @@
     "video": "videos/CB-04/video/CB-04.mp4",
     "generated_images_available": [
       "videos/CB-04/images/01.webp",
-      "videos/CB-04/images/02.webp"
+      "videos/CB-04/images/02.webp",
+      "videos/CB-04/images/03.webp"
     ],
     "audio_available": false,
-    "video_available": false
+    "video_available": false,
+    "famille": "voyage"
   },
   {
     "id": "CB-05",
     "brand": "ChinaBook",
     "profession": "Revendeurs / sourcing Chine",
-    "angle": "Pourquoi partager son réseau",
+    "angle": "Pourquoi je vends mes fournisseurs",
     "script": "videos/CB-05/script.txt",
     "brief": "videos/CB-05/brief.json",
     "images": [
@@ -790,10 +798,12 @@
     "audio": "videos/CB-05/audio/CB-05.mp3",
     "video": "videos/CB-05/video/CB-05.mp4",
     "generated_images_available": [
-      "videos/CB-05/images/02.webp"
+      "videos/CB-05/images/02.webp",
+      "videos/CB-05/images/03.webp"
     ],
     "audio_available": false,
-    "video_available": false
+    "video_available": false,
+    "famille": "reseau"
   },
   {
     "id": "CB-06",
@@ -812,16 +822,18 @@
     "video": "videos/CB-06/video/CB-06.mp4",
     "generated_images_available": [
       "videos/CB-06/images/01.webp",
-      "videos/CB-06/images/02.webp"
+      "videos/CB-06/images/02.webp",
+      "videos/CB-06/images/03.webp"
     ],
     "audio_available": false,
-    "video_available": false
+    "video_available": false,
+    "famille": "reseau"
   },
   {
     "id": "CB-07",
     "brand": "ChinaBook",
     "profession": "Revendeurs / sourcing Chine",
-    "angle": "Le transitaire oublié",
+    "angle": "Le transitaire que tout le monde oublie",
     "script": "videos/CB-07/script.txt",
     "brief": "videos/CB-07/brief.json",
     "images": [
@@ -833,10 +845,12 @@
     "audio": "videos/CB-07/audio/CB-07.mp3",
     "video": "videos/CB-07/video/CB-07.mp4",
     "generated_images_available": [
-      "videos/CB-07/images/02.webp"
+      "videos/CB-07/images/02.webp",
+      "videos/CB-07/images/03.webp"
     ],
     "audio_available": false,
-    "video_available": false
+    "video_available": false,
+    "famille": "intermediaire"
   },
   {
     "id": "CB-08",
@@ -855,16 +869,18 @@
     "video": "videos/CB-08/video/CB-08.mp4",
     "generated_images_available": [
       "videos/CB-08/images/01.webp",
-      "videos/CB-08/images/02.webp"
+      "videos/CB-08/images/02.webp",
+      "videos/CB-08/images/03.webp"
     ],
     "audio_available": true,
-    "video_available": true
+    "video_available": true,
+    "famille": "prix"
   },
   {
     "id": "CB-09",
     "brand": "ChinaBook",
     "profession": "Revendeurs / sourcing Chine",
-    "angle": "Tester un fournisseur avant de lui faire confiance",
+    "angle": "Tester avant de faire confiance",
     "script": "videos/CB-09/script.txt",
     "brief": "videos/CB-09/brief.json",
     "images": [
@@ -876,16 +892,18 @@
     "audio": "videos/CB-09/audio/CB-09.mp3",
     "video": "videos/CB-09/video/CB-09.mp4",
     "generated_images_available": [
-      "videos/CB-09/images/02.webp"
+      "videos/CB-09/images/02.webp",
+      "videos/CB-09/images/03.webp"
     ],
     "audio_available": false,
-    "video_available": false
+    "video_available": false,
+    "famille": "reseau"
   },
   {
     "id": "CB-10",
     "brand": "ChinaBook",
     "profession": "Revendeurs / sourcing Chine",
-    "angle": "Commencer par une petite commande",
+    "angle": "Démarrer petit et réinvestir",
     "script": "videos/CB-10/script.txt",
     "brief": "videos/CB-10/brief.json",
     "images": [
@@ -897,16 +915,18 @@
     "audio": "videos/CB-10/audio/CB-10.mp3",
     "video": "videos/CB-10/video/CB-10.mp4",
     "generated_images_available": [
-      "videos/CB-10/images/02.webp"
+      "videos/CB-10/images/02.webp",
+      "videos/CB-10/images/03.webp"
     ],
     "audio_available": false,
-    "video_available": false
+    "video_available": false,
+    "famille": "rentable"
   },
   {
     "id": "CB-11",
     "brand": "ChinaBook",
     "profession": "Revendeurs / sourcing Chine",
-    "angle": "Dépendance à un intermédiaire",
+    "angle": "Le revendeur français installé en Chine",
     "script": "videos/CB-11/script.txt",
     "brief": "videos/CB-11/brief.json",
     "images": [
@@ -919,10 +939,12 @@
     "video": "videos/CB-11/video/CB-11.mp4",
     "generated_images_available": [
       "videos/CB-11/images/01.webp",
-      "videos/CB-11/images/02.webp"
+      "videos/CB-11/images/02.webp",
+      "videos/CB-11/images/03.webp"
     ],
     "audio_available": false,
-    "video_available": false
+    "video_available": false,
+    "famille": "intermediaire"
   },
   {
     "id": "CB-12",
@@ -941,10 +963,12 @@
     "video": "videos/CB-12/video/CB-12.mp4",
     "generated_images_available": [
       "videos/CB-12/images/01.webp",
-      "videos/CB-12/images/02.webp"
+      "videos/CB-12/images/02.webp",
+      "videos/CB-12/images/03.webp"
     ],
     "audio_available": false,
-    "video_available": false
+    "video_available": false,
+    "famille": "voyage"
   },
   {
     "id": "CB-13",
@@ -963,16 +987,18 @@
     "video": "videos/CB-13/video/CB-13.mp4",
     "generated_images_available": [
       "videos/CB-13/images/01.webp",
-      "videos/CB-13/images/02.webp"
+      "videos/CB-13/images/02.webp",
+      "videos/CB-13/images/03.webp"
     ],
     "audio_available": false,
-    "video_available": false
+    "video_available": false,
+    "famille": "reseau"
   },
   {
     "id": "CB-14",
     "brand": "ChinaBook",
     "profession": "Revendeurs / sourcing Chine",
-    "angle": "Accès durable au réseau",
+    "angle": "Un carnet, pas un contact",
     "script": "videos/CB-14/script.txt",
     "brief": "videos/CB-14/brief.json",
     "images": [
@@ -985,16 +1011,18 @@
     "video": "videos/CB-14/video/CB-14.mp4",
     "generated_images_available": [
       "videos/CB-14/images/01.webp",
-      "videos/CB-14/images/02.webp"
+      "videos/CB-14/images/02.webp",
+      "videos/CB-14/images/03.webp"
     ],
     "audio_available": false,
-    "video_available": false
+    "video_available": false,
+    "famille": "reseau"
   },
   {
     "id": "CB-15",
     "brand": "ChinaBook",
     "profession": "Revendeurs / sourcing Chine",
-    "angle": "Le revendeur déjà actif plafonne",
+    "angle": "Tu revends déjà et tu plafonnes",
     "script": "videos/CB-15/script.txt",
     "brief": "videos/CB-15/brief.json",
     "images": [
@@ -1007,16 +1035,18 @@
     "video": "videos/CB-15/video/CB-15.mp4",
     "generated_images_available": [
       "videos/CB-15/images/01.webp",
-      "videos/CB-15/images/02.webp"
+      "videos/CB-15/images/02.webp",
+      "videos/CB-15/images/03.webp"
     ],
     "audio_available": false,
-    "video_available": false
+    "video_available": false,
+    "famille": "prix"
   },
   {
     "id": "CB-16",
     "brand": "ChinaBook",
     "profession": "Revendeurs / sourcing Chine",
-    "angle": "Tester avant de choisir un gros pack",
+    "angle": "Tester un pack avant de s'engager",
     "script": "videos/CB-16/script.txt",
     "brief": "videos/CB-16/brief.json",
     "images": [
@@ -1029,16 +1059,18 @@
     "video": "videos/CB-16/video/CB-16.mp4",
     "generated_images_available": [
       "videos/CB-16/images/01.webp",
-      "videos/CB-16/images/02.webp"
+      "videos/CB-16/images/02.webp",
+      "videos/CB-16/images/03.webp"
     ],
     "audio_available": false,
-    "video_available": false
+    "video_available": false,
+    "famille": "rentable"
   },
   {
     "id": "CB-17",
     "brand": "ChinaBook",
     "profession": "Revendeurs / sourcing Chine",
-    "angle": "Le réseau dans le téléphone",
+    "angle": "Le réseau tient dans ton téléphone",
     "script": "videos/CB-17/script.txt",
     "brief": "videos/CB-17/brief.json",
     "images": [
@@ -1051,16 +1083,18 @@
     "video": "videos/CB-17/video/CB-17.mp4",
     "generated_images_available": [
       "videos/CB-17/images/01.webp",
-      "videos/CB-17/images/02.webp"
+      "videos/CB-17/images/02.webp",
+      "videos/CB-17/images/03.webp"
     ],
     "audio_available": false,
-    "video_available": false
+    "video_available": false,
+    "famille": "voyage"
   },
   {
     "id": "CB-18",
     "brand": "ChinaBook",
     "profession": "Revendeurs / sourcing Chine",
-    "angle": "Le prix seul ne suffit pas",
+    "angle": "Le prix bas ne suffit pas",
     "script": "videos/CB-18/script.txt",
     "brief": "videos/CB-18/brief.json",
     "images": [
@@ -1073,16 +1107,18 @@
     "video": "videos/CB-18/video/CB-18.mp4",
     "generated_images_available": [
       "videos/CB-18/images/01.webp",
-      "videos/CB-18/images/02.webp"
+      "videos/CB-18/images/02.webp",
+      "videos/CB-18/images/03.webp"
     ],
     "audio_available": false,
-    "video_available": false
+    "video_available": false,
+    "famille": "prix"
   },
   {
     "id": "CB-19",
     "brand": "ChinaBook",
     "profession": "Revendeurs / sourcing Chine",
-    "angle": "Reprendre les décisions d'achat",
+    "angle": "Les bons prix te font des clients",
     "script": "videos/CB-19/script.txt",
     "brief": "videos/CB-19/brief.json",
     "images": [
@@ -1095,16 +1131,18 @@
     "video": "videos/CB-19/video/CB-19.mp4",
     "generated_images_available": [
       "videos/CB-19/images/01.webp",
-      "videos/CB-19/images/02.webp"
+      "videos/CB-19/images/02.webp",
+      "videos/CB-19/images/03.webp"
     ],
     "audio_available": false,
-    "video_available": false
+    "video_available": false,
+    "famille": "rentable"
   },
   {
     "id": "CB-20",
     "brand": "ChinaBook",
     "profession": "Revendeurs / sourcing Chine",
-    "angle": "Le commerce portable",
+    "angle": "Un commerce qui tient dans la poche",
     "script": "videos/CB-20/script.txt",
     "brief": "videos/CB-20/brief.json",
     "images": [
@@ -1117,9 +1155,11 @@
     "video": "videos/CB-20/video/CB-20.mp4",
     "generated_images_available": [
       "videos/CB-20/images/01.webp",
-      "videos/CB-20/images/02.webp"
+      "videos/CB-20/images/02.webp",
+      "videos/CB-20/images/03.webp"
     ],
     "audio_available": false,
-    "video_available": false
+    "video_available": false,
+    "famille": "rentable"
   }
 ]

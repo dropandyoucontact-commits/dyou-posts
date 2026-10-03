@@ -16,10 +16,14 @@ Le prix cher affiché est celui de dropandyou, relu dans `full11_source.json`. L
 
 ## Produits à l'image
 
-Les produits viennent de la banque DROP&YOU, détourés par `outils/detourer.py`. Celui-ci rejette de lui-même une photo au fond non uni ou dont le détourage mange de la matière — il y a 2 035 produits, on en prend un autre plutôt que de rafistoler.
+Les 150 images générées servent au décor et à la scène. **Dès qu'un produit est montré, il vient de la banque DROP&YOU**, détouré par `outils/detourer.py` — plus jamais une photo de produit générique qui n'a rien à voir avec ce qui est réellement vendu. Le détoureur rejette de lui-même une photo au fond non uni ou dont le détourage mange de la matière : il y a 2 035 produits, on en prend un autre plutôt que de rafistoler.
 
 ## Angles ChinaBook
 
 Les vingt scripts se répartissent en cinq familles, marquées par `famille` dans chaque `brief.json` : `prix` (le même objet, deux prix), `voyage` (pas besoin d'aller en Chine), `intermediaire` (la marge du revendeur français), `rentable` (ce que ça te rapporte), `reseau` (le carnet, la confiance, le tri). Varier les familles dans le calendrier de publication.
 
-Statut au 3 octobre 2026 : 50 scripts et prompts complets, 39 premières images de scènes disponibles ; images restantes en cours de génération ; MP3 des nouveaux scripts et MP4 finals non fournis. Ne pas considérer les trois chemins `images/` prévus comme trois images déjà disponibles.
+## Répartition du travail
+
+ChatGPT fournit les scripts de départ et les images de scène. **Le motion et les voix sont faits ici** : scripts réécrits quand l'angle ne porte pas, montage, bruitages, encodage.
+
+Statut au 4 octobre 2026 : 50 scripts et prompts complets, 143 images de scène disponibles ; les sept `01.webp` de CB-01, CB-02, CB-03, CB-05, CB-07, CB-09 et CB-10 ont été retirées (personnage cagoulé non demandé) et restent à régénérer, logo DYOU et capture POLYRA de référence. `availability.json` expose le statut par ID et doit refléter le disque, pas l'intention : un `status: ready` sur un fichier absent fait planter un montage. Vidéos montées : RES-01, CB-02, CB-08.

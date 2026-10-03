@@ -1,0 +1,21 @@
+{
+  "brand": "DYOU Agency",
+  "date": "2026-10-03",
+  "sequence": "J14",
+  "topic": "Mobile-first ne veut pas dire version réduite",
+  "status": "ready_for_claude",
+  "approved_by": "Youssef — autorisation permanente du 2026-10-01",
+  "dimensions": "1080x1080",
+  "format": "jpg",
+  "slides": [
+    "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-10-03-j14-mobile-first/slide-01.jpg",
+    "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-10-03-j14-mobile-first/slide-02.jpg",
+    "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-10-03-j14-mobile-first/slide-03.jpg",
+    "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-10-03-j14-mobile-first/slide-04.jpg",
+    "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-10-03-j14-mobile-first/slide-05.jpg",
+    "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-10-03-j14-mobile-first/slide-06.jpg",
+    "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-10-03-j14-mobile-first/slide-07.jpg"
+  ],
+  "caption_url": "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-10-03-j14-mobile-first/caption.txt",
+  "repository": "https://github.com/dropandyoucontact-commits/dyou-posts"
+}
