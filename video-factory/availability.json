@@ -308,7 +308,9 @@
     "real_asset_requirement": "Vrai parcours de premier rendez-vous du concept coach",
     "audio": "videos/COA-05/audio/COA-05.mp3",
     "video": "videos/COA-05/video/COA-05.mp4",
-    "generated_images_available": [],
+    "generated_images_available": [
+      "videos/COA-05/images/01.webp"
+    ],
     "audio_available": false,
     "video_available": false
   },
@@ -852,7 +854,9 @@
     "real_asset_requirement": "Vraies catégories et méthode de contact direct",
     "audio": "videos/CB-11/audio/CB-11.mp3",
     "video": "videos/CB-11/video/CB-11.mp4",
-    "generated_images_available": [],
+    "generated_images_available": [
+      "videos/CB-11/images/01.webp"
+    ],
     "audio_available": false,
     "video_available": false
   },
@@ -871,7 +875,9 @@
     "real_asset_requirement": "Vraies images de voyage et page packs, sans inventer de montant",
     "audio": "videos/CB-12/audio/CB-12.mp3",
     "video": "videos/CB-12/video/CB-12.mp4",
-    "generated_images_available": [],
+    "generated_images_available": [
+      "videos/CB-12/images/01.webp"
+    ],
     "audio_available": false,
     "video_available": false
   },
@@ -890,7 +896,9 @@
     "real_asset_requirement": "Vraies photos fournisseurs et échanges autorisés",
     "audio": "videos/CB-13/audio/CB-13.mp3",
     "video": "videos/CB-13/video/CB-13.mp4",
-    "generated_images_available": [],
+    "generated_images_available": [
+      "videos/CB-13/images/01.webp"
+    ],
     "audio_available": false,
     "video_available": false
   },
@@ -909,7 +917,9 @@
     "real_asset_requirement": "Vraie capture de l'accès à vie et des mises à jour sur le site",
     "audio": "videos/CB-14/audio/CB-14.mp3",
     "video": "videos/CB-14/video/CB-14.mp4",
-    "generated_images_available": [],
+    "generated_images_available": [
+      "videos/CB-14/images/01.webp"
+    ],
     "audio_available": false,
     "video_available": false
   },
@@ -928,7 +938,9 @@
     "real_asset_requirement": "Vrais comparatifs de prix avec mention frais de transport",
     "audio": "videos/CB-15/audio/CB-15.mp3",
     "video": "videos/CB-15/video/CB-15.mp4",
-    "generated_images_available": [],
+    "generated_images_available": [
+      "videos/CB-15/images/01.webp"
+    ],
     "audio_available": false,
     "video_available": false
   },
@@ -947,7 +959,9 @@
     "real_asset_requirement": "Vraie page pack Test et contacts redigés selon autorisation",
     "audio": "videos/CB-16/audio/CB-16.mp3",
     "video": "videos/CB-16/video/CB-16.mp4",
-    "generated_images_available": [],
+    "generated_images_available": [
+      "videos/CB-16/images/01.webp"
+    ],
     "audio_available": false,
     "video_available": false
   },
@@ -966,7 +980,9 @@
     "real_asset_requirement": "Vraie capture espace ChinaBook montrant catégories sans exposer contacts",
     "audio": "videos/CB-17/audio/CB-17.mp3",
     "video": "videos/CB-17/video/CB-17.mp4",
-    "generated_images_available": [],
+    "generated_images_available": [
+      "videos/CB-17/images/01.webp"
+    ],
     "audio_available": false,
     "video_available": false
   },
@@ -985,7 +1001,9 @@
     "real_asset_requirement": "Vrais échanges tarifaires et mention article hors livraison",
     "audio": "videos/CB-18/audio/CB-18.mp3",
     "video": "videos/CB-18/video/CB-18.mp4",
-    "generated_images_available": [],
+    "generated_images_available": [
+      "videos/CB-18/images/01.webp"
+    ],
     "audio_available": false,
     "video_available": false
   },
@@ -1004,7 +1022,9 @@
     "real_asset_requirement": "Vrai catalogue fournisseur ou captures autorisées, coordonnées protégées",
     "audio": "videos/CB-19/audio/CB-19.mp3",
     "video": "videos/CB-19/video/CB-19.mp4",
-    "generated_images_available": [],
+    "generated_images_available": [
+      "videos/CB-19/images/01.webp"
+    ],
     "audio_available": false,
     "video_available": false
   },
@@ -1023,7 +1043,9 @@
     "real_asset_requirement": "Vraies photos de voyage du fondateur et vrai échange fournisseur/transitaire",
     "audio": "videos/CB-20/audio/CB-20.mp3",
     "video": "videos/CB-20/video/CB-20.mp4",
-    "generated_images_available": [],
+    "generated_images_available": [
+      "videos/CB-20/images/01.webp"
+    ],
     "audio_available": false,
     "video_available": false
   }
