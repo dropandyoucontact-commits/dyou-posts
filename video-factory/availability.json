@@ -15,7 +15,8 @@
     "audio": "videos/RES-01/audio/RES-01.mp3",
     "video": "videos/RES-01/video/RES-01.mp4",
     "generated_images_available": [
-      "videos/RES-01/images/01.webp"
+      "videos/RES-01/images/01.webp",
+      "videos/RES-01/images/02.webp"
     ],
     "audio_available": false,
     "video_available": false
@@ -36,7 +37,8 @@
     "audio": "videos/RES-02/audio/RES-02.mp3",
     "video": "videos/RES-02/video/RES-02.mp4",
     "generated_images_available": [
-      "videos/RES-02/images/01.webp"
+      "videos/RES-02/images/01.webp",
+      "videos/RES-02/images/02.webp"
     ],
     "audio_available": false,
     "video_available": false
@@ -57,7 +59,8 @@
     "audio": "videos/RES-03/audio/RES-03.mp3",
     "video": "videos/RES-03/video/RES-03.mp4",
     "generated_images_available": [
-      "videos/RES-03/images/01.webp"
+      "videos/RES-03/images/01.webp",
+      "videos/RES-03/images/02.webp"
     ],
     "audio_available": false,
     "video_available": false
@@ -78,7 +81,8 @@
     "audio": "videos/RES-04/audio/RES-04.mp3",
     "video": "videos/RES-04/video/RES-04.mp4",
     "generated_images_available": [
-      "videos/RES-04/images/01.webp"
+      "videos/RES-04/images/01.webp",
+      "videos/RES-04/images/02.webp"
     ],
     "audio_available": false,
     "video_available": false
@@ -99,7 +103,8 @@
     "audio": "videos/RES-05/audio/RES-05.mp3",
     "video": "videos/RES-05/video/RES-05.mp4",
     "generated_images_available": [
-      "videos/RES-05/images/01.webp"
+      "videos/RES-05/images/01.webp",
+      "videos/RES-05/images/02.webp"
     ],
     "audio_available": false,
     "video_available": false
@@ -120,7 +125,8 @@
     "audio": "videos/RES-06/audio/RES-06.mp3",
     "video": "videos/RES-06/video/RES-06.mp4",
     "generated_images_available": [
-      "videos/RES-06/images/01.webp"
+      "videos/RES-06/images/01.webp",
+      "videos/RES-06/images/02.webp"
     ],
     "audio_available": false,
     "video_available": false
@@ -141,7 +147,8 @@
     "audio": "videos/RES-07/audio/RES-07.mp3",
     "video": "videos/RES-07/video/RES-07.mp4",
     "generated_images_available": [
-      "videos/RES-07/images/01.webp"
+      "videos/RES-07/images/01.webp",
+      "videos/RES-07/images/02.webp"
     ],
     "audio_available": false,
     "video_available": false
@@ -162,7 +169,8 @@
     "audio": "videos/RES-08/audio/RES-08.mp3",
     "video": "videos/RES-08/video/RES-08.mp4",
     "generated_images_available": [
-      "videos/RES-08/images/01.webp"
+      "videos/RES-08/images/01.webp",
+      "videos/RES-08/images/02.webp"
     ],
     "audio_available": false,
     "video_available": false
@@ -183,7 +191,8 @@
     "audio": "videos/RES-09/audio/RES-09.mp3",
     "video": "videos/RES-09/video/RES-09.mp4",
     "generated_images_available": [
-      "videos/RES-09/images/01.webp"
+      "videos/RES-09/images/01.webp",
+      "videos/RES-09/images/02.webp"
     ],
     "audio_available": false,
     "video_available": false
@@ -204,7 +213,8 @@
     "audio": "videos/RES-10/audio/RES-10.mp3",
     "video": "videos/RES-10/video/RES-10.mp4",
     "generated_images_available": [
-      "videos/RES-10/images/01.webp"
+      "videos/RES-10/images/01.webp",
+      "videos/RES-10/images/02.webp"
     ],
     "audio_available": false,
     "video_available": false
