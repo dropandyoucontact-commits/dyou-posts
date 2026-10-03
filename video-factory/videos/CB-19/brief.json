@@ -2,9 +2,9 @@
   "id": "CB-19",
   "brand": "ChinaBook",
   "profession": "Revendeurs / sourcing Chine",
-  "angle": "Reprendre les décisions d'achat",
+  "angle": "Les bons prix te font des clients",
   "format": "moyen",
-  "voice_text": "Quand tu passes uniquement par un revendeur, tu achètes ce qu'il a décidé de te montrer. Quand tu échanges avec un fournisseur, tu peux demander les modèles, les variantes, les quantités et les photos dont tu as besoin. Tu dois toujours vérifier ce que tu commandes, mais tu reprends la conversation en main. C'est la logique du ChinaBook : des contacts et une méthode. Dis-moi sur WhatsApp ce que tu veux sourcer et je t'oriente vers le bon pack.",
+  "voice_text": "Quand tu as les bons prix d'achat, n'importe qui qui cherche un produit devient un client. Tu proposes, tu encaisses ta marge, tu recommences. Commente CHINABOOK.",
   "audio_filename": "audio/CB-19.mp3",
   "final_video_filename": "video/CB-19.mp4",
   "images": [
@@ -26,5 +26,15 @@
   ],
   "real_asset_requirement": "Vrai catalogue fournisseur ou captures autorisées, coordonnées protégées",
   "motion_direction": "Choix imposé devient choix demandé en direct",
-  "real_asset_status": "pending"
+  "real_asset_status": "pending",
+  "famille": "rentable",
+  "cta": {
+    "type": "commentaire",
+    "mot": "CHINABOOK",
+    "contacts": {
+      "whatsapp": "+1 480 569 1625",
+      "snapchat": "dropandyou1"
+    }
+  },
+  "visuels_source": "Banque produits DROP&YOU (full11), détourés par outils/detourer.py"
 }

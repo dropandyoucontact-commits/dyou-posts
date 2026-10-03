@@ -2,9 +2,9 @@
   "id": "CB-14",
   "brand": "ChinaBook",
   "profession": "Revendeurs / sourcing Chine",
-  "angle": "Accès durable au réseau",
+  "angle": "Un carnet, pas un contact",
   "format": "court",
-  "voice_text": "Tu veux des contacts fournisseurs, pas un abonnement de plus. Avec ChinaBook, tu choisis ton accès et tu gardes le réseau. Regarde les catégories sur le site et prends le pack adapté à ton projet.",
+  "voice_text": "Un contact, ça se perd. Un carnet, ça se garde. Tu y reviens à chaque nouveau produit, pendant des années. Commente CHINABOOK.",
   "audio_filename": "audio/CB-14.mp3",
   "final_video_filename": "video/CB-14.mp4",
   "images": [
@@ -26,5 +26,15 @@
   ],
   "real_asset_requirement": "Vraie capture de l'accès à vie et des mises à jour sur le site",
   "motion_direction": "Paiement unique et réseau durable en typographie claire",
-  "real_asset_status": "pending"
+  "real_asset_status": "pending",
+  "famille": "reseau",
+  "cta": {
+    "type": "commentaire",
+    "mot": "CHINABOOK",
+    "contacts": {
+      "whatsapp": "+1 480 569 1625",
+      "snapchat": "dropandyou1"
+    }
+  },
+  "visuels_source": "Banque produits DROP&YOU (full11), détourés par outils/detourer.py"
 }

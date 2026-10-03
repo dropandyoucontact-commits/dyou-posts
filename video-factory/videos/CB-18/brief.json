@@ -2,9 +2,9 @@
   "id": "CB-18",
   "brand": "ChinaBook",
   "profession": "Revendeurs / sourcing Chine",
-  "angle": "Le prix seul ne suffit pas",
+  "angle": "Le prix bas ne suffit pas",
   "format": "long",
-  "voice_text": "Tu vois deux prix pour un produit et tu penses avoir trouvé la meilleure affaire. Attends. Est-ce que la qualité est la même ? La quantité demandée ? Le prix inclut-il le transport ? Tu peux gagner sur l'achat et perdre sur une commande mal vérifiée. C'est pour ça que je montre les échanges réels et que j'explique comment parler aux fournisseurs et au transitaire. Le ChinaBook sert à trouver des contacts, mais aussi à comprendre les questions à poser avant de payer. Regarde les preuves sur le site, compare les catégories, puis choisis ton accès.",
+  "voice_text": "Le prix bas ne suffit pas. Un fournisseur pas cher qui livre en retard te coûte plus cher qu'un fournisseur correct. Dans le carnet, tu as les deux infos. Commente CHINABOOK.",
   "audio_filename": "audio/CB-18.mp3",
   "final_video_filename": "video/CB-18.mp4",
   "images": [
@@ -26,5 +26,15 @@
   ],
   "real_asset_requirement": "Vrais échanges tarifaires et mention article hors livraison",
   "motion_direction": "Prix séduisant stoppé par qualité, quantité et transport",
-  "real_asset_status": "pending"
+  "real_asset_status": "pending",
+  "famille": "prix",
+  "cta": {
+    "type": "commentaire",
+    "mot": "CHINABOOK",
+    "contacts": {
+      "whatsapp": "+1 480 569 1625",
+      "snapchat": "dropandyou1"
+    }
+  },
+  "visuels_source": "Banque produits DROP&YOU (full11), détourés par outils/detourer.py"
 }

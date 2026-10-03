@@ -2,9 +2,9 @@
   "id": "CB-03",
   "brand": "ChinaBook",
   "profession": "Revendeurs / sourcing Chine",
-  "angle": "La langue comme obstacle",
+  "angle": "La langue n'est plus un obstacle",
   "format": "court",
-  "voice_text": "Tu veux sourcer en Chine, mais l'anglais et WeChat te freinent ? Le ChinaBook te montre qui contacter, quoi demander et comment expédier. Écris-moi sur WhatsApp pour choisir ton pack.",
+  "voice_text": "Tu écris à l'usine, elle répond en chinois, tu abandonnes. Moi j'ai déjà fait le tri et les présentations. Tu arrives, tu commandes. Commente CHINABOOK.",
   "audio_filename": "audio/CB-03.mp3",
   "final_video_filename": "video/CB-03.mp4",
   "images": [
@@ -26,5 +26,15 @@
   ],
   "real_asset_requirement": "Vrais extraits de guide WeChat et échanges autorisés, informations sensibles masquées",
   "motion_direction": "Blocages anglais et WeChat se transforment en étapes",
-  "real_asset_status": "pending"
+  "real_asset_status": "pending",
+  "famille": "intermediaire",
+  "cta": {
+    "type": "commentaire",
+    "mot": "CHINABOOK",
+    "contacts": {
+      "whatsapp": "+1 480 569 1625",
+      "snapchat": "dropandyou1"
+    }
+  },
+  "visuels_source": "Banque produits DROP&YOU (full11), détourés par outils/detourer.py"
 }

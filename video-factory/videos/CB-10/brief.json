@@ -2,9 +2,9 @@
   "id": "CB-10",
   "brand": "ChinaBook",
   "profession": "Revendeurs / sourcing Chine",
-  "angle": "Commencer par une petite commande",
+  "angle": "Démarrer petit et réinvestir",
   "format": "moyen",
-  "voice_text": "Tu n'as pas besoin de préparer un container pour comprendre comment fonctionne le sourcing. Commence par choisir une catégorie, parler à un fournisseur, demander les détails du produit et faire tes vérifications avant une première commande adaptée à ton budget. Le pack Test du ChinaBook existe justement pour découvrir un contact et le circuit d'expédition. Si tu veux avancer étape par étape, regarde cette option sur le site.",
+  "voice_text": "Ta première commande ne doit pas te ruiner. Deux cents euros de marchandise, tu revends, tu réinvestis, tu recommences plus gros. Commente CHINABOOK.",
   "audio_filename": "audio/CB-10.mp3",
   "final_video_filename": "video/CB-10.mp4",
   "images": [
@@ -26,5 +26,15 @@
   ],
   "real_asset_requirement": "Vraie page pack Test et explication transitaire",
   "motion_direction": "Une catégorie → un contact → une première vérification",
-  "real_asset_status": "pending"
+  "real_asset_status": "pending",
+  "famille": "rentable",
+  "cta": {
+    "type": "commentaire",
+    "mot": "CHINABOOK",
+    "contacts": {
+      "whatsapp": "+1 480 569 1625",
+      "snapchat": "dropandyou1"
+    }
+  },
+  "visuels_source": "Banque produits DROP&YOU (full11), détourés par outils/detourer.py"
 }

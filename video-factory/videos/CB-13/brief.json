@@ -4,7 +4,7 @@
   "profession": "Revendeurs / sourcing Chine",
   "angle": "Marché immense, recherche mal ciblée",
   "format": "moyen",
-  "voice_text": "Tu arrives dans un immense marché en Chine. Des milliers de produits, des dizaines de stands, tout le monde te dit « meilleure qualité ». Comment tu sais qui contacter pour ta catégorie ? Le difficile, ce n'est pas de trouver quelqu'un qui vend. C'est d'identifier un contact avec lequel travailler et de vérifier ce qu'il propose. C'est le temps de recherche derrière le ChinaBook. Si tu hésites entre les packs, écris-moi sur WhatsApp.",
+  "voice_text": "Le marché chinois est immense, et c'est bien le problème. Mille usines pour un produit, neuf cents qui ne te répondront jamais. Le tri, je l'ai déjà fait. Commente CHINABOOK.",
   "audio_filename": "audio/CB-13.mp3",
   "final_video_filename": "video/CB-13.mp4",
   "images": [
@@ -26,5 +26,15 @@
   ],
   "real_asset_requirement": "Vraies photos fournisseurs et échanges autorisés",
   "motion_direction": "La foule de stands se filtre vers catégorie et critères",
-  "real_asset_status": "pending"
+  "real_asset_status": "pending",
+  "famille": "reseau",
+  "cta": {
+    "type": "commentaire",
+    "mot": "CHINABOOK",
+    "contacts": {
+      "whatsapp": "+1 480 569 1625",
+      "snapchat": "dropandyou1"
+    }
+  },
+  "visuels_source": "Banque produits DROP&YOU (full11), détourés par outils/detourer.py"
 }

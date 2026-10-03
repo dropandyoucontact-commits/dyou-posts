@@ -2,9 +2,9 @@
   "id": "CB-07",
   "brand": "ChinaBook",
   "profession": "Revendeurs / sourcing Chine",
-  "angle": "Le transitaire oublié",
+  "angle": "Le transitaire que tout le monde oublie",
   "format": "moyen",
-  "voice_text": "Tu as trouvé un fournisseur. Très bien. Maintenant, comment le produit part de Chine et arrive chez toi ? C'est là que beaucoup de débutants se bloquent. Le circuit ne s'arrête pas au contact du vendeur : il faut aussi comprendre le rôle du transitaire, le contrôle et l'expédition. Le ChinaBook rassemble les contacts et les étapes pour que tu voies le chemin complet. Regarde les packs sur le site.",
+  "voice_text": "Tu as trouvé l'usine, bravo. Et le transitaire ? Et la douane ? Sans eux, ton carton dort à Shenzhen. Tout est dans le carnet. Commente CHINABOOK.",
   "audio_filename": "audio/CB-07.mp3",
   "final_video_filename": "video/CB-07.mp4",
   "images": [
@@ -26,5 +26,15 @@
   ],
   "real_asset_requirement": "Vrai contact transitaire et schéma du circuit si publiables",
   "motion_direction": "Fournisseur → transitaire → réception en motion, sans fausse promesse douane",
-  "real_asset_status": "pending"
+  "real_asset_status": "pending",
+  "famille": "intermediaire",
+  "cta": {
+    "type": "commentaire",
+    "mot": "CHINABOOK",
+    "contacts": {
+      "whatsapp": "+1 480 569 1625",
+      "snapchat": "dropandyou1"
+    }
+  },
+  "visuels_source": "Banque produits DROP&YOU (full11), détourés par outils/detourer.py"
 }

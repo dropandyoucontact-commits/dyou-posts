@@ -2,9 +2,9 @@
   "id": "CB-17",
   "brand": "ChinaBook",
   "profession": "Revendeurs / sourcing Chine",
-  "angle": "Le réseau dans le téléphone",
+  "angle": "Le réseau tient dans ton téléphone",
   "format": "court",
-  "voice_text": "Ton prochain contact fournisseur peut être dans ton téléphone avant même que tu réserves un billet pour la Chine. Choisis ton domaine, découvre le réseau ChinaBook et commence par poser les bonnes questions. Les packs sont sur le site.",
+  "voice_text": "Tu n'as pas besoin d'aller en Chine. Tes fournisseurs tiennent dans ton téléphone, et tu peux les ouvrir maintenant. Commente CHINABOOK et je te montre.",
   "audio_filename": "audio/CB-17.mp3",
   "final_video_filename": "video/CB-17.mp4",
   "images": [
@@ -26,5 +26,15 @@
   ],
   "real_asset_requirement": "Vraie capture espace ChinaBook montrant catégories sans exposer contacts",
   "motion_direction": "Rue lointaine se rapproche en fenêtre de téléphone",
-  "real_asset_status": "pending"
+  "real_asset_status": "pending",
+  "famille": "voyage",
+  "cta": {
+    "type": "commentaire",
+    "mot": "CHINABOOK",
+    "contacts": {
+      "whatsapp": "+1 480 569 1625",
+      "snapchat": "dropandyou1"
+    }
+  },
+  "visuels_source": "Banque produits DROP&YOU (full11), détourés par outils/detourer.py"
 }

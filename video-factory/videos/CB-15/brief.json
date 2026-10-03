@@ -2,9 +2,9 @@
   "id": "CB-15",
   "brand": "ChinaBook",
   "profession": "Revendeurs / sourcing Chine",
-  "angle": "Le revendeur déjà actif plafonne",
+  "angle": "Tu revends déjà et tu plafonnes",
   "format": "moyen",
-  "voice_text": "Tu fais déjà des ventes, mais ton prix d'achat te laisse peu de place. Avant de chercher un nouveau produit, regarde le chemin de celui que tu vends déjà. Combien d'intermédiaires se trouvent entre toi et la source ? Comparer des contacts et des prix de touche, transport compris, peut changer ta lecture de la marge. C'est exactement le point de départ du ChinaBook. Les exemples et les conversations sont sur le site.",
+  "voice_text": "Tu revends déjà, et tu plafonnes. Normal : ta marge est mangée avant même la vente. Ce n'est pas ton produit qu'il faut changer, c'est ton prix d'achat. Commente CHINABOOK.",
   "audio_filename": "audio/CB-15.mp3",
   "final_video_filename": "video/CB-15.mp4",
   "images": [
@@ -26,5 +26,26 @@
   ],
   "real_asset_requirement": "Vrais comparatifs de prix avec mention frais de transport",
   "motion_direction": "Chaîne des intermédiaires se contracte puis calcul complet",
-  "real_asset_status": "pending"
+  "real_asset_status": "pending",
+  "famille": "prix",
+  "cta": {
+    "type": "commentaire",
+    "mot": "CHINABOOK",
+    "contacts": {
+      "whatsapp": "+1 480 569 1625",
+      "snapchat": "dropandyou1"
+    }
+  },
+  "visuels_source": "Banque produits DROP&YOU (full11), détourés par outils/detourer.py",
+  "chiffres": {
+    "source": "Youssef, 04/10/2026",
+    "surron_france_eur": [
+      3000,
+      7000
+    ],
+    "surron_chine_eur": [
+      1500,
+      3600
+    ]
+  }
 }

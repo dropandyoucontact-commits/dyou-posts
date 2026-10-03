@@ -11,14 +11,14 @@
   "real_asset_requirement": "Aucun prix affiché à l'écran : l'appel est de commenter, le prix se donne en message privé.",
   "motion_direction": "Sept plans calés sur les respirations de la voix. Hero produit détouré en double sur halo violet, barres de marge, mur de produits défilant, carton COMMENTE CHINABOOK, carte de contacts WhatsApp + Snapchat.",
   "real_asset_status": "ok",
-  "visuels_source": "Banque produits DROP&YOU (full11), détourés par outils/detourer.py — pas d'image générée : les produits montrés sont ceux réellement proposés.",
+  "visuels_source": "Banque produits DROP&YOU (full11), détourés par outils/detourer.py",
   "cta": {
     "type": "commentaire",
     "mot": "CHINABOOK",
     "contacts": {
       "whatsapp": "+1 480 569 1625",
       "snapchat": "dropandyou1"
-    },
-    "regle": "jamais de prix dans la vidéo"
-  }
+    }
+  },
+  "famille": "prix"
 }
