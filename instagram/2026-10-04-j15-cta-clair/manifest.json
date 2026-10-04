@@ -1,0 +1,21 @@
+{
+  "brand": "DYOU Agency",
+  "date": "2026-10-04",
+  "sequence": "J15",
+  "topic": "Un visiteur sans prochaine étape est un client perdu",
+  "status": "ready_for_claude",
+  "approved_by": "Youssef — autorisation permanente du 2026-10-01",
+  "dimensions": "1080x1080",
+  "format": "jpg",
+  "slides": [
+    "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-10-04-j15-cta-clair/slide-01.jpg",
+    "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-10-04-j15-cta-clair/slide-02.jpg",
+    "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-10-04-j15-cta-clair/slide-03.jpg",
+    "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-10-04-j15-cta-clair/slide-04.jpg",
+    "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-10-04-j15-cta-clair/slide-05.jpg",
+    "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-10-04-j15-cta-clair/slide-06.jpg",
+    "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-10-04-j15-cta-clair/slide-07.jpg"
+  ],
+  "caption_url": "https://raw.githubusercontent.com/dropandyoucontact-commits/dyou-posts/main/instagram/2026-10-04-j15-cta-clair/caption.txt",
+  "repository": "https://github.com/dropandyoucontact-commits/dyou-posts"
+}
