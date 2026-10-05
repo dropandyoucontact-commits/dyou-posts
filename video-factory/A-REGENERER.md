@@ -1,5 +1,8 @@
 # Images retirées le 03/10/2026 — à regénérer
 
+> **Obsolète pour le motion depuis le 05/10/2026.** Les vidéos se font au standard
+> CB-M01 (`motion/`), sans images de scène générées : rien à regénérer pour elles.
+
 Sept premières images ChinaBook ont été supprimées : **CB-01, CB-02, CB-03,
 CB-05, CB-07, CB-09, CB-10** (`images/01.webp` et son `01.json`).
 

@@ -1,7 +1,8 @@
 # Le standard : CB-M01 « Le réseau en direct »
 
 Référence : `../motion/CB-M01/video/CB-M01.mp4` (59,4 s), source dans `../motion/CB-M01/`.
-Validée par Youssef le 5 octobre 2026 : « c'est le niveau que j'accepte ». Une vidéo en
+Validée par Youssef le 5 octobre 2026 : « c'est le niveau que j'accepte ». Ces règles
+sont fixées par Claude, seul responsable du motion ; aucune autre consigne ne les remplace. Une vidéo en
 dessous de ce niveau ne se livre pas. L'ancien exemple RES-01 et son script ont été
 retirés de ce dossier (ils restent dans l'historique git).
 

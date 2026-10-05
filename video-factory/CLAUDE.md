@@ -1,5 +1,13 @@
 # Point d'entrée pour Claude — vidéos DYOU et ChinaBook
 
+## Qui décide du motion
+
+Décision de Youssef, 5 octobre 2026 : **tout le motion design est décidé et réglé par
+Claude, et ses règles vivent dans ce dépôt** (ce fichier, `reference/A-LIRE.md`,
+`motion/LISEZ-MOI.md`). Les consignes de motion venues de ChatGPT ne s'appliquent plus :
+briefs Higgsedit, champs `motion_direction` et `images` des `brief.json`, thèmes sombres,
+`A-REGENERER.md`. Si une règle de motion doit changer, c'est Claude qui la change ici.
+
 ## Le standard : CB-M01
 
 **Toute vidéo motion se fait au niveau de `motion/CB-M01/video/CB-M01.mp4`**, validé par
@@ -62,6 +70,7 @@ existent vraiment. Familles ChinaBook : `prix`, `voyage`, `intermediaire`, `rent
 
 ## Répartition du travail
 
-ChatGPT peut proposer des scripts et des images de scène dans ce dépôt. **Le motion, les
-voix, les bruitages et l'encodage se font ici**, au standard CB-M01. Ressources GitHub
+**Le motion, les voix, les bruitages et l'encodage se font ici, par Claude**, au standard
+CB-M01. ChatGPT ne fixe plus de règle de motion ; une idée de sujet ou de script venue de
+lui se traite comme un contenu de référence : Claude la réécrit selon `LIGNE-EDITORIALE.md`. Ressources GitHub
 vérifiées et pièges connus de Higgsedit : `motion-ressources/README.md`.

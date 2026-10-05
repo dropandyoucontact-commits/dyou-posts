@@ -1,5 +1,9 @@
 # Production vidéo DYOU et ChinaBook
 
+> **Le motion design est décidé et réglé par Claude seul** (décision de Youssef du
+> 05/10/2026). Ses règles : `reference/A-LIRE.md`, `CLAUDE.md`, `motion/LISEZ-MOI.md`.
+> Les anciennes consignes de motion de ChatGPT ne s'appliquent plus.
+
 **Le niveau attendu est celui de `motion/CB-M01/video/CB-M01.mp4`** (validé le 05/10/2026) :
 vidéo verticale 1080 × 1920, 60 i/s, fond blanc, noir et vert, sous-titres karaoké calés
 mot à mot sur la voix, métaphores animées (pas de fiches statiques), perspective 3D, flou
