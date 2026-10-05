@@ -14,7 +14,8 @@ import numpy as np
 import skia
 from skia import textlayout as tl
 
-ICI = pathlib.Path(__file__).resolve().parent
+ICI = pathlib.Path(__file__).resolve().parent      # le moteur : fontes/, icones/, sons/
+PROJET = pathlib.Path.cwd()                         # le projet vidéo : media/ (scenes.py le fixe)
 W, H, FPS = 1080, 1920, 60
 
 # ───────────────────────────── couleurs
@@ -207,7 +208,7 @@ _ECH = skia.SamplingOptions(skia.FilterMode.kLinear, skia.MipmapMode.kLinear)
 
 @functools.lru_cache(maxsize=None)
 def _img(nom):
-    return skia.Image.open(str(ICI / "media" / f"{nom}.png")).withDefaultMipmaps()
+    return skia.Image.open(str(PROJET / "media" / f"{nom}.png")).withDefaultMipmaps()
 
 def taille_img(nom):
     i = _img(nom)

@@ -1,61 +1,52 @@
-# Le standard minimum
+# Le standard : CB-M01 « Le réseau en direct »
 
-`EXEMPLE-RES-01.mp4` est la référence à égaler ou dépasser pour les 49 autres
-vidéos. `montage-exemple.py` est le moteur qui l'a produite.
-Validé par Youssef le 03/10/2026 — en dessous de ce niveau, on ne livre pas.
+Référence : `../motion/CB-M01/video/CB-M01.mp4` (59,4 s), source dans `../motion/CB-M01/`.
+Validée par Youssef le 5 octobre 2026 : « c'est le niveau que j'accepte ». Une vidéo en
+dessous de ce niveau ne se livre pas. L'ancien exemple RES-01 et son script ont été
+retirés de ce dossier (ils restent dans l'historique git).
 
-## La règle du mockup : élargir le téléphone, jamais rogner le site
+## Ce qui fait le niveau
 
-C'est le point qui a demandé trois essais.
+**Le texte, d'abord.** Sous-titres en Inter Display Black, 96 à 104 px, centrés en haut
+(à partir de y = 292), deux ou trois lignes. Chaque mot apparaît au moment exact où il
+est prononcé (petit rebond), et un fond vert glisse sous le mot en cours (rouge pour les
+mots qui parlent de la marge de l'intermédiaire). Le mot que le fond quitte ne reprend sa
+couleur qu'une fois découvert : jamais de vert sur vert. Les mots-clés gardent leur
+couleur après coup. Le texte est toujours mesuré et dessiné par le même moteur : aucune
+position calculée avec une autre police.
 
-Les enregistrements d'écran n'ont pas tous le même rapport — de 0,515 pour ATHLA
-à 0,598 pour POLYRA. Avec un cadre de largeur fixe, le site est rogné sur les
-côtés : sur RES-01, « On ne pose pas un motif » s'affichait « n ne pose as un
-motif », et le prix du simulateur était coupé.
+**Une idée = une image qui bouge.** Pas de fiches empilées : des métaphores physiques.
+Dans CB-M01 : la marge du revendeur qui écrase la tienne dans une barre de prix ; un colis
+qui prend une étiquette « + marge » ; des ciseaux qui coupent l'intermédiaire ; un
+calendrier qui défile jusqu'à 14 ; des contacts éliminés un à un ; un interrupteur
+« Intermédiaire → Direct » ; « CHINA » tapé lettre par lettre au rythme de la voix.
 
-**Le cadre du téléphone s'adapte à la capture, pas l'inverse.** On extrait en
-`scale=-2:<hauteur>` **sans `crop`**, le montage lit la taille réelle des images
-et dessine le cadre autour. Un mockup large se lit très bien ; un site rogné, non.
+**Le rythme.** Un changement visible au moins toutes les secondes. Chaque mot important
+déclenche quelque chose : apparition avec rebond, tampon, secousse, éclair de couleur
+léger (10 %), confettis sur les moments de victoire. Transitions franches (coup de fouet
+avec flou de mouvement, zoom traversant, disque vert qui remplit l'écran), jamais de
+fondu mou.
 
-```python
-ECR = sorted((TRAV/"phone").glob("p*.png"))
-_e = Image.open(ECR[0]); ECR_W, ECR_H = _e.size; _e.close()
-...
-pw, phh = ECR_W, ECR_H          # jamais de valeur en dur
-px, py = (W-pw)//2, 520
-```
+**Le relief.** Cartes blanches arrondies avec ombre douce, produits détourés avec ombre au
+sol, vraie perspective 3D sur les entrées (`Espace`), flou de mouvement par sous-images
+sur les mouvements rapides (`rapide(t0, t1)`).
 
-## Les autres règles tenues par cet exemple
+**La charte.** Fond blanc à points discrets qui montent. Noir `#0B0F0D`, vert `#00B862`,
+rouge `#FF3B30` réservé à l'intermédiaire et à sa marge. Logo ChinaBook recoloré vert et
+noir (blanc sur fond vert). Un seul bandeau de marque discret en haut.
 
-**Zone de sécurité.** Marges latérales à 10 % (`MARGE = 108`), rien d'important
-sous 75 % de hauteur (`BAS_SUR = 1440`). Un fichier 9:16 n'est pas affiché en
-9:16 : les téléphones sont en 19,5:9, et Facebook agrandit de 22 % pour remplir
-la hauteur, donc il rogne 9 % de chaque côté.
+**Le son.** Voix à −16 LUFS ; ~180 bruitages synthétisés (whoosh, impact, pop, clic,
+verre, frappe…) posés dans `scenes.py` à côté de l'animation qu'ils accompagnent, et
+atténués automatiquement sous chaque mot. Pas de musique.
 
-**Durées en nombre d'images, jamais en secondes.** `-frames:v 82`, pas `-t 2.73`.
-La somme des plans égale la durée du MP3 à l'image près.
+**Le cadre.** Rien d'important sous 1 440 px, ni à moins de 70 px des bords. La première
+image est déjà forte (produit + premier mot visibles) : c'est la miniature. Le carton
+final tient 1,5 s après la voix (logo + bouton d'appel).
 
-**Calage sur les respirations réelles du MP3.**
-`ffmpeg -hide_banner -i voix.mp3 -af "silencedetect=noise=-30dB:d=0.12" -f null -`
-(avec `-v error` les filtres n'affichent rien). Les frontières de phrase se
-choisissent parmi ces pauses, pondérées par le nombre de syllabes.
+## Ce qu'on vérifie avant de livrer
 
-**Le mockup montre le site dont parle la voix**, et la queue d'enregistrement est
-retirée — voir `captures-communes/A-LIRE.md`.
-
-**Police** : Helvetica Neue index 9 (Condensed Black) pour les titres, index 10
-(Medium) pour le texte. L'index 2 est l'italique : piège déjà payé.
-
-**Logo** : `brand-DYOU-sigle.png`, le sigle seul détouré. Pas la vignette carrée.
-
-**Voix** : « D-YOU Agency » dans les scripts, sinon ElevenLabs le lit comme un mot.
-
-**Son** : voix à −16 LUFS, bruitages de `sons/` posés par `outils/mixer_sons.py`,
-limiteur à 0,95, pas de musique de fond.
-
-## Ce qui reste perfectible
-
-L'animation est sobre : fondus et translations. Il y a de la marge sans changer
-d'outil — typographie révélée mot à mot, courbes d'accélération plutôt que des
-fondus linéaires, flou de mouvement sur les entrées, masques qui suivent une
-forme, transitions qui portent le sens au lieu d'un simple whoosh.
+1. Des images extraites **du MP4 final** sur toute la durée (`outils/verifier.py`) :
+   espaces entre les mots, rien qui déborde d'un cadre, rien qui se chevauche, aucun mot
+   illisible pendant un glissement de surlignage.
+2. Volume intégré à −16 LUFS, crête sous −1 dBFS, durée = voix + carton final.
+3. Aucun chiffre inventé à l'écran.

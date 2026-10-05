@@ -15,9 +15,10 @@ somme, limiteur à 0,95. Pas de musique de fond.
 import json, pathlib, re, subprocess, sys, wave
 import numpy as np
 
-ICI = pathlib.Path(__file__).resolve().parent.parent
+MOTEUR = pathlib.Path(__file__).resolve().parent.parent   # sons/ fabriqués par sons.py
+ICI = pathlib.Path.cwd()                                   # le projet : sfx.json, media/voix.mp3
 SR = 48000
-DUREE = 59.4
+DUREE = 59.4          # remplacée par la durée de la vidéo quand on en donne une
 CIBLE_LUFS = -16.0
 
 
@@ -45,7 +46,7 @@ def bus(evenements):
     cache = {}
     for t, nom, gain in evenements:
         if nom not in cache:
-            cache[nom] = lire(ICI / "sons" / f"{nom}.wav")
+            cache[nom] = lire(MOTEUR / "sons" / f"{nom}.wav")
         s = cache[nom] * (10 ** (gain / 20))
         i = int(round(t * SR))
         x[i:i + len(s)] += s[: max(0, len(x) - i)]
@@ -53,6 +54,10 @@ def bus(evenements):
 
 
 def main():
+    global DUREE
+    if len(sys.argv) > 1:
+        DUREE = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", sys.argv[1]],
+                                     capture_output=True, text=True).stdout.strip())
     ev = json.loads((ICI / "sfx.json").read_text())
     print(len(ev), "bruitages,", len({e[1] for e in ev}), "sons différents")
     ecrire(ICI / "audio" / "bus.wav", bus(ev))
@@ -69,7 +74,7 @@ def main():
     print(f"voix +{g:.2f} dB ; mix {loudness(mix):.1f} LUFS → {mix.relative_to(ICI)}")
     if len(sys.argv) > 1:
         video = pathlib.Path(sys.argv[1])
-        sortie = ICI / "video" / "CB-M01.mp4"
+        sortie = ICI / "video" / f"{ICI.name}.mp4"
         sortie.parent.mkdir(exist_ok=True)
         subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(video), "-i", str(mix), "-map", "0:v:0", "-map", "1:a:0",
                         "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-ar", str(SR), "-t", str(DUREE),

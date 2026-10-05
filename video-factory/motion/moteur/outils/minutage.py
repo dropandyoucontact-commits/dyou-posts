@@ -7,7 +7,7 @@ SIL = subprocess.run(["ffmpeg","-hide_banner","-i","media/voix.mp3","-af",
       "silencedetect=noise=-32dB:d=0.10","-f","null","-"],capture_output=True,text=True).stderr
 starts=[float(x) for x in re.findall(r"silence_start: ([\d.]+)",SIL)]
 ends=[float(x) for x in re.findall(r"silence_end: ([\d.]+)",SIL)]
-DUREE=57.887
+DUREE=float(subprocess.run(["ffprobe","-v","error","-show_entries","format=duration","-of","csv=p=0","media/voix.mp3"],capture_output=True,text=True).stdout)
 # segments de parole = entre la fin d'un silence et le début du suivant
 seg=[]; t=ends[0] if starts and starts[0]<0.01 else 0.0
 for s,e in zip(starts[1:] if starts[0]<0.01 else starts, ends[1:] if starts[0]<0.01 else ends):

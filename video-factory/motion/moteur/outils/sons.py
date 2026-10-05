@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Synthétise les bruitages de CB-M01 dans ../sons/*.wav (48 kHz, mono, crête -1 dBFS).
+"""Synthétise les bruitages du moteur dans motion/moteur/sons/*.wav (48 kHz, mono, crête -1 dBFS).
 
 Rien n'est téléchargé : pas de licence à vérifier, et relancer le script refait
 exactement les mêmes sons (graine fixe). Les niveaux relatifs se règlent dans

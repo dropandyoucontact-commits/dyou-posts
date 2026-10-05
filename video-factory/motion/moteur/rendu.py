@@ -1,16 +1,17 @@
 #!/usr/bin/env python3
-"""Aperçus et rendu final.
+"""Aperçus et rendu final — à lancer depuis le dossier du projet (celui qui contient scenes.py).
 
-    python3 rendu.py apercu 0.5 3.2 9.8 …     → apercus/planche.jpg (et une image PNG par temps)
-    python3 rendu.py video                    → renders/image.mp4 (sans son), rendu sur 3 processus
+    cd video-factory/motion/CB-M01
+    python3 ../moteur/rendu.py apercu 0.5 3.2 9.8 …   → apercus/planche.jpg (et une image PNG par temps)
+    python3 ../moteur/rendu.py video                  → renders/image.mp4 (sans son), 3 processus
 """
-import sys, pathlib, subprocess, time
+import os, sys, pathlib, subprocess, time
+ICI = pathlib.Path.cwd()                      # le projet
+sys.path.insert(0, str(ICI))                  # (aussi pour les processus de rendu)
 from multiprocessing import Pool
 import numpy as np
 from PIL import Image, ImageDraw
 import moteur, scenes
-
-ICI = pathlib.Path(__file__).resolve().parent
 
 def apercu(temps):
     (ICI / "apercus").mkdir(exist_ok=True)

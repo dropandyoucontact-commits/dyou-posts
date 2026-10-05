@@ -3,14 +3,19 @@
 Chaque élément est calé sur un mot de la voix (TW(i) = début du mot i dans
 timing.json). dessine(c, t) peint l'image complète au temps t.
 """
-import json, math
+import json, math, pathlib, sys
 import numpy as np
 import skia
+
+P = pathlib.Path(__file__).resolve().parent          # ce projet
+sys.path.insert(0, str(P.parent / "moteur"))
+import moteur
+moteur.PROJET = P
 from moteur import *
 
-TIMING = json.loads((ICI / "timing.json").read_text())
+TIMING = json.loads((P / "timing.json").read_text())
 MOTS = TIMING["mots"]
-CHINE = json.loads((ICI / "chine.json").read_text())
+CHINE = json.loads((P / "chine.json").read_text())
 DUREE = 59.4
 NB_IMAGES = round(DUREE * FPS)
 

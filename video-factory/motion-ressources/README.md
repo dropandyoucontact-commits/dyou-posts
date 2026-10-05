@@ -10,7 +10,7 @@ d'outil ; « référence » = à lire ou copier à la main, pas à brancher.
 
 | Chaîne | Où elle tourne | Quand la prendre |
 |---|---|---|
-| **Moteur Python + Skia** (`video-factory/motion/CB-M01/moteur.py`) | Sur le Mac, ou n'importe quelle machine avec Python 3.9+ | Par défaut. Ce qu'on voit en aperçu est exactement ce qui sort : même code, même police, même mesure du texte. |
+| **Moteur Python + Skia** (`video-factory/motion/moteur/`) | Sur le Mac, ou n'importe quelle machine avec Python 3.9+ | Par défaut. Ce qu'on voit en aperçu est exactement ce qui sort : même code, même police, même mesure du texte. |
 | **Higgsedit** (CLI Higgsfield v0.14.0, build `f39e3bc5882b`) | Dans le bac à sable Higgsfield (connecteur MCP), jamais en local | Si l'on veut un projet éditable dans l'outil Higgsfield. Lire d'abord la section 4 : le rendu final peut différer des aperçus. |
 
 ## 2. Dépôts retenus
@@ -40,13 +40,17 @@ collections de prompts.
 
 ## 3. Utiliser le moteur Python + Skia
 
+Le moteur est dans `video-factory/motion/moteur/`, chaque vidéo dans `video-factory/motion/<ID>/`.
+La marche à suivre complète est dans `video-factory/motion/LISEZ-MOI.md` ; en bref :
+
 ```sh
 pip3 install --user skia-python numpy pillow scipy
-cd video-factory/motion/CB-M01
-python3 rendu.py apercu 0.5 4.2 12.0      # planche d'aperçus dans apercus/
-python3 rendu.py video                    # renders/image.mp4, 3 processus
-python3 outils/sons.py                    # 18 bruitages synthétisés (aucune licence)
-python3 outils/mixer.py renders/image.mp4 # mixage FFmpeg → video/CB-M01.mp4
+cd video-factory/motion/MON-ID
+python3 ../moteur/outils/voix.py              # script.txt → voix Tomy rapide + timing.json
+python3 ../moteur/rendu.py apercu 0.5 4.2 12  # planche d'aperçus
+python3 ../moteur/rendu.py video              # renders/image.mp4, 3 processus
+python3 ../moteur/outils/mixer.py renders/image.mp4
+python3 ../moteur/outils/verifier.py video/MON-ID.mp4 0 5 10 20 30
 ```
 
 Ce qui fait la qualité, à reprendre d'une vidéo à l'autre :
@@ -54,9 +58,10 @@ Ce qui fait la qualité, à reprendre d'une vidéo à l'autre :
 - **Texte** : toujours `texte()` / `largeur()` du moteur, qui mesurent et dessinent
   avec la même mise en page HarfBuzz. Jamais de position de mot calculée avec une
   autre police que celle qui dessine.
-- **Minutage** : `whisper-cli -ml 1 -sow -oj` donne un mot par segment ;
-  `outils/minutage.py` recale chaque phrase sur la fin du silence qui la précède
-  (whisper avance de 0,1 à 0,15 s en début de phrase).
+- **Minutage** : avec une voix générée par nous, `outils/voix.py` le reçoit
+  d'ElevenLabs (temps de chaque caractère). Avec une voix fournie, `whisper-cli -ml 1
+  -sow -oj` donne un mot par segment et `outils/minutage.py` recale chaque phrase sur la
+  fin du silence qui la précède (whisper avance de 0,1 à 0,15 s en début de phrase).
 - **Perspective** : `Espace(c, cx, cy, rx=, ry=, rz=, s=)` projette vraiment les
   quatre coins (pas un simple cisaillement).
 - **Flou de mouvement** : déclarer les fenêtres rapides avec `rapide(t0, t1)` ;
