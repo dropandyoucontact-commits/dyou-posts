@@ -25,7 +25,7 @@ vidéos. Le moteur cherche un média dans le projet (`media/`), puis `moteur/med
 | `photos/<catégorie>/` | Photos en situation (téléphone) |
 | `videos/<catégorie>/` | Vidéos de fournisseurs (téléphone, accélérées) |
 | `lieux/` | Lieux réels : devanture de Kimbo (Guangzhou), tour SEG Electronics (Shenzhen)… |
-| `logos/` | Logos d'applications (Simple Icons, CC0) : `wechat`, `alipay` |
+| `logos/` | Logos d'applications (Simple Icons, CC0) : `wechat`, `alipay`, `snapchat`, `whatsapp` |
 | `originaux/` | Photos d'origine avant détourage |
 
 ## Inventaire au 5 octobre 2026

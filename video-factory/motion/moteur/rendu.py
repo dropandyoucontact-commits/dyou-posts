@@ -31,6 +31,10 @@ def apercu(temps):
 def video(nproc=3):
     (ICI / "renders").mkdir(exist_ok=True)
     N = scenes.NB_IMAGES
+    # préchauffage : le processus principal extrait d'abord les images des vidéos de la banque,
+    # pour que les processus de rendu ne les extraient pas en même temps
+    for tt in np.arange(0.0, N / moteur.FPS, 0.4):
+        moteur.image_rgba(scenes.dessine, float(tt), 1)
     bornes = np.linspace(0, N, nproc * 2 + 1).astype(int)   # 6 segments répartis sur 3 processus
     taches = [("scenes", int(bornes[k]), int(bornes[k + 1]), str(ICI / "renders" / f"seg{k}.mp4")) for k in range(len(bornes) - 1)]
     t0 = time.time()

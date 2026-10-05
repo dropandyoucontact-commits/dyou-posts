@@ -72,3 +72,20 @@ Règle de départ, à ajuster selon les chiffres :
   temps ou pas les moyens d'aller en Chine ? Les fournisseurs que j'ai testés sont
   regroupés dans le ChinaBook. Écris-moi CHINA. »
 - **De temps en temps** : une vidéo entièrement ChinaBook, comme CB-M01.
+
+## Le persona et l'accroche (décision de Youssef, 05/10/2026)
+
+Youssef connaît son persona et ne le redéfinit plus : un **revendeur** (sneakers, textile, électronique…)
+qui trouve que sa marge est trop faible, qui passe par un intermédiaire (un Français installé en Chine),
+et qui craint de perdre du temps et des milliers d'euros à aller sourcer lui-même. Claude sait ce que ce
+revendeur veut entendre : ne pas redemander.
+
+**Accroche agressive, une idée, une phrase, dans les 3 premières secondes :**
+- le problème dit sans détour (« Tu ne marges pas assez sur tes sneakers ? Normal. Tu bosses pour un
+  Français installé en Chine ») ;
+- une première image réelle ou choquante (un rush de Youssef, une barre de marge qu'on mange) ;
+- la réponse en 2 phrases (ChinaBook = les numéros directs), puis le process, puis l'appel à l'action.
+
+Modèle : `motion/CB-M03` (27,5 s). La structure qui marche : accroche → cause → preuve (« j'y étais »)
+→ solution → process (WeChat, Alipay, transitaire) → liberté (détail, unité, gros, à la commande, depuis
+la Thaïlande) → « sans y aller, sans perdre des milliers d'euros ni du temps » → « Envoie-moi CHINA ».

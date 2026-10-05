@@ -27,8 +27,8 @@ moments (début de scène, sortie d'une carte) la moitié de l'écran était bla
 le sous-titre bougeait. Règle : chaque phrase a son visuel **dès son premier mot** ; une
 scène entre avant que la précédente ne sorte (chevauchement de 0,2 s) ; la zone entre les
 sous-titres et y = 1 440 ne reste jamais sans objet plus de 0,3 s ; le visuel d'une phrase
-occupe au moins la moitié de cette zone. On le vérifie sur des images **tirées du MP4
-final**, une toutes les 0,4 s, en cherchant les plans trop blancs.
+occupe au moins la moitié de cette zone. On le vérifie avec `motion/moteur/outils/vide.py` (rend une image tous les 0,1 s et cherche la plus grande
+bande vide de la zone centrale ; seuil 300 px) et sur des images **tirées du MP4 final**.
 
 **Le rythme.** Un changement visible au moins toutes les secondes. Chaque mot important
 déclenche quelque chose : apparition avec rebond, tampon, secousse, éclair de couleur

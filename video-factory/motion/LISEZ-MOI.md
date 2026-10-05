@@ -10,7 +10,7 @@ python3 moteur/outils/sons.py                 # 18 bruitages synthétisés dans 
 
 # 1. le dossier de la vidéo
 mkdir -p MON-ID/media && cd MON-ID
-cp ../CB-M02/scenes.py .                       # mécanique de départ (kit.py) ; son discours est refusé
+cp ../CB-M03/scenes.py .                       # point de départ : le plus complet (voir motion/CB-M03)
 #    écrire script.txt (la voix exacte), déposer les produits détourés dans media/
 
 # 2. la voix (ElevenLabs, Tomy) et le temps de chaque mot
@@ -46,3 +46,20 @@ flou de mouvement.
 Voix fournie au lieu d'être générée : la déposer en `media/voix.mp3`, la transcrire avec
 whisper.cpp (`whisper-cli -ml 1 -sow -oj …`, voir `CB-M01/LISEZ-MOI.md`), puis
 `python3 ../moteur/outils/minutage.py`.
+
+## Composants prêts (moteur/kit.py)
+
+| Besoin | Composant |
+|---|---|
+| Sous-titres karaoké | `SousTitres` |
+| Téléphone en 3D, photo ou vidéo de la banque dedans | `telephone` + `Espace`, `image_cover`, `video` (rogne un sous-titre incrusté) |
+| Conversation WeChat qui défile, paiement Alipay (QR → « Paiement réussi ») | `ecran_wechat`, `ecran_alipay` |
+| Compte Snapchat (stories + chats) | `ecran_snap`, `logo_app("snapchat")` |
+| App ChinaBook : contacts directs avec bouton WeChat | `ecran_contacts` |
+| Globe en points, arcs de colis ou de messages, épingles avec drapeau | `Globe` (`terres`, `arc`, `repere`) |
+| Basket et colis dessinés, drapeaux FR / CN / TH | `sneaker`, `carton`, `drapeau` |
+| Tampons, pastilles, confettis, ondes | `tampon`, `pastille_rot`, `confettis`, `onde`, `etincelles` |
+| « CHINA » tapé puis carton final WhatsApp | `cta_whatsapp` |
+
+Vérifications avant de livrer : `outils/vide.py` (pas de bande vide de plus de 300 px au centre),
+`outils/verifier.py` (images extraites **du MP4 final**).

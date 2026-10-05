@@ -140,6 +140,16 @@ def tous():
     tt = np.linspace(0, 1, n)
     mont = mont * tt ** 2.2 + 0.25 * np.sin(2 * np.pi * np.cumsum(220 * 4 ** tt) / SR) * tt ** 2
     s["montee"] = fondu(normal(mont))
+    # ajoutés le 05/10/2026 (CB-M03) : après les autres, donc sans changer leur tirage aléatoire
+    n = int(0.16 * SR)
+    croc = bande(rng.standard_normal(n), 250, 1900) * env(n, 0.001, 0.03) * 0.9
+    corps = np.sin(2 * np.pi * np.cumsum(130 * np.exp(-t_(0.16) / 0.05) + 70) / SR) * env(n, 0.002, 0.045)
+    s["croc"] = fondu(normal(croc + corps * 0.8))
+    cl = np.concatenate([note([2637, 5274], 0.07, 0.05, 0.001, [1, 0.3]), np.zeros(int(0.045 * SR)), note([3520, 7040], 0.7, 0.2, 0.001, [1, 0.35])])
+    tic = passe_haut(rng.standard_normal(int(0.03 * SR)), 3500) * env(int(0.03 * SR), 0.0003, 0.004)
+    cl[: len(tic)] += normal(tic) * 0.5
+    s["ching"] = fondu(normal(cl))
+    s["ding"] = fondu(normal(np.concatenate([note([1760, 3520], 0.06, 0.04, 0.001, [1, 0.25]), note([2349, 4698], 0.3, 0.1, 0.001, [1, 0.25])])))
     for k, v in s.items():
         ecrire(k, v)
     return s

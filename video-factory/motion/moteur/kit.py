@@ -251,15 +251,15 @@ class SousTitres:
 
 
 # ─────────────────────────────────────────── logos d'applications (Simple Icons, CC0)
-MARQUES = {"wechat": "#07C160", "alipay": "#1677FF"}
+MARQUES = {"wechat": "#07C160", "alipay": "#1677FF", "snapchat": "#FFFC00", "whatsapp": "#25D366"}
 _LOGO_DATA = []
 
 
-def _logo_dom(nom, couleur):
-    import functools
-    cle = (nom, couleur)
+def _logo_dom(nom, couleur, contour=None):
+    cle = (nom, couleur, contour)
     if cle not in _logo_dom.cache:
-        src = (moteur.BANQUE / "logos" / f"{nom}.svg").read_text().replace("<path ", f'<path fill="{couleur}" ')
+        trait_ = f' stroke="{contour}" stroke-width="0.9" stroke-linejoin="round"' if contour else ""
+        src = (moteur.BANQUE / "logos" / f"{nom}.svg").read_text().replace("<path ", f'<path fill="{couleur}"{trait_} ')
         data = skia.Data.MakeWithCopy(src.encode()); _LOGO_DATA.append(data)
         dom = skia.SVGDOM.MakeFromStream(skia.MemoryStream(data)); dom.setContainerSize(skia.Size(24, 24))
         _logo_dom.cache[cle] = dom
@@ -267,8 +267,8 @@ def _logo_dom(nom, couleur):
 _logo_dom.cache = {}
 
 
-def logo_glyphe(c, nom, cx, cy, taille, couleur=None, alpha=1.0):
-    dom = _logo_dom(nom, couleur or MARQUES.get(nom, C["ink"]))
+def logo_glyphe(c, nom, cx, cy, taille, couleur=None, alpha=1.0, contour=None):
+    dom = _logo_dom(nom, couleur or MARQUES.get(nom, C["ink"]), contour)
     c.save()
     if alpha < 1: c.saveLayerAlpha(skia.Rect.MakeXYWH(cx - taille, cy - taille, 2 * taille, 2 * taille), int(255 * borne(alpha)))
     c.translate(cx - taille / 2, cy - taille / 2); c.scale(taille / 24, taille / 24); dom.render(c)
@@ -279,7 +279,10 @@ def logo_glyphe(c, nom, cx, cy, taille, couleur=None, alpha=1.0):
 def logo_app(c, nom, cx, cy, taille, alpha=1.0, ombre=(10, 26, 0.18)):
     """icône d'application : carré arrondi à la couleur de la marque, glyphe blanc"""
     rrect(c, cx - taille / 2, cy - taille / 2, taille, taille, taille * 0.24, MARQUES[nom], alpha, ombre)
-    logo_glyphe(c, nom, cx, cy, taille * 0.62, C["blanc"], alpha)
+    if nom == "snapchat":
+        logo_glyphe(c, nom, cx, cy, taille * 0.66, C["blanc"], alpha, "#0B0F0D")
+    else:
+        logo_glyphe(c, nom, cx, cy, taille * 0.62, C["blanc"], alpha)
 
 
 # ─────────────────────────────────────────── écran WeChat
@@ -336,7 +339,10 @@ def _wx_mesure(m, wmax):
     """taille (w, h) du contenu d'un message"""
     if m["type"] == "texte":
         lignes = m["texte"].split("\n")
-        return max(largeur(l, 30, "moyen", 0) for l in lignes) + 44, len(lignes) * 40 + 32
+        tl = 30
+        while tl > 18 and max(largeur(l, tl, "moyen", 0) for l in lignes) + 44 > wmax: tl -= 1
+        m["_taille"] = tl
+        return max(largeur(l, tl, "moyen", 0) for l in lignes) + 44, len(lignes) * int(tl * 1.33) + 32
     if m["type"] == "image": return 300, 300
     if m["type"] == "video": return 250, 420
     if m["type"] == "qr": return min(wmax, 310), 420
@@ -373,8 +379,9 @@ def ecran_wechat(c, x, y, w, h, t, titre, messages):
             icone(c, "store" if not moi else "user", ax + 36, yy + 36, 40, C["blanc"] if not moi else "#2E7D52", 2.2)
             if m["type"] == "texte":
                 _wx_bulle(c, m, xb, yy, mw, mh, moi)
+                tl = m.get("_taille", 30)
                 for n, l in enumerate(m["texte"].split("\n")):
-                    texte(c, l, xb + 22, yy + 16 + n * 40, 30, WX["texte"], "moyen", track=0)
+                    texte(c, l, xb + 22, yy + 16 + n * int(tl * 1.33), tl, WX["texte"], "moyen", track=0)
             elif m["type"] == "image":
                 c.save(); c.clipRRect(skia.RRect.MakeRectXY(skia.Rect.MakeXYWH(xb, yy, mw, mh), 12, 12), doAntiAlias=True)
                 c.drawRect(skia.Rect.MakeXYWH(xb, yy, mw, mh), peinture(C["blanc"]))
@@ -435,3 +442,311 @@ def ecran_alipay(c, x, y, w, h, t, t_scan, t_paye, marchand="Fournisseur"):
         c.restore()
         texte_centre(c, "Paiement réussi", cx, y + 740, 40, C["ink"], "noir", borne(ok * 2))
         texte_centre(c, "Le fournisseur expédie chez ton transitaire", cx, y + 800, 24, C["gris"], "fort", borne(ok * 2))
+
+
+# ─────────────────────────────────────────── globe en points
+import numpy as _np
+
+
+class Globe:
+    """globe terrestre en points (terres émergées), projection orthographique, arcs et repères.
+    Centré sur (lon0, lat0) en degrés ; rayon R en pixels. Étiquettes de points : 0 terre,
+    1 Chine, 2 Thaïlande, 3 France, 4 reste de l'Europe (voir outils/monde_points.py)."""
+
+    COUL = {0: "#B2D3C1", 1: C["vert"], 2: C["ink"], 3: "#8E9893", 4: "#A6CDB5"}
+    TAILLE = {0: 6.6, 1: 8.2, 2: 11.0, 3: 9.0, 4: 6.6}
+
+    def __init__(self):
+        d = json.loads((moteur.ICI / "media" / "monde-points.json").read_text())
+        lon, lat = _np.radians(_np.array(d["lon"])), _np.radians(_np.array(d["lat"]))
+        self.xyz = _np.stack([_np.cos(lat) * _np.sin(lon), _np.sin(lat), _np.cos(lat) * _np.cos(lon)], axis=1)
+        self.tag = _np.array(d["tag"])
+
+    @staticmethod
+    def vec(lon, lat):
+        lo, la = math.radians(lon), math.radians(lat)
+        return _np.array([math.cos(la) * math.sin(lo), math.sin(la), math.cos(la) * math.cos(lo)])
+
+    @staticmethod
+    def rot(lon0, lat0):
+        l0, f0 = math.radians(lon0), math.radians(lat0)
+        cy, sy = math.cos(-l0), math.sin(-l0)
+        ry = _np.array([[cy, 0, sy], [0, 1, 0], [-sy, 0, cy]])
+        cx, sx = math.cos(f0), math.sin(f0)
+        rx = _np.array([[1, 0, 0], [0, cx, -sx], [0, sx, cx]])
+        return rx @ ry
+
+    def pos(self, lon, lat, lon0, lat0, R, cx, cy, lift=0.0):
+        """position écran (x, y), profondeur z (> 0 : face visible)"""
+        v = self.rot(lon0, lat0) @ (self.vec(lon, lat) * (1 + lift))
+        return cx + R * v[0], cy - R * v[1], v[2]
+
+    def disque(self, c, cx, cy, R, alpha=1.0):
+        """la sphère : ombre au sol, dégradé doux, contour fin"""
+        with Calque(c, alpha):
+            ombre_sol(c, cx, cy + R * 1.06, R * 0.78, R * 0.09, 0.14)
+            p = skia.Paint(AntiAlias=True)
+            p.setShader(skia.GradientShader.MakeRadial(skia.Point(cx - R * 0.3, cy - R * 0.35), R * 1.5,
+                                                       [hexa("#FFFFFF"), hexa("#EAF3EE")], [0.0, 1.0]))
+            c.drawCircle(cx, cy, R, p)
+            anneau(c, cx, cy, R, "#D5E5DB", 3)
+
+    def terres(self, c, cx, cy, R, lon0, lat0, alpha=1.0, couleurs=None, grossir=None):
+        """les points de terre ; couleurs / grossir : dicts {étiquette: couleur | facteur de taille}"""
+        v = self.xyz @ self.rot(lon0, lat0).T
+        vis = v[:, 2] > 0.03
+        X, Y, Z, T = cx + R * v[vis, 0], cy - R * v[vis, 1], v[vis, 2], self.tag[vis]
+        coul = {**self.COUL, **(couleurs or {})}
+        for tg in sorted(set(T.tolist())):
+            m = T == tg
+            for lo, hi, a_ in ((0.03, 0.30, 0.35), (0.30, 0.62, 0.7), (0.62, 1.01, 1.0)):
+                mm = m & (Z >= lo) & (Z < hi)
+                if not mm.any(): continue
+                taille = self.TAILLE[tg] * (grossir or {}).get(tg, 1.0) * (0.55 + 0.45 * (lo + hi) / 2)
+                pnt = [skia.Point(float(a), float(b)) for a, b in zip(X[mm], Y[mm])]
+                pa = skia.Paint(AntiAlias=True, Color=hexa(coul[tg], a_ * alpha), StrokeWidth=taille,
+                                Style=skia.Paint.kStroke_Style); pa.setStrokeCap(skia.Paint.kRound_Cap)
+                c.drawPoints(skia.Canvas.kPoints_PointMode, pnt, pa)
+
+    def trace(self, p1, p2, progres=1.0, hauteur=0.32, n=72):
+        """points 3D (lon, lat en degrés) d'un arc de grand cercle surélevé, jusqu'à `progres`"""
+        a, b = self.vec(*p1), self.vec(*p2)
+        om = math.acos(max(-1.0, min(1.0, float(a @ b))))
+        ts = _np.linspace(0, borne(progres), max(2, int(n * max(progres, 0.05))))
+        pts = [(math.sin((1 - t) * om) * a + math.sin(t * om) * b) / max(math.sin(om), 1e-6) * (1 + hauteur * math.sin(math.pi * t)) for t in ts]
+        return _np.array(pts)
+
+    def arc(self, c, p1, p2, cx, cy, R, lon0, lat0, progres=1.0, couleur=C["vert"], ep=7, hauteur=0.32, pointille=None, alpha=1.0):
+        """dessine l'arc ; renvoie la position écran (x, y, z) de sa tête"""
+        pts = self.trace(p1, p2, progres, hauteur) @ self.rot(lon0, lat0).T
+        X, Y, Z = cx + R * pts[:, 0], cy - R * pts[:, 1], pts[:, 2]
+        vis = (Z > -0.02) | (pts[:, 0] ** 2 + pts[:, 1] ** 2 > 1.0)
+        pa = peinture(couleur, alpha, Style=skia.Paint.kStroke_Style, StrokeWidth=ep); pa.setStrokeCap(skia.Paint.kRound_Cap)
+        if pointille: pa.setPathEffect(skia.DashPathEffect.Make(pointille, 0))
+        path, prec = skia.Path(), False
+        for x, y, ok in zip(X, Y, vis):
+            if ok: (path.lineTo if prec else path.moveTo)(float(x), float(y)); prec = True
+            else: prec = False
+        c.drawPath(path, pa)
+        return float(X[-1]), float(Y[-1]), float(Z[-1])
+
+    def repere(self, c, lon, lat, cx, cy, R, lon0, lat0, etiquette, couleur=C["ink"], drapeau_=None, u=1.0, alpha=1.0, haut=70):
+        """épingle plantée au point (lon, lat) avec une étiquette ; u = progression d'apparition"""
+        x, y, z = self.pos(lon, lat, lon0, lat0, R, cx, cy)
+        if z < 0.05 or u <= 0: return None
+        with Calque(c, alpha * borne(u * 2) * borne((z - 0.05) * 6)):
+            disque(c, x, y, 9, couleur)
+            trait(c, x, y, x, y - haut * u, couleur, 4)
+            c.save(); c.translate(x, y - haut * u); c.scale(mix(0.3, 1, u), mix(0.3, 1, u))
+            w, h = pastille(c, etiquette, 0, -36, 32, couleur, C["blanc"], None, 1.0, (10, 26, 0.2))
+            if drapeau_:
+                drapeau(c, drapeau_, -w / 2 - 62, -54, 50, 34, 5)
+            c.restore()
+        return x, y, z
+
+
+# ─────────────────────────────────────────── écran Snapchat
+def _cercle_image(c, nom, cx, cy, r, zoom=1.2, fx=0.5, fy=0.5):
+    image_cover(c, nom, cx - r, cy - r, 2 * r, 2 * r, zoom=zoom, fx=fx, fy=fy, rayon=r)
+
+
+def anneau_story(c, cx, cy, r, alpha=1.0, vu=False):
+    if vu:
+        anneau(c, cx, cy, r + 6, "#D5D9D7", 4, alpha); return
+    pa = skia.Paint(AntiAlias=True, Style=skia.Paint.kStroke_Style, StrokeWidth=5, Alpha=int(255 * alpha))
+    pa.setShader(skia.GradientShader.MakeLinear([skia.Point(cx - r, cy - r), skia.Point(cx + r, cy + r)],
+                                                [hexa("#A855F7"), hexa("#EC4899"), hexa("#F59E0B")], [0.0, 0.6, 1.0]))
+    c.drawCircle(cx, cy, r + 6, pa)
+
+
+def ecran_snap(c, x, y, w, h, t, stories, chats, t_nav=0.0):
+    """compte Snapchat : en-tête, ligne de stories (photos de produits), conversations qui arrivent.
+    stories : [(image, légende, t_apparition)] ; chats : [dict(nom, texte, t, couleur, statut)]"""
+    c.drawRect(skia.Rect.MakeXYWH(x, y, w, h), peinture(C["blanc"]))
+    # en-tête
+    disque(c, x + 62, y + 96, 30, "#F5D0A9"); disque(c, x + 62, y + 90, 14, "#FFFFFF", 0.0)
+    icone(c, "smile", x + 62, y + 96, 36, "#5B3A1E", 2.2)
+    disque(c, x + 134, y + 96, 28, C["fondDoux"]); icone(c, "search", x + 134, y + 96, 28, C["ink"], 2.4)
+    texte_centre(c, "Chat", x + w / 2, y + 96, 34, C["ink"], "noir", track=0)
+    disque(c, x + w - 124, y + 96, 28, C["fondDoux"]); icone(c, "users", x + w - 124, y + 96, 28, C["ink"], 2.4)
+    disque(c, x + w - 62, y + 96, 28, C["fondDoux"]); icone(c, "circle-plus", x + w - 62, y + 96, 28, C["ink"], 2.4)
+    # stories
+    pas = (w - 40) / 4.2
+    for k, (img, leg, ts) in enumerate(stories):
+        if t < ts - 0.02: continue
+        u = prog(t, ts, 0.34, lambda v: rebond(v, 2.0))
+        cx_, cy_ = x + 20 + pas * (k + 0.5), y + 240
+        c.save(); c.translate(cx_, cy_); c.scale(mix(0.3, 1, u), mix(0.3, 1, u)); c.translate(-cx_, -cy_)
+        with Calque(c, borne(u * 2)):
+            anneau_story(c, cx_, cy_, 48)
+            _cercle_image(c, img, cx_, cy_, 48, 1.25, 0.5, 0.5)
+            texte_centre(c, leg, cx_, cy_ + 78, 20, C["gris"], "fort", track=0)
+        c.restore()
+    trait(c, x + 20, y + 350, x + w - 20, y + 350, C["ligne"], 2, rond=False)
+    # conversations
+    ya = y + 366
+    for k, m in enumerate(chats):
+        if t < m["t"] - 0.02: continue
+        u = prog(t, m["t"], 0.32, lambda v: rebond(v, 1.7))
+        yy = ya + k * 112
+        c.save(); c.translate(0, 40 * (1 - u))
+        with Calque(c, borne(u * 2)):
+            disque(c, x + 70, yy + 48, 36, m["couleur"])
+            texte_centre(c, m["nom"][0], x + 70, yy + 48, 32, C["blanc"], "noir", track=0)
+            texte(c, m["nom"], x + 124, yy + 14, 28, C["ink"], "noir", track=0)
+            rrect(c, x + 124, yy + 58, 15, 15, 4, m.get("statut", "#EF4444"))
+            texte(c, m["texte"], x + 148, yy + 54, 22, C["gris"], "demi", track=0)
+            texte(c, "maintenant", x + w - 22, yy + 18, 19, C["grisClair"], "fort", "droite", 0)
+            if m.get("badge"):
+                disque(c, x + w - 36, yy + 78, 14, "#EF4444"); texte_centre(c, str(m["badge"]), x + w - 36, yy + 78, 18, C["blanc"], "noir", track=0)
+        c.restore()
+    # barre de navigation
+    yb = y + h - 112
+    c.drawRect(skia.Rect.MakeXYWH(x, yb, w, 112), peinture(C["blanc"]))
+    trait(c, x, yb, x + w, yb, C["ligne"], 2, rond=False)
+    for k, ic in enumerate(["map-pin", "message-square", "camera", "users", "play"]):
+        cx_ = x + w * (k + 0.5) / 5
+        if ic == "message-square":
+            icone(c, ic, cx_, yb + 50, 40, "#3B82F6", 2.6)
+            n = sum(1 for m in chats if t >= m["t"])
+            if n: disque(c, cx_ + 22, yb + 26, 14, "#EF4444"); texte_centre(c, str(n), cx_ + 22, yb + 26, 18, C["blanc"], "noir", track=0)
+        else:
+            icone(c, ic, cx_, yb + 50, 38, C["ink"] if ic != "camera" else "#111111", 2.2)
+
+
+# ─────────────────────────────────────────── écran ChinaBook : contacts directs
+def ecran_contacts(c, x, y, w, h, t, lignes, t_titre=0.0):
+    """app ChinaBook : fournisseurs validés avec bouton WeChat. lignes : dicts
+    {t, image, zoom, nom, ville, produit_png (facultatif)}"""
+    c.drawRect(skia.Rect.MakeXYWH(x, y, w, h), peinture(C["blanc"]))
+    c.drawRect(skia.Rect.MakeXYWH(x, y, w, 170), peinture(C["vert"]))
+    texte(c, "9:41", x + 40, y + 24, 24, C["blanc"], "fort", track=0)
+    image(c, "logo-tout-blanc", x + 36, y + 92, 230)
+    texte(c, "Contacts directs", x + 36, y + 192, 40)
+    texte(c, "Validés · Guangzhou · Shenzhen", x + 36, y + 244, 22, C["gris"], "demi", track=0)
+    for k, m in enumerate(lignes):
+        if t < m["t"] - 0.02: continue
+        u = prog(t, m["t"], 0.34, sortie)
+        yy = y + 296 + k * 168
+        on = prog(t, m["t"] + 0.3, 0.3, lambda v: rebond(v, 2.0))
+        with Calque(c, u):
+            xx = x + 22 + 150 * (1 - u)
+            rrect(c, xx, yy, w - 44, 150, 28, C["fondDoux"])
+            _cercle_image(c, m["image"], xx + 76, yy + 75, 52, m.get("zoom", 1.3), m.get("fx", 0.5), m.get("fy", 0.5))
+            texte(c, m["nom"], xx + 150, yy + 22, ajuste(m["nom"], w - 44 - 150 - 96, 36), C["ink"], "noir", track=0)
+            texte(c, "Fournisseur · " + m["ville"], xx + 150, yy + 66, ajuste("Fournisseur · " + m["ville"], w - 44 - 150 - 96, 21), C["gris"], "demi", track=0)
+            rrect(c, xx + 150, yy + 100, 128, 32, 16, C["vertDoux"])
+            icone(c, "badge-check", xx + 172, yy + 116, 22, C["vertFonce"], 2.6)
+            texte(c, "Validé", xx + 192, yy + 105, 20, C["vertFonce"], "fort", track=0)
+            c.save(); c.translate(xx + w - 44 - 56, yy + 75); c.scale(on, on)
+            disque(c, 0, 0, 40, MARQUES["wechat"], 1.0, (8, 20, 0.2)); logo_glyphe(c, "wechat", 0, 0, 44, C["blanc"])
+            c.restore()
+
+
+# ─────────────────────────────────────────── appel à l'action : « CHINA » sur WhatsApp, puis carton final
+def cta_whatsapp(c, t, t0, TL, t_envoi, t_fin, duree, legende_fin="Ton accès direct à la Chine."):
+    """fenêtre de conversation ChinaBook où « CHINA » se tape lettre par lettre (temps TL) puis part
+    (t_envoi) ; à t_fin tout bascule sur le carton final (logo + bouton WhatsApp). Les sous-titres
+    restent à l'appelant."""
+    if t < t0: return
+    part = prog(t, t_fin, 0.32, entree)
+    if part < 1:
+        u = prog(t, t0, 0.36, lambda v: rebond(v, 1.4))
+        x, y, w, h = 90, 650, 900, 660
+        c.save(); c.translate(540, y + h / 2 + 900 * part); s_ = mix(0.6, 1, u); c.scale(s_, s_); c.translate(-540, -(y + h / 2))
+        with Calque(c, borne(u * 2) * (1 - part)):
+            carte(c, x, y, w, h, 46, "#EEF3F0", 1.0, (24, 56, 0.14))
+            c.save(); c.clipRRect(skia.RRect.MakeRectXY(skia.Rect.MakeXYWH(x, y, w, h), 46, 46), doAntiAlias=True)
+            c.drawRect(skia.Rect.MakeXYWH(x, y, w, 130), peinture(MARQUES["whatsapp"]))
+            c.restore()
+            disque(c, x + 80, y + 65, 42, C["blanc"]); image(c, "logo-marque", x + 80 - 24, y + 65 - 25, 48)
+            texte(c, "ChinaBook", x + 140, y + 30, 38, C["blanc"])
+            texte(c, "en ligne", x + 140, y + 78, 26, "#DDF7E8", "demi")
+            if t >= t_envoi:
+                ub = prog(t, t_envoi, 0.34, sortie)
+                bw = largeur("CHINA", 64) + 100
+                bx, by = x + w - 30 - bw, mix(y + h - 120, y + 300, ub)
+                rrect(c, bx, by, bw, 124, 40, "#D9FDD3", ub, (12, 30, 0.2))
+                texte_centre(c, "CHINA", bx + bw / 2 - 12, by + 62, 64, C["ink"], alpha=ub)
+                icone(c, "check", bx + bw - 38, by + 92, 28, "#34B7F1", 3, ub)
+            iy = y + h - 110
+            rrect(c, x + 24, iy, w - 150, 86, 43, C["blanc"])
+            if t < TL[0]:
+                texte(c, "Message", x + 64, iy + (86 - hauteurLigne(38, "moyen")) / 2, 38, C["grisClair"], "moyen")
+            elif t < t_envoi + 0.04:
+                xl = x + 64
+                for k, l in enumerate("CHINA"):
+                    if t >= TL[k]:
+                        uu = prog(t, TL[k], 0.12, sortie)
+                        texte(c, l, xl, iy + (86 - hauteurLigne(48)) / 2 - 10 * (1 - uu), 48, C["ink"], alpha=uu)
+                        xl += largeur(l, 48)
+                if int(t * 4) % 2 == 0: rrect(c, xl + 4, iy + 22, 4, 42, 2, MARQUES["whatsapp"])
+            sb = battement(t, t_envoi - 0.04, -0.18, 0.25)
+            c.save(); c.translate(x + w - 70, iy + 43); c.scale(sb, sb)
+            disque(c, 0, 0, 46, MARQUES["whatsapp"], 1.0, (8, 20, 0.2)); icone(c, "send", -3, 2, 44, C["blanc"], 2.4)
+            c.restore()
+        c.restore()
+    if t >= t_fin + 0.05:
+        u = prog(t, t_fin + 0.05, 0.4, sortie)
+        disque(c, 540, 1060, 420 * u * (1 + 0.02 * math.sin(t * 3)), C["vertDoux"])
+        ul = prog(t, t_fin + 0.12, 0.36, lambda v: rebond(v, 1.6))
+        lw = 760 * mix(0.6, 1, ul)
+        iw_, ih_ = taille_img("logo"); lh = lw * ih_ / iw_
+        image(c, "logo", 540 - lw / 2, 960 - lh / 2, lw, borne(ul * 2))
+        ub = prog(t, t_fin + 0.36, 0.36, lambda v: rebond(v, 1.8))
+        etincelles(c, 540, 1170, t, t_fin + 0.5, 12, 380)
+        if ub > 0:
+            s = mix(0.4, 1, ub) * (1 + 0.035 * max(0, math.sin((t - t_fin - 0.8) * 5)) if t > t_fin + 0.8 else 1)
+            lab = "Envoie « CHINA » sur WhatsApp"
+            tw = largeur(lab, 40); wb, hb = tw + 150, 116
+            c.save(); c.translate(540, 1170); c.scale(s, s)
+            with Calque(c, borne(ub * 2)):
+                rrect(c, -wb / 2, -hb / 2, wb, hb, hb / 2, MARQUES["whatsapp"], 1.0, (18, 46, 0.3))
+                logo_glyphe(c, "whatsapp", -wb / 2 + 70, 0, 56, C["blanc"])
+                texte_centre(c, lab, -wb / 2 + 118 + tw / 2, 0, 40, C["blanc"])
+            c.restore()
+
+
+# ─────────────────────────────────────────── illustrations dessinées (sans photo, sans marque)
+_SNEAKER = chemin_svg("M 8 44 L 7 21 C 7 11 13 6 21 6 L 32 6 L 37 1 L 47 2 L 50 9 C 58 17 62 20 71 23 C 84 26 94 32 97 42 L 97 44 Z")
+_SNEAKER_BANDE = chemin_svg("M 17 38 C 24 26 38 20 52 24 C 60 27 66 31 74 33 L 70 38 C 62 35 56 32 50 30 C 40 27 31 32 25 41 Z")
+_SNEAKER_BOUT = chemin_svg("M 78 27 C 88 29 95 34 97 42 L 97 44 L 80 44 C 82 38 82 32 78 27 Z")
+
+
+def sneaker(c, cx, cy, w, haut=C["ink"], accent=C["vert"], semelle=C["blanc"], alpha=1.0, rot=0.0):
+    """basket de profil, style aplat : empeigne, bande de couleur, bout renforcé, lacets, semelle (largeur w)"""
+    k = w / 100.0
+    c.save(); c.translate(cx, cy); c.rotate(rot); c.scale(k, k); c.translate(-50, -28)
+    with Calque(c, alpha):
+        c.drawPath(_SNEAKER, peinture(haut))
+        c.drawPath(_SNEAKER_BOUT, peinture("#FFFFFF", 0.20))
+        c.drawPath(_SNEAKER_BANDE, peinture(accent))
+        for q in range(4):
+            u = q / 3
+            x0, y0 = 49.5 + u * 12.5, 10 + u * 8.5
+            c.drawLine(x0, y0 + 2.5, x0 + 5.5, y0 - 3.5, peinture(C["blanc"], 1, Style=skia.Paint.kStroke_Style, StrokeWidth=2.6))
+        c.drawLine(8, 24, 8, 36, peinture(accent, 1, Style=skia.Paint.kStroke_Style, StrokeWidth=3.6))
+        rrect(c, 3, 41, 95, 13, 6.5, semelle, 1.0, None, C["ink"], 2.6)
+        for q in range(9):
+            trait(c, 14 + q * 8.6, 51.5, 17 + q * 8.6, 51.5, "#C5D0CA", 2.4)
+    c.restore()
+
+
+def carton(c, cx, cy, w, marge=0.0, alpha=1.0, rot=0.0, etiquette="↑"):
+    """colis en carton : corps kraft, ruban, étiquette ; marge > 0 ajoute la bande rouge « + marge »"""
+    h = w * 0.78
+    c.save(); c.translate(cx, cy); c.rotate(rot)
+    with Calque(c, alpha):
+        rrect(c, -w / 2, -h / 2, w, h, w * 0.06, "#DDB98D", 1.0, (w * 0.08, w * 0.2, 0.22), "#B98B5E", max(2, w * 0.018))
+        rrect(c, -w * 0.07, -h / 2, w * 0.14, h, 0, "#EBD3AE")
+        trait(c, -w / 2 + 6, -h / 2 + h * 0.2, w / 2 - 6, -h / 2 + h * 0.2, "#B98B5E", max(2, w * 0.014), rond=False)
+        rrect(c, w * 0.12, -h * 0.02, w * 0.28, h * 0.30, w * 0.02, C["blanc"])
+        icone(c, "package", w * 0.26, h * 0.13, w * 0.16, C["ink"], 2.2)
+        if marge > 0:
+            m = borne(marge)
+            c.save(); c.clipRRect(skia.RRect.MakeRectXY(skia.Rect.MakeXYWH(-w / 2, -h / 2, w, h), w * 0.06, w * 0.06), doAntiAlias=True)
+            rrect(c, -w / 2, h * 0.26 + h * 0.24 * (1 - m), w, h * 0.24, 0, C["rouge"], m)
+            c.restore()
+            if m > 0.6:
+                texte_centre(c, "+ MARGE", 0, h * 0.38 + h * 0.24 * (1 - m), w * 0.15, C["blanc"], "noir", borne((m - 0.6) * 4))
+    c.restore()

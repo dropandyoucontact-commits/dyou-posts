@@ -195,6 +195,9 @@ def drapeau(c, pays, x, y, w, h, r=8):
     if pays == "FR":
         for k, col in enumerate([C["bleuFR"], C["blanc"], C["rougeFR"]]):
             c.drawRect(skia.Rect.MakeXYWH(x + k * w / 3, y, w / 3 + 1, h), peinture(col))
+    elif pays == "TH":
+        for (u0, u1, col) in [(0, 1, "#A51931"), (1, 2, "#F4F5F8"), (2, 4, "#2D2A4A"), (4, 5, "#F4F5F8"), (5, 6, "#A51931")]:
+            c.drawRect(skia.Rect.MakeXYWH(x, y + h * u0 / 6, w, h * (u1 - u0) / 6 + 1), peinture(col))
     else:
         c.drawRect(skia.Rect.MakeXYWH(x, y, w, h), peinture(C["rougeCN"]))
         c.drawPath(etoile(x + w * 0.17, y + h * 0.27, h * 0.16), peinture(C["jauneCN"]))
@@ -285,17 +288,21 @@ def image_cover(c, nom, x, y, w, h, zoom=1.0, fx=0.5, fy=0.5, rayon=0, alpha=1.0
 
 
 # ───────────────────────────── vidéos de la banque (images extraites une fois, lues à la demande)
-def prepare_video(nom, w, h):
+def prepare_video(nom, w, h, rogne=(0.0, 0.0, 0.0, 0.0)):
     """extrait la vidéo en images JPEG au format exact du cadre (recadrage « cover »).
-    À appeler au chargement de scenes.py : le processus principal extrait avant le rendu
-    parallèle, les autres trouvent le travail fait."""
+    rogne = fractions (gauche, haut, droite, bas) retirées de la source avant le recadrage :
+    sert à couper un sous-titre ou un logo incrusté. Le processus principal extrait avant le
+    rendu parallèle ; les autres trouvent le travail fait."""
     w, h = int(w), int(h)
     src = chemin_media(nom, (".mp4", ".mov"))
-    cache = PROJET / "renders" / "cache-videos" / f"{pathlib.Path(nom).name}-{w}x{h}"
+    tag = "" if not any(rogne) else "-r" + "".join(f"{int(round(v * 100)):02d}" for v in rogne)
+    cache = PROJET / "renders" / "cache-videos" / f"{pathlib.Path(nom).name}-{w}x{h}{tag}"
     if not (cache / "fini").exists():
         cache.mkdir(parents=True, exist_ok=True)
+        g, hh, d, b = rogne
+        pre = f"crop=iw*{1 - g - d:.4f}:ih*{1 - hh - b:.4f}:iw*{g:.4f}:ih*{hh:.4f}," if any(rogne) else ""
         subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(src), "-an",
-                        "-vf", f"scale={w}:{h}:force_original_aspect_ratio=increase,crop={w}:{h}",
+                        "-vf", f"{pre}scale={w}:{h}:force_original_aspect_ratio=increase,crop={w}:{h}",
                         "-q:v", "3", str(cache / "%05d.jpg")], check=True)
         fps = subprocess.run(["ffprobe", "-v", "error", "-select_streams", "v:0", "-show_entries", "stream=r_frame_rate",
                               "-of", "csv=p=0", str(src)], capture_output=True, text=True).stdout.strip()
@@ -309,9 +316,9 @@ def _image_video(dossier, k):
     return skia.Image.open(f"{dossier}/{k:05d}.jpg")
 
 
-def video(c, nom, x, y, w, h, t_local, vitesse=1.0, boucle=True, rayon=0, alpha=1.0):
+def video(c, nom, x, y, w, h, t_local, vitesse=1.0, boucle=True, rayon=0, alpha=1.0, rogne=(0.0, 0.0, 0.0, 0.0)):
     """dessine l'image de la vidéo au temps t_local × vitesse (×2 ou ×2,5 pour tenir dans une phrase)"""
-    cache, n, fps = prepare_video(nom, w, h)
+    cache, n, fps = prepare_video(nom, w, h, rogne)
     k = int(max(0.0, t_local) * vitesse * fps)
     k = k % n if boucle else min(k, n - 1)
     c.save()
