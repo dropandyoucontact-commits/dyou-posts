@@ -26,11 +26,17 @@ d'une phrase de clôture, et les cinq sont partis sur la Page Facebook sans
 qu'aucune erreur ne le signale. La coupe est désormais indifférente à la
 position, mais la dernière ligne reste la convention lisible.
 
-## Contenu généré par IA : le déclarer
+## Contenu généré par IA : quand le déclarer
 
-Un visuel ou une vidéo produit par IA doit être publié **avec** la mention
-« contenu IA ». Le label de Meta n'est pas une pénalité de classement. C'est
-l'inverse qui coûte : un contenu IA **non déclaré** que les classifieurs
-repèrent ensuite voit sa distribution réduite. Retirer les métadonnées de
-provenance d'un fichier ne protège donc de rien, et fait basculer le post du
-bon côté vers le mauvais.
+Les slides de ces carrousels sont des rendus 3D stylisés avec du texte par-dessus.
+L'obligation de déclaration de Meta vise le contenu **photoréaliste** qu'un lecteur
+pourrait prendre pour une photo ou une vidéo réelle : elle ne s'applique pas ici,
+rien à cocher.
+
+Elle s'applique en revanche à une vidéo générée mettant en scène des personnes ou
+des lieux d'apparence réelle. Dans ce cas, **déclarer**. Le label de Meta n'est pas
+une pénalité de classement ; c'est l'inverse qui coûte, un contenu IA non déclaré
+que les classifieurs repèrent ensuite voit sa distribution réduite. Retirer les
+métadonnées de provenance d'un fichier ne protège donc de rien.
+
+La consigne de rédaction des légendes est dans `CONSIGNE-LEGENDE.md`.
