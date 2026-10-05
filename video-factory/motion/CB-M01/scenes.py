@@ -352,7 +352,7 @@ def s2(c, t):
         # la barre
         rrect(c, x0, yb, x1 - x0, hb, 34, C["fondDoux"])
         c.save(); c.clipRRect(skia.RRect.MakeRectXY(skia.Rect.MakeXYWH(x0, yb, x1 - x0, hb), 34, 34), doAntiAlias=True)
-        segs = [("Usine", lUs, C["ink"]), ("Sa marge", lSa, C["rouge"]), ("Ta marge", lTa, C["vert"])]
+        segs = [("Fournisseur", lUs, C["ink"]), ("Sa marge", lSa, C["rouge"]), ("Ta marge", lTa, C["vert"])]
         x = x0
         for nom, l, coul in segs:
             if l > 1:
@@ -898,7 +898,7 @@ def s9(c, t):
     if t >= t_hub + 0.2:
         hx, hy = 540, 780
         u = prog(t, t_hub + 0.2, 0.35, lambda v: rebond(v, 1.7))
-        nodes = [("Fournisseurs", "Usines testées", "factory", 280, 1060, t_four), ("Transitaire", "Logistique", "ship", 790, 1060, t_trans)]
+        nodes = [("Fournisseurs", "Validés, vérifiés", "factory", 280, 1060, t_four), ("Transitaire", "Logistique", "ship", 790, 1060, t_trans)]
         for titre, sous_, ic, nx, ny, tn in nodes:
             if t < tn - 0.12: continue
             ul = prog(t, tn - 0.12, 0.3, sortie)
@@ -989,7 +989,7 @@ def ecran_chat(c, x, y, w, h, t):
             carte(c, x + 22, yy, w - 44, 120, 26, C["blanc"], 1.0, (10, 24, 0.12))
             disque(c, x + 82, yy + 60, 34, C["vert"]); icone(c, "check", x + 82, yy + 60, 38, C["blanc"], 3.4)
             texte(c, "Commande envoyée", x + 134, yy + 26, 28)
-            texte(c, "Directement à l’usine", x + 134, yy + 66, 22, C["gris"], "demi")
+            texte(c, "Direct fournisseur", x + 134, yy + 66, 22, C["gris"], "demi")
 
 def s11(c, t):
     if not (44.80 <= t <= 49.45): return

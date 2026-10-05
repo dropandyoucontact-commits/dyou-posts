@@ -23,6 +23,7 @@ d'outil ; « référence » = à lire ou copier à la main, pas à brancher.
 | [nvkelso/natural-earth-vector](https://github.com/nvkelso/natural-earth-vector) | Contours de pays (carte de Chine) | Domaine public | 2024-04-22 | 2 230 | **Utilisé** — `chine.json` extrait du 1:110m |
 | [ggml-org/whisper.cpp](https://github.com/ggml-org/whisper.cpp) | Transcription locale, temps de chaque mot | MIT | 2026-10-02 | 54 140 | **Utilisé** — `whisper-cli`, modèle `ggml-small.bin`, gratuit |
 | [FFmpeg/FFmpeg](https://github.com/FFmpeg/FFmpeg) | Encodage H.264, mixage, mesure du volume | LGPL-2.1+ / GPL selon la compilation | 2026-10-04 | 64 766 | **Utilisé** |
+| [simple-icons/simple-icons](https://github.com/simple-icons/simple-icons) | Logos de marques (WeChat `#07C160`, Alipay `#1677FF`) | CC0-1.0 (les marques restent à leurs propriétaires) | 2026-10-04 | 25 963 | **Utilisé** — `motion/banque/logos/` |
 | [tabler/tabler-icons](https://github.com/tabler/tabler-icons) | 5 000+ icônes au trait, même style que Lucide | MIT | 2026-10-04 | 21 901 | Compatible — même code d'affichage SVG |
 | [gl-transitions/gl-transitions](https://github.com/gl-transitions/gl-transitions) | Transitions GLSL entre deux plans | MIT | 2026-06-22 | 2 145 | Référence — en FFmpeg, utiliser plutôt le filtre intégré `xfade` |
 | [ai/easings.net](https://github.com/ai/easings.net) | Courbes d'accélération illustrées | GPL-3.0 | 2026-04-07 | 8 698 | Référence — recopier les valeurs de Bézier, pas le code |

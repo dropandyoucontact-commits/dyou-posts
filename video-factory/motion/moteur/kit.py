@@ -248,3 +248,190 @@ class SousTitres:
                 else:
                     texte(c, m["s"], x0, y0, taille, base_c, alpha=a)
                 c.restore()
+
+
+# ─────────────────────────────────────────── logos d'applications (Simple Icons, CC0)
+MARQUES = {"wechat": "#07C160", "alipay": "#1677FF"}
+_LOGO_DATA = []
+
+
+def _logo_dom(nom, couleur):
+    import functools
+    cle = (nom, couleur)
+    if cle not in _logo_dom.cache:
+        src = (moteur.BANQUE / "logos" / f"{nom}.svg").read_text().replace("<path ", f'<path fill="{couleur}" ')
+        data = skia.Data.MakeWithCopy(src.encode()); _LOGO_DATA.append(data)
+        dom = skia.SVGDOM.MakeFromStream(skia.MemoryStream(data)); dom.setContainerSize(skia.Size(24, 24))
+        _logo_dom.cache[cle] = dom
+    return _logo_dom.cache[cle]
+_logo_dom.cache = {}
+
+
+def logo_glyphe(c, nom, cx, cy, taille, couleur=None, alpha=1.0):
+    dom = _logo_dom(nom, couleur or MARQUES.get(nom, C["ink"]))
+    c.save()
+    if alpha < 1: c.saveLayerAlpha(skia.Rect.MakeXYWH(cx - taille, cy - taille, 2 * taille, 2 * taille), int(255 * borne(alpha)))
+    c.translate(cx - taille / 2, cy - taille / 2); c.scale(taille / 24, taille / 24); dom.render(c)
+    if alpha < 1: c.restore()
+    c.restore()
+
+
+def logo_app(c, nom, cx, cy, taille, alpha=1.0, ombre=(10, 26, 0.18)):
+    """icône d'application : carré arrondi à la couleur de la marque, glyphe blanc"""
+    rrect(c, cx - taille / 2, cy - taille / 2, taille, taille, taille * 0.24, MARQUES[nom], alpha, ombre)
+    logo_glyphe(c, nom, cx, cy, taille * 0.62, C["blanc"], alpha)
+
+
+# ─────────────────────────────────────────── écran WeChat
+WX = dict(fond="#EDEDED", barre="#EDEDED", trait="#D5D5D5", vert="#95EC69", texte="#111111", gris="#8C8C8C", saisie="#F7F7F7")
+
+
+def _wx_entete(c, x, y, w, titre):
+    c.drawRect(skia.Rect.MakeXYWH(x, y, w, 150), peinture(WX["barre"]))
+    texte(c, "9:41", x + 42, y + 22, 24, WX["texte"], "fort", track=0)
+    icone(c, "signal", x + w - 110, y + 38, 26, WX["texte"], 2.4); icone(c, "battery-full", x + w - 66, y + 38, 30, WX["texte"], 2.2)
+    icone(c, "chevron-left", x + 40, y + 108, 40, WX["texte"], 2.6)
+    texte_centre(c, titre, x + w / 2, y + 108, 30, WX["texte"], "demi", track=0)
+    icone(c, "ellipsis", x + w - 46, y + 108, 38, WX["texte"], 2.6)
+    trait(c, x, y + 150, x + w, y + 150, WX["trait"], 2, rond=False)
+
+
+def _wx_saisie(c, x, y, w, h):
+    yb = y + h - 112
+    c.drawRect(skia.Rect.MakeXYWH(x, yb, w, 112), peinture(WX["saisie"]))
+    trait(c, x, yb, x + w, yb, WX["trait"], 2, rond=False)
+    anneau(c, x + 46, yb + 50, 22, WX["texte"], 2.4); icone(c, "mic", x + 46, yb + 50, 24, WX["texte"], 2.2)
+    rrect(c, x + 84, yb + 22, w - 220, 58, 10, C["blanc"])
+    icone(c, "smile", x + w - 104, yb + 50, 44, WX["texte"], 2.0); icone(c, "circle-plus", x + w - 48, yb + 50, 44, WX["texte"], 2.0)
+
+
+def qr_code(c, x, y, taille, graine=7, couleur="#111111"):
+    """motif de QR code (décoratif, non lisible) : 25 × 25 modules, trois repères d'angle"""
+    import numpy as np
+    n = 25; m = taille / n
+    rng = np.random.default_rng(graine); g = rng.random((n, n)) < 0.48
+    p = peinture(couleur)
+    for i in range(n):
+        for j in range(n):
+            coin = (i < 8 and j < 8) or (i < 8 and j >= n - 8) or (i >= n - 8 and j < 8)
+            if g[i, j] and not coin: c.drawRect(skia.Rect.MakeXYWH(x + j * m, y + i * m, m + 0.4, m + 0.4), p)
+    for (ci, cj) in ((0, 0), (0, n - 7), (n - 7, 0)):
+        rrect(c, x + cj * m, y + ci * m, 7 * m, 7 * m, m * 1.4, couleur)
+        rrect(c, x + (cj + 1) * m, y + (ci + 1) * m, 5 * m, 5 * m, m, C["blanc"])
+        rrect(c, x + (cj + 2) * m, y + (ci + 2) * m, 3 * m, 3 * m, m * 0.6, couleur)
+
+
+def _wx_bulle(c, m, xb, yb, wb, hb, moi):
+    coul = WX["vert"] if moi else C["blanc"]
+    rrect(c, xb, yb, wb, hb, 12, coul)
+    pq = skia.Path()
+    if moi:
+        pq.moveTo(xb + wb - 1, yb + 26); pq.lineTo(xb + wb + 12, yb + 36); pq.lineTo(xb + wb - 1, yb + 46)
+    else:
+        pq.moveTo(xb + 1, yb + 26); pq.lineTo(xb - 12, yb + 36); pq.lineTo(xb + 1, yb + 46)
+    pq.close(); c.drawPath(pq, peinture(coul))
+
+
+def _wx_mesure(m, wmax):
+    """taille (w, h) du contenu d'un message"""
+    if m["type"] == "texte":
+        lignes = m["texte"].split("\n")
+        return max(largeur(l, 30, "moyen", 0) for l in lignes) + 44, len(lignes) * 40 + 32
+    if m["type"] == "image": return 300, 300
+    if m["type"] == "video": return 250, 420
+    if m["type"] == "qr": return min(wmax, 310), 420
+    if m["type"] == "carte": return min(wmax, 380), 150
+    return 200, 80
+
+
+def ecran_wechat(c, x, y, w, h, t, titre, messages):
+    """conversation WeChat. messages : dicts {t, moi, type (texte|image|video|qr|carte), …}.
+    Les messages apparaissent à leur temps et la conversation défile quand elle déborde."""
+    c.drawRect(skia.Rect.MakeXYWH(x, y, w, h), peinture(WX["fond"]))
+    haut, bas = y + 170, y + h - 130
+    ya, poses_ = haut, []
+    for m in messages:
+        mw, mh = _wx_mesure(m, w - 24 - 72 - 20 - 36)
+        poses_.append((ya, mw, mh)); ya += mh + 34
+    # défilement : le dernier message apparu doit rester visible
+    vus = [k for k, m in enumerate(messages) if t >= m["t"] - 0.05]
+    def bas_de(k): return poses_[k][0] + poses_[k][2]
+    dec = 0.0
+    for k in vus:
+        cible = max(0.0, bas_de(k) - bas)
+        dec = mix(dec, cible, prog(t, messages[k]["t"] - 0.05, 0.3, sortie))
+    c.save(); c.clipRect(skia.Rect.MakeXYWH(x, y + 151, w, h - 151 - 112))
+    for k in vus:
+        m = messages[k]; yy, mw, mh = poses_[k]; yy -= dec
+        u = prog(t, m["t"] - 0.05, 0.3, lambda v: rebond(v, 1.6))
+        moi = m.get("moi", False)
+        ax = x + w - 24 - 72 if moi else x + 24
+        xb = ax - 20 - mw if moi else ax + 72 + 20
+        c.save(); pivot_x = xb + (mw if moi else 0); c.translate(pivot_x, yy); c.scale(mix(0.5, 1, u), mix(0.5, 1, u)); c.translate(-pivot_x, -yy)
+        with Calque(c, borne(u * 2)):
+            rrect(c, ax, yy, 72, 72, 10, "#3E4A44" if not moi else "#CFE8D9")
+            icone(c, "store" if not moi else "user", ax + 36, yy + 36, 40, C["blanc"] if not moi else "#2E7D52", 2.2)
+            if m["type"] == "texte":
+                _wx_bulle(c, m, xb, yy, mw, mh, moi)
+                for n, l in enumerate(m["texte"].split("\n")):
+                    texte(c, l, xb + 22, yy + 16 + n * 40, 30, WX["texte"], "moyen", track=0)
+            elif m["type"] == "image":
+                c.save(); c.clipRRect(skia.RRect.MakeRectXY(skia.Rect.MakeXYWH(xb, yy, mw, mh), 12, 12), doAntiAlias=True)
+                c.drawRect(skia.Rect.MakeXYWH(xb, yy, mw, mh), peinture(C["blanc"]))
+                iw, ih = taille_img(m["image"]); s = min((mw - 30) / iw, (mh - 30) / ih)
+                image(c, m["image"], xb + (mw - iw * s) / 2, yy + (mh - ih * s) / 2, iw * s)
+                c.restore()
+            elif m["type"] == "video":
+                video(c, m["video"], xb, yy, mw, mh, t - m["t"], m.get("vitesse", 1.0), rayon=12)
+                disque(c, xb + 34, yy + mh - 34, 18, "#000000", 0.35); icone(c, "play", xb + 35, yy + mh - 34, 18, C["blanc"], 2.6)
+            elif m["type"] == "qr":
+                rrect(c, xb, yy, mw, mh, 12, C["blanc"])
+                c.save(); c.clipRRect(skia.RRect.MakeRectXY(skia.Rect.MakeXYWH(xb, yy, mw, mh), 12, 12), doAntiAlias=True)
+                c.drawRect(skia.Rect.MakeXYWH(xb, yy, mw, 84), peinture(MARQUES["alipay"]))
+                c.restore()
+                logo_glyphe(c, "alipay", xb + 44, yy + 42, 40, C["blanc"])
+                texte(c, "Alipay", xb + 78, yy + 24, 32, C["blanc"], "noir", track=0)
+                q = mw - 90
+                qr_code(c, xb + 45, yy + 104, q, m.get("graine", 7))
+                texte_centre(c, m.get("legende", "Scanne pour payer"), xb + mw / 2, yy + 104 + q + 30, 22, WX["gris"], "fort", track=0)
+            elif m["type"] == "carte":
+                rrect(c, xb, yy, mw, mh, 12, C["blanc"])
+                texte(c, m["titre"], xb + 24, yy + 28, 28, WX["texte"], "fort", track=0)
+                texte(c, m.get("sous", ""), xb + 24, yy + 74, 24, WX["gris"], "demi", track=0)
+        c.restore()
+    c.restore()
+    _wx_entete(c, x, y, w, titre)
+    _wx_saisie(c, x, y, w, h)
+
+
+# ─────────────────────────────────────────── écran Alipay
+def ecran_alipay(c, x, y, w, h, t, t_scan, t_paye, marchand="Fournisseur"):
+    """paiement Alipay : QR scanné (ligne qui balaie), puis « Paiement réussi ». Montant masqué."""
+    bleu = MARQUES["alipay"]
+    c.drawRect(skia.Rect.MakeXYWH(x, y, w, h), peinture("#F5F7FA"))
+    c.drawRect(skia.Rect.MakeXYWH(x, y, w, 330), peinture(bleu))
+    texte(c, "9:41", x + 42, y + 22, 24, C["blanc"], "fort", track=0)
+    logo_glyphe(c, "alipay", x + w / 2 - 78, y + 150, 64, C["blanc"])
+    texte(c, "Alipay", x + w / 2 - 34, y + 122, 52, C["blanc"], "noir")
+    texte_centre(c, "Payer le marchand", x + w / 2, y + 236, 26, "#D6E6FF", "fort", track=0)
+    cx, cy = x + w / 2, y + 330 + 240
+    carte(c, x + 30, y + 290, w - 60, h - 420, 28, C["blanc"], 1.0, (10, 30, 0.12))
+    ok = prog(t, t_paye, 0.35, lambda v: rebond(v, 1.7))
+    if ok < 1:
+        with Calque(c, 1 - ok):
+            texte_centre(c, marchand, cx, y + 350, 30, C["ink"], "noir")
+            texte_centre(c, "¥ • • • •", cx, y + 410, 40, C["ink"], "noir")
+            qr_code(c, cx - 150, y + 460, 300, 11)
+            if t >= t_scan:
+                yy = y + 460 + 300 * ((t - t_scan) * 1.6 % 1.0)
+                trait(c, cx - 170, yy, cx + 170, yy, bleu, 6, 0.9)
+            rrect(c, x + 70, y + 800, w - 140, 84, 42, bleu)
+            texte_centre(c, "Payer", cx, y + 842, 32, C["blanc"])
+    if ok > 0:
+        c.save(); c.translate(cx, y + 560); c.scale(mix(0.3, 1, ok), mix(0.3, 1, ok))
+        with Calque(c, borne(ok * 2)):
+            disque(c, 0, 0, 110, bleu)
+            icone(c, "check", 0, 0, 120, C["blanc"], 3.2)
+        c.restore()
+        texte_centre(c, "Paiement réussi", cx, y + 740, 40, C["ink"], "noir", borne(ok * 2))
+        texte_centre(c, "Le fournisseur expédie chez ton transitaire", cx, y + 800, 24, C["gris"], "fort", borne(ok * 2))

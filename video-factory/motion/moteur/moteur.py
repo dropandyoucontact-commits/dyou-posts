@@ -206,12 +206,22 @@ def drapeau(c, pays, x, y, w, h, r=8):
 # ───────────────────────────── images et icônes
 _ECH = skia.SamplingOptions(skia.FilterMode.kLinear, skia.MipmapMode.kLinear)
 
+BANQUE = ICI.parent / "banque"   # banque commune : produits/<catégorie>/, videos/, lieux/, logos/
+
+
+def chemin_media(nom, exts=(".png",)):
+    """cherche d'abord dans le projet (media/), puis dans le moteur (media/), puis dans la banque"""
+    for base in (PROJET / "media", ICI / "media", BANQUE):
+        for e in exts:
+            f = base / f"{nom}{e}"
+            if f.exists():
+                return f
+    raise FileNotFoundError(f"média introuvable : {nom} ({', '.join(exts)})")
+
+
 @functools.lru_cache(maxsize=None)
 def _img(nom):
-    f = PROJET / "media" / f"{nom}.png"
-    if not f.exists():
-        f = ICI / "media" / f"{nom}.png"      # logos et produits communs à toutes les vidéos
-    return skia.Image.open(str(f)).withDefaultMipmaps()
+    return skia.Image.open(str(chemin_media(nom, (".png", ".jpg")))).withDefaultMipmaps()
 
 def taille_img(nom):
     i = _img(nom)
@@ -254,6 +264,44 @@ def icone(c, nom, cx, cy, taille, couleur=C["ink"], ep=2.0, alpha=1.0):
     dom.render(c)
     if alpha < 1: c.restore()
     c.restore()
+
+# ───────────────────────────── vidéos de la banque (images extraites une fois, lues à la demande)
+def prepare_video(nom, w, h):
+    """extrait la vidéo en images JPEG au format exact du cadre (recadrage « cover »).
+    À appeler au chargement de scenes.py : le processus principal extrait avant le rendu
+    parallèle, les autres trouvent le travail fait."""
+    w, h = int(w), int(h)
+    src = chemin_media(nom, (".mp4", ".mov"))
+    cache = PROJET / "renders" / "cache-videos" / f"{pathlib.Path(nom).name}-{w}x{h}"
+    if not (cache / "fini").exists():
+        cache.mkdir(parents=True, exist_ok=True)
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(src), "-an",
+                        "-vf", f"scale={w}:{h}:force_original_aspect_ratio=increase,crop={w}:{h}",
+                        "-q:v", "3", str(cache / "%05d.jpg")], check=True)
+        fps = subprocess.run(["ffprobe", "-v", "error", "-select_streams", "v:0", "-show_entries", "stream=r_frame_rate",
+                              "-of", "csv=p=0", str(src)], capture_output=True, text=True).stdout.strip()
+        (cache / "fini").write_text(fps)
+    num, _, den = (cache / "fini").read_text().strip().partition("/")
+    return cache, len(list(cache.glob("*.jpg"))), float(num) / float(den or 1)
+
+
+@functools.lru_cache(maxsize=600)
+def _image_video(dossier, k):
+    return skia.Image.open(f"{dossier}/{k:05d}.jpg")
+
+
+def video(c, nom, x, y, w, h, t_local, vitesse=1.0, boucle=True, rayon=0, alpha=1.0):
+    """dessine l'image de la vidéo au temps t_local × vitesse (×2 ou ×2,5 pour tenir dans une phrase)"""
+    cache, n, fps = prepare_video(nom, w, h)
+    k = int(max(0.0, t_local) * vitesse * fps)
+    k = k % n if boucle else min(k, n - 1)
+    c.save()
+    if rayon: c.clipRRect(skia.RRect.MakeRectXY(skia.Rect.MakeXYWH(x, y, w, h), rayon, rayon), doAntiAlias=True)
+    p = skia.Paint(AntiAlias=True)
+    if alpha < 1: p.setAlphaf(borne(alpha))
+    c.drawImageRect(_image_video(str(cache), k + 1), skia.Rect.MakeXYWH(x, y, w, h), _ECH, p)
+    c.restore()
+
 
 # ───────────────────────────── perspective 3D vraie
 def matrice3d(cx, cy, rx=0.0, ry=0.0, rz=0.0, s=1.0, tx=0.0, ty=0.0, d=1800.0):

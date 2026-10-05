@@ -1,5 +1,9 @@
 # CB-M02 — découpage final
 
+> **Discours refusé par Youssef (05/10/2026) : ne pas publier.** La vidéo parle d'usines, ce
+> n'est pas sa façon de vendre (voir `../../LIGNE-EDITORIALE.md`). Seule la mécanique de
+> motion sert de modèle.
+
 Vidéo 1080 × 1920, 60 i/s, 22,3 s (voix 20,8 s générée par `voix.py`, Tomy, 3,5 mots/s + 1,5 s de carton final).
 
 ## Plans

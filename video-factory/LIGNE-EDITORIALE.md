@@ -4,6 +4,34 @@ But : construire une audience autour de la Chine et de l'import-export, **pas ve
 chaque vidéo**. Youssef, le 5 octobre 2026 : « Il ne faut pas que je vende tout le temps
 mon China Book, toutes les vidéos. Sinon, les gens ne vont pas s'abonner. »
 
+## Le discours ChinaBook — la façon de vendre de Youssef
+
+Donné par Youssef le 5 octobre 2026 ; il prime sur tout le reste.
+
+- **Jamais « usine » ni « fabricant ».** Ce n'est pas vrai : ChinaBook ne branche pas les
+  gens avec des usines. Ce sont des **fournisseurs à Guangzhou ou à Shenzhen, validés,
+  vérifiés, avec qui Youssef travaille lui-même**. Pas de « demande-lui des photos de
+  l'usine », pas de « signes que ce n'est pas une usine ».
+- **Taper dans le cœur du problème.** « Tu es revendeur, tu vends des sneakers par
+  exemple. Tu passes par un Français installé en Chine. Lui prend sa marge : il va voir
+  le fournisseur chinois, il prend sa marge, et il t'envoie. Avec le ChinaBook, tu passes
+  directement par les fournisseurs chinois : tu leur parles sur WeChat et tu paies sur
+  Alipay. »
+- **Le process, qu'on peut expliquer en vidéo :**
+  1. sur WeChat, tu écris au fournisseur : « je veux deux paires de B30 » ;
+  2. il te donne le prix et t'envoie un QR code Alipay ; tu paies ;
+  3. il envoie la marchandise **à ton nom** (ou au surnom que tu lui as donné) **chez ton
+     transitaire** ;
+  4. le transitaire regroupe les colis de tes différents fournisseurs, et tu lui dis sur
+     WeChat où part chaque chose : « cette paire et les lunettes, ça va là ; les AirPods
+     Max, là ; la montre connectée, ici ».
+- **À l'écran** : les conversations se montrent en style WeChat (le site ChinaBook en a
+  de vraies captures), avec les logos WeChat et Alipay quand on parle de ces applis ; le
+  produit montré correspond à ce que dit la voix (textile → vestes, électronique →
+  casque, baskets → vidéos du fournisseur dans un téléphone, accélérées ×2 à ×2,5).
+  Lieux à venir dans la banque : la devanture de Kimbo à Guangzhou (où l'on va trouver
+  des fournisseurs), la tour SEG Electronics à Shenzhen.
+
 ## Sujets
 
 1. **Partir en Chine** : ce qu'il faut faire en arrivant (applications de paiement, de
