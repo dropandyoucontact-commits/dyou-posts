@@ -3,9 +3,12 @@
 Tout ce que Youssef envoie pour les vidéos motion se range ici, une fois pour toutes les
 vidéos. Le moteur cherche un média dans le projet (`media/`), puis `moteur/media/`, puis ici.
 
-> **Les médias de la banque restent sur le Mac de Youssef, pas dans GitHub** : le dépôt
-> `dyou-posts` est public (il sert les visuels à l'API Instagram). `.gitignore` ignore tout
-> ici sauf cette page et les logos. Sauvegarde : à faire hors git (disque externe / iCloud).
+> **Où sont les médias.** Sur le Mac de Youssef, dans ce dossier, et sauvegardés sur
+> GitHub dans le dépôt **privé** `dyou-assets`, sous `motion-banque/` (jamais dans
+> `dyou-posts`, qui est public : il sert les visuels à l'API Instagram). `.gitignore` ici
+> ne suit que cette page et les logos. Pour sauvegarder après un ajout :
+> `git clone git@github.com:dropandyoucontact-commits/dyou-assets.git`, copier ce dossier
+> dans `motion-banque/`, commit, push.
 
 ## La règle fond blanc / situation (Youssef, 05/10/2026)
 
@@ -35,7 +38,12 @@ marine · veste racing noire · veste racing bleue · veste racing blanche. Autr
 Photos en situation (`photos/`) : baskets portées marine / grises / violettes ·
 étagère de 6 baskets de running · planche de 12 baskets · casque de moto sur plateau.
 
-Vidéos (`videos/chaussures/`) : 2 vidéos de baskets en main sur le stock (10,2 s et 9,6 s).
+Vidéos : `videos/chaussures/` 2 vidéos de baskets en main sur le stock (10,2 s et 9,6 s) ·
+`videos/guangzhou/guangzhou-cartons-baskets-gros.mp4` (2,1 s : des cartons pleins de baskets, filtre
+« GUANGZHOU » à la fin — sert pour « j'étais à Guangzhou » **et** pour « en gros »).
+
+Photos de fabrication (`photos/fabrication/`) : couture d'une semelle, assemblage d'une semelle
+(en téléphone, sans jamais dire « usine » dans la voix).
 
 ## Ajouter un média
 
