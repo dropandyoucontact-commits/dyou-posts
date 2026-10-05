@@ -27,3 +27,7 @@ Les vingt scripts se répartissent en cinq familles, marquées par `famille` dan
 ChatGPT fournit les scripts de départ et les images de scène. **Le motion et les voix sont faits ici** : scripts réécrits quand l'angle ne porte pas, montage, bruitages, encodage.
 
 Statut au 4 octobre 2026 : 50 scripts et prompts complets, 143 images de scène disponibles ; les sept `01.webp` de CB-01, CB-02, CB-03, CB-05, CB-07, CB-09 et CB-10 ont été retirées (personnage cagoulé non demandé) et restent à régénérer, logo DYOU et capture POLYRA de référence. `availability.json` expose le statut par ID et doit refléter le disque, pas l'intention : un `status: ready` sur un fichier absent fait planter un montage. Vidéos montées : RES-01, CB-02, CB-08.
+
+## Motion design
+
+Depuis le 5 octobre 2026 : moteur Python + Skia dans `motion/CB-M01/` (premier projet complet, voir son `LISEZ-MOI.md` et `DECOUPAGE.md`). Ressources GitHub vérifiées (licences, maintenance) et pièges de Higgsedit dans `motion-ressources/README.md`. Avant de livrer, vérifier des images extraites **du MP4 final**, pas seulement les aperçus : le rendu Higgsedit a déjà changé de police entre les deux.
