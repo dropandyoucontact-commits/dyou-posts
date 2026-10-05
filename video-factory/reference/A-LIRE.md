@@ -22,6 +22,14 @@ qui prend une étiquette « + marge » ; des ciseaux qui coupent l'intermédiair
 calendrier qui défile jusqu'à 14 ; des contacts éliminés un à un ; un interrupteur
 « Intermédiaire → Direct » ; « CHINA » tapé lettre par lettre au rythme de la voix.
 
+**Jamais de vide.** Remarque de Youssef le 5 octobre 2026 sur CB-M01 : à plusieurs
+moments (début de scène, sortie d'une carte) la moitié de l'écran était blanche et seul
+le sous-titre bougeait. Règle : chaque phrase a son visuel **dès son premier mot** ; une
+scène entre avant que la précédente ne sorte (chevauchement de 0,2 s) ; la zone entre les
+sous-titres et y = 1 440 ne reste jamais sans objet plus de 0,3 s ; le visuel d'une phrase
+occupe au moins la moitié de cette zone. On le vérifie sur des images **tirées du MP4
+final**, une toutes les 0,4 s, en cherchant les plans trop blancs.
+
 **Le rythme.** Un changement visible au moins toutes les secondes. Chaque mot important
 déclenche quelque chose : apparition avec rebond, tampon, secousse, éclair de couleur
 léger (10 %), confettis sur les moments de victoire. Transitions franches (coup de fouet

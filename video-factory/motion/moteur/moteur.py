@@ -265,6 +265,25 @@ def icone(c, nom, cx, cy, taille, couleur=C["ink"], ep=2.0, alpha=1.0):
     if alpha < 1: c.restore()
     c.restore()
 
+def image_cover(c, nom, x, y, w, h, zoom=1.0, fx=0.5, fy=0.5, rayon=0, alpha=1.0):
+    """photo de la banque qui remplit le cadre (recadrage « cover »), zoom ≥ 1 centré sur (fx, fy)
+    en fractions de l'image : animer zoom et fx/fy donne un travelling lent (effet Ken Burns).
+    Sert aux photos en situation (portées, posées, en rayon) montrées dans un téléphone."""
+    i = _img(nom)
+    iw, ih = i.width(), i.height()
+    s = max(w / iw, h / ih) * max(1.0, zoom)
+    vw, vh = w / s, h / s                                   # fenêtre visible dans l'image source
+    sx = min(max(fx * iw - vw / 2, 0), iw - vw)
+    sy = min(max(fy * ih - vh / 2, 0), ih - vh)
+    c.save()
+    if rayon: c.clipRRect(skia.RRect.MakeRectXY(skia.Rect.MakeXYWH(x, y, w, h), rayon, rayon), doAntiAlias=True)
+    else: c.clipRect(skia.Rect.MakeXYWH(x, y, w, h))
+    p = skia.Paint(AntiAlias=True)
+    if alpha < 1: p.setAlphaf(borne(alpha))
+    c.drawImageRect(i, skia.Rect.MakeXYWH(sx, sy, vw, vh), skia.Rect.MakeXYWH(x, y, w, h), _ECH, p)
+    c.restore()
+
+
 # ───────────────────────────── vidéos de la banque (images extraites une fois, lues à la demande)
 def prepare_video(nom, w, h):
     """extrait la vidéo en images JPEG au format exact du cadre (recadrage « cover »).

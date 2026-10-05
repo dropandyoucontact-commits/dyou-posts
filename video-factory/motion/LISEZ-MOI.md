@@ -34,8 +34,9 @@ python3 ../moteur/outils/verifier.py video/MON-ID.mp4 0.0 2 5 10 20 30 40 50
 bandeau, pastilles, tampons, téléphone, bulles, éclairs, registres de sons et de flou.
 Les médias se cherchent dans le projet (`media/`), puis `moteur/media/`, puis la banque commune `banque/`
 (produits par catégorie, vidéos, lieux, logos — voir `banque/LISEZ-MOI.md`). Écrans prêts dans `kit.py` :
-`ecran_wechat` (conversation qui défile), `ecran_alipay` (QR puis paiement réussi), `logo_app`, et `video()`
-du moteur pour une vidéo de la banque dans un téléphone, accélérée.
+`ecran_wechat` (conversation qui défile), `ecran_alipay` (QR puis paiement réussi), `logo_app`, et du
+moteur : `video()` (vidéo de la banque dans un téléphone, accélérée) et `image_cover()` (photo en situation
+plein cadre, zoom et travelling lents). Règle fond blanc / situation : `banque/LISEZ-MOI.md`.
 
 Dans `scenes.py` : `DUREE` = durée de la voix + 1,5 s de carton final ; chaque animation
 cite le mot qu'elle illustre (`TW(i)`) ; chaque son est déclaré à côté de son animation
