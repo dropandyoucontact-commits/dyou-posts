@@ -208,7 +208,10 @@ _ECH = skia.SamplingOptions(skia.FilterMode.kLinear, skia.MipmapMode.kLinear)
 
 @functools.lru_cache(maxsize=None)
 def _img(nom):
-    return skia.Image.open(str(PROJET / "media" / f"{nom}.png")).withDefaultMipmaps()
+    f = PROJET / "media" / f"{nom}.png"
+    if not f.exists():
+        f = ICI / "media" / f"{nom}.png"      # logos et produits communs à toutes les vidéos
+    return skia.Image.open(str(f)).withDefaultMipmaps()
 
 def taille_img(nom):
     i = _img(nom)

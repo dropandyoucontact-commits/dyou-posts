@@ -10,7 +10,7 @@ python3 moteur/outils/sons.py                 # 18 bruitages synthétisés dans 
 
 # 1. le dossier de la vidéo
 mkdir -p MON-ID/media && cd MON-ID
-cp ../CB-M01/scenes.py .                       # point de départ des scènes
+cp ../CB-M02/scenes.py .                       # point de départ : il s'appuie sur moteur/kit.py
 #    écrire script.txt (la voix exacte), déposer les produits détourés dans media/
 
 # 2. la voix (ElevenLabs, Tomy) et le temps de chaque mot
@@ -29,6 +29,10 @@ python3 ../moteur/outils/mixer.py renders/image.mp4      # video/MON-ID.mp4, −
 # 5. vérifier LE FICHIER FINAL
 python3 ../moteur/outils/verifier.py video/MON-ID.mp4 0.0 2 5 10 20 30 40 50
 ```
+
+`moteur/kit.py` fournit les briques au standard : sous-titres karaoké (`SousTitres`), fond,
+bandeau, pastilles, tampons, téléphone, bulles, éclairs, registres de sons et de flou.
+Les logos et produits ChinaBook sont dans `moteur/media/` (un `media/` de projet passe devant).
 
 Dans `scenes.py` : `DUREE` = durée de la voix + 1,5 s de carton final ; chaque animation
 cite le mot qu'elle illustre (`TW(i)`) ; chaque son est déclaré à côté de son animation
