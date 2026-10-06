@@ -58,3 +58,8 @@ grises ajoutées par les outils des vendeurs. Un vêtement gris clair peut deman
 `--halo 255`. Toujours vérifier le résultat sur un fond foncé. Les noms disent ce qu'on
 voit, sans marque : les marques visibles sur les produits ne se citent ni à l'écran ni
 dans la voix.
+
+## Lieux (ajoutés le 06/10/2026)
+
+- `lieux/kinbo-devanture-guangzhou.jpg` — devanture de Kinbo Fashion City (金宝外贸服装城), Guangzhou. Source : business-in-guangzhou.com.
+- `lieux/seg-electronics-market-shenzhen.jpg` — entrée du SEG Electronics Market (赛格电子市场), Huaqiangbei, Shenzhen. Source : Wikimedia Commons, domaine public.
