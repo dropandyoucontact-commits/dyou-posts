@@ -13,7 +13,8 @@ briefs Higgsedit, champs `motion_direction` et `images` des `brief.json`, thème
 **Toute vidéo motion se fait au niveau de `motion/CB-M01/video/CB-M01.mp4`**, validé par
 Youssef le 5 octobre 2026 (« c'est le niveau que j'accepte »). Les anciennes méthodes
 (montages PIL de `outils/ancien-montage/`, thèmes sombres, exemple RES-01) ne sont plus
-des modèles. Ce qu'il faut savoir est dans `reference/A-LIRE.md` ; comment faire une
+des modèles. **Depuis le 06/10/2026, la méthode de CB-M04 et CB-M05 est validée (« c'est parfait ») :
+partir de leur `scenes.py` pour toute nouvelle vidéo ChinaBook courte.** Ce qu'il faut savoir est dans `reference/A-LIRE.md` ; comment faire une
 nouvelle vidéo est dans `motion/LISEZ-MOI.md`.
 
 Le moteur est `motion/moteur/` (Python + Skia : texte crénagé, perspective 3D, flou de

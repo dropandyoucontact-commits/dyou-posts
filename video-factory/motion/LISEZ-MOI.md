@@ -10,7 +10,7 @@ python3 moteur/outils/sons.py                 # 18 bruitages synthétisés dans 
 
 # 1. le dossier de la vidéo
 mkdir -p MON-ID/media && cd MON-ID
-cp ../CB-M03/scenes.py .                       # point de départ : le plus complet (voir motion/CB-M03)
+cp ../CB-M05/scenes.py .                       # point de départ validé (CB-M04 / CB-M05, voir reference/A-LIRE.md)
 #    écrire script.txt (la voix exacte), déposer les produits détourés dans media/
 
 # 2. la voix (ElevenLabs, Tomy) et le temps de chaque mot

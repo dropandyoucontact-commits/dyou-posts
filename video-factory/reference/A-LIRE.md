@@ -52,6 +52,37 @@ atténués automatiquement sous chaque mot. Pas de musique.
 image est déjà forte (produit + premier mot visibles) : c'est la miniature. Le carton
 final tient 1,5 s après la voix (logo + bouton d'appel).
 
+## La méthode validée : CB-M04 et CB-M05 (06/10/2026)
+
+Youssef, après CB-M04 « T'as tout faux » et CB-M05 « Reste ici » : « c'est parfait ».
+**Toute vidéo ChinaBook courte se fait désormais comme ces deux-là** (`motion/CB-M04/`,
+`motion/CB-M05/`, leurs `DECOUPAGE.md`). La recette :
+
+1. **Une accroche = une cible = une vidéo.** On teste plusieurs accroches sur la même offre
+   (plateformes / voyage / Français installé en Chine…) plutôt que de tout dire dans une vidéo.
+   L'accroche nomme la cible dès le premier mot (« Stop. Tu fais de l'achat-revente… »,
+   « Tu comptes aller à Kinbo… »).
+2. **Script de 90 à 105 mots (≈ 520-570 caractères), voix Tomy à 3,8 mots/s** :
+   `voix.py --debit 3.8` → 23 à 27 s de voix, + 1,5 s de carton final.
+   Structure : accroche → la vérité qui dérange → preuve (« j'y suis allé », rushs, lieux) →
+   ChinaBook = contacts validés dans ton téléphone → ce que tu y gagnes → « Envoie-moi CHINA sur WhatsApp ».
+3. **Image 0 = la vignette** : un objet fort déjà en place et net (panneau STOP, carte
+   d'embarquement), jamais de flou de mouvement sur les 0,25 premières secondes.
+4. **Un plan par phrase, chaque élément au mot qui le nomme** (`TW(i)`) : cartes qui se
+   barrent, tampons, pastilles, globe avec arcs (avion, message WeChat, colis), téléphone
+   avec Snapchat / contacts ChinaBook, rushs de Youssef dans le téléphone.
+5. **Photos de lieux (Kinbo, SEG…) : 1 seconde maximum**, au mot qui les nomme, en
+   carte photo qui claque puis repart (`photo_lieu` dans CB-M04/CB-M05).
+6. **Jamais de vide** : quand une liste se construit mot après mot, des emplacements
+   « ? » gris occupent déjà la place et se remplissent au mot. `outils/vide.py` ne doit
+   plus signaler que les glissements entre scènes (≤ 0,3 s).
+7. **Sur « ChinaBook »** : disque noir plein écran, logo blanc qui claque ; les sous-titres
+   passent en blanc pendant le disque (`SOUS.dessine(c, t, C["blanc"] if r > 900 else C["ink"])`).
+8. **Aucun chiffre inventé** : coûts, marges et prix sont des barres, des cartes ou
+   « des milliers d'euros » si Youssef l'a dit — jamais un montant.
+9. **Vérifier le MP4 final** (`verifier.py` sur toute la durée + `vide.py`), corriger,
+   re-rendre, puis seulement livrer. Code dans `dyou-posts`, vidéo finie dans le dépôt privé.
+
 ## Ce qu'on vérifie avant de livrer
 
 1. Des images extraites **du MP4 final** sur toute la durée (`outils/verifier.py`) :
