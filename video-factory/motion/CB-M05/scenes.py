@@ -14,7 +14,7 @@ P = pathlib.Path(__file__).resolve().parent
 sys.path.insert(0, str(P.parent / "moteur"))
 from kit import *
 
-DUREE = 25.15
+DUREE = 29.1
 K = Kit(P, DUREE)
 TW, son, rapide, eclair = K.TW, K.son, K.rapide, K.eclair
 NB_IMAGES = K.nb_images
@@ -22,7 +22,7 @@ SFX, RAPIDE = K.SFX, K.RAPIDE
 flou_a = K.flou_a
 G = Globe()
 
-GZ, PAR = (113.26, 23.13), (2.35, 48.86)
+GZ, PAR, BKK, MAR = (113.26, 23.13), (2.35, 48.86), (100.5, 13.75), (-7.6, 33.6)
 
 # ─────────────────────────────────────────── sous-titres
 SOUS = SousTitres(K, [
@@ -40,19 +40,21 @@ SOUS = SousTitres(K, [
     [(53, "avec"), (54, "le"), (55, "ChinaBook.", "g")],
     [(57, "Tu"), (58, "bosses"), (59, "dès"), (60, "demain,", "g"), (61, "depuis"), (62, "la"), (63, "France.", "g")],
     [(64, "Et"), (65, "si"), (66, "t’as"), (67, "déjà"), (68, "ta"), (69, "clientèle,", "g")],
-    [(70, "tu"), (71, "prends"), (72, "ton"), (73, "billet,")],
-    [(74, "et"), (75, "tu"), (76, "gères"), (77, "tes"), (78, "commandes"), (79, "à"), (80, "distance,", "g")],
-    [(81, "à"), (82, "l’unité", "g"), (83, "ou"), (84, "en"), (85, "lot.", "g")],
-    [(86, "Envoie-moi"), (87, "« CHINA »", "g"), (88, "sur"), (89, "WhatsApp.")],
-    [(None, "Ton", "", 23.75), (None, "accès", "", 23.82), (None, "direct", "g", 23.91), (None, "à", "", 24.01), (None, "la", "", 24.06), (None, "Chine.", "", 24.12)],
+    [(70, "tu"), (71, "peux"), (72, "prendre"), (73, "un"), (74, "billet"), (75, "d’avion")],
+    [(76, "et"), (77, "travailler", "g"), (78, "de"), (79, "n’importe"), (80, "où :", "g")],
+    [(81, "en"), (82, "Thaïlande,", "g"), (83, "au"), (84, "Maroc.", "g")],
+    [(85, "Tu"), (86, "gères"), (87, "tes"), (88, "commandes"), (89, "à"), (90, "distance,", "g")],
+    [(91, "et"), (92, "tu"), (93, "vends"), (94, "à"), (95, "l’unité", "g"), (96, "ou"), (97, "en"), (98, "lot.", "g")],
+    [(99, "Envoie-moi"), (100, "« CHINA »", "g"), (101, "sur"), (102, "WhatsApp.")],
+    [(None, "Ton", "", 27.67), (None, "accès", "", 27.74), (None, "direct", "g", 27.83), (None, "à", "", 27.93), (None, "la", "", 27.98), (None, "Chine.", "", 28.04)],
 ])
 
 # ─────────────────────────────────────────── fenêtres de scène
 S1, S2, S3, S4, S5 = (0.0, 2.88), (2.76, 5.68), (5.55, 10.62), (10.45, 12.02), (11.85, 15.45)
-S6, S7, S8, S9 = (15.30, 17.32), (17.18, 19.56), (19.42, 21.02), (20.86, 22.40)
-T_CTA, T_FIN = 22.25, 23.68
-TL = [TW(87) - 0.16 + k * 0.07 for k in range(5)]
-T_ENVOI = TW(88)
+S6, S7, S8, S9 = (15.30, 17.32), (17.18, 20.02), (19.88, 24.72), (24.58, 26.20)
+T_CTA, T_FIN = 26.05, 27.60
+TL = [TW(100) - 0.16 + k * 0.07 for k in range(5)]
+T_ENVOI = TW(101)
 T_KINBO = TW(6) - 0.06
 T_LOGO = TW(55) - 0.12
 
@@ -95,8 +97,8 @@ def tel(c, cx, cy, ecran, w=480, h=960, alpha=1.0, **espace):
         telephone(c, cx - w / 2, cy - h / 2, w, h, ecran, alpha)
 
 
-def billet(c, cx, cy, s=1.0, rot=0.0, alpha=1.0, coche=0.0):
-    """carte d'embarquement Paris → Guangzhou (sans compagnie, sans numéro)"""
+def billet(c, cx, cy, s=1.0, rot=0.0, alpha=1.0, coche=0.0, dest=("CN", "GUANGZHOU")):
+    """carte d'embarquement Paris → dest (sans compagnie, sans numéro) ; dest = (drapeau ou None, ville)"""
     c.save(); c.translate(cx, cy); c.rotate(rot); c.scale(s, s)
     with Calque(c, alpha):
         carte(c, -420, -200, 840, 400, 40, C["blanc"], 1.0, (26, 60, 0.22))
@@ -105,8 +107,9 @@ def billet(c, cx, cy, s=1.0, rot=0.0, alpha=1.0, coche=0.0):
         c.restore()
         icone(c, "plane-takeoff", -364, -152, 46, C["blanc"], 2.4)
         texte(c, "CARTE D’EMBARQUEMENT", -320, -172, 34, C["blanc"], "noir", track=0.06)
-        for x, pays, ville in ((-370, "FR", "PARIS"), (95, "CN", "GUANGZHOU")):
-            drapeau(c, pays, x, -76, 66, 44, 7)
+        for x, pays, ville in ((-370, "FR", "PARIS"), (95,) + tuple(dest)):
+            if pays: drapeau(c, pays, x, -76, 66, 44, 7)
+            else: icone(c, "globe", x + 24, -54, 48, C["vert"], 2.4)
             texte(c, ville, x, -18, ajuste(ville, 290, 54), C["ink"], "noir")
         icone(c, "plane", -10, -30, 64, C["vert"], 2.4)
         trait(c, -400, 92, 230, 92, C["ligne"], 4, 1.0, (2, 14))
@@ -322,39 +325,62 @@ def s7(c, t):
     sc = scene(c, t, S7, "gauche", "gauche", de=0.28, ds=0.22)
     if sc is None: return
     with sc:
-        recul = prog(t, TW(71) - 0.15, 0.35, sortie)
+        recul = prog(t, TW(74) - 0.15, 0.35, sortie)
         tel(c, 540 - 120 * recul, 1144 - 60 * recul, lambda cc, a, b, d, e: ecran_snap(cc, a, b, d, e, t, STORIES, CHATS), ry=-6 + 3 * math.sin(t * 2.0), s=mix(1, 0.85, recul))
         if t >= TW(69) - 0.08:
             u = apparait(t, TW(69) - 0.08)
             pastille_rot(c, "TA CLIENTÈLE", 300, 700, 38, C["vert"], C["blanc"], -6, mix(0.3, 1, u), borne(u * 2), "users", (14, 32, 0.22))
-        if t >= TW(71) - 0.15:
-            ub = prog(t, TW(71) - 0.15, 0.4, lambda v: rebond(v, 1.4))
-            billet(c, mix(1500, 560, ub), 1280, 0.82, mix(14, -5, ub), 1.0, apparait(t, TW(73), 2.0, 0.3))
+        if t >= TW(74) - 0.15:
+            ub = prog(t, TW(74) - 0.15, 0.4, lambda v: rebond(v, 1.4))
+            billet(c, mix(1500, 560, ub), 1280, 0.82, mix(14, -5, ub), 1.0, apparait(t, TW(75) + 0.1, 2.0, 0.3), (None, "N’IMPORTE OÙ"))
 
 
-# ─────────────────────────────────────────── S8 · tes commandes à distance
+# ─────────────────────────────────────────── S8 · travailler de n'importe où, gérer à distance
+def poste(c, x, y, u):
+    """toi au travail : ordinateur dans une pastille blanche au-dessus d'une épingle"""
+    if u <= 0: return
+    c.save(); c.translate(x, y - 96 * u); c.scale(u, u)
+    disque(c, 0, 0, 46, C["blanc"], 1.0, (8, 20, 0.22)); icone(c, "laptop", 0, 0, 52, C["ink"], 2.4)
+    c.restore()
+
+
 def s8(c, t):
-    sc = scene(c, t, S8, "zoom", "gauche", de=0.28, ds=0.2)
+    sc = scene(c, t, S8, "zoom", "gauche", de=0.28, ds=0.22)
     if sc is None: return
     with sc:
-        cx, cy, R = 540, 1100, 400
-        lon0, lat0 = 58, 38
+        cx, cy, R = 540, 1110, 410
+        lon0 = cles(t, [(S8[0], 40), (TW(84), 52, entreeSortie), (S8[1], 56)]); lat0 = 24
         G.disque(c, cx, cy, R); G.terres(c, cx, cy, R, lon0, lat0, grossir={1: 1.2})
-        G.repere(c, *PAR, cx, cy, R, lon0, lat0, "TOI", C["ink"], "FR", apparait(t, S8[0] + 0.15, 1.8, 0.4), 1.0, 80)
-        G.repere(c, *GZ, cx, cy, R, lon0, lat0, "FOURNISSEURS", C["vert"], "CN", apparait(t, S8[0] + 0.3, 1.8, 0.4), 1.0, 70)
-        pm = prog(t, TW(76) - 0.05, 0.6, entreeSortie)
-        if pm > 0:
-            G.arc(c, PAR, GZ, cx, cy, R, lon0, lat0, 1.0, "#CBD5CF", 5, 0.3, [2, 16])
-            x_, y_, z_ = G.arc(c, PAR, GZ, cx, cy, R, lon0, lat0, pm, C["ink"], 6, 0.3, [2, 16])
-            if pm < 1: c.save(); c.translate(x_, y_ - 22); logo_app(c, "wechat", 0, 0, 62); c.restore()
-        pc = prog(t, TW(78) + 0.05, 0.75, entreeSortie)
-        if pc > 0:
-            G.arc(c, GZ, PAR, cx, cy, R, lon0, lat0, 1.0, "#CDEFDC", 6, 0.42)
-            x_, y_, z_ = G.arc(c, GZ, PAR, cx, cy, R, lon0, lat0, pc, C["vert"], 8, 0.42)
-            if pc < 1: carton(c, x_, y_ - 20, 96, 0, 1.0, 8 * math.sin(t * 9))
-            else: onde(c, *G.pos(*PAR, lon0, lat0, R, cx, cy)[:2], t, TW(78) + 0.8, 20, 110, C["vert"], 5)
-        if t >= TW(80) - 0.1:
-            u = apparait(t, TW(80) - 0.1)
+        G.repere(c, *GZ, cx, cy, R, lon0, lat0, "FOURNISSEURS", C["vert"], "CN", apparait(t, S8[0] + 0.2, 1.8, 0.4), 1.0, 150)
+        # n'importe où : de petits ordinateurs s'allument un peu partout
+        for k, (lon, lat) in enumerate(((-3.7, 40.4), (55.3, 25.2), (28.9, 41.0), (103.8, 1.35), (18.4, -33.9))):
+            u = apparait(t, TW(79) - 0.05 + 0.07 * k, 2.0, 0.3) * (1 - prog(t, TW(82) - 0.1, 0.25))
+            x, y, z = G.pos(lon, lat, lon0, lat0, R, cx, cy)
+            if z > 0 and u > 0:
+                c.save(); c.translate(x, y); c.scale(u, u); disque(c, 0, 0, 30, C["ink"], 1.0, (6, 14, 0.2)); icone(c, "laptop", 0, 0, 34, C["blanc"], 2.4); c.restore()
+        for lieu, nom, dr, tw in ((BKK, "THAÏLANDE", "TH", TW(82)), (MAR, "MAROC", "MA", TW(84))):
+            u = apparait(t, tw - 0.05, 1.8, 0.4)
+            G.repere(c, *lieu, cx, cy, R, lon0, lat0, nom, C["ink"], dr, u, 1.0, 45 if nom == "THAÏLANDE" else 80)
+            if u > 0:
+                x, y, z = G.pos(*lieu, lon0, lat0, R, cx, cy)
+                onde(c, x, y, t, tw, 20, 120, C["ink"], 5)
+        # à distance : les messages partent vers les fournisseurs, les colis repartent
+        for k, (lieu, t0) in enumerate(((MAR, TW(88) - 0.1), (BKK, TW(88) + 0.15))):
+            pm = prog(t, t0, 0.6, entreeSortie)
+            if pm > 0:
+                G.arc(c, lieu, GZ, cx, cy, R, lon0, lat0, 1.0, "#CBD5CF", 5, 0.3, [2, 16])
+                x_, y_, z_ = G.arc(c, lieu, GZ, cx, cy, R, lon0, lat0, pm, C["ink"], 6, 0.3, [2, 16])
+                if pm < 1: c.save(); c.translate(x_, y_ - 22); logo_app(c, "wechat", 0, 0, 56); c.restore()
+        for k, (lieu, t0) in enumerate(((MAR, TW(90) - 0.2), (BKK, TW(90)))):
+            pc = prog(t, t0, 0.7, entreeSortie)
+            if pc > 0:
+                x_, y_, z_ = G.arc(c, GZ, lieu, cx, cy, R, lon0, lat0, pc, C["vert"], 7, 0.42)
+                if pc < 1: carton(c, x_, y_ - 20, 84, 0, 1.0, 8 * math.sin(t * 9 + k))
+        if t >= TW(77) - 0.08:
+            u = apparait(t, TW(77) - 0.08)
+            pastille_rot(c, "DE N’IMPORTE OÙ", 330, 700, 38, C["vert"], C["blanc"], -6, mix(0.3, 1, u), borne(u * 2), "globe", (14, 32, 0.22))
+        if t >= TW(90) - 0.1:
+            u = apparait(t, TW(90) - 0.1)
             pastille_rot(c, "À DISTANCE", 760, 1420, 40, C["ink"], C["blanc"], 5, mix(0.3, 1, u), borne(u * 2), "laptop", (14, 32, 0.25))
 
 
@@ -363,18 +389,18 @@ def s9(c, t):
     sc = scene(c, t, S9, "gauche", None, de=0.28)
     if sc is None: return
     with sc:
-        u1 = apparait(t, TW(82) - 0.08, 1.7, 0.4)
+        u1 = apparait(t, TW(95) - 0.08, 1.7, 0.4)
         if u1 > 0:
             bob = 10 * math.sin(t * 4)
             sneaker(c, 290, 1000 + bob, 400 * mix(0.5, 1, u1), alpha=borne(u1 * 2), rot=-6)
             ombre_sol(c, 290, 1120, 160, 16, 0.15 * u1)
             pastille_rot(c, "À L’UNITÉ", 290, 1290, 40, C["vert"], C["blanc"], -5, mix(0.3, 1, u1), borne(u1 * 2))
         for k, (dx, dy) in enumerate(((-90, 70), (90, 70), (0, -70), (-90, -210), (90, -210))):
-            uk = apparait(t, TW(85) - 0.12 + 0.06 * k, 2.0, 0.32)
+            uk = apparait(t, TW(98) - 0.12 + 0.06 * k, 2.0, 0.32)
             if uk > 0:
                 carton(c, 790 + dx, 1050 + dy - 200 * (1 - uk), 170, 0, borne(uk * 2), 3 * math.sin(t * 5 + k))
-        if t >= TW(85) - 0.05:
-            u = apparait(t, TW(85) - 0.05)
+        if t >= TW(98) - 0.05:
+            u = apparait(t, TW(98) - 0.05)
             pastille_rot(c, "EN LOT", 790, 1290, 40, C["ink"], C["blanc"], 5, mix(0.3, 1, u), borne(u * 2), "package")
 
 
@@ -393,10 +419,13 @@ son(T_LOGO - 0.1, "montee", -15); son(T_LOGO + 0.24, "impact", -7); son(T_LOGO +
 son(TW(60) - 0.05, "pop", -11); son(TW(60), "ding", -12); son(TW(63) - 0.08, "pop", -11); son(17.16, "whoosh", -13)
 for k in range(4): son(17.25 + k * 0.07, "pop", -16)
 son(17.3, "message_in", -12); son(TW(66), "message_in", -12); son(TW(68), "message_in", -12); son(TW(69) - 0.08, "pop", -11)
-son(TW(71) - 0.15, "whoosh_court", -12); son(TW(73), "check", -11); son(19.40, "whoosh", -13)
-son(S8[0] + 0.15, "pop", -13); son(S8[0] + 0.3, "pop", -13); son(TW(76) - 0.05, "message", -11); son(TW(78) + 0.05, "whoosh_long", -14); son(TW(80) - 0.1, "pop", -11)
-son(20.84, "swipe", -14); son(TW(82) - 0.08, "pop", -11)
-for k in range(5): son(TW(85) - 0.12 + 0.06 * k, "impact_doux", -13)
+son(TW(74) - 0.15, "whoosh_court", -12); son(TW(75) + 0.1, "check", -11); son(19.86, "whoosh", -13)
+son(S8[0] + 0.2, "pop", -13); son(TW(77) - 0.08, "pop", -11)
+for k in range(5): son(TW(79) - 0.05 + 0.07 * k, "blip", -17)
+son(TW(82) - 0.05, "pop", -11); son(TW(82), "ding", -14); son(TW(84) - 0.05, "pop", -11); son(TW(84), "ding", -14)
+son(TW(88) - 0.1, "message", -11); son(TW(88) + 0.15, "message", -13); son(TW(90) - 0.2, "whoosh_long", -15); son(TW(90) - 0.1, "pop", -11)
+son(24.56, "swipe", -14); son(TW(95) - 0.08, "pop", -11)
+for k in range(5): son(TW(98) - 0.12 + 0.06 * k, "impact_doux", -13)
 son(T_CTA - 0.1, "whoosh", -13)
 for tl in TL: son(tl, "frappe", -13)
 son(T_ENVOI, "clic", -10); son(T_ENVOI + 0.04, "whoosh_court", -13); son(T_ENVOI + 0.16, "message", -10)
@@ -404,7 +433,7 @@ son(T_FIN, "whoosh", -13); son(T_FIN + 0.14, "impact_doux", -8); son(T_FIN + 0.1
 
 for a, b in [(T_KINBO - 0.14, T_KINBO + 0.12), (T_KINBO + 0.98, T_KINBO + 1.26), (2.74, 3.06), (TW(11) - 0.1, TW(11) + 0.1), (TW(12) - 0.05, TW(12) + 0.2),
              (5.53, 5.85), (TW(34) - 0.05, TW(34) + 0.2), (10.43, 10.75), (11.83, 12.15), (T_LOGO, T_LOGO + 0.4), (S6[0] - 0.05, S6[0] + 0.4),
-             (17.16, 17.48), (TW(71) - 0.15, TW(71) + 0.25), (19.40, 19.72), (20.84, 21.16), (T_CTA - 0.1, T_CTA + 0.3), (T_ENVOI, T_ENVOI + 0.32), (T_FIN, T_FIN + 0.36)]:
+             (17.16, 17.48), (TW(74) - 0.15, TW(74) + 0.25), (19.86, 20.18), (24.56, 24.88), (T_CTA - 0.1, T_CTA + 0.3), (T_ENVOI, T_ENVOI + 0.32), (T_FIN, T_FIN + 0.36)]:
     rapide(a, b)
 for tt, cc_, a_ in [(T_KINBO, "#FFFFFF", 0.25), (TW(11) - 0.08, C["rouge"], 0.14), (TW(18) - 0.05, C["rouge"], 0.10), (TW(34) - 0.05, C["rouge"], 0.12),
                     (TW(39), C["vert"], 0.08), (TW(45), C["vert"], 0.08), (T_LOGO + 0.24, C["blanc"], 0.15), (TW(60), C["vert"], 0.08), (T_FIN + 0.14, C["vert"], 0.10)]:

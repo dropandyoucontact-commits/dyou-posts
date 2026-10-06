@@ -198,6 +198,9 @@ def drapeau(c, pays, x, y, w, h, r=8):
     elif pays == "TH":
         for (u0, u1, col) in [(0, 1, "#A51931"), (1, 2, "#F4F5F8"), (2, 4, "#2D2A4A"), (4, 5, "#F4F5F8"), (5, 6, "#A51931")]:
             c.drawRect(skia.Rect.MakeXYWH(x, y + h * u0 / 6, w, h * (u1 - u0) / 6 + 1), peinture(col))
+    elif pays == "MA":
+        c.drawRect(skia.Rect.MakeXYWH(x, y, w, h), peinture("#C1272D"))
+        c.drawPath(etoile(x + w / 2, y + h / 2 + h * 0.02, h * 0.3), peinture("#006233", Style=skia.Paint.kStroke_Style, StrokeWidth=max(1.5, h * 0.05)))
     else:
         c.drawRect(skia.Rect.MakeXYWH(x, y, w, h), peinture(C["rougeCN"]))
         c.drawPath(etoile(x + w * 0.17, y + h * 0.27, h * 0.16), peinture(C["jauneCN"]))

@@ -83,6 +83,14 @@ Youssef, après CB-M04 « T'as tout faux » et CB-M05 « Reste ici » : « c'est
 9. **Vérifier le MP4 final** (`verifier.py` sur toute la durée + `vide.py`), corriger,
    re-rendre, puis seulement livrer. Code dans `dyou-posts`, vidéo finie dans le dépôt privé.
 
+10. **Corrections de Youssef (06/10/2026), à ne plus refaire :**
+   - **Une plateforme nommée n'est qu'un exemple.** Dire « Hipobuy, Oopbuy, ou ce genre de
+     plateforme », jamais comme si c'étaient les seules.
+   - **Le billet d'avion du client ne va pas en Chine.** Quand on parle de quelqu'un qui a déjà sa
+     clientèle et qui prend un billet, l'idée est « tu peux travailler de n'importe où » (Thaïlande,
+     Maroc…) et gérer ses commandes à distance — pas « tu pars en Chine ». La Chine n'apparaît que
+     pour les fournisseurs. Le message ChinaBook : on n'a plus besoin d'aller en Chine.
+
 ## Ce qu'on vérifie avant de livrer
 
 1. Des images extraites **du MP4 final** sur toute la durée (`outils/verifier.py`) :

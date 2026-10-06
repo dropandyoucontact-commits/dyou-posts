@@ -5,3 +5,5 @@ audio/
 __pycache__/
 renders_log.txt
 video/
+v1/
+suite/audio/
