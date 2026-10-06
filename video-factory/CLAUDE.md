@@ -38,8 +38,8 @@ contient que son script, sa voix, son minutage, ses médias et son `scenes.py`.
 4. **Aperçus**, puis **rendu** : `python3 ../moteur/rendu.py apercu …` et
    `python3 ../moteur/rendu.py video` (≈ 5 min pour 60 s sur le Mac de Youssef, 2 cœurs /
    4 Go — le VPS de Tokyo, 1 vCPU / 2 Go déjà chargé par les bots, serait 3 fois plus lent).
-5. **Son** : `outils/sons.py` (une fois) puis `outils/mixer.py renders/image.mp4` — voix à
-   −16 LUFS, bruitages atténués sous la voix, pas de musique.
+5. **Son** : `outils/sons.py` (une fois) puis `outils/mixer.py renders/image.mp4` — voix compressée,
+   mix final à −11 LUFS / −1 dB crête (assez fort pour le téléphone, plus besoin de CapCut), bruitages atténués sous la voix, pas de musique.
 6. **Vérifier le MP4 final** : `outils/verifier.py video/<ID>.mp4 t1 t2 …` extrait des
    images du fichier exporté lui-même. Ne jamais livrer sur la foi des aperçus.
 

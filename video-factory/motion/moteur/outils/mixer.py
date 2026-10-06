@@ -8,9 +8,13 @@ qu'il accompagne. On la range dans sfx.json, puis :
     python3 outils/mixer.py                       # → audio/mix.wav
     python3 outils/mixer.py renders/CB-M01.mp4    # → et video/CB-M01.mp4 (vidéo copiée, son AAC)
 
-Chaîne : voix ramenée à -16 LUFS (gain fixe, pas de compression) ; bus de
-bruitages compressé par la voix (sidechain : il s'efface sous chaque mot) ;
-somme, limiteur à 0,95. Pas de musique de fond.
+Chaîne : voix ramenée à -16 LUFS puis compressée (elle reste en avant, mots réguliers) ; bus de
+bruitages compressé par la voix (sidechain : il s'efface sous chaque mot) ; somme, gain de sortie
+ajusté pour que le mix final atteigne -11 LUFS, limiteur à -1 dB crête. Pas de musique de fond.
+
+Pourquoi -11 : à -16 la voix sonnait faible sur téléphone et Youssef la remontait à la main dans
+CapCut à chaque vidéo (06/10/2026). -11 LUFS / -1 dBTP est le niveau des Reels et TikTok qui
+sonnent fort, sans saturer.
 """
 import json, pathlib, re, subprocess, sys, wave
 import numpy as np
@@ -19,7 +23,8 @@ MOTEUR = pathlib.Path(__file__).resolve().parent.parent   # sons/ fabriqués par
 ICI = pathlib.Path.cwd()                                   # le projet : sfx.json, media/voix.mp3
 SR = 48000
 DUREE = 59.4          # remplacée par la durée de la vidéo quand on en donne une
-CIBLE_LUFS = -16.0
+CIBLE_LUFS = -16.0     # voix seule, avant compression
+CIBLE_MIX = -11.0      # mix final
 
 
 def lire(chemin):
@@ -63,15 +68,23 @@ def main():
     ecrire(ICI / "audio" / "bus.wav", bus(ev))
     voix = ICI / "media" / "voix.mp3"
     g = CIBLE_LUFS - loudness(voix)
-    filtre = (f"[0:a]aresample={SR},aformat=channel_layouts=mono,volume={g:.2f}dB,apad=whole_dur={DUREE},asplit=2[v][vsc];"
-              f"[1:a]aresample={SR}[s];"
-              "[s][vsc]sidechaincompress=threshold=0.03:ratio=3:attack=6:release=260:makeup=1[sd];"
-              "[v][sd]amix=inputs=2:normalize=0:duration=first,alimiter=limit=0.95:level=false,"
-              "aformat=channel_layouts=stereo[out]")
     mix = ICI / "audio" / "mix.wav"
-    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(voix), "-i", str(ICI / "audio" / "bus.wav"),
-                    "-filter_complex", filtre, "-map", "[out]", "-t", str(DUREE), "-c:a", "pcm_s16le", str(mix)], check=True)
-    print(f"voix +{g:.2f} dB ; mix {loudness(mix):.1f} LUFS → {mix.relative_to(ICI)}")
+    sortie_db = 4.0
+    for _ in range(4):
+        filtre = (f"[0:a]aresample={SR},aformat=channel_layouts=mono,volume={g:.2f}dB,"
+                  "acompressor=threshold=0.1:ratio=3:attack=5:release=120:makeup=1,"
+                  f"apad=whole_dur={DUREE},asplit=2[v][vsc];"
+                  f"[1:a]aresample={SR}[s];"
+                  "[s][vsc]sidechaincompress=threshold=0.03:ratio=3:attack=6:release=260:makeup=1[sd];"
+                  f"[v][sd]amix=inputs=2:normalize=0:duration=first,volume={sortie_db:.2f}dB,"
+                  "alimiter=limit=0.89:attack=2:release=60:level=false,"
+                  "aformat=channel_layouts=stereo[out]")
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(voix), "-i", str(ICI / "audio" / "bus.wav"),
+                        "-filter_complex", filtre, "-map", "[out]", "-t", str(DUREE), "-c:a", "pcm_s16le", str(mix)], check=True)
+        ecart = CIBLE_MIX - loudness(mix)
+        if abs(ecart) < 0.3: break
+        sortie_db += ecart
+    print(f"voix +{g:.2f} dB, sortie +{sortie_db:.1f} dB ; mix {loudness(mix):.1f} LUFS → {mix.relative_to(ICI)}")
     if len(sys.argv) > 1:
         video = pathlib.Path(sys.argv[1])
         sortie = ICI / "video" / f"{ICI.name}.mp4"
