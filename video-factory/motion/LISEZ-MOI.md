@@ -1,6 +1,6 @@
 # Faire une nouvelle vidéo motion
 
-Le niveau à tenir : `CB-M01/video/CB-M01.mp4` (voir `../reference/A-LIRE.md`).
+Le niveau à tenir : `CB-M04` et `CB-M05` (vidéos finies dans le dépôt privé `dyou-assets/motion-videos/`) (voir `../reference/A-LIRE.md`).
 Toutes les commandes se lancent **depuis le dossier de la vidéo**.
 
 ```sh
@@ -24,7 +24,7 @@ python3 ../moteur/rendu.py apercu 0.5 3 8 15   # apercus/planche.jpg
 # 4. la vidéo
 python3 ../moteur/rendu.py video               # renders/image.mp4, ≈ 5 min pour 60 s
 python3 -c "import json, scenes; json.dump(sorted(scenes.SFX), open('sfx.json', 'w'))"
-python3 ../moteur/outils/mixer.py renders/image.mp4      # video/MON-ID.mp4, −16 LUFS
+python3 ../moteur/outils/mixer.py renders/image.mp4      # video/MON-ID.mp4, −11 LUFS / −1 dB crête
 
 # 5. vérifier LE FICHIER FINAL
 python3 ../moteur/outils/verifier.py video/MON-ID.mp4 0.0 2 5 10 20 30 40 50

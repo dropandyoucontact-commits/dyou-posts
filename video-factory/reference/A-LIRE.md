@@ -1,4 +1,9 @@
-# Le standard : CB-M01 « Le réseau en direct »
+# Le standard : CB-M04 et CB-M05 (validés le 06/10/2026)
+
+Première vidéo validée : CB-M01 « Le réseau en direct » (05/10/2026), décrite ci-dessous. Niveau de
+référence actuel : CB-M04 et CB-M05 v2, voir « La méthode validée ».
+
+## CB-M01 « Le réseau en direct »
 
 Référence : `../motion/CB-M01/video/CB-M01.mp4` (59,4 s), source dans `../motion/CB-M01/`.
 Validée par Youssef le 5 octobre 2026 : « c'est le niveau que j'accepte ». Ces règles
@@ -80,10 +85,12 @@ Youssef, après CB-M04 « T'as tout faux » et CB-M05 « Reste ici » : « c'est
    passent en blanc pendant le disque (`SOUS.dessine(c, t, C["blanc"] if r > 900 else C["ink"])`).
 8. **Aucun chiffre inventé** : coûts, marges et prix sont des barres, des cartes ou
    « des milliers d'euros » si Youssef l'a dit — jamais un montant.
-9. **Vérifier le MP4 final** (`verifier.py` sur toute la durée + `vide.py`), corriger,
+9. **Son : mix final à −11 LUFS / −1 dB crête, voix compressée** (`mixer.py` le fait seul). Plus
+   jamais −16 : trop faible sur téléphone.
+10. **Vérifier le MP4 final** (`verifier.py` sur toute la durée + `vide.py`), corriger,
    re-rendre, puis seulement livrer. Code dans `dyou-posts`, vidéo finie dans le dépôt privé.
 
-10. **Corrections de Youssef (06/10/2026), à ne plus refaire :**
+11. **Corrections de Youssef (06/10/2026), à ne plus refaire :**
    - **Une plateforme nommée n'est qu'un exemple.** Dire « Hipobuy, Oopbuy, ou ce genre de
      plateforme », jamais comme si c'étaient les seules.
    - **Le billet d'avion du client ne va pas en Chine.** Quand on parle de quelqu'un qui a déjà sa

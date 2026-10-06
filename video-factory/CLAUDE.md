@@ -8,14 +8,19 @@ Claude, et ses règles vivent dans ce dépôt** (ce fichier, `reference/A-LIRE.m
 briefs Higgsedit, champs `motion_direction` et `images` des `brief.json`, thèmes sombres,
 `A-REGENERER.md`. Si une règle de motion doit changer, c'est Claude qui la change ici.
 
-## Le standard : CB-M01
+## Le standard : CB-M04 et CB-M05 (06/10/2026)
 
-**Toute vidéo motion se fait au niveau de `motion/CB-M01/video/CB-M01.mp4`**, validé par
-Youssef le 5 octobre 2026 (« c'est le niveau que j'accepte »). Les anciennes méthodes
-(montages PIL de `outils/ancien-montage/`, thèmes sombres, exemple RES-01) ne sont plus
-des modèles. **Depuis le 06/10/2026, la méthode de CB-M04 et CB-M05 est validée (« c'est parfait ») :
-partir de leur `scenes.py` pour toute nouvelle vidéo ChinaBook courte.** Ce qu'il faut savoir est dans `reference/A-LIRE.md` ; comment faire une
-nouvelle vidéo est dans `motion/LISEZ-MOI.md`.
+**Le niveau de référence est celui de `motion/CB-M04/` (« T'as tout faux ») et de `motion/CB-M05/`
+(« Reste ici », v2)**, validés par Youssef le 6 octobre 2026 : « c'est parfait », « c'est très bien
+ce que tu me fais ». Toute nouvelle vidéo part du `scenes.py` de CB-M05 et suit la recette de
+`reference/A-LIRE.md` (section « La méthode validée », corrections comprises). CB-M01 (05/10) reste
+la première vidéo validée, plus le modèle. Les anciennes méthodes (montages PIL de
+`outils/ancien-montage/`, thèmes sombres, exemple RES-01) ne sont pas des modèles.
+
+**Volume de la voix : mix final à −11 LUFS, −1 dB crête, voix compressée** (`outils/mixer.py`).
+À −16 LUFS, Youssef devait remonter le son dans CapCut à chaque vidéo : ne jamais redescendre.
+Ce qu'il faut savoir est dans `reference/A-LIRE.md` ; comment faire une nouvelle vidéo est dans
+`motion/LISEZ-MOI.md`.
 
 Le moteur est `motion/moteur/` (Python + Skia : texte crénagé, perspective 3D, flou de
 mouvement, confettis, encodage H.264). Chaque vidéo est un dossier `motion/<ID>/` qui ne
