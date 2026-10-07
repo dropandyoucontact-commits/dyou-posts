@@ -1,0 +1,9 @@
+Un site peut être beau, convaincant et pourtant perdre le visiteur avant que l’offre ne s’affiche correctement.
+
+Commencez par ce qui pèse vraiment : l’image principale, les vidéos, les polices, les scripts et les widgets externes. Supprimez ce qui n’aide ni la compréhension ni l’action, puis compressez et optimisez le reste.
+
+Un bon contrôle ne se résume pas à un score. Vérifiez sur un vrai téléphone que l’accueil apparaît vite, que le menu répond immédiatement et que le formulaire reste fluide jusqu’à l’envoi.
+
+Enregistrez ce contrôle pour votre prochain audit et envoyez-le à quelqu’un dont le site semble attendre avant de commencer.
+
+#VitesseSite #PerformanceWeb #CoreWebVitals
