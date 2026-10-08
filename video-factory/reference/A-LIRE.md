@@ -98,10 +98,19 @@ Youssef, après CB-M04 « T'as tout faux » et CB-M05 « Reste ici » : « c'est
      Maroc…) et gérer ses commandes à distance — pas « tu pars en Chine ». La Chine n'apparaît que
      pour les fournisseurs. Le message ChinaBook : on n'a plus besoin d'aller en Chine.
 
+12. **Le hook de DY-M01 (08/10/2026, validé « c'est parfait, garde ce niveau ») :**
+   - **Jamais un grand logo + un sous-titre qui disent la même chose.** Un fond uni avec « Bienvenue
+     chez… » n'arrête pas le scroll : l'attention naît quand les articles apparaissent.
+   - **Dès l'image 0 : le produit en action, en 3D.** Téléphone en perspective (`Espace`, `matrice3d`),
+     produits détourés qui jaillissent vers la caméra (profondeur Z, flou de mouvement, secousse + lueur
+     d'écran à chaque sortie), puis le téléphone se pose exactement dans la pose de la scène suivante
+     (raccord sans coupure). Référence : `motion/DY-M01/scenes.py`, scène S1.
+   - Produits clairs détourés avec **rembg** (le détourage par composantes connexes mange les baskets blanches).
+
 ## Ce qu'on vérifie avant de livrer
 
 1. Des images extraites **du MP4 final** sur toute la durée (`outils/verifier.py`) :
    espaces entre les mots, rien qui déborde d'un cadre, rien qui se chevauche, aucun mot
    illisible pendant un glissement de surlignage.
-2. Volume intégré à −16 LUFS, crête sous −1 dBFS, durée = voix + carton final.
+2. Volume intégré à −11 LUFS, crête sous −1 dBFS, durée = voix + carton final.
 3. Aucun chiffre inventé à l'écran.

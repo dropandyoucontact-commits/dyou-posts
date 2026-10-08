@@ -136,27 +136,87 @@ def flash(cc, a, b, d, e, t, coupes):
         if 0 < f <= 1: cc.drawRect(skia.Rect.MakeXYWH(a, b, d, e), peinture("#FFFFFF", 0.7 * f))
 
 
-# ─────────────────────────────────────────── S1 · bienvenue chez DROP&YOU, ton agent en Chine
+# ─────────────────────────────────────────── S1 · le téléphone en 3D d'où jaillissent les baskets
+# Hook (retour de Youssef, 08/10/2026) : plus de grand logo qui répète le sous-titre. Dès l'image 0,
+# un téléphone en perspective sur fond violet, des baskets du catalogue qui sortent de l'écran vers
+# la caméra ; puis le violet rentre dans le téléphone, qui se redresse dans la pose exacte de S2.
+D3 = 1800.0
+JAILLIT = [("hook/c22", -0.36, (-0.34, 0.12), 1), ("hook/c05", 0.12, (0.6, -0.3), -1), ("hook/c08", 0.38, (-0.6, 0.35), 1),
+           ("hook/c11", 0.64, (0.5, 0.5), -1), ("hook/c09", 0.90, (-0.2, -0.7), 1), ("hook/c22", 1.12, (0.45, -0.2), -1)]
+VIE = 0.72
+
+
+def pose_s1(t):
+    """pose du téléphone : orbite en 3D, puis arrivée sur la pose de S2 à S2[0]"""
+    rx = cles(t, [(0.0, 48), (1.25, 30, douce), (S2[0], 0, entreeSortie)])
+    ry = cles(t, [(0.0, -30), (1.25, 22, douce), (S2[0], -6 + 3 * math.sin(S2[0] * 2.2), entreeSortie)])
+    rz = cles(t, [(0.0, -10), (1.25, 9, douce), (S2[0], 1.5 * math.sin(S2[0] * 2.7), entreeSortie)])
+    cy_ = cles(t, [(0.0, 1260), (1.25, 1160, douce), (S2[0], 1100, entreeSortie)])
+    w = cles(t, [(0.0, 640), (1.25, 560, douce), (S2[0], 480, entreeSortie)])
+    return rx, ry, rz, cy_, w
+
+
+def ecran_hook(cc, a, b, d, e, t):
+    ecran_catalogue(cc, a, b, d, e, t, -0.6)
+    # lueur de l'écran à chaque basket qui sort
+    for nom, t0, _, _ in JAILLIT:
+        f = 1 - (t - t0) / 0.22
+        if 0 < f <= 1: cc.drawRect(skia.Rect.MakeXYWH(a, b, d, e), peinture("#FFFFFF", 0.55 * f))
+
+
+def basket_volante(c, nom, t, t0, direc, sens, cx, cy):
+    u = (t - t0) / VIE
+    if not (0 <= u <= 1): return None
+    v = sortie(u) * 0.35 + u ** 1.7 * 0.65
+    X = direc[0] * 620 * v
+    Y = direc[1] * 720 * v - 200 * math.sin(math.pi * min(1, u * 1.2))
+    Z = -1560 * u ** 1.1
+    f = D3 / (D3 + Z)
+    x, y = cx + X * f, cy + Y * f
+    w = 330 * f
+    rot = sens * (-18 + 70 * u)
+    al = borne(u / 0.06)
+    iw, ih = taille_img(nom)
+    c.save(); c.translate(x, y); c.rotate(rot)
+    h_ = w * ih / iw
+    om = skia.Paint(AntiAlias=True, ImageFilter=skia.ImageFilters.DropShadowOnly(0, 0.08 * w, 0.06 * w, 0.06 * w, skia.Color4f(0.1, 0.0, 0.25, 0.45 * al)))
+    c.saveLayer(None, om); image(c, nom, -w / 2, -h_ / 2, w, al); c.restore()
+    image(c, nom, -w / 2, -h_ / 2, w, al)
+    c.restore()
+    return Z
+
+
 def s1(c, t):
-    sc = scene(c, t, S1, None, "zoom", ds=0.2)
-    if sc is None: return
-    with sc:
-        # disque violet plein écran dès l'image 0, logo blanc qui claque, puis le disque se replie
-        r = cles(t, [(0.0, 1750), (TW(5) - 0.25, 1750), (TW(5) + 0.15, 330, entreeSortie)])
-        cy_ = cles(t, [(TW(5) - 0.25, 1080), (TW(5) + 0.15, 1000, entreeSortie)])
-        puls = 1 + 0.02 * math.sin(t * 5)
-        disque(c, 540, cy_, r * puls, C["vert"], 1.0, (20, 60, 0.25) if r < 900 else None)
-        u = 1.0 + 0.18 * (1 - prog(t, 0, 0.35, sortie))
-        lw = mix(860, 560, prog(t, TW(5) - 0.25, 0.4, entreeSortie)) * u
-        iw, ih = taille_img("logo-dy-blanc")
-        image(c, "logo-dy-blanc", 540 - lw / 2, cy_ - lw * ih / iw / 2, lw)
-        if t >= TW(6) - 0.08:
-            ua = apparait(t, TW(6) - 0.08)
-            c.save(); c.translate(540, 1420); c.rotate(-4); c.scale(mix(0.4, 1, ua), mix(0.4, 1, ua))
-            w, h = pastille(c, "TON AGENT EN CHINE", 32, 0, 44, C["ink"], C["blanc"], None, borne(ua * 2), (16, 40, 0.28))
-            drapeau(c, "CN", -w / 2 - 70, -30, 72, 48, 7)
+    if t > S1[1]: return
+    rx, ry, rz, cy_, w = pose_s1(t)
+    # fond violet plein écran, qui rentre dans le téléphone sur « ton »
+    r = cles(t, [(0.0, 1750), (TW(5) - 0.25, 1750), (TW(5) + 0.15, 0, entree)])
+    if r > 1:
+        disque(c, 540, cy_, r, C["vert"])
+        # rayons de vitesse qui partent de l'écran
+        with Calque(c, 0.16):
+            for k in range(18):
+                ang = k / 18 * 2 * math.pi + t * 0.6
+                l0 = 260 + ((t * 2400 + k * 137) % 900)
+                trait(c, 540 + math.cos(ang) * l0, cy_ + math.sin(ang) * l0, 540 + math.cos(ang) * (l0 + 220), cy_ + math.sin(ang) * (l0 + 220), "#FFFFFF", 10)
+    if t < S2[0]:
+        sx, sy = secousse(t, 0.0, 16, 0.3)
+        for nom, t0, _, _ in JAILLIT: sx, sy = sx + secousse(t, t0, 7, 0.18)[0], sy + secousse(t, t0, 7, 0.18)[1]
+        tel(c, 540 + sx, cy_ + sy, lambda cc, a, b, d, e: ecran_hook(cc, a, b, d, e, t), w=w, h=w * 2, rx=rx, ry=ry, rz=rz)
+        for nom, t0, _, _ in JAILLIT:
+            onde(c, 540, cy_, t, t0, 80, 420, "#FFFFFF", 7, 0.45)
+    # les baskets volent devant tout, les plus proches dessinées en dernier
+    vols = sorted(JAILLIT, key=lambda j: j[1])
+    for nom, t0, direc, sens in vols:
+        basket_volante(c, nom, t, t0, direc, sens, 540, cy_)
+    # drapeau chinois en autocollant 3D sur « Chine »
+    if t >= TW(8) - 0.1:
+        u = apparait(t, TW(8) - 0.1, 2.0, 0.32)
+        with Espace(c, 860, 760, ry=-28 + 10 * math.sin(t * 3), rx=12, rz=8):
+            c.save(); c.translate(860, 760); c.scale(mix(0.2, 1, u), mix(0.2, 1, u))
+            rrect(c, -98, -66, 196, 132, 24, "#FFFFFF", borne(u * 2), (14, 36, 0.25))
+            drapeau(c, "CN", -82, -50, 164, 100, 14)
             c.restore()
-        etincelles(c, 540, 1000, t, TW(5) + 0.15, 12, 420, C["vert"])
 
 
 # ─────────────────────────────────────────── S2 · catégories qui défilent dans le téléphone, puis le catalogue
@@ -220,7 +280,7 @@ CATS = [("BASKETS", TW(9), 270, 700, -6), ("VÊTEMENTS", TW(10), 820, 760, 6), (
 
 
 def s2(c, t):
-    sc = scene(c, t, S2, "bas", "gauche", de=0.3, ds=0.22)
+    sc = scene(c, t, S2, None, "gauche", de=0.3, ds=0.22)
     if sc is None: return
     with sc:
         sx, sy = secousse(t, T_CATA, 10, 0.3)
@@ -538,8 +598,10 @@ def bandeau_dy(c, t, alpha):
 
 
 # ─────────────────────────────────────────── sons, flou, éclairs
-son(0.0, "impact", -5); son(0.0, "whoosh_court", -12); son(0.12, "verre", -10); son(TW(5) - 0.25, "whoosh", -13); son(TW(6) - 0.08, "pop", -11)
-son(S2[0], "whoosh_long", -14)
+son(0.0, "impact", -5); son(0.0, "whoosh_court", -12)
+for _n, _t0, _d, _s in JAILLIT:
+    if _t0 > 0: son(_t0, "whoosh_court", -12); son(_t0 + 0.02, "pop", -14)
+son(TW(5) - 0.25, "whoosh", -13); son(TW(8) - 0.1, "pop", -11); son(S2[0] - 0.3, "whoosh_long", -15)
 for t0 in (TW(9) - 0.08, TW(9) + 0.09, TW(9) + 0.26, TW(9) + 0.43, TW(10) - 0.05, TW(10) + 0.25, TW(11) - 0.05, TW(11) + 0.19, TW(11) + 0.43, T_MONTRES, T_MONTRES + 0.75):
     son(t0, "clic", -11); son(t0 + 0.01, "swipe", -18)
 for lab, t0, x, y, rot in CATS: son(t0 - 0.08, "pop", -12)
@@ -561,7 +623,7 @@ son(TW(101) - 0.1, "pop", -11); son(TW(98), "pop", -12); son(TW(101) - 0.05, "po
 son(T_LOGO - 0.1, "montee", -15); son(T_LOGO + 0.24, "impact", -7); son(T_LOGO + 0.26, "verre", -9)
 son(T_FIN, "whoosh", -13); son(T_FIN + 0.14, "impact_doux", -8); son(T_FIN + 0.16, "verre", -8); son(T_FIN + 0.36, "pop", -11)
 
-for a, b in [(TW(5) - 0.25, TW(5) + 0.2), (S2[0], S2[0] + 0.3), (T_CATA - 0.05, T_CATA + 0.15), (6.28, 6.6), (11.48, 11.8), (TW(40) - 0.1, TW(40) + 0.2),
+for a, b in [(0.06, 1.75), (S2[0] - 0.3, S2[0] + 0.1), (T_CATA - 0.05, T_CATA + 0.15), (6.28, 6.6), (11.48, 11.8), (TW(40) - 0.1, TW(40) + 0.2),
              (15.78, 16.1), (T_GROS - 0.05, T_GROS + 0.35), (19.56, 19.85), (22.10, 22.42), (25.34, 25.7), (T_LOGO, T_LOGO + 0.4), (T_FIN, T_FIN + 0.36)]:
     rapide(a, b)
 for tt, cc_, a_ in [(0.02, "#7C3AED", 0.14), (TW(16), "#7C3AED", 0.10), (TW(38), "#7C3AED", 0.08), (TW(46), "#7C3AED", 0.08), (TW(73) - 0.08, C["rouge"], 0.12),
