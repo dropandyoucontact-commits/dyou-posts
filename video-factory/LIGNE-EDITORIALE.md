@@ -92,6 +92,14 @@ Avant d'écrire un script, savoir pour quoi il est fait. Youssef le dit en le de
 - **Aucun appel aux commentaires, à l'enregistrement ni à l'abonnement** : ça ne sert à rien en pub.
 - Seul appel à l'action : WhatsApp (ou le site, qui porte déjà le WhatsApp).
 
+**Signature (Youssef, 08/10/2026)** : toute vidéo ChinaBook, organique ou pub, finit sur le carton
+final avec **« proposé par » + le logo DROP&YOU** (`moteur/media/logo-dropandyou.png`), comme DY-M01 v1.
+
+**Remix d'un TikTok d'arnaques ou de conseils** : le discours ChinaBook prime sur la source. Jamais
+« usine », jamais « paie seulement sur un compte d'entreprise » (chez nous on paie le fournisseur sur
+Alipay) : on reformule en « vrai fournisseur », « moyen de paiement traçable », « il te montre la
+marchandise en direct ».
+
 **Remasteriser un TikTok de référence** : on reprend les idées et les faits (vérifiés le jour même),
 jamais le texte, la voix ni les visuels. On retire tout ce qui appartient à l'auteur (son nom, son
 compte, ses appels à l'action vers lui). Notre accroche, notre ordre, plus dense, plus rapide.

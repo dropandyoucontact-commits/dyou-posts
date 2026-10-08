@@ -770,6 +770,10 @@ def carton_final(c, t):
             signet(c, -170, 0, 56, True); texte_centre(c, "Enregistre-la", 40, 0, 40, C["blanc"], "noir")
         c.restore()
     etincelles(c, 540, 1180, t, T_FIN + 0.45, 12, 360)
+    ud = prog(t, T_FIN + 0.55, 0.4, sortie)
+    if ud > 0:
+        texte_centre(c, "proposé par", 540, 1320, 26, C["gris"], "fort", ud, 0.04)
+        image(c, "logo-dropandyou", 540 - 160, 1350, 320, ud)
 
 
 # ─────────────────────────────────────────── sons, flou, éclairs
@@ -810,7 +814,7 @@ son(T_LOGO - 0.1, "montee", -15); son(T_LOGO + 0.24, "impact", -7); son(T_LOGO +
 son(TW(217) - 0.05, "message", -11); son(TW(219), "message_in", -11); son(TW(219) - 0.1, "pop", -12); son(TW(221) - 0.1, "whoosh_court", -12); son(TW(223) + 0.2, "ching", -9)
 son(SC4[0], "whoosh", -13); son(TW(225) - 0.1, "pop", -11)
 for tl in T_TAPE: son(tl, "frappe", -15)
-son(T_FIN, "whoosh", -13); son(T_FIN + 0.1, "impact_doux", -8); son(T_FIN + 0.12, "verre", -8); son(T_FIN + 0.3, "pop", -11)
+son(T_FIN, "whoosh", -13); son(T_FIN + 0.1, "impact_doux", -8); son(T_FIN + 0.12, "verre", -8); son(T_FIN + 0.3, "pop", -11); son(T_FIN + 0.55, "pop", -13)
 
 for a, b in [(TW(18) - 0.15, TW(18) + 0.15)] + [(a - 0.02, a + 0.3) for (a, b), n in NUMS] + \
             [(TW(43) - 0.1, TW(43) + 0.3), (TW(60) - 0.2, TW(60) + 0.2), (TW(73) - 0.1, TW(73) + 0.3), (TW(106) - 0.1, TW(106) + 0.3),
