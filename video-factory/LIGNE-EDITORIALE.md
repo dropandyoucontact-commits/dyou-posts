@@ -73,6 +73,29 @@ Règle de départ, à ajuster selon les chiffres :
   regroupés dans le ChinaBook. Écris-moi CHINA. »
 - **De temps en temps** : une vidéo entièrement ChinaBook, comme CB-M01.
 
+## Deux familles de vidéos : organique ou pub (Youssef, 08/10/2026)
+
+Avant d'écrire un script, savoir pour quoi il est fait. Youssef le dit en le demandant.
+
+**Vidéo organique** (pour publier sur le compte, gagner des abonnés) :
+- **Appel à l'enregistrement ou au partage dans les 3 premières secondes**, dit par la voix :
+  « Enregistre cette vidéo », « Envoie-la à celui qui part avec toi ». Ça fait monter l'algorithme.
+- **Une question au public quand on explique quelque chose** : « Dis-moi en commentaire… ».
+  Les commentaires comptent autant que les enregistrements.
+- **Une boucle ouverte annoncée tôt** (« reste jusqu'au 9… ») pour tenir jusqu'au bout.
+- La pub ChinaBook se place **à la fin**, en passerelle : « tu n'as même pas besoin d'y aller,
+  on a déjà fait le travail, nos fournisseurs validés sont dans le ChinaBook ».
+- Un sujet qui n'a rien à voir avec les produits (voyage, applis, VPN…) se fait en **motion pur**
+  (logos, écrans, icônes), sans aller chercher dans la banque de produits. Même voix, même débit.
+
+**Vidéo pub** (motion type CB-M04 / CB-M05 / DY-M01, pour Meta Ads) :
+- **Aucun appel aux commentaires, à l'enregistrement ni à l'abonnement** : ça ne sert à rien en pub.
+- Seul appel à l'action : WhatsApp (ou le site, qui porte déjà le WhatsApp).
+
+**Remasteriser un TikTok de référence** : on reprend les idées et les faits (vérifiés le jour même),
+jamais le texte, la voix ni les visuels. On retire tout ce qui appartient à l'auteur (son nom, son
+compte, ses appels à l'action vers lui). Notre accroche, notre ordre, plus dense, plus rapide.
+
 ## Le persona et l'accroche (décision de Youssef, 05/10/2026)
 
 Youssef connaît son persona et ne le redéfinit plus : un **revendeur** (sneakers, textile, électronique…)

@@ -441,7 +441,8 @@ def ecran_alipay(c, x, y, w, h, t, t_scan, t_paye, marchand="Fournisseur"):
             icone(c, "check", 0, 0, 120, C["blanc"], 3.2)
         c.restore()
         texte_centre(c, "Paiement réussi", cx, y + 740, 40, C["ink"], "noir", borne(ok * 2))
-        texte_centre(c, "Le fournisseur expédie chez ton transitaire", cx, y + 800, 24, C["gris"], "fort", borne(ok * 2))
+        _l = "Le fournisseur expédie chez ton transitaire"
+        texte_centre(c, _l, cx, y + 800, ajuste(_l, w - 60, 24, "fort"), C["gris"], "fort", borne(ok * 2))
 
 
 # ─────────────────────────────────────────── globe en points

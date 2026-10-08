@@ -50,6 +50,7 @@ contient que son script, sa voix, son minutage, ses médias et son `scenes.py`.
 
 ## Règles de contenu
 
+- **Organique ou pub** : voir `LIGNE-EDITORIALE.md`, « Deux familles de vidéos » — appels à enregistrer, partager et commenter en organique seulement.
 - Ne pas inventer de prix, de marge, de résultat chiffré, de témoignage, de capture WeChat
   ni de preuve commerciale. Les barres et tickets du motion n'ont pas de nombres.
 - Prix à l'écran : le prix cher est celui de dropandyou (`full11_source.json`) ; le prix
