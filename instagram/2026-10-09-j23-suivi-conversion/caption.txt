@@ -1,0 +1,11 @@
+Votre site reçoit des visites. Mais savez-vous précisément où une demande se perd ?
+
+Commencez par suivre quatre actions simples : la page d’offre consultée, le clic vers l’action, le formulaire commencé et la demande réellement envoyée.
+
+Ces repères montrent où le parcours se casse. Une offre peu consultée signale un problème d’accès. Un bouton ignoré questionne la promesse. Un formulaire commencé mais abandonné révèle une friction concrète.
+
+Changez ensuite une seule chose à la fois. Vous pourrez enfin distinguer une vraie amélioration d’une simple impression.
+
+Enregistrez ce tableau de bord et envoyez-le à quelqu’un qui modifie encore son site au hasard.
+
+#AnalyseWeb #SuiviConversion #ParcoursUtilisateur
