@@ -81,3 +81,13 @@ existent vraiment. Familles ChinaBook : `prix`, `voyage`, `intermediaire`, `rent
 CB-M01. ChatGPT ne fixe plus de règle de motion ; une idée de sujet ou de script venue de
 lui se traite comme un contenu de référence : Claude la réécrit selon `LIGNE-EDITORIALE.md`. Ressources GitHub
 vérifiées et pièges connus de Higgsedit : `motion-ressources/README.md`.
+
+## Trois façons de monter (Youssef, 10/10/2026)
+
+1. **Motion pur** : fond blanc ou noir, mockups, téléphones et objets en 3D, voix. Modèle : CB-M04 / CB-M05, `scenes.py` + `moteur/rendu.py`.
+2. **Rushes à écran vert** : Youssef génère une vidéo où un élément est vert chroma uni (écran de téléphone, panneau publicitaire,
+   écran de télé, vitrine…) ; on détoure le vert, on y incruste du contenu et on fait sortir des panneaux en verre fumé.
+   Modèle : DY-M02 (`suivi_vert.py`). Consignes de génération : vert uni mat, 4 coins visibles, mouvement lent, haute résolution.
+3. **Habillage d'une vidéo finie** : Youssef envoie une vidéo déjà montée (musique, texte incrusté) ; on n'y touche pas et on pose
+   par-dessus, en verre fumé, marque, cartes de chapitre, repères accrochés aux objets (suivi par flux optique) et carton de fin.
+   Pas de voix. Modèle : DY-M03 (`montage.py`, `suivi.py`, rendu autonome au format de la source) — « c'est parfait ».
