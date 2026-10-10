@@ -1,0 +1,9 @@
+Une automatisation mal pensée ne supprime pas un problème. Elle le répète plus vite, plus souvent et parfois sans que personne ne le voie.
+
+Avant de choisir un outil, dessinez le parcours réel. Supprimez les étapes inutiles, définissez les informations indispensables et prévoyez ce qui doit se passer lorsqu’un cas sort du scénario normal.
+
+Commencez ensuite par une tâche répétitive dont le résultat est facile à vérifier : confirmation, relance, classement ou attribution. Une automatisation utile reste compréhensible, contrôlable et réversible.
+
+Enregistrez cette checklist avant votre prochain projet d’automatisation et envoyez-la à quelqu’un qui veut connecter des outils avant de clarifier son processus.
+
+#AutomatisationEntreprise #ProcessusMetier #WorkflowDigital
