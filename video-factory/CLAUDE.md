@@ -116,3 +116,17 @@ Rushes humoristiques fournis par Youssef (personnages muets, seule la voix off p
 **Voix** : toujours Tomy (`Lt0unAbeM6JystrA2RTv`). eleven_v4 a sorti une prise à l'accent québécois sur DA-M04 :
 `voix.py` envoie désormais `language_code: "fr"`. Si une prise sonne autrement, la refaire (`--forcer`) : les animations
 suivent les mots (`TW`), rien d'autre à reprendre.
+
+### DA-M05 « Résine » (10/10/2026)
+
+Même montage que DA-M04 pour les artisans des sols en résine époxy, thème `theme_polyra()` (cuivre sur noir), site de démo
+POLYRA (`dyou-netlify-ready/dist/realisations/polyra/`, capturé depuis une copie dans le scratchpad : ne jamais écrire dans
+`dist/`, il est déployé). Six rushes : selfie en hook, ponçage et coulée dans le téléphone, ordinateur à écran vert avec un
+vieux site fictif qu'il referme et jette, téléphone à écran vert avec POLYRA dont les blocs sortent, marche vers la caméra
+sur « Tu veux le même ? ». `cadre_vert()` de `DA-M05/scenes.py` recadre le rush pour grossir un petit écran vert.
+
+## Reprendre ailleurs
+
+`REPRISE.md` (dans ce dossier) est le prompt à donner à un autre Claude ou à ChatGPT. Les vidéos finies et les médias
+de chaque vidéo (rushes, voix, captures) sont dans le dépôt **privé** `dyou-assets` (`motion-videos/`, `motion-medias/<ID>/`),
+jamais dans ce dépôt public.
