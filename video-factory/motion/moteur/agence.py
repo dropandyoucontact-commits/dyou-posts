@@ -73,6 +73,15 @@ def theme_athla():
                  (860, 200, 560, "#C8FF2E", 0.10, 0.29, 3.1), (80, 1760, 600, "#1E2808", 0.45, 0.21, 4.4)]
 
 
+def theme_polyra():
+    """cuivre POLYRA (#E39A62 → #B8683C) sur noir chaud, texte sombre sur l'accent"""
+    A.update(fond="#080605", violet="#E39A62", violetClair="#F2C49B", violetPale="#F7E3D0", surAccent="#140E0A",
+             poussiere="#F5C9A0", verreFond="#140F0B", disque=("#F2C49B", "#E39A62", "#B8683C"), bouton=("#F0B888", "#C97A45"),
+             logoDisque="logo-agence-noir", gris="#A89A8E")
+    TACHES[:] = [(140, 380, 760, "#7A4520", 0.32, 0.23, 0.0), (980, 1560, 820, "#4D2C12", 0.36, 0.17, 1.7),
+                 (860, 200, 560, "#E39A62", 0.10, 0.29, 3.1), (80, 1760, 600, "#28180B", 0.45, 0.21, 4.4)]
+
+
 # ─────────────────────────────────────────── verre dépoli
 T_COURANT = [0.0]     # temps courant : le verre redessine le fond derrière lui
 

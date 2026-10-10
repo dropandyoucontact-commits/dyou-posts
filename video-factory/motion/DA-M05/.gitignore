@@ -1,0 +1,10 @@
+media/
+renders/
+apercus/
+verification/
+video/
+audio/
+__pycache__/
+renders_log.txt
+suivi/r4/
+suivi/r5/
