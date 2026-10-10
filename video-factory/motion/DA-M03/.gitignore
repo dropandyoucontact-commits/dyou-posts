@@ -1,0 +1,8 @@
+media/
+renders/
+apercus/
+verification/
+video/
+audio/
+__pycache__/
+renders_log.txt

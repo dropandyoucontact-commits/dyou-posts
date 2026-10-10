@@ -58,8 +58,46 @@ def bus(evenements):
     return x[: int(DUREE * SR)]
 
 
+def mix_fort(voix, g, mix, ecart):
+    """mix au-dessus de -10,5 LUFS (09/10/2026) : la voix est compressée et montée SEULE à son niveau, les
+    bruitages sont posés à `ecart` LU en dessous et s'effacent sous chaque mot ; limiteur final.
+    (Avant : un seul gain de sortie de +25 dB remontait aussi les bruitages, non compressés → ils couvraient la voix.)"""
+    v = ICI / "audio" / "voix-traitee.wav"
+    vgain = 0.0
+    for _ in range(6):
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(voix), "-af",
+                        f"aresample={SR},aformat=channel_layouts=mono,volume={g:.2f}dB,"
+                        "acompressor=threshold=0.06:ratio=4:attack=4:release=110:makeup=1,"
+                        f"volume={vgain:.2f}dB,alimiter=limit=0.89:attack=1.5:release=50:level=false,apad=whole_dur={DUREE}",
+                        "-t", str(DUREE), "-c:a", "pcm_s16le", str(v)], check=True)
+        e = CIBLE_MIX - 0.4 - loudness(v)
+        if abs(e) < 0.2: break
+        vgain += e
+    lv = loudness(v)
+    b = ICI / "audio" / "bus.wav"
+    sgain = (lv - ecart) - loudness(b)
+    filtre = (f"[1:a]aresample={SR},volume={sgain:.2f}dB[s];[0:a]asplit=2[v][vsc];"
+              "[s][vsc]sidechaincompress=threshold=0.03:ratio=4:attack=6:release=260:makeup=1[sd];"
+              "[v][sd]amix=inputs=2:normalize=0:duration=first,alimiter=limit=0.89:attack=2:release=60:level=false,"
+              "aformat=channel_layouts=stereo[out]")
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(v), "-i", str(b), "-filter_complex", filtre, "-map", "[out]",
+                    "-t", str(DUREE), "-c:a", "pcm_s16le", str(mix)], check=True)
+    print(f"voix seule {lv:.1f} LUFS, bruitages {lv - ecart:.1f} LUFS ({ecart:.0f} LU dessous) ; mix {loudness(mix):.1f} LUFS → {mix.relative_to(ICI)}")
+
+
 def main():
-    global DUREE
+    global DUREE, CIBLE_MIX
+    # options : --lufs -9 (mix final plus fort) ; --sfx -3 (bruitages baissés de 3 dB sous la voix)
+    sfx_db = 0.0
+    ecart = -1.0     # mode fort : bruitages 1 LU AU-DESSUS de la voix avant l'effacement sous les mots.
+                     # DY-M02 (09/10/2026) validée à +1 LU dessous, mais « bruitages encore un peu trop bas » : +2 dB pour les suivantes
+    args = sys.argv[1:]
+    while args and args[0].startswith("--"):
+        if args[0] == "--lufs": CIBLE_MIX = float(args[1])
+        elif args[0] == "--sfx": sfx_db = float(args[1])
+        elif args[0] == "--ecart": ecart = float(args[1])
+        args = args[2:]
+    sys.argv = sys.argv[:1] + args
     if len(sys.argv) > 1:
         DUREE = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", sys.argv[1]],
                                      capture_output=True, text=True).stdout.strip())
@@ -69,12 +107,16 @@ def main():
     voix = ICI / "media" / "voix.mp3"
     g = CIBLE_LUFS - loudness(voix)
     mix = ICI / "audio" / "mix.wav"
+    if CIBLE_MIX > -10.5:
+        mix_fort(voix, g, mix, ecart)
+        return poser(mix)
+    comp_seuil, comp_ratio = 0.1, 3
     sortie_db = 4.0
-    for _ in range(4):
+    for _ in range(8):
         filtre = (f"[0:a]aresample={SR},aformat=channel_layouts=mono,volume={g:.2f}dB,"
-                  "acompressor=threshold=0.1:ratio=3:attack=5:release=120:makeup=1,"
+                  f"acompressor=threshold={comp_seuil}:ratio={comp_ratio}:attack=5:release=120:makeup=1,"
                   f"apad=whole_dur={DUREE},asplit=2[v][vsc];"
-                  f"[1:a]aresample={SR}[s];"
+                  f"[1:a]aresample={SR},volume={sfx_db:.2f}dB[s];"
                   "[s][vsc]sidechaincompress=threshold=0.03:ratio=3:attack=6:release=260:makeup=1[sd];"
                   f"[v][sd]amix=inputs=2:normalize=0:duration=first,volume={sortie_db:.2f}dB,"
                   "alimiter=limit=0.89:attack=2:release=60:level=false,"
@@ -85,6 +127,10 @@ def main():
         if abs(ecart) < 0.3: break
         sortie_db += ecart
     print(f"voix +{g:.2f} dB, sortie +{sortie_db:.1f} dB ; mix {loudness(mix):.1f} LUFS → {mix.relative_to(ICI)}")
+    poser(mix)
+
+
+def poser(mix):
     if len(sys.argv) > 1:
         video = pathlib.Path(sys.argv[1])
         sortie = ICI / "video" / f"{ICI.name}.mp4"

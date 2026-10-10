@@ -17,8 +17,11 @@ ce que tu me fais ». Toute nouvelle vidéo part du `scenes.py` de CB-M05 et sui
 la première vidéo validée, plus le modèle. Les anciennes méthodes (montages PIL de
 `outils/ancien-montage/`, thèmes sombres, exemple RES-01) ne sont pas des modèles.
 
-**Volume de la voix : mix final à −11 LUFS, −1 dB crête, voix compressée** (`outils/mixer.py`).
-À −16 LUFS, Youssef devait remonter le son dans CapCut à chaque vidéo : ne jamais redescendre.
+**Volume : `mixer.py --lufs -9 renders/image.mp4`** (depuis DY-M02, 09/10/2026) : la voix est montée seule
+(≈ −10 LUFS), les bruitages posés à côté d'elle puis effacés sous chaque mot. Retour de Youssef sur DY-M02 :
+voix bien forte = bon ; bruitages « encore un peu trop bas » → réglage par défaut relevé de 2 dB (`ecart = -1`).
+Jamais d'écart de 15 LU (« on n'entend plus rien »), jamais un seul gain de sortie qui remonte les bruitages
+au-dessus de la voix. Ancien réglage −11 LUFS : trop faible, Youssef remontait le son dans CapCut.
 Ce qu'il faut savoir est dans `reference/A-LIRE.md` ; comment faire une nouvelle vidéo est dans
 `motion/LISEZ-MOI.md`.
 
@@ -91,3 +94,25 @@ vérifiées et pièges connus de Higgsedit : `motion-ressources/README.md`.
 3. **Habillage d'une vidéo finie** : Youssef envoie une vidéo déjà montée (musique, texte incrusté) ; on n'y touche pas et on pose
    par-dessus, en verre fumé, marque, cartes de chapitre, repères accrochés aux objets (suivi par flux optique) et carton de fin.
    Pas de voix. Modèle : DY-M03 (`montage.py`, `suivi.py`, rendu autonome au format de la source) — « c'est parfait ».
+
+## Vidéos DYOU Agency (vendre du motion) — 10/10/2026
+
+Style à part : `motion/moteur/agence.py` (fond sombre vivant, verre dépoli, violet du logo #7439FC, particules).
+**Sous-titres fins** (`SousTitresFins`) : la phrase en cours en blanc, chaque mot qui se pose flou → net à son
+temps, **aucun surlignage ni mot coloré** — Youssef n'aime plus les sous-titres karaoké vert/violet pour l'agence.
+Les cartes en verre, écrans de chat, mockups 3D : c'est le niveau « moderne » attendu. Pas de logo + sous-titre
+qui disent la même chose (sous-titres masqués pendant le disque logo). Modèles : `motion/DA-M01`, `motion/DA-M02`.
+
+### DA-M04 « Stop, coach » — référence de montage hybride (10/10/2026, « la vidéo est parfaite, ça c'est du montage »)
+
+Rushes humoristiques fournis par Youssef (personnages muets, seule la voix off parle) + motion du style agence :
+- **un seul rush en plein écran, le hook** (r1 : « Stop ! » et la main qui frappe l'écran) — on garde son vrai son,
+  la voix off démarre juste après (voix décalée de 0,95 s, timing.json recalé), vitre fendue + secousse à l'impact ;
+- **les autres rushes vont dans des mockups** : téléphone 3D (`video()` dans `telephone_sombre`), et le rush à écran
+  vert dans un grand cadre de verre avec le site incrusté sous les doigts (`DA-M04/suivi_vert.py`, fonctions de DY-M02) ;
+- les blocs du site sortent du téléphone en verre (découpes d'une capture Chrome headless de la page), surlignés au mot ;
+- le texte change à chaque vidéo (les algorithmes repèrent les doublons) ; CTA organique « Commente COACH » tapé à l'écran.
+
+**Voix** : toujours Tomy (`Lt0unAbeM6JystrA2RTv`). eleven_v4 a sorti une prise à l'accent québécois sur DA-M04 :
+`voix.py` envoie désormais `language_code: "fr"`. Si une prise sonne autrement, la refaire (`--forcer`) : les animations
+suivent les mots (`TW`), rien d'autre à reprendre.

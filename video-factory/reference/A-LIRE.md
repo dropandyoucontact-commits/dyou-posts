@@ -85,7 +85,7 @@ Youssef, après CB-M04 « T'as tout faux » et CB-M05 « Reste ici » : « c'est
    passent en blanc pendant le disque (`SOUS.dessine(c, t, C["blanc"] if r > 900 else C["ink"])`).
 8. **Aucun chiffre inventé** : coûts, marges et prix sont des barres, des cartes ou
    « des milliers d'euros » si Youssef l'a dit — jamais un montant.
-9. **Son : mix final à −11 LUFS / −1 dB crête, voix compressée** (`mixer.py` le fait seul). Plus
+9. **Son : `mixer.py --lufs -9`** (depuis DY-M02, 09/10/2026 : voix montée seule ≈ −10 LUFS, bruitages bien audibles, relevés de 2 dB après DY-M02). Avant : −11 LUFS / −1 dB crête, voix compressée. Plus
    jamais −16 : trop faible sur téléphone.
 10. **Vérifier le MP4 final** (`verifier.py` sur toute la durée + `vide.py`), corriger,
    re-rendre, puis seulement livrer. Code dans `dyou-posts`, vidéo finie dans le dépôt privé.

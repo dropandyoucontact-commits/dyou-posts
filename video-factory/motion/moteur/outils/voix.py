@@ -88,8 +88,11 @@ def main():
     p = argparse.ArgumentParser()
     p.add_argument("--etat", action="store_true"); p.add_argument("--forcer", action="store_true")
     p.add_argument("--debit", type=float, default=3.5, help="mots par seconde visés après accélération")
+    p.add_argument("--voix", help="voice_id ElevenLabs, à la place de celui de la configuration")
     a = p.parse_args()
     c = conf()
+    if a.voix:
+        c = {**c, "voice_id": a.voix}
     texte = (ICI / "script.txt").read_text(encoding="utf-8").strip()
     texte = re.sub(r"\s+", " ", texte)
     reste, _ = credits(c)
@@ -101,7 +104,7 @@ def main():
         if len(texte) > reste:
             sys.exit(f"Crédits insuffisants : {len(texte)} nécessaires, {reste} restants.")
         r = appel(f"text-to-speech/{c['voice_id']}/with-timestamps?output_format=mp3_44100_128", c, {
-            "text": texte, "model_id": c.get("model_id", "eleven_v4"),
+            "text": texte, "model_id": c.get("model_id", "eleven_v4"), "language_code": c.get("language_code", "fr"),
             "voice_settings": c.get("voice_settings", {"stability": 0.42, "similarity_boost": 0.80, "style": 0.30, "use_speaker_boost": True})})
         brut.parent.mkdir(exist_ok=True)
         brut.write_bytes(base64.b64decode(r["audio_base64"]))
