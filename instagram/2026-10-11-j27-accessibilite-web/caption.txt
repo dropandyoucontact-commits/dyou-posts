@@ -1,0 +1,11 @@
+Un site peut perdre un client sans que l’offre soit en cause. Parfois, le texte est trop pâle, trop petit ou impossible à parcourir sans souris.
+
+L’accessibilité commence par des choix concrets : contraste net, lecture confortable, navigation au clavier, messages d’erreur compréhensibles et animations contrôlables.
+
+Ces ajustements n’appauvrissent pas le design. Ils rendent l’expérience plus claire pour davantage de personnes, y compris sur un téléphone en plein jour, avec une fatigue visuelle ou une motricité limitée.
+
+Avant votre prochaine refonte, essayez de parcourir les pages sans souris, baissez la luminosité et provoquez une erreur dans chaque formulaire. Ce que vous découvrez mérite d’être corrigé.
+
+Enregistrez cette checklist avant votre prochain audit et envoyez-la à la personne qui décide du design de votre site.
+
+#AccessibiliteWeb #DesignInclusif #ExperienceUtilisateur
