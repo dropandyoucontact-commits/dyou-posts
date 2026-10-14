@@ -1,0 +1,11 @@
+Un site peut être propre page par page et pourtant sembler amateur dans son ensemble.
+
+Le problème apparaît quand les couleurs changent de rôle, que les titres n’ont plus la même hiérarchie, que les boutons varient sans raison et que les espacements deviennent irréguliers.
+
+Un système visuel fixe ces règles avant la production. Il rend la navigation plus prévisible, renforce la marque et permet d’ajouter de nouvelles pages sans repartir de zéro.
+
+Lors de votre prochaine refonte, ne validez pas seulement une maquette. Validez aussi la palette, les styles de texte, les composants et la grille qui devront rester cohérents partout.
+
+Enregistrez cette grille avant votre prochaine refonte et envoyez-la à la personne qui gère votre site.
+
+#DesignSystem #IdentiteVisuelle #WebDesign
