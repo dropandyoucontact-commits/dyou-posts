@@ -117,6 +117,18 @@ compte, ses appels à l'action vers lui). Notre accroche, notre ordre, plus dens
 - **Son plus fort** : viser −7 à −8 LUFS, crête ≤ −1 dB (le −9 précédent est encore jugé trop bas sur TikTok).
 - **Une vidéo par jour, pas trois** : les jours à 2-3 publications rapprochées, les vidéos se cannibalisent.
 
+### Consignes de Youssef après CB-M10 (14/10/2026)
+
+- **Fond coloré, plus jamais de fond blanc** à partir de CB-M10 : le blanc ressort mal sur TikTok.
+  Un produit détouré se pose sur le fond coloré.
+- **Tomy encore plus rapide** : CB-M10 sortait à 3,4 mots/s réels (196 mots en 57 s). Viser ~4 mots/s.
+  `moteur/outils/voix.py` plafonne l'accélération à ×1,3 : le relever, et réécouter que ça reste net.
+- **Nouveaux sujets** : toujours de l'éducatif sur la Chine, l'import-export, gagner de l'argent, mais
+  chercher des sujets qu'on n'a pas encore traités.
+- **Organique** : beaucoup d'appels à l'action (enregistre, envoie-la, commente).
+- **Fin variable** : ChinaBook quand le sujet mène aux fournisseurs, **ou** DROP&YOU pour qui veut
+  simplement acheter en passant par nous.
+
 ## Le persona et l'accroche (décision de Youssef, 05/10/2026)
 
 Youssef connaît son persona et ne le redéfinit plus : un **revendeur** (sneakers, textile, électronique…)
