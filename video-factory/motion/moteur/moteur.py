@@ -314,7 +314,7 @@ def prepare_video(nom, w, h, rogne=(0.0, 0.0, 0.0, 0.0)):
         fps = subprocess.run(["ffprobe", "-v", "error", "-select_streams", "v:0", "-show_entries", "stream=r_frame_rate",
                               "-of", "csv=p=0", str(src)], capture_output=True, text=True).stdout.strip()
         (cache / "fini").write_text(fps)
-    num, _, den = (cache / "fini").read_text().strip().partition("/")
+    num, _, den = (cache / "fini").read_text().strip().splitlines()[0].strip(",").partition("/")   # .mov iPhone : « 30/1, »
     return cache, len(list(cache.glob("*.jpg"))), float(num) / float(den or 1)
 
 

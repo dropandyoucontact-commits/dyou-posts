@@ -63,3 +63,28 @@ dans la voix.
 
 - `lieux/kinbo-devanture-guangzhou.jpg` — devanture de Kinbo Fashion City (金宝外贸服装城), Guangzhou. Source : business-in-guangzhou.com.
 - `lieux/seg-electronics-market-shenzhen.jpg` — entrée du SEG Electronics Market (赛格电子市场), Huaqiangbei, Shenzhen. Source : Wikimedia Commons, domaine public.
+
+## Crocodile (Youssef, 14/10/2026 — pour CB-M13, « elements croco »)
+
+Quand Youssef demande « les éléments croco », ce sont ceux-là.
+
+- `videos/croco/croco-peaux-telephone-defile.mov` — main qui tient un téléphone, on fait défiler des peaux de crocodile entières de plusieurs couleurs (4 s, 4K).
+- `videos/croco/croco-types-de-peaux-comparatif.mov` — téléphone puis gros plans : comparatif de trois types de peaux de crocodile (10 s). Un nom de marque est embossé sur les peaux : ne pas le citer, recadrer si besoin.
+- `videos/croco/croco-sac-fini-boite.mov` — sac à main fini en crocodile beige mat, dans sa boîte (9,6 s).
+- `videos/croco/croco-portefeuille-violet.mov` — portefeuille en crocodile violet brillant, manipulé (10,7 s).
+- `photos/croco/croco-deux-sacs-finis.jpg` — deux sacs à main finis en crocodile gris clair, posés sur une table.
+
+## Sacs : trois qualités du même modèle (Youssef, 14/10/2026)
+
+Prix donnés par Youssef (chez les revendeurs) : qualité standard 120–150 €, top qualité « 1:1 » 200–250 €, qualité
+originale (vrais matériaux) plus de 300 €. L'originale a du grain ; les deux autres sont trop lisses ; ferrures et sangle parfaites.
+- `videos/sacs/sacoches-3-qualites-sangles.mov` — trois sangles côte à côte puis les mousquetons, manipulés (25 s).
+- `photos/sacs/sacoches-3-qualites-face.jpg` — les trois sacoches polochon empilées, vues de face.
+- `photos/sacs/sacoches-3-qualites-dessus.jpg` — les trois sacoches ouvertes, vues de dessus, avec leurs sangles.
+
+## Avis clients DROP&YOU (captures Snap envoyées à @dropandyou1)
+
+- `photos/avis/avis-sac-beige-matelasse.jpg` — « J'ai acheté, j'ai reçu, j'ai aimé. Drop and you je recommande foncez !! »
+- `photos/avis/avis-pochette-noire-matelassee.jpg` — « Drop and you 😍 — Qualité wow on dirait du vrai »
+- `photos/avis/avis-sacoche-nylon-noire.jpg` — « Bien reçu DROPANDYOU »
+- `photos/avis/avis-claquettes-noires.jpg` — « Carré drop and you »
