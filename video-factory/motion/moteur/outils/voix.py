@@ -87,7 +87,7 @@ def accelerer(debit):
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("--etat", action="store_true"); p.add_argument("--forcer", action="store_true")
-    p.add_argument("--debit", type=float, default=3.5, help="mots par seconde visés après accélération")
+    p.add_argument("--debit", type=float, default=4.0, help="mots par seconde visés après accélération (4,0 = rythme validé le 14/10/2026)")
     p.add_argument("--voix", help="voice_id ElevenLabs, à la place de celui de la configuration")
     p.add_argument("--langue", help="code langue de la prise (fr par défaut) : en pour une version anglaise")
     a = p.parse_args()

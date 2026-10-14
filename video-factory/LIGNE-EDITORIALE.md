@@ -145,3 +145,16 @@ revendeur veut entendre : ne pas redemander.
 Modèle : `motion/CB-M03` (27,5 s). La structure qui marche : accroche → cause → preuve (« j'y étais »)
 → solution → process (WeChat, Alipay, transitaire) → liberté (détail, unité, gros, à la commande, depuis
 la Thaïlande) → « sans y aller, sans perdre des milliers d'euros ni du temps » → « Envoie-moi CHINA ».
+
+### Règles de Youssef du 14/10/2026 (soir) — voix, rythme, organique → pub
+
+- **Rythme de voix validé, pour TOUTES les voix françaises** (Tomy, You, n'importe laquelle) : celui de DA-M07 anglais
+  (`motion/DA-M07-169-EN`), soit **4,0 mots/s** après accélération (`voix.py` : `--debit 4.0`, défaut désormais ; plafond ×1,45).
+  Ce rythme donne aussi le bon tempo à l'animation. Si une prise reste sous 3,8 mots/s au plafond, raccourcir les pauses du script
+  (moins de points, phrases plus serrées) plutôt que d'accepter un débit lent.
+- **Quelle voix** : vidéos et pubs des agences (DYOU Agency…) → **toujours Tomy**. La voix clonée de Youssef « You » → seulement
+  pour DROP&YOU ou ChinaBook.
+- **Organique → pub** : quand Youssef renvoie une vidéo organique en disant « refais-la en format ad », on retire tous les appels
+  « commente / enregistre / partage / abonne-toi » et on les remplace par **« Clique sur le lien »** (EN : « Click the link »),
+  en français comme en anglais.
+- **Exemples de référence** (16:9, site) : `motion/DA-M07-169`, `DA-M07-169-EN`, `NOVA`, `NOVA-EN`, `FORMA`, `FORMA-EN`.
