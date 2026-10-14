@@ -8,6 +8,16 @@ Claude, et ses règles vivent dans ce dépôt** (ce fichier, `reference/A-LIRE.m
 briefs Higgsedit, champs `motion_direction` et `images` des `brief.json`, thèmes sombres,
 `A-REGENERER.md`. Si une règle de motion doit changer, c'est Claude qui la change ici.
 
+## Mise à jour du 14/10/2026 (prioritaire sur ce qui suit)
+
+- **Son fort (CB-M10, 14/10)** : `mixer.py --lufs -8 --ecart -3 renders/image.mp4`, puis poser le son avec
+  `aresample=192000,volume=5dB,alimiter=limit=0.86:attack=0.5:release=40:level=false,alimiter=limit=0.86:attack=0.1:release=20:level=false,aresample=48000`
+  (AAC 256k) → −6,8 LUFS, crête vraie −1,0 dB. Sans le suréchantillonnage à 192 kHz, l'AAC fait dépasser 0 dB.
+- **Plus de fonds blancs** pour l'organique DROP&YOU / ChinaBook : fond sombre violet nuit ou image réelle, accents saturés.
+- **ChinaBook en violet** (logo du site #6E48F0), plus en vert ; logo DROP&YOU plus présent ; ChinaBook en fin, « par DROP&YOU ».
+- Règles d'animation tirées des meilleurs kits GitHub : `reference/grammaire-motion.md`.
+- Organique / pub : voir `LIGNE-EDITORIALE.md`, mise à jour du 14/10.
+
 ## Le standard : CB-M04 et CB-M05 (06/10/2026)
 
 **Le niveau de référence est celui de `motion/CB-M04/` (« T'as tout faux ») et de `motion/CB-M05/`
@@ -124,6 +134,14 @@ POLYRA (`dyou-netlify-ready/dist/realisations/polyra/`, capturé depuis une copi
 `dist/`, il est déployé). Six rushes : selfie en hook, ponçage et coulée dans le téléphone, ordinateur à écran vert avec un
 vieux site fictif qu'il referme et jette, téléphone à écran vert avec POLYRA dont les blocs sortent, marche vers la caméra
 sur « Tu veux le même ? ». `cadre_vert()` de `DA-M05/scenes.py` recadre le rush pour grossir un petit écran vert.
+
+### DA-M06 / DA-M07 — style « studio clair » du site refondu (14/10/2026)
+
+Pour vendre le motion design DYOU (offre du site : dès 290 € TTC, 30-45 s, 3 ou 4 accroches ; jamais de délai ni de
+retouches illimitées promis) : `motion/moteur/studio.py`, aux couleurs du site clair (papier #FCFBFE, encre #211B33,
+dégradé #6533BF → #7C43CC → #4665AD, Inter). Niveau visé : au-dessus des meilleurs studios concurrents — titres construits
+lettre par lettre, interfaces vivantes, une idée par seconde, transitions variées. Le corps est commun (repères `M`),
+seul le hook change. Sous-titres `SousTitresEncre` : encre, fins, sans surlignage, masqués pendant le prix et la fin.
 
 ## Reprendre ailleurs
 

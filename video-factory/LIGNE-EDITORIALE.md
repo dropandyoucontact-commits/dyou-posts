@@ -104,6 +104,19 @@ marchandise en direct ».
 jamais le texte, la voix ni les visuels. On retire tout ce qui appartient à l'auteur (son nom, son
 compte, ses appels à l'action vers lui). Notre accroche, notre ordre, plus dense, plus rapide.
 
+
+### Mise à jour du 14/10/2026 (analyse des 15 dernières vidéos @dropandyou1)
+
+- **Organique : à chaque vidéo, sans exception**, « enregistre » dit dans le hook (CB-M06 l'a fait : 2,2 % d'enregistrements
+  par vue, le meilleur taux du compte) + un appel au partage ciblé (« envoie-la à celui qui… »). **Pub : jamais.**
+- **Rétention** : suspense → réponse → suspense → réponse, une boucle ouverte toutes les 4-6 s, jamais une seule à la fin.
+- **Fonds blancs arrêtés** : les vidéos motion sur blanc plafonnent (~400-1 400 vues) ; les vidéos avec un visage humain
+  dans un vrai lieu chinois font le plus (4 743 vues). Fond sombre (violet nuit) ou image réelle, accents saturés.
+- **Logo DROP&YOU plus présent** ; ChinaBook seulement en fin, « par DROP&YOU », en **violet** (logo du site #6E48F0),
+  plus en vert.
+- **Son plus fort** : viser −7 à −8 LUFS, crête ≤ −1 dB (le −9 précédent est encore jugé trop bas sur TikTok).
+- **Une vidéo par jour, pas trois** : les jours à 2-3 publications rapprochées, les vidéos se cannibalisent.
+
 ## Le persona et l'accroche (décision de Youssef, 05/10/2026)
 
 Youssef connaît son persona et ne le redéfinit plus : un **revendeur** (sneakers, textile, électronique…)

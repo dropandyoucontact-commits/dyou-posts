@@ -1,0 +1,157 @@
+import math, pathlib, re, sys
+import skia
+
+P = pathlib.Path(__file__).resolve().parent
+sys.path.insert(0, str(P.parent / "moteur"))
+from kit import *
+import moteur
+
+K = Kit(P, 1.0)
+DUREE = round(K.timing["duree_voix"] + 2.0, 2)
+K.duree = DUREE; K.nb_images = round(DUREE * FPS)
+TW, son, rapide, eclair = K.TW, K.son, K.rapide, K.eclair
+NB_IMAGES, SFX, flou_a = K.nb_images, K.SFX, K.flou_a
+ROUGE, VERT, INK, BL = C["rouge"], C["vert"], C["ink"], C["blanc"]
+MARQUES.update({"tiktok": "#000000", "instagram": "#E4405F", "klarna": "#FFB3C7"})
+VINTED, ORANGE = "#09B1BA", "#F28C28"
+
+%%SOUS%%
+
+class _Sc:
+    def __init__(self, c, tr):
+        self.c, self.tr = c, tr
+    def __enter__(self):
+        dx, dy, s, al = self.tr
+        if al < 0.999: self.c.saveLayerAlpha(None, int(255 * borne(al)))
+        else: self.c.save()
+        self.c.translate(540 + dx, 1080 + dy); self.c.scale(s, s); self.c.translate(-540, -1080)
+        return self.c
+    def __exit__(self, *a):
+        self.c.restore()
+
+
+def scene(c, t, S, ek="gauche", sk="gauche", de=0.28, ds=0.22):
+    a, b = S
+    if not (a <= t <= b): return None
+    ue = prog(t, a, de, sortie) if ek else 1.0
+    us = prog(t, b - ds, ds, entree) if sk else 0.0
+    dx = dy = 0.0; s = 1.0; al = 1.0
+    if ek == "gauche": dx += 1300 * (1 - ue)
+    elif ek == "bas": dy += 1500 * (1 - ue)
+    elif ek == "zoom": s *= mix(0.55, 1, ue); al *= ue
+    if sk == "gauche": dx -= 1300 * us
+    elif sk == "haut": dy -= 1500 * us
+    elif sk == "zoom": s *= mix(1, 1.9, us); al *= (1 - us)
+    return _Sc(c, (dx, dy, s, al))
+
+
+def tel(c, cx, cy, ecran, w=480, h=960, alpha=1.0, **espace):
+    with Espace(c, cx, cy, **espace):
+        telephone(c, cx - w / 2, cy - h / 2, w, h, ecran, alpha)
+
+
+def apparait(t, t0, s=1.9, d=0.34):
+    return prog(t, t0, d, lambda v: rebond(v, s))
+
+
+def fenetre(t, a, b, d=0.25):
+    """opacité d'un sous-plan visible de a à b"""
+    return prog(t, a, d, sortie) * (1 - prog(t, b - d, d, entree))
+
+
+# ─────────────────────────────────────────── petits éléments
+def basket(c, nom, cx, cy, w, alpha=1.0, rot=0.0, ombre=True):
+    if alpha <= 0.01: return
+    iw, ih = taille_img(f"saucony/{nom}"); h = w * ih / iw
+    c.save(); c.translate(cx, cy); c.rotate(rot)
+    if ombre: ombre_sol(c, 0, h * 0.45, w * 0.42, h * 0.08, 0.2 * alpha)
+    image(c, f"saucony/{nom}", -w / 2, -h / 2, w, alpha)
+    c.restore()
+
+
+def etiquette(c, cx, cy, w, txt, u, coul=INK, rot=0.0, verrou=0.0, sous=None, fond_=BL):
+    """étiquette de prix : carte trouée + ficelle ; verrou > 0 : cadenas posé dessus"""
+    if u <= 0.01: return
+    h = w * 0.56
+    c.save(); c.translate(cx, cy); c.rotate(rot); c.scale(mix(0.3, 1, u), mix(0.3, 1, u))
+    with Calque(c, borne(u * 2)):
+        pq = skia.Path()
+        pq.moveTo(-w / 2 + h * 0.32, -h / 2); pq.lineTo(w / 2 - 22, -h / 2); pq.quadTo(w / 2, -h / 2, w / 2, -h / 2 + 22)
+        pq.lineTo(w / 2, h / 2 - 22); pq.quadTo(w / 2, h / 2, w / 2 - 22, h / 2); pq.lineTo(-w / 2 + h * 0.32, h / 2)
+        pq.lineTo(-w / 2, 0); pq.close()
+        p = peinture(fond_); p.setImageFilter(skia.ImageFilters.DropShadow(0, 22, 26, 26, hexa(INK, 0.22))); c.drawPath(pq, p)
+        c.drawPath(pq, peinture(coul, 1, Style=skia.Paint.kStroke_Style, StrokeWidth=6))
+        disque(c, -w / 2 + h * 0.3, 0, h * 0.08, "#E6EBE8"); anneau(c, -w / 2 + h * 0.3, 0, h * 0.08, coul, 4)
+        T = ajuste(txt, w * 0.62, h * 0.5)
+        texte_centre(c, txt, w * 0.1, -h * 0.04 if sous else 0, T, coul, "noir")
+        if sous: texte_centre(c, sous, w * 0.1, h * 0.28, h * 0.13, C["gris"], "fort", 1, 0.02)
+        if verrou > 0:
+            c.save(); c.translate(w * 0.36, -h * 0.42); c.rotate(12); c.scale(verrou, verrou)
+            disque(c, 0, 0, h * 0.2, ROUGE, 1, (8, 20, 0.25)); icone(c, "lock", 0, 0, h * 0.22, BL, 2.8)
+            c.restore()
+    c.restore()
+
+
+def tuile(c, nom, cx, cy, taille, u=1.0, rot=0.0):
+    if u <= 0: return
+    c.save(); c.translate(cx, cy); c.rotate(rot); c.scale(mix(0.3, 1, u), mix(0.3, 1, u))
+    with Calque(c, borne(u * 2)):
+        r = taille * 0.24
+        if nom == "vinted":
+            rrect(c, -taille / 2, -taille / 2, taille, taille, r, VINTED, 1, (10, 26, 0.18))
+            texte_centre(c, "Vinted", 0, 0, ajuste("Vinted", taille * 0.82, taille * 0.3), BL, "noir", 1, -0.02)
+        elif nom == "ebay":
+            rrect(c, -taille / 2, -taille / 2, taille, taille, r, BL, 1, (10, 26, 0.18), "#E7EBE9", 3)
+            T = taille * 0.34; x = -largeur("ebay", T, "noir", -0.06) / 2
+            for l, col in zip("ebay", ["#E53238", "#0064D2", "#F5AF02", "#86B817"]):
+                texte(c, l, x, -hauteurLigne(T) / 2, T, col, "noir", track=-0.06); x += largeur(l, T, "noir", -0.06)
+        elif nom == "klarna":
+            rrect(c, -taille / 2, -taille / 2, taille, taille, r, MARQUES["klarna"], 1, (10, 26, 0.18))
+            logo_glyphe(c, "klarna", 0, 0, taille * 0.5, INK)
+        else:
+            logo_app(c, nom, 0, 0, taille)
+    c.restore()
+
+
+def billet(c, cx, cy, w, rot, alpha=1.0):
+    h = w * 0.52
+    c.save(); c.translate(cx, cy); c.rotate(rot)
+    rrect(c, -w / 2, -h / 2, w, h, 12, ORANGE, alpha, (8, 20, 0.15))
+    rrect(c, -w / 2 + 10, -h / 2 + 10, w - 20, h - 20, 8, "#F7A85A", alpha)
+    texte_centre(c, "€", -w * 0.22, 0, h * 0.55, "#7A3B06", "noir", alpha)
+    disque(c, w * 0.22, 0, h * 0.26, "#E07A14", alpha)
+    c.restore()
+
+
+def compteur(t, t0, t1, v):
+    return int(round(v * prog(t, t0, max(0.05, t1 - t0), sortie)))
+
+
+def euros(n):
+    return f"{n:,}".replace(",", " ") + " €"
+
+
+def coche(c, cx, cy, r, u, couleur=None):
+    if u <= 0: return
+    c.save(); c.translate(cx, cy); c.scale(u, u)
+    disque(c, 0, 0, r, couleur or VERT, 1.0, (8, 20, 0.2)); icone(c, "check", 0, 0, r * 1.1, BL, 3.6)
+    c.restore()
+
+
+def signet(c, cx, cy, taille, rempli, alpha=1.0):
+    w, h = taille * 0.62, taille * 0.8
+    pq = skia.Path()
+    pq.moveTo(cx - w / 2, cy - h / 2); pq.lineTo(cx + w / 2, cy - h / 2); pq.lineTo(cx + w / 2, cy + h / 2)
+    pq.lineTo(cx, cy + h / 2 - w * 0.42); pq.lineTo(cx - w / 2, cy + h / 2); pq.close()
+    if rempli: c.drawPath(pq, peinture("#FACE15", alpha))
+    p = skia.Paint(AntiAlias=True, Style=skia.Paint.kStroke_Style, StrokeWidth=taille * 0.08, StrokeJoin=skia.Paint.kRound_Join,
+                   Color=hexa(INK if rempli else BL, alpha))
+    c.drawPath(pq, p)
+
+
+def pil(c, label, cx, cy, taille, fond_, texte_c, t0, t, rot=0.0, ic=None, fin=None):
+    u = apparait(t, t0)
+    if fin is not None: u *= 1 - prog(t, fin, 0.2, entree)
+    if u > 0: pastille_rot(c, label, cx, cy, taille, fond_, texte_c, rot, mix(0.3, 1, u), borne(u * 2), ic, (14, 32, 0.25))
+
+
