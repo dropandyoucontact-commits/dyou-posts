@@ -20,11 +20,13 @@ def apercu(temps):
         a = moteur.image_rgba(scenes.dessine, t, scenes.flou_a(t))
         im = Image.fromarray(a[..., :3])
         im.save(ICI / "apercus" / f"t{t:06.2f}.png")
-        vignettes.append((t, im.resize((270, 480), Image.LANCZOS)))
+        tw, th = (480, 270) if moteur.W > moteur.H else (270, 480)
+        vignettes.append((t, im.resize((tw, th), Image.LANCZOS)))
     n = len(vignettes); cols = min(4, n); lig = (n + cols - 1) // cols
-    planche = Image.new("RGB", (cols * 272, lig * 482), (40, 40, 40)); d = ImageDraw.Draw(planche)
+    tw, th = vignettes[0][1].size
+    planche = Image.new("RGB", (cols * (tw + 2), lig * (th + 2)), (40, 40, 40)); d = ImageDraw.Draw(planche)
     for k, (t, im) in enumerate(vignettes):
-        x, y = (k % cols) * 272 + 1, (k // cols) * 482 + 1
+        x, y = (k % cols) * (tw + 2) + 1, (k // cols) * (th + 2) + 1
         planche.paste(im, (x, y)); d.text((x + 5, y + 4), f"{t:.2f}", fill=(255, 0, 0))
     planche.save(ICI / "apercus" / "planche.jpg", quality=82)
 

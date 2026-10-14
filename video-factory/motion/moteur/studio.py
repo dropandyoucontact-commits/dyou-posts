@@ -71,6 +71,7 @@ TACHES = [(170, 430, 760, "#E2D4FF", 0.80, 0.21, 0.0), (960, 1480, 820, "#D7E3FF
 def fond_studio(c, t, pulse=0.0):
     c.clear(hexa(S["papier"]))
     for x, y, r, col, a, v, ph in TACHES:
+        x, y = x * W / 1080, y * H / 1920                       # mêmes taches en 16:9
         cx = x + 110 * math.sin(t * v + ph); cy = y + 120 * math.cos(t * v * 0.8 + ph)
         p = skia.Paint(AntiAlias=True)
         p.setShader(skia.GradientShader.MakeRadial(skia.Point(cx, cy), r * (1 + 0.08 * pulse), [hexa(col, min(1, a * (1 + 0.3 * pulse))), hexa(col, 0.0)]))
@@ -87,6 +88,7 @@ def fond_grad(c, t, alpha=1.0):
     with Calque(c, alpha):
         c.drawRect(skia.Rect.MakeWH(W, H), pgrad(0, 0, W, H, ["#5B2BD6", "#7B3FF2", "#4F6FE8"]))
         for k, (x, y, r, a) in enumerate([(200, 500, 700, 0.30), (900, 1500, 760, 0.26), (850, 300, 420, 0.18)]):
+            x, y = x * W / 1080, y * H / 1920
             cx = x + 120 * math.sin(t * 0.4 + k * 2); cy = y + 100 * math.cos(t * 0.33 + k)
             p = skia.Paint(AntiAlias=True)
             p.setShader(skia.GradientShader.MakeRadial(skia.Point(cx, cy), r, [hexa("#C9B6FF", a), hexa("#C9B6FF", 0.0)]))
@@ -339,16 +341,16 @@ class Groupe:
         self.visible = t >= t_in - 0.01 and us < 0.999
         tx = ty = 0.0; s = 1.0; a = 1.0
         if ent == "bas": ty += 340 * (1 - ue); s *= mix(0.9, 1, ue); a *= borne(ue * 2.5)
-        elif ent == "droite": tx += 1150 * (1 - ue)
+        elif ent == "droite": tx += (W + 70) * (1 - ue)
         elif ent == "zoom": s *= mix(0.55, 1, ue); a *= borne(ue * 2.5)
         elif ent == "grand": s *= mix(1.7, 1, ue); a *= borne(ue * 2.5)
         if sor == "haut": ty -= 420 * us; a *= 1 - us
-        elif sor == "gauche": tx -= 1150 * us
+        elif sor == "gauche": tx -= (W + 70) * us
         elif sor == "zoom": s *= mix(1, 2.6, us); a *= 1 - us
         elif sor == "recul": s *= mix(1, 0.6, us); a *= 1 - us
         self.tx, self.ty, self.s, self.a = tx, ty, s, a
     def __enter__(self):
-        c = self.c; c.save(); c.translate(540 + self.tx, self.cy + self.ty); c.scale(self.s, self.s); c.translate(-540, -self.cy)
+        c = self.c; c.save(); c.translate(W / 2 + self.tx, self.cy + self.ty); c.scale(self.s, self.s); c.translate(-W / 2, -self.cy)
         if self.a < 0.999: c.saveLayerAlpha(None, int(255 * borne(self.a)))
         return c
     def __exit__(self, *a):

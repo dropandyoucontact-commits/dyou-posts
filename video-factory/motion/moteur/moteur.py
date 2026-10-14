@@ -16,7 +16,8 @@ from skia import textlayout as tl
 
 ICI = pathlib.Path(__file__).resolve().parent      # le moteur : fontes/, icones/, sons/
 PROJET = pathlib.Path.cwd()                         # le projet vidéo : media/ (scenes.py le fixe)
-W, H, FPS = 1080, 1920, 60
+# format : vertical par défaut ; un fichier « format.txt » contenant « 16:9 » dans le dossier de la vidéo passe en 1920×1080
+W, H, FPS = (1920, 1080, 60) if (PROJET / "format.txt").exists() and "16:9" in (PROJET / "format.txt").read_text() else (1080, 1920, 60)
 
 # ───────────────────────────── couleurs
 def hexa(s, a=1.0):

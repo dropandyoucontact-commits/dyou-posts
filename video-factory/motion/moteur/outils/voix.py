@@ -74,7 +74,7 @@ def accelerer(debit):
     al = json.loads((ICI / "media" / "voix-alignement.json").read_text())
     mots = mots_depuis_alignement(al)
     naturel = len(mots) / max(0.1, mots[-1]["t1"] - mots[0]["t0"])
-    f = max(1.0, min(1.3, debit / naturel))
+    f = max(1.0, min(1.45, debit / naturel))      # plafond relevé le 14/10 (Tomy plus rapide)
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(ICI / "media" / "voix-brut.mp3"), "-filter:a", f"atempo={f:.4f}",
                     "-ar", "44100", "-c:a", "libmp3lame", "-b:a", "192k", str(ICI / "media" / "voix.mp3")], check=True)
     d = duree(ICI / "media" / "voix.mp3")

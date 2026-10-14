@@ -193,7 +193,7 @@ class SousTitresFins:
         pos = []
         hl = hauteurLigne(T, fam) * 1.04
         for k, (ligne, lw) in enumerate(lignes):
-            x = 540 - lw / 2
+            x = W / 2 - lw / 2
             for txt, t0, w in ligne:
                 pos.append((txt, t0, x, self.y + k * hl)); x += w + esp
         return pos
