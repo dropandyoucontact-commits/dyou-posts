@@ -8,7 +8,17 @@ Claude, et ses règles vivent dans ce dépôt** (ce fichier, `reference/A-LIRE.m
 briefs Higgsedit, champs `motion_direction` et `images` des `brief.json`, thèmes sombres,
 `A-REGENERER.md`. Si une règle de motion doit changer, c'est Claude qui la change ici.
 
-## Mise à jour du 14/10/2026 (prioritaire sur ce qui suit)
+## Mise à jour du 15/10/2026 (prioritaire sur tout ce qui suit)
+
+- **Volume de toutes les vidéos : −13 LUFS intégrés, crête vraie −1 dB.** TikTok rebaisse les vidéos trop fortes (nos −7/−8
+  du 14/10) ; Youssef veut la norme (−14) avec un poil de marge au-dessus, et un fichier prêt à poster sans CapCut.
+  Motion : `mixer.py --lufs -13` ; edits : `Edit.son()` de `moteur/edit.py` règle le gain par mesure.
+- **Edits** (rush tourné, voix d'origine) : voix remplacée par **Léo** (`jsScnYkNNda9Q1NES5nn`) au changeur de voix ElevenLabs
+  (même rythme) ; **Tomy est réservé au motion design**. Montage par `moteur/edit.py` : sous-titres petits (Inter Display
+  ExtraBold 60 px, une ligne, centrés à y ≈ 1250, hors zones de l'interface TikTok), pastilles sur les mots, coups de zoom,
+  logo DROP&YOU + « Enregistre la vidéo » à la fin. Modèles : `motion/DY-M06`, `motion/DY-M07`.
+
+## Mise à jour du 14/10/2026
 
 - **Son fort (CB-M10, 14/10)** : `mixer.py --lufs -8 --ecart -3 renders/image.mp4`, puis poser le son avec
   `aresample=192000,volume=5dB,alimiter=limit=0.86:attack=0.5:release=40:level=false,alimiter=limit=0.86:attack=0.1:release=20:level=false,aresample=48000`
