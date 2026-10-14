@@ -14,6 +14,7 @@ briefs Higgsedit, champs `motion_direction` et `images` des `brief.json`, thème
   `aresample=192000,volume=5dB,alimiter=limit=0.86:attack=0.5:release=40:level=false,alimiter=limit=0.86:attack=0.1:release=20:level=false,aresample=48000`
   (AAC 256k) → −6,8 LUFS, crête vraie −1,0 dB. Sans le suréchantillonnage à 192 kHz, l'AAC fait dépasser 0 dB.
 - **Plus de fonds blancs** pour l'organique DROP&YOU / ChinaBook : fond sombre violet nuit ou image réelle, accents saturés.
+- **Après CB-M10 (14/10)** : fond coloré obligatoire (jamais blanc), Tomy ~4 mots/s (relever le plafond ×1,3 de `voix.py`), nouveaux sujets, fin ChinaBook OU DROP&YOU. Détail dans `LIGNE-EDITORIALE.md`.
 - **ChinaBook en violet** (logo du site #6E48F0), plus en vert ; logo DROP&YOU plus présent ; ChinaBook en fin, « par DROP&YOU ».
 - Règles d'animation tirées des meilleurs kits GitHub : `reference/grammaire-motion.md`.
 - Organique / pub : voir `LIGNE-EDITORIALE.md`, mise à jour du 14/10.
