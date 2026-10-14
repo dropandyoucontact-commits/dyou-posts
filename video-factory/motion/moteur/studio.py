@@ -407,11 +407,14 @@ def lignes_texte(c, x, y, w, n, t, t0, pas=0.08, h=14, ecart=30, cols=None, grai
         rrect(c, x, y + k * ecart, lw * u, h, h / 2, col)
 
 
+TIMELINE_NOMS = ["Titre", "Formes", "Texte", "Son"]     # une version anglaise les remplace
+
+
 def timeline(c, x, y, w, h, t, t0, t1, alpha=1.0):
     """panneau de montage : calques nommés, barres, images clés qui naissent, tête de lecture qui balaie"""
     with Calque(c, alpha):
         carte_s(c, x, y, w, h, 28)
-        rangs = [("Titre", S["violetVif"]), ("Formes", S["bleuVif"]), ("Texte", "#A87BFF"), ("Son", "#7FA2FF")]
+        rangs = list(zip(TIMELINE_NOMS, [S["violetVif"], S["bleuVif"], "#A87BFF", "#7FA2FF"]))
         rh = (h - 70) / len(rangs)
         texte(c, "00:00:0" + str(min(9, int(max(0, t - t0) * 3))), x + 28, y + 18, 22, S["gris"], "fort", track=0.02)
         for j in range(12):

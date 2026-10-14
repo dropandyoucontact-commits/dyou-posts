@@ -89,10 +89,13 @@ def main():
     p.add_argument("--etat", action="store_true"); p.add_argument("--forcer", action="store_true")
     p.add_argument("--debit", type=float, default=3.5, help="mots par seconde visés après accélération")
     p.add_argument("--voix", help="voice_id ElevenLabs, à la place de celui de la configuration")
+    p.add_argument("--langue", help="code langue de la prise (fr par défaut) : en pour une version anglaise")
     a = p.parse_args()
     c = conf()
     if a.voix:
         c = {**c, "voice_id": a.voix}
+    if a.langue:
+        c = {**c, "language_code": a.langue}
     texte = (ICI / "script.txt").read_text(encoding="utf-8").strip()
     texte = re.sub(r"\s+", " ", texte)
     reste, _ = credits(c)
