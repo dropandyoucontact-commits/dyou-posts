@@ -87,7 +87,8 @@ def accelerer(debit):
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("--etat", action="store_true"); p.add_argument("--forcer", action="store_true")
-    p.add_argument("--debit", type=float, default=4.0, help="mots par seconde visés après accélération (4,0 = rythme validé le 14/10/2026)")
+    p.add_argument("--debit", type=float, default=4.2, help="mots par seconde visés après accélération (4,2 + pauses resserrées = rythme validé le 15/10/2026, MQ-M02/MQ-M03)")
+    p.add_argument("--sans-resserrer", action="store_true", help="garder les pauses naturelles (par défaut ramenées à 0,18 s)")
     p.add_argument("--voix", help="voice_id ElevenLabs, à la place de celui de la configuration")
     p.add_argument("--langue", help="code langue de la prise (fr par défaut) : en pour une version anglaise")
     a = p.parse_args()
@@ -114,6 +115,8 @@ def main():
         (ICI / "media" / "voix-alignement.json").write_text(json.dumps(r.get("normalized_alignment") or r["alignment"], ensure_ascii=False))
         print(f"prise générée : {len(texte)} caractères ; crédits restants ≈ {reste - len(texte)}")
     accelerer(a.debit)
+    if not a.sans_resserrer:      # rythme validé par Youssef le 15/10/2026 pour toutes ses vidéos
+        subprocess.run([sys.executable, str(pathlib.Path(__file__).with_name("resserrer.py"))], check=True)
 
 if __name__ == "__main__":
     main()

@@ -8,7 +8,15 @@ Claude, et ses règles vivent dans ce dépôt** (ce fichier, `reference/A-LIRE.m
 briefs Higgsedit, champs `motion_direction` et `images` des `brief.json`, thèmes sombres,
 `A-REGENERER.md`. Si une règle de motion doit changer, c'est Claude qui la change ici.
 
+## Client MONARQUE — niveau validé (16/10/2026)
+
+« Le client a adoré » **MQ-M05** et **MQ-M04 v2** : c'est le standard de toutes ses vidéos (pub, éducatif, réseaux).
+Recette complète : `reference/monarque.md`. Toute nouvelle vidéo Monarque part de `motion/MQ-M05/`.
+
 ## Mise à jour du 15/10/2026 (prioritaire sur tout ce qui suit)
+
+- **Débit de voix validé pour toutes les vidéos, toutes marques** (MQ-M02 / MQ-M03, « il est parfait, enregistre-le toujours ») :
+  4,2 mots/s et pauses ramenées à 0,18 s. C'est le défaut de `voix.py`, qui lance `outils/resserrer.py` tout seul.
 
 - **Volume de toutes les vidéos : −13 LUFS intégrés, crête vraie −1 dB.** TikTok rebaisse les vidéos trop fortes (nos −7/−8
   du 14/10) ; Youssef veut la norme (−14) avec un poil de marge au-dessus, et un fichier prêt à poster sans CapCut.
