@@ -31,6 +31,9 @@ def apercu(temps):
     planche.save(ICI / "apercus" / "planche.jpg", quality=82)
 
 def video(nproc=3):
+    # conformité DROP&YOU / ChinaBook (17/10/2026) : pas de marque, pas de WhatsApp/Snap, pas de promesse de gain
+    if subprocess.run([sys.executable, str(pathlib.Path(__file__).parent / "outils" / "conformite.py")], cwd=ICI).returncode:
+        sys.exit("rendu annulé : corriger la conformité d'abord")
     (ICI / "renders").mkdir(exist_ok=True)
     N = scenes.NB_IMAGES
     # préchauffage : le processus principal extrait d'abord les images des vidéos de la banque,

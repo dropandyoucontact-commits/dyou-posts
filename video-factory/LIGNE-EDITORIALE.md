@@ -70,7 +70,7 @@ Règle de départ, à ajuster selon les chiffres :
   « enregistre-la pour ton voyage », une question en commentaire).
 - **Environ une sur trois** : une passerelle douce en dernière phrase, du type « Pas le
   temps ou pas les moyens d'aller en Chine ? Les fournisseurs que j'ai testés sont
-  regroupés dans le ChinaBook. Écris-moi CHINA. »
+  regroupés dans le ChinaBook. Écris-moi CHINA en message privé. » (message privé de la plateforme, jamais WhatsApp ni Snap)
 - **De temps en temps** : une vidéo entièrement ChinaBook, comme CB-M01.
 
 ## Deux familles de vidéos : organique ou pub (Youssef, 08/10/2026)
@@ -90,7 +90,8 @@ Avant d'écrire un script, savoir pour quoi il est fait. Youssef le dit en le de
 
 **Vidéo pub** (motion type CB-M04 / CB-M05 / DY-M01, pour Meta Ads) :
 - **Aucun appel aux commentaires, à l'enregistrement ni à l'abonnement** : ça ne sert à rien en pub.
-- Seul appel à l'action : WhatsApp (ou le site, qui porte déjà le WhatsApp).
+- Seul appel à l'action : « contacte-moi via le lien autour de cette vidéo » (le bouton de l'annonce).
+  **Plus jamais WhatsApp ni Snap** (17/10/2026) — voir « Conformité » dans `CLAUDE.md`.
 
 **Signature (Youssef, 08/10/2026)** : toute vidéo ChinaBook, organique ou pub, finit sur le carton
 final avec **« proposé par » + le logo DROP&YOU** (`moteur/media/logo-dropandyou.png`), comme DY-M01 v1.

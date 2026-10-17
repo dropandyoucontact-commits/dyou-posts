@@ -1,5 +1,32 @@
 # Point d'entrée pour Claude — vidéos DYOU et ChinaBook
 
+## Conformité DROP&YOU et ChinaBook — prioritaire sur tout le reste (17/10/2026)
+
+Deux pubs TikTok refusées le 17/10 sur DELICIAE : CB-M08 (« Misleading Opportunity » : « 50 paires de Saucony ×50 », achat de
+50 unités pour revendre) et la vidéo IA à 21,6 K (contrefaçon de marques + audio 0:21-0:29 qui renvoie vers WhatsApp).
+Les mêmes fautes bridaient la portée organique. Valable pour **toutes** les vidéos CB- et DY-, organique comme pub :
+
+1. **Aucune marque nommée** : ni à l'oral, ni à l'écran, ni en hashtag, ni en description, ni dans le nom de fichier.
+   Les visuels suffisent.
+2. **Aucun renvoi hors plateforme** : plus de WhatsApp ni de Snap en fin de vidéo (ni Telegram, ni Instagram) — ni numéro,
+   ni logo, ni dit, ni suggéré. Le message privé de la plateforme reste permis. `cta_whatsapp` (kit.py) et la scène
+   « écris-nous : Snap / WhatsApp » de `dy3d.py` ne s'utilisent plus.
+3. **Aucune promesse de gain ni ticket d'entrée** : pas de quantité minimum en condition, pas de prix d'accès, pas de
+   promesse de revente ou de bénéfice.
+4. **Jamais « contrefaçon »**, ni copie, réplique, faux, dupe, AAA. Discours : produits de très haute qualité, plusieurs
+   qualités possibles selon les produits (grille standard / 1:1 / originale : sacs seulement).
+
+**CTA** — organique : « écris-moi en message privé », « commente », « enregistre la vidéo », rien d'autre.
+Pub : pas d'appel à commenter ; « contacte-moi via le lien autour de cette vidéo » (le bouton de l'annonce porte l'action).
+
+La modération lit le texte à l'écran (OCR) et transcrit l'audio, horodatage à l'appui : une seule image fautive
+(un logo dans un mockup) fait tomber la vidéo. Permis : produits, entrepôts, lieux, sourcing, fournisseurs validés,
+délais, douane, transitaire, différences de qualité en restant général.
+
+**Avant chaque rendu** : `python3 ../moteur/outils/conformite.py` depuis le dossier de la vidéo (`rendu.py video` le lance
+seul et s'arrête pour un projet CB-/DY- fautif). Il contrôle script.txt et scenes.py ; les mockups et images se vérifient
+à l'œil sur les aperçus. Les pubs DYOU Agency (DA-) ne sont pas visées.
+
 ## Qui décide du motion
 
 Décision de Youssef, 5 octobre 2026 : **tout le motion design est décidé et réglé par
@@ -12,6 +39,11 @@ briefs Higgsedit, champs `motion_direction` et `images` des `brief.json`, thème
 
 « Le client a adoré » **MQ-M05** et **MQ-M04 v2** : c'est le standard de toutes ses vidéos (pub, éducatif, réseaux).
 Recette complète : `reference/monarque.md`. Toute nouvelle vidéo Monarque part de `motion/MQ-M05/`.
+
+## Voix off sur rushes — format validé (16/10/2026)
+
+DY-M08 « c'était parfait » : rush muet de Youssef (POV, marchandise, personnage qui agit) + voix off Léo écrite plan par plan,
+débit naturel calé sur l'image. Recette : `reference/voix-off.md`. Toute nouvelle vidéo de ce type part de `motion/DY-M08/`.
 
 ## Mise à jour du 15/10/2026 (prioritaire sur tout ce qui suit)
 
