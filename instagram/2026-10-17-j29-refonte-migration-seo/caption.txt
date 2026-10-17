@@ -1,0 +1,11 @@
+Une refonte peut être plus belle, plus rapide et pourtant faire perdre du trafic si les anciennes URL disparaissent sans relais.
+
+Avant la mise en ligne, listez les pages qui reçoivent déjà des visites ou des liens. Associez ensuite chaque ancienne adresse à la nouvelle page la plus proche, puis installez une redirection permanente. Tout renvoyer vers l’accueil ne remplace pas une vraie correspondance.
+
+Mettez aussi à jour les liens internes, les campagnes, les profils et le sitemap. Après le lancement, testez les anciennes URL et surveillez les pages manquantes dans Search Console.
+
+Google recommande de conserver les redirections aussi longtemps que possible, généralement au moins un an, afin de laisser le temps aux signaux d’être transférés.
+
+Enregistrez cette checklist avant votre prochaine refonte et envoyez-la à la personne qui prépare la migration.
+
+#MigrationSEO #RefonteSiteWeb #ReferencementNaturel
