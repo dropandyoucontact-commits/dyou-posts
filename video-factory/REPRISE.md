@@ -11,6 +11,56 @@ habituelle n'est pas disponible. Tout le savoir-faire est dans deux dépôts Git
 Pour refaire une vidéo avec le moteur : cloner les deux, copier `dyou-assets/motion-medias/<ID>/` dans
 `dyou-posts/video-factory/motion/<ID>/media/`, puis suivre la chaîne ci-dessous.
 
+## Niveau actuel (19/10/2026) — commence ici, le reste du fichier est plus ancien
+
+Le niveau à atteindre, ce sont les dernières vidéos. Regarde d'abord le MP4 fini dans `dyou-assets/motion-videos/`,
+puis lis son `scenes.py` dans `dyou-posts/video-factory/motion/<ID>/`, puis les modules du moteur qu'il importe.
+
+| Vidéo de référence | Ce qu'elle montre | Modules (`video-factory/motion/moteur/`) |
+|---|---|---|
+| **DA-M17-EN** (pub motion) et **DA-M18-EN** (pub sites) | les plus récentes : fond clair studio, cartes en verre clair, **signature 3D DYOU** à la fin | `verre_studio.py` + `studio3d.py` / `sites3d.py` + `studio.py` |
+| DA-M14-EN-v2, DA-M16-EN-v2 | les mêmes en verre fumé sombre (cartes UI animées, vitrine de sites, rendu qui avance) | `glace.py` |
+| DA-M10-EN à DA-M16-EN | studio clair en vraie perspective 3D (caméra, plans, décollage) | `studio3d.py`, `sites3d.py` |
+| DY-M15 | signature explosive DROP&YOU (médias aspirés, explosion, logo extrudé) | `signature.py` |
+| GSX-M01 à GSX-M04 | client GSX : fond blanc, verre clair, signature 3D à la couleur du client | `gsx.py` |
+| DY-M10, DY-M11, CB-M15 | style cobalt (bleu nuit / orange) en 3D | `cobalt.py`, `dy3d.py` |
+| MQ-M05 | client MONARQUE, niveau validé par le client | `monarque.py`, `mq.py` |
+
+Ce qui fait le niveau, dans le code :
+- **3D sans moteur 3D** : `studio3d.py` (`Cam`, `Plan`, `rot3`, `compose`) projette des plans en perspective dans Skia.
+- **Verre** : `verre()` dans `verre_studio.py` (clair) et `glace.py` (sombre) : flou d'arrière-plan, halo, liseré dégradé.
+  Les deux thèmes s'appliquent en remplaçant `rrect` / `carte_s` dans les modules (`appliquer()` / `_installe`).
+- **Signature 3D** : `verre_studio.signature()` (et `signature.py`, `gsx.py`) : médias aspirés au centre → explosion
+  (flash, ondes, éclats de verre, étincelles) → anneau de cartes → sigle extrudé en couches qui tourne et claque →
+  nom en tranches qui volent → bouton cliqué, adresse tapée. Calée sur le mot de la voix (`T_BOUM`).
+- **Tout tombe sur un mot** : `TW(i)` / `M["mot"]` lus dans `timing.json`, jamais une seconde écrite à la main.
+- **Hook rapide** : `outils/hook_rapide.py` (lancé par `voix.py`) accélère et renforce la 1re phrase. Jamais de ralenti sur un clip.
+- **Zone sûre TikTok/Snap** : `outils/zone_tiktok.py` (~96 px rognés de chaque côté, boutons à droite x > 860).
+- **Son** : `outils/mixer.py --lufs -13` (−13 LUFS, crête ≤ −1 dB) ; un bruitage sur chaque apparition, pas de musique.
+- **Conformité** : `outils/conformite.py` avant chaque rendu DROP&YOU/ChinaBook (pas de marque, de WhatsApp/Snap, de promesse de gain).
+
+### Installer le moteur ailleurs que sur le Mac (tablette → Claude Code dans le cloud, ou toute machine Linux)
+
+```
+git clone git@github.com:dropandyoucontact-commits/dyou-posts.git
+git clone git@github.com:dropandyoucontact-commits/dyou-assets.git      # privé
+pip install skia-python numpy pillow scipy
+apt install ffmpeg                                                        # ou brew install ffmpeg
+cd dyou-posts/video-factory/motion
+cp -r ../../../dyou-assets/motion-medias/moteur/. moteur/media/            # logos, images du moteur
+mkdir -p banque && cp -r ../../../dyou-assets/motion-banque/. banque/      # banque (dont banque/glace)
+cp -r ../../../dyou-assets/motion-medias/DA-M17-EN DA-M17-EN/media         # médias d'une vidéo (voix, logo…)
+python3 moteur/outils/sons.py                                              # régénère les bruitages (synthétisés, non suivis)
+cd DA-M17-EN && python3 ../moteur/rendu.py apercu 2 8 14 20                # planche d'images, puis :
+python3 ../moteur/rendu.py video && python3 ../moteur/outils/mixer.py --lufs -13 renders/image.mp4
+python3 ../moteur/outils/verifier.py video/DA-M17-EN.mp4 2 8 14 20
+```
+
+Une vidéo existante se refait sans clé : `voix.mp3` est dans ses médias, `timing.json` dans son dossier de code. Pour une **nouvelle voix**, il
+faut la clé ElevenLabs (`~/.config/dyou/elevenlabs.json`, jamais dans GitHub) : la demander à Youssef, ou générer la voix
+Tomy ailleurs et poser `media/voix.mp3` + l'horodatage des mots. Une tablette seule ne fait pas tourner Python + Skia :
+il faut une machine (Claude Code dans le cloud, VPS) ; la tablette ne sert qu'à piloter et regarder.
+
 ---
 
 Tu reprends la production de vidéos verticales (1080×1920, 60 i/s) pour Youssef : pubs **DYOU Agency** (agence qui crée

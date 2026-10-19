@@ -245,6 +245,6 @@ Réf. : DA-M17-EN (motion), DA-M18-EN (sites). Partir de là pour les prochaines
 
 ## Reprendre ailleurs
 
-`REPRISE.md` (dans ce dossier) est le prompt à donner à un autre Claude ou à ChatGPT. Les vidéos finies et les médias
+`REPRISE.md` (dans ce dossier, section « Niveau actuel » en tête) est le prompt à donner à un autre Claude ou à ChatGPT. Les vidéos finies et les médias
 de chaque vidéo (rushes, voix, captures) sont dans le dépôt **privé** `dyou-assets` (`motion-videos/`, `motion-medias/<ID>/`),
 jamais dans ce dépôt public.
