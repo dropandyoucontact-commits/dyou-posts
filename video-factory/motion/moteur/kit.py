@@ -251,7 +251,7 @@ class SousTitres:
 
 
 # ─────────────────────────────────────────── logos d'applications (Simple Icons, CC0)
-MARQUES = {"wechat": "#07C160", "alipay": "#1677FF", "snapchat": "#FFFC00", "whatsapp": "#25D366"}
+MARQUES = {"wechat": "#07C160", "alipay": "#1677FF", "snapchat": "#FFFC00", "whatsapp": "#25D366", "paypal": "#003087"}
 _LOGO_DATA = []
 
 

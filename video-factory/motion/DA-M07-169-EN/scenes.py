@@ -24,7 +24,7 @@ M = dict(b1=TW(12), produit=TW(16), service=TW(18), message=TW(22), oblige=TW(24
          demandes=TW(52), clients=TW(54), b4=TW(55), site=TW(58), expliquer=TW(60), facon=TW(61), simple=TW(64),
          long_texte=TW(65), b5=TW(70), script=TW(73), anime=TW(75), accroches=TW(79), tester=TW(82), prix=TW(84),
          deux=TW(85), qvd=TW(87), euros=TW(88), devis=TW(89), url=TW(93))
-SOUS = SousTitresEncre(K, fusions={(4, 5): "3 seconds.", (85, 86, 87, 88): "€290.", (93, 94, 95, 96, 97): "dyou-agency.com."},
+SOUS = SousTitresEncre(K, fusions={(4, 5): "3 seconds.", (85, 86, 87, 88): "$299.", (93, 94, 95, 96, 97): "dyou-agency.com."},
                        y=968, larg=1500, taille=44, fam="fort", max_mots=7)
 
 T_2, T_1 = TW(6) - 0.05, TW(7) - 0.05
@@ -504,20 +504,19 @@ def scene_prix(c, t):
         a = entre(t, M["prix"] - 0.05, 0.4, 1.6)
         texte(cc, "FROM", CX, 130 + 20 * (1 - a), 46, "#FFFFFF", "titre", "centre", 0.14, borne(a * 3))
         taille = 330
-        ws = [largeur(ch, taille, "noir", -0.04) for ch in "290"]
-        we = largeur("€", 210, "noir", -0.02)
+        ws = [largeur(ch, taille, "noir", -0.04) for ch in "299"]
+        we = largeur("$", 210, "noir", -0.02)
         tot = sum(ws) + we + 30
-        xe = CX - tot / 2; x = xe + we + 30; y = 220            # en anglais : €290
+        xe = CX - tot / 2; x = xe + we + 30; y = 220            # en anglais : $299 (marché US, 18/10/2026)
         arr = [M["deux"] + 0.08, M["qvd"] + 0.2, M["euros"] - 0.06]
-        for k, ch in enumerate("290"):
+        for k, ch in enumerate("299"):
             rouleau(cc, int(ch), x, y, taille, t, M["prix"] - 0.05 + 0.04 * k, arr[k])
             x += ws[k]
         e = entre(t, M["euros"] - 0.05, 0.4, 2.6)
         if e > 0:
             cc.save(); cc.translate(xe + we / 2, y + 120); cc.scale(mix(0.2, 1, e), mix(0.2, 1, e))
-            texte(cc, "€", 0, -hauteurLigne(210) / 2 + 20, 210, "#FFFFFF", "noir", "centre", -0.02)
+            texte(cc, "$", 0, -hauteurLigne(210) / 2 + 20, 210, "#FFFFFF", "noir", "centre", -0.02)
             cc.restore()
-            pill(cc, "incl. VAT", xe + tot / 2, y + 400, 30, "blanc", None, borne(e * 3), mix(0.3, 1, e))
         sh = prog(t, M["euros"] + 0.1, 0.5, lin)
         if 0 < sh < 1:
             p = skia.Paint(AntiAlias=True); sxp = mix(300, 1620, sh)
@@ -567,7 +566,7 @@ def scene_cta(c, t):
             xs_ = xb - wb / 2 + 84
             texte(c, url[:n], xs_, yb - hauteurLigne(38, "titre") / 2, 38, S["encre"], "titre", track=-0.01)
             if int(t * 3) % 2 == 0: rrect(c, xs_ + largeur(url[:n], 38, "titre", -0.01) + 4, yb - 22, 4, 44, 2, S["violet"])
-    for k, (lab, ic) in enumerate([("30–45 s", "clock"), ("3–4 hooks", "layers"), ("from €290 incl. VAT", "sparkles"), ("2nd format free", "gift")]):
+    for k, (lab, ic) in enumerate([("30–45 s", "clock"), ("3–4 hooks", "layers"), ("from $299", "sparkles"), ("2nd format free", "gift")]):
         b = entre(t, M["url"] + 0.4 + 0.08 * k, 0.4, 2.2)
         if b > 0:
             pill(c, lab, CX + (k - 1.5) * 390, 760, 30, "doux", ic, borne(b * 3), mix(0.4, 1, b))

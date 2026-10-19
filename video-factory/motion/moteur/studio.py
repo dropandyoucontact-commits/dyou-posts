@@ -23,6 +23,12 @@ GRAD = ["#6533BF", "#7C43CC", "#4665AD"]          # le dégradé des titres du s
 GRAD_VIF = ["#7B3FF2", "#8B5CFF", "#4F7BFF"]      # les grands aplats (prix, boutons)
 CONFETTIS = [S["violet"], S["violetVif"], S["bleuVif"], S["lilas"], "#FFFFFF", S["or_"]]
 
+# Langue : une version étrangère remplit TR (texte français → texte affiché) et PRIX avant le rendu.
+TR = {}
+def tr(x): return TR.get(x, x)
+CTA_PILLS = None          # pastilles du carton final, à la place de celles du motion (ex. pubs « sites »)
+PRIX = dict(chiffres="290", devise="€", avant=False, mention="TTC")   # en dollars : chiffres="299", devise="$", avant=True
+
 
 def entre(t, t0, d=0.42, s=1.6): return 0.0 if t <= t0 else prog(t, t0, d, lambda v: rebond(v, s))   # 0 exact avant le départ (rebond(0) ≈ 2e-16)
 def sort(t, t0, d=0.26): return prog(t, t0, d, entree)
@@ -414,7 +420,7 @@ def timeline(c, x, y, w, h, t, t0, t1, alpha=1.0):
     """panneau de montage : calques nommés, barres, images clés qui naissent, tête de lecture qui balaie"""
     with Calque(c, alpha):
         carte_s(c, x, y, w, h, 28)
-        rangs = list(zip(TIMELINE_NOMS, [S["violetVif"], S["bleuVif"], "#A87BFF", "#7FA2FF"]))
+        rangs = list(zip([tr(n_) for n_ in TIMELINE_NOMS], [S["violetVif"], S["bleuVif"], "#A87BFF", "#7FA2FF"]))
         rh = (h - 70) / len(rangs)
         texte(c, "00:00:0" + str(min(9, int(max(0, t - t0) * 3))), x + 28, y + 18, 22, S["gris"], "fort", track=0.02)
         for j in range(12):
@@ -471,7 +477,9 @@ class SousTitresEncre(SousTitresFins):
 
 
 def sous_titres(K, fusions=None):
-    return SousTitresEncre(K, fusions=fusions, y=1452, larg=860, taille=50, fam="fort", max_mots=5)
+    """zone sûre TikTok / Snap (17/10/2026) : sur un téléphone 19,5:9, l'appli rogne ~96 px de chaque côté de la vidéo
+    et la colonne de boutons couvre x > 860 de y 816 à 1555 → bloc décalé à gauche, 640 px de large (x 180-820)"""
+    return SousTitresEncre(K, fusions=fusions, y=1410, larg=640, taille=50, fam="fort", max_mots=5, cx=500)
 
 
 # ═══════════════════════════════════════════ CORPS COMMUN (de « Aujourd'hui » à la fin)
@@ -485,8 +493,8 @@ def scene_b1(c, t, M):
     if not g.visible: return
     with g:
         so = prog(t, M["page"] - 0.25, 0.3, entreeSortie)          # le titre laisse la place à la page
-        lettres(c, "AUJOURD'HUI,", 540, 300 - 60 * so, 124, t, M["b1"] - 0.08, "ressort", decal=0.03, alpha=1 - so)
-        cartes = [("Un produit", "package", M["produit"], -1), ("Un service", "briefcase", M["service"], 0), ("Ton message", "megaphone", M["message"], 1)]
+        lettres(c, tr("AUJOURD'HUI,"), 540, 300 - 60 * so, 124, t, M["b1"] - 0.08, "ressort", decal=0.03, alpha=1 - so)
+        cartes = [(tr("Un produit"), "package", M["produit"], -1), (tr("Un service"), "briefcase", M["service"], 0), (tr("Ton message"), "megaphone", M["message"], 1)]
         serre = prog(t, M["oblige"] - 0.1, 0.45, entreeSortie)
         for k, (lab, ic, t0, pos) in enumerate(cartes):
             a = entre(t, t0 - 0.12, 0.5, 1.4)
@@ -515,7 +523,7 @@ def scene_b1(c, t, M):
                 with Calque(c, borne(a * 3)):
                     carte_s(c, cx - 380, cy - 230, 760, 400, 40, ombre=0.18)
                     for j in range(3): rrect(c, cx - 300, cy - 180 + j * 26, 260 - 60 * j, 12, 6, S["lavande"])
-                    texte_grad(c, "À LA PAGE", cx, cy - 70, 118, "noir", "centre", -0.035)
+                    texte_grad(c, tr("À LA PAGE"), cx, cy - 70, 118, "noir", "centre", -0.035)
                     rrect(c, cx - 300, cy + 100, 600, 12, 6, S["doux"])
             b = entre(t, M["page"] + 0.12, 0.4, 2.4)
             if b > 0:
@@ -566,11 +574,11 @@ def scene_b2(c, t, M):
                 trait(c, 0, 0, (R - 70) * math.cos(ang), (R - 70) * math.sin(ang), S["encre"], 12)
                 disque(c, 0, 0, 26, S["encre"]); disque(c, 0, 0, 10, "#FFFFFF")
                 texte(c, "ATTENTION", 0, 40, 30, S["gris"], "titre", "centre", 0.16)
-                texte_grad(c, "CAPTIVÉ", 0, 90, 104, "noir", "centre", -0.03)
+                texte_grad(c, tr("CAPTIVÉ"), 0, 90, 104, "noir", "centre", -0.03)
             c.restore()
             onde(c, cx, cy, t, M["captive"] + 0.35, 120, 420, S["violetVif"], 8, 0.6)
         # il regarde → il comprend → il agit
-        etapes = [("Il regarde", "eye", M["regarde"]), ("Il comprend", "lightbulb", M["comprend"]), ("Il agit", "mouse-pointer-click", M["action"])]
+        etapes = [(tr("Il regarde"), "eye", M["regarde"]), (tr("Il comprend"), "lightbulb", M["comprend"]), (tr("Il agit"), "mouse-pointer-click", M["action"])]
         xs = [210, 540, 870]; yN = 1060
         for k in range(2):
             u = prog(t, etapes[k + 1][2] - 0.25, 0.3, sortie)
@@ -603,7 +611,7 @@ def scene_b2(c, t, M):
         ba = entre(t, M["action"] - 0.05, 0.4, 2.0)
         if ba > 0:
             ap = prog(t, M["action"] + 0.3, 0.1, sortie) * (1 - prog(t, M["action"] + 0.42, 0.15, sortie))
-            bouton(c, "Réserver", 870, 1270, 34, mix(0.4, 1, ba) * (1 - 0.06 * ap), borne(ba * 3), "check" if t > M["action"] + 0.4 else "arrow-right")
+            bouton(c, tr("Réserver"), 870, 1270, 34, mix(0.4, 1, ba) * (1 - 0.06 * ap), borne(ba * 3), "check" if t > M["action"] + 0.4 else "arrow-right")
             cxu = mix(1040, 900, prog(t, M["action"], 0.32, sortie)); cyu = mix(1420, 1286, prog(t, M["action"], 0.32, sortie))
             curseur(c, cxu, cyu, 1.0, borne(ba * 3), ap)
             clic(c, 900, 1280, t, M["action"] + 0.34)
@@ -625,9 +633,9 @@ def scene_b3(c, t, M):
             with Calque(c, borne(a * 3)):
                 carte_s(c, x, y, w, h, 40, ombre=0.14)
                 tuile(c, "chart-line", x + 70, y + 66, 76)
-                texte(c, "Ton activité", x + 128, y + 44, 38, S["encre"], "titre", track=-0.02)
+                texte(c, tr("Ton activité"), x + 128, y + 44, 38, S["encre"], "titre", track=-0.02)
                 pd = 0.5 + 0.5 * math.sin(t * 6)
-                w_ = pill(c, "En direct", x + w - 130, y + 66, 22, "vert")
+                w_ = pill(c, tr("En direct"), x + w - 130, y + 66, 22, "vert")
                 disque(c, x + w - 130 - w_ / 2 + 18, y + 66, 6, S["vert"], 0.4 + 0.6 * pd)
                 # graphique
                 gx, gy, gw, gh = x + 50, y + 140, w - 100, 300
@@ -653,7 +661,7 @@ def scene_b3(c, t, M):
                         rrect(c, -46, -28, 92, 56, 18, S["encre"]); icone(c, "trending-up", 0, 0, 34, "#FFFFFF", 2.8)
                         c.restore()
                 # trois indicateurs, sans chiffres
-                kpi = [("Attention", "eye", M["attention"]), ("Demandes", "message-circle", M["demandes"]), ("Clients", "users", M["clients"])]
+                kpi = [(tr("Attention"), "eye", M["attention"]), (tr("Demandes"), "message-circle", M["demandes"]), (tr("Clients"), "users", M["clients"])]
                 for k, (lab, ic, t0) in enumerate(kpi):
                     b = entre(t, t0 - 0.1, 0.45, 2.2)
                     if b <= 0: continue
@@ -678,8 +686,8 @@ def scene_b3(c, t, M):
             with Calque(c, borne(b * 3)):
                 carte_s(c, xx, yy, 860, 76, 24, ombre=0.12)
                 tuile(c, "bell", xx + 44, yy + 38, 48, "grad")
-                texte(c, "Nouvelle demande" if k < 2 else "Nouveau client", xx + 86, yy + 38 - hauteurLigne(28, "titre") / 2, 28, S["encre"], "titre", track=-0.02)
-                texte(c, "à l'instant", xx + 830, yy + 38 - hauteurLigne(22, "demi") / 2, 22, S["gris"], "demi", "droite", 0)
+                texte(c, tr("Nouvelle demande") if k < 2 else tr("Nouveau client"), xx + 86, yy + 38 - hauteurLigne(28, "titre") / 2, 28, S["encre"], "titre", track=-0.02)
+                texte(c, tr("à l'instant"), xx + 830, yy + 38 - hauteurLigne(22, "demi") / 2, 22, S["gris"], "demi", "droite", 0)
 
 
 def ecran_explicatif(c, x, y, w, h, t, t_play, M):
@@ -689,7 +697,7 @@ def ecran_explicatif(c, x, y, w, h, t, t_play, M):
         lueur_s(c, x + w / 2, y + h / 2, 200, S["violetVif"], 0.25)
         disque(c, x + w / 2, y + h / 2, 62, S["violet"], 1.0, (8, 20, 0.2)); icone(c, "play", x + w / 2 + 5, y + h / 2, 56, "#FFFFFF", 2.6)
         return
-    etapes = [("Devis", "receipt"), ("Conception", "paintbrush"), ("Pose", "hammer")]
+    etapes = [(tr("Devis"), "receipt"), (tr("Conception"), "paintbrush"), (tr("Pose"), "hammer")]
     dt = (M["simple"] - t_play) / 3.2
     for k, (lab, ic) in enumerate(etapes):
         t0 = t_play + 0.08 + k * dt
@@ -716,17 +724,17 @@ def scene_b4(c, t, M):
     if not g.visible: return
     with g:
         a = entre(t, M["site"] - 0.12, 0.4, 2.2)
-        pill(c, "Sur ton site", 540, 300, 36, "grad", "laptop", borne(a * 3), mix(0.4, 1, a))
+        pill(c, tr("Sur ton site"), 540, 300, 36, "grad", "laptop", borne(a * 3), mix(0.4, 1, a))
         x, y, w, h = 80, 400, 920, 860
         b = entre(t, M["b4"] - 0.05, 0.55, 1.2)
         t_play = M["expliquer"] - 0.05
         def contenu(cc, x_, y_, w_, h_):
             cc.drawRect(skia.Rect.MakeXYWH(x_, y_, w_, h_), peinture("#FFFFFF"))
             texte(cc, "MOREL", x_ + 44, y_ + 30, 34, S["encre"], "noir", track=0.06)
-            texte(cc, "· cuisines", x_ + 168, y_ + 36, 26, S["gris"], "demi", track=0)
+            texte(cc, tr("· cuisines"), x_ + 168, y_ + 36, 26, S["gris"], "demi", track=0)
             for j in range(3): rrect(cc, x_ + w_ - 330 + j * 100, y_ + 46, 70, 10, 5, S["ligne"])
-            texte(cc, "Votre cuisine,", x_ + 44, y_ + 110, 56, S["encre"], "titre", track=-0.035)
-            texte_grad(cc, "sur mesure.", x_ + 44, y_ + 172, 56, "titre", "gauche", -0.035)
+            texte(cc, tr("Votre cuisine,"), x_ + 44, y_ + 110, 56, S["encre"], "titre", track=-0.035)
+            texte_grad(cc, tr("sur mesure."), x_ + 44, y_ + 172, 56, "titre", "gauche", -0.035)
             vx, vy, vw = x_ + 44, y_ + 270, w_ - 88
             vh = vw * 9 / 16
             cc.save(); cc.clipRRect(skia.RRect.MakeRectXY(skia.Rect.MakeXYWH(vx, vy, vw, vh), 22, 22), doAntiAlias=True)
@@ -734,7 +742,7 @@ def scene_b4(c, t, M):
             cc.restore()
             cc.drawRRect(skia.RRect.MakeRectXY(skia.Rect.MakeXYWH(vx, vy, vw, vh), 22, 22), peinture(S["ligne"], 1, Style=skia.Paint.kStroke_Style, StrokeWidth=2))
         with Espace(c, 540, y + h / 2, rx=mix(45, 0, b), s=mix(0.75, 1, b) * (1 + 0.012 * math.sin(t * 1.5))):
-            navigateur(c, x, y, w, h, "cuisines-morel.fr", contenu, borne(b * 3))
+            navigateur(c, x, y, w, h, tr("cuisines-morel.fr"), contenu, borne(b * 3))
         # « sans un long texte » : le pavé de texte qu'on ne lira pas, barré
         if "long_texte" in M:
             la = entre(t, M["long_texte"] - 0.12, 0.45, 1.6)
@@ -760,7 +768,7 @@ def scene_b4(c, t, M):
         d = entre(t, M["simple"] - 0.08, 0.4, 2.4)
         if d > 0:
             c.save(); c.translate(880, 470); c.rotate(-8); c.scale(mix(2.2, 1, prog(t, M["simple"] - 0.08, 0.2, entree)), mix(2.2, 1, prog(t, M["simple"] - 0.08, 0.2, entree)))
-            pill(c, "Clair", 0, 0, 38, "vert", "circle-check", borne(d * 3))
+            pill(c, tr("Clair"), 0, 0, 38, "vert", "circle-check", borne(d * 3))
             c.restore()
             eclats(c, 880, 470, t, M["simple"], 10, 200, graine=8)
 
@@ -771,7 +779,7 @@ ACCROCHES = [("01", "Le problème", "Tes clients ne comprennent pas ?"), ("02", 
 
 def mini_ecran_accroche(c, x, y, w, h, t, k):
     c.drawRect(skia.Rect.MakeXYWH(x, y, w, h), pgrad(x, y, x + w, y + h, [GRAD_VIF[0], GRAD_VIF[2]] if k % 2 == 0 else ["#2A1E52", "#4B3A9A"]))
-    num, nom, phrase = ACCROCHES[k]
+    num, nom, phrase = ACCROCHES[k]; nom, phrase = tr(nom), tr(phrase)
     texte(c, num, x + 24, y + 70, 26, "#FFFFFF", "titre", track=0.06, alpha=0.7)
     texte(c, nom.upper(), x + 24, y + 104, 20, "#FFFFFF", "titre", track=0.1, alpha=0.8)
     mots = phrase.split(" ")
@@ -785,7 +793,7 @@ def mini_ecran_accroche(c, x, y, w, h, t, k):
 
 
 def scene_b5(c, t, M):
-    g = Groupe(c, t, M["b5"] - 0.1, M["prix"] - 0.1, ent="droite", sor="aucune", d_in=0.38)
+    g = Groupe(c, t, M["b5"] - 0.1, (M["prix"] if M.get("prix") is not None else M.get("decolle", M["devis"])) - 0.1, ent="droite", sor="aucune" if "decolle" not in M else "zoom", d_in=0.38)
     if not g.visible: return
     with g:
         part = prog(t, M["accroches"] - 0.35, 0.4, entreeSortie)        # script et animation s'envolent
@@ -826,8 +834,8 @@ def scene_b5(c, t, M):
                     pill(c, "ANIMATION", ax, ay + 300, 32, "blanc", "clapperboard", borne(b * 3), 0.85)
         # 3 OU 4 ACCROCHES : quatre écrans qui s'ouvrent en éventail
         if t > M["accroches"] - 0.3:
-            lettres(c, "3 OU 4", 540, 250, 110, t, M["accroches"] - 0.25, "ressort", decal=0.04)
-            lettres(c, "ACCROCHES", 540, 370, 110, t, M["accroches"] - 0.05, "masque", decal=0.03, duree=0.4)
+            lettres(c, tr("3 OU 4"), 540, 250, 110, t, M["accroches"] - 0.25, "ressort", decal=0.04)
+            lettres(c, tr("ACCROCHES"), 540, 370, 110, t, M["accroches"] - 0.05, "masque", decal=0.03, duree=0.4)
             for k in range(4):
                 a = entre(t, M["accroches"] - 0.1 + 0.08 * k, 0.55, 1.5)
                 if a <= 0: continue
@@ -842,7 +850,7 @@ def scene_b5(c, t, M):
                 c.restore()
             b = entre(t, M["tester"] - 0.1, 0.4, 2.2)
             if b > 0:
-                pill(c, "À tester", 540, 1300, 34, "encre", "split", borne(b * 3), mix(0.4, 1, b))
+                pill(c, tr("À tester"), 540, 1300, 34, "encre", "split", borne(b * 3), mix(0.4, 1, b))
                 eclats(c, 540, 830, t, M["tester"] + 0.1, 12, 360, graine=11)
 
 
@@ -864,30 +872,36 @@ def rouleau(c, chiffre, x, y, taille, t, t_dep, t_arr, couleur="#FFFFFF"):
 
 
 def scene_prix(c, t, M):
+    if M.get("prix") is None: return          # version sans prix : on laisse le site l'annoncer
     t_in, t_out = M["prix"] - 0.22, M["devis"] - 0.12
     if t < t_in or t > t_out + 0.5: return
     R = cles(t, [(t_in, 0), (t_in + 0.42, 1500, sortieExpo), (t_out, 1500), (t_out + 0.4, 0, entreeSortie)])
     cyc = mix(1000, 1060, prog(t, t_out, 0.4, entreeSortie))
+    ch_, dev, avant = PRIX["chiffres"], PRIX["devise"], PRIX["avant"]
     def dessin(cc):
         fond_grad(cc, t)
         rayons(cc, 540, 900, t, 1100, 0.10)
         a = entre(t, M["prix"] - 0.05, 0.4, 1.6)
-        texte(cc, "À PARTIR DE", 540, 560 + 20 * (1 - a), 46, "#FFFFFF", "titre", "centre", 0.14, borne(a * 3))
+        texte(cc, tr("À PARTIR DE"), 540, 560 + 20 * (1 - a), 46, "#FFFFFF", "titre", "centre", 0.14, borne(a * 3))
         taille = 300
-        ws = [largeur(ch, taille, "noir", -0.04) for ch in "290"]
-        we = largeur("€", 190, "noir", -0.02)
+        td = 190 if not avant else 210
+        ws = [largeur(ch, taille, "noir", -0.04) for ch in ch_]
+        we = largeur(dev, td, "noir", -0.02)
         tot = sum(ws) + we + 30
-        x = 540 - tot / 2; y = 660
+        xd = 540 - tot / 2 if avant else 540 - tot / 2 + sum(ws) + 30      # x de la devise
+        x = 540 - tot / 2 + (we + 30 if avant else 0); y = 660
         arr = [M["deux"] + 0.08, M["qvd"] + 0.2, M["euros"] - 0.06]
-        for k, ch in enumerate("290"):
+        for k, ch in enumerate(ch_):
             rouleau(cc, int(ch), x, y, taille, t, M["prix"] - 0.05 + 0.04 * k, arr[k])
             x += ws[k]
         e = entre(t, M["euros"] - 0.05, 0.4, 2.6)
         if e > 0:
-            cc.save(); cc.translate(x + 30 + we / 2, y + 110); cc.scale(mix(0.2, 1, e), mix(0.2, 1, e))
-            texte(cc, "€", 0, -hauteurLigne(190) / 2 + 20, 190, "#FFFFFF", "noir", "centre", -0.02)
+            cc.save(); cc.translate(xd + we / 2, y + 110); cc.scale(mix(0.2, 1, e), mix(0.2, 1, e))
+            texte(cc, dev, 0, -hauteurLigne(td) / 2 + 20, td, "#FFFFFF", "noir", "centre", -0.02)
             cc.restore()
-            pill(cc, "TTC", x + 30 + we / 2, y + 290, 30, "blanc", None, borne(e * 3), mix(0.3, 1, e))
+            if PRIX["mention"]:
+                px_ = xd + we / 2 if not avant else 540
+                pill(cc, PRIX["mention"], px_, y + 290 + (60 if avant else 0), 30, "blanc", None, borne(e * 3), mix(0.3, 1, e))
         # reflet qui balaie les chiffres
         sh = prog(t, M["euros"] + 0.1, 0.5, lin)
         if 0 < sh < 1:
@@ -897,10 +911,10 @@ def scene_prix(c, t, M):
             cc.drawRect(skia.Rect.MakeXYWH(0, y, W, 330), p)
         onde(cc, 540, 820, t, M["euros"], 120, 560, "#FFFFFF", 8, 0.7)
         eclats(cc, 540, 820, t, M["euros"] + 0.02, 16, 520, ["#FFFFFF", "#E3D6FF", S["or_"], "#C9D8FF"], graine=4, duree=0.9)
-        chips = [("30–45 s", "clock"), ("3–4 accroches", "layers"), ("Script inclus", "file-text")]
+        chips = [("30–45 s", "clock"), (tr("3–4 accroches"), "layers"), (tr("Script inclus"), "file-text")]
         for k, (lab, ic) in enumerate(chips):
             b = entre(t, M["euros"] + 0.1 + 0.08 * k, 0.4, 2.2)
-            pill(cc, lab, 540, 1130 + k * 92, 30, "blanc", ic, borne(b * 3), mix(0.4, 1, b))
+            pill(cc, lab, 540, 1130 + k * 92 + (40 if avant and PRIX["mention"] else 0), 30, "blanc", ic, borne(b * 3), mix(0.4, 1, b))
     iris(c, 540, cyc, R, dessin)
 
 
@@ -916,14 +930,14 @@ def scene_cta(c, t, M, duree):
     c.restore(); c.restore()
     b = prog(t, t0 + 0.2, 0.4, sortie)
     if b > 0:
-        texte(c, "Ton offre, en mouvement.", 540, 700 + 20 * (1 - b), 52, S["encre"], "titre", "centre", -0.03, b)
+        texte(c, tr("Ton offre, en mouvement."), 540, 700 + 20 * (1 - b), 52, S["encre"], "titre", "centre", -0.03, b)
     # le bouton naît de l'iris qui se referme
     bt = entre(t, M["devis"] + 0.18, 0.5, 1.8)
     tc = M["devis"] + 0.75
     ap = prog(t, tc - 0.06, 0.06, sortie) * (1 - prog(t, tc + 0.05, 0.14, sortie))
     pulse = 1 + 0.025 * max(0, math.sin((t - tc - 0.4) * 5)) if t > tc + 0.4 else 1
     if bt > 0:
-        bouton(c, "Demander mon devis", 540, 900, 44, mix(0.2, 1, bt) * (1 - 0.07 * ap) * pulse, borne(bt * 3))
+        bouton(c, tr("Demander mon devis"), 540, 900, 44, mix(0.2, 1, bt) * (1 - 0.07 * ap) * pulse, borne(bt * 3))
     cu = prog(t, tc - 0.5, 0.45, sortie)
     if cu > 0:
         curseur(c, mix(960, 650, cu), mix(1300, 912, cu), 1.1, 1 - prog(t, tc + 0.6, 0.3, sortie), ap)
@@ -941,7 +955,7 @@ def scene_cta(c, t, M, duree):
             xs_ = 540 - wb / 2 + 84
             texte(c, url[:n], xs_, yb - hauteurLigne(38, "titre") / 2, 38, S["encre"], "titre", track=-0.01)
             if int(t * 3) % 2 == 0: rrect(c, xs_ + largeur(url[:n], 38, "titre", -0.01) + 4, yb - 22, 4, 44, 2, S["violet"])
-    for k, (lab, ic) in enumerate([("30–45 s", "clock"), ("3–4 accroches", "layers"), ("dès 290 € TTC", "sparkles")]):
+    for k, (lab, ic) in enumerate(CTA_PILLS or [("30–45 s", "clock"), (tr("3–4 accroches"), "layers"), (tr("dès 290 € TTC"), "sparkles")]):
         b = entre(t, M["url"] + 0.4 + 0.08 * k, 0.4, 2.2)
         if b > 0:
             pill(c, lab, [215, 540, 865][k], 1230, 26, "doux", ic, borne(b * 3), mix(0.4, 1, b))
@@ -976,14 +990,16 @@ def sons_corps(K, M):
     son(M["accroches"] - 0.35, "whoosh_long", -10)
     for k in range(4): son(M["accroches"] - 0.1 + 0.08 * k, "swipe", -15)
     son(M["tester"] - 0.05, "montee", -14); son(M["tester"] + 0.05, "ching", -11)
-    son(M["prix"] - 0.22, "whoosh_bas", -8); son(M["prix"] - 0.05, "montee", -12)
-    for i in range(14): son(M["prix"] + i * (M["euros"] - M["prix"]) / 14, "tick", -17)
-    son(M["deux"] + 0.08, "clic", -10); son(M["qvd"] + 0.2, "clic", -10); son(M["euros"] - 0.06, "impact", -5); son(M["euros"], "ching", -9)
-    son(M["euros"] + 0.1, "pop", -13)
+    if M.get("prix") is not None:
+        son(M["prix"] - 0.22, "whoosh_bas", -8); son(M["prix"] - 0.05, "montee", -12)
+        for i in range(14): son(M["prix"] + i * (M["euros"] - M["prix"]) / 14, "tick", -17)
+        son(M["deux"] + 0.08, "clic", -10); son(M["qvd"] + 0.2, "clic", -10); son(M["euros"] - 0.06, "impact", -5); son(M["euros"], "ching", -9)
+        son(M["euros"] + 0.1, "pop", -13)
     son(M["devis"] - 0.12, "whoosh", -9); son(M["devis"] + 0.18, "verre", -10); son(M["devis"] + 0.75, "clic", -6)
     for i in range(15): son(M["url"] + i * 0.034, "frappe", -18)
     son(M["url"] + 0.4, "pop", -13)
     for a, b in [(M["b1"] - 0.12, M["b1"] + 0.25), (M["b2"] - 0.15, M["b2"] + 0.3), (M["b3"] - 0.15, M["b3"] + 0.3),
                  (M["b4"] - 0.15, M["b4"] + 0.3), (M["b5"] - 0.15, M["b5"] + 0.3), (M["accroches"] - 0.35, M["accroches"] + 0.1),
-                 (M["prix"] - 0.25, M["prix"] + 0.25), (M["prix"], M["euros"] + 0.05), (M["devis"] - 0.15, M["devis"] + 0.3)]:
+                 *([(M["prix"] - 0.25, M["prix"] + 0.25), (M["prix"], M["euros"] + 0.05)] if M.get("prix") is not None else []),
+                 (M["devis"] - 0.15, M["devis"] + 0.3)]:
         rapide(a, b)

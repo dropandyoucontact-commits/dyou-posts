@@ -324,7 +324,9 @@ def _image_video(dossier, k):
 
 
 def video(c, nom, x, y, w, h, t_local, vitesse=1.0, boucle=True, rayon=0, alpha=1.0, rogne=(0.0, 0.0, 0.0, 0.0)):
-    """dessine l'image de la vidéo au temps t_local × vitesse (×2 ou ×2,5 pour tenir dans une phrase)"""
+    """dessine l'image de la vidéo au temps t_local × vitesse (×2 ou ×2,5 pour tenir dans une phrase)
+    jamais de ralenti (Youssef, 18/10/2026 : « ça fait comme si la vidéo laguait ») → vitesse ramenée à 1 au minimum"""
+    vitesse = max(1.0, vitesse)
     cache, n, fps = prepare_video(nom, w, h, rogne)
     k = int(max(0.0, t_local) * vitesse * fps)
     k = k % n if boucle else min(k, n - 1)

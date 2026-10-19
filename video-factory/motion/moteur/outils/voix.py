@@ -89,6 +89,7 @@ def main():
     p.add_argument("--etat", action="store_true"); p.add_argument("--forcer", action="store_true")
     p.add_argument("--debit", type=float, default=4.2, help="mots par seconde visés après accélération (4,2 + pauses resserrées = rythme validé le 15/10/2026, MQ-M02/MQ-M03)")
     p.add_argument("--sans-resserrer", action="store_true", help="garder les pauses naturelles (par défaut ramenées à 0,18 s)")
+    p.add_argument("--sans-hook", action="store_true", help="ne pas accélérer l'attaque (par défaut : hook_rapide.py, règle du 19/10/2026)")
     p.add_argument("--voix", help="voice_id ElevenLabs, à la place de celui de la configuration")
     p.add_argument("--langue", help="code langue de la prise (fr par défaut) : en pour une version anglaise")
     a = p.parse_args()
@@ -117,6 +118,8 @@ def main():
     accelerer(a.debit)
     if not a.sans_resserrer:      # rythme validé par Youssef le 15/10/2026 pour toutes ses vidéos
         subprocess.run([sys.executable, str(pathlib.Path(__file__).with_name("resserrer.py"))], check=True)
+    if not a.sans_hook:           # Youssef, 19/10/2026 : les premiers mots du hook sortent toujours forts et rapides
+        subprocess.run([sys.executable, str(pathlib.Path(__file__).with_name("hook_rapide.py"))], check=True)
 
 if __name__ == "__main__":
     main()

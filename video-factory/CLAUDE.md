@@ -27,6 +27,45 @@ délais, douane, transitaire, différences de qualité en restant général.
 seul et s'arrête pour un projet CB-/DY- fautif). Il contrôle script.txt et scenes.py ; les mockups et images se vérifient
 à l'œil sur les aperçus. Les pubs DYOU Agency (DA-) ne sont pas visées.
 
+**Marque et produits (17/10/2026)** : le logo DROP&YOU se met **en haut de l'écran du téléphone** (en-tête d'appli), en plus du
+filigrane. Les cartes produits en verre clair (`banque/glace/carte_*.png`) servent quand un produit doit être présenté, pas
+partout ; elles portent des logos de marques lisibles → à signaler avant une vidéo TikTok. Les consignes de ChatGPT ne
+s'appliquent que si elles montent le niveau (référence : DA-M14/M16-EN v2, DY-M12).
+
+**Vrais produits et zone sûre (17/10/2026, retour sur DY-M12).** Jamais un produit dessiné ou une icône à la place d'un
+produit : les vraies paires détourées et les vraies vidéos de la banque et des projets (« les gens veulent voir ce qu'ils
+ont envie d'acheter »). Hook fort (vrais produits dès l'image 0) et une intention de commentaire par vidéo. Contrôler
+chaque vidéo de stock image par image : des cartons portent des marques. **Zone sûre unique TikTok + Snap** : sur un
+téléphone 19,5:9 l'appli rogne ~96 px de chaque côté et la colonne de boutons couvre x > 860 de y 816 à 1555 → titres
+≤ 760-840 px, contenu sous y 816 entre x 130 et 860, sous-titres de `studio.sous_titres` (y 1410, x 180-820). Vérifier
+avec `motion/moteur/outils/zone_tiktok.py apercus/t*.png -o planche.jpg`.
+
+**Jamais de ralenti (18/10/2026).** Une vidéo ou un rush ralenti « fait comme si la vidéo laguait » et casse le motion.
+Vitesse ×1, ou accélérée quand le geste dure plus longtemps que la phrase (geste de 6 s, voix de 2-3 s → ×2). Si le plan est
+trop court pour la phrase : enchaîner un deuxième plan, jamais l'étirer. `moteur.video()` refuse tout `vitesse < 1`.
+
+**Produits et signature (18/10/2026, retour sur DY-M13).** Youssef choisit les baskets et articles qui jaillissent (mes choix
+« pourris » : paires à virgule, montantes connues) → lui demander la liste, sinon `PAIRES` isolée en tête de scenes.py.
+Ne pas centrer une vidéo DROP&YOU sur les baskets : « un article — une paire, une montre, une sape », catégories mélangées.
+Fin : `moteur/signature.py` (produits aspirés → explosion → DROP&YOU recomposé en 3D), plus jamais le logo dans un cadre.
+**DY-M15 = référence DROP&YOU validée (18/10/2026)** : police, disposition, rythme, signature → partir de là.
+Toute correction validée par Youssef devient la base des vidéos suivantes (moteur ou règle ici), sans qu'il la redemande.
+Pubs DYOU Agency : garder les dernières, mais leur fin passe à une signature du même genre, aux couleurs de l'agence.
+
+## Hook toujours rapide et fort (19/10/2026) — toutes les vidéos voix off
+
+Youssef : « dans le hook, tout le temps faut parler rapide… les premiers mots qui vont sortir, faut jamais que ce soit en lent ;
+au début il faut que ça soit fort et rapide, toujours ». L'intonation peut varier ensuite dans la phrase, pas l'attaque.
+`voix.py` lance `outils/hook_rapide.py` après `resserrer.py` : sur la première phrase, silences internes ramenés à 0,05 s
+(la virgule d'« Aujourd'hui, » ne fait plus de trou), débit relevé à 5,2 mots/s minimum, +1,5 dB. `--sans-hook` pour l'éviter.
+
+## Client GSX — Global SINO Export (19/10/2026)
+
+Deuxième société du client MONARQUE (sourcing / accompagnement en Chine). Même grammaire claire que MONARQUE + les éléments
+de DY-M15 passés en clair : `moteur/gsx.py` (verre givré blanc `verre_clair`, accent rouge du logo #E8072D, globe à points
+Chine rouge, `titre2`, `signature_gsx` = plans aspirés → explosion → sigle-globe extrudé → « Global SINO Export » en 3D).
+Premier film : `motion/GSX-M01/` (hook 1 du client, script mot pour mot, rushes d'usines du client en cartes 9:16 entières).
+
 ## Qui décide du motion
 
 Décision de Youssef, 5 octobre 2026 : **tout le motion design est décidé et réglé par
@@ -193,6 +232,16 @@ retouches illimitées promis) : `motion/moteur/studio.py`, aux couleurs du site 
 dégradé #6533BF → #7C43CC → #4665AD, Inter). Niveau visé : au-dessus des meilleurs studios concurrents — titres construits
 lettre par lettre, interfaces vivantes, une idée par seconde, transitions variées. Le corps est commun (repères `M`),
 seul le hook change. Sous-titres `SousTitresEncre` : encre, fins, sans surlignage, masqués pendant le prix et la fin.
+
+### Pubs DYOU : verre clair + signature 3D (19/10/2026)
+
+Demande de Youssef : garder tout de DA-M14-EN-v2 / DA-M16-EN-v2 (texte, voix, cartes en verre, vitrine, rendu, outils)
+sauf les couleurs → fond clair du studio (DA-M06-EN, DA-M09-EN), et fin en signature 3D comme DY-M15 / GSX.
+`moteur/verre_studio.py` : `vs.appliquer()` (cartes blanches → verre clair à halo violet, faux sites intacts), cartes de
+Youssef redessinées en clair (`carte_rendu`, `carte_outils`, `carte_onde`, `carte_fichier`, `dock_outils`, `vitrine`),
+`vs.signature(c, t, M["devis"] - vs.T_BOUM, MEDIAS, lignes, cta)` : explosion sur « Tap », sigle DYOU extrudé, DYOU AGENCY
+en tranches 3D, « Tap the link. », bouton cliqué, adresse tapée. Mettre `studio3d.scene_cta` / `sites3d.scene_cta` à vide.
+Réf. : DA-M17-EN (motion), DA-M18-EN (sites). Partir de là pour les prochaines pubs DYOU.
 
 ## Reprendre ailleurs
 

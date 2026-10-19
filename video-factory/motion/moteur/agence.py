@@ -150,7 +150,7 @@ def texte_flou(c, s, x, y, taille, couleur="#FFFFFF", fam="gras", align="gauche"
 class SousTitresFins:
     """phrase en cours, blanc, mot par mot (flou → net), sans surlignage ; fusions : {(i, j…): "affichage"}"""
 
-    def __init__(self, kit, fusions=None, y=300, larg=900, taille=64, fam="gras", max_mots=5):
+    def __init__(self, kit, fusions=None, y=300, larg=900, taille=64, fam="gras", max_mots=5, cx=None):
         mots = kit.mots
         fusions = fusions or {}
         prem = {k[0]: (k, v) for k, v in fusions.items()}
@@ -178,6 +178,7 @@ class SousTitresFins:
                 fus.append(b)
         self.blocs = fus
         self.y, self.larg, self.taille, self.fam = y, larg, taille, fam
+        self.cx = W / 2 if cx is None else cx
         self.mise = [self._mise(b) for b in self.blocs]
 
     def _mise(self, bloc):
@@ -193,7 +194,7 @@ class SousTitresFins:
         pos = []
         hl = hauteurLigne(T, fam) * 1.04
         for k, (ligne, lw) in enumerate(lignes):
-            x = W / 2 - lw / 2
+            x = self.cx - lw / 2
             for txt, t0, w in ligne:
                 pos.append((txt, t0, x, self.y + k * hl)); x += w + esp
         return pos

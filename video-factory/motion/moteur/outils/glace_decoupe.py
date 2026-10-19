@@ -48,3 +48,10 @@ for k, x in enumerate([77, 301, 525, 749]):
 coupe(vit, (205, 460, 965, 995), "ecrans", 0)
 # panneau givré (verre clair)
 coupe(giv, (170, 222, 920, 1222), "givre", 48)
+
+# cartes produits en verre clair (Youssef, 17/10/2026) : damier imprimé → découpe au masque arrondi, une carte par fichier.
+# Noms de fichiers sans marque (règle de conformité du 17/10).
+cp_ = Image.open(B / "sources" / "cartes-produits.png").convert("RGBA")
+for nom, box in dict(lunettes=(47, 87, 528, 449), montre=(554, 90, 896, 551), baskets=(44, 492, 486, 853),
+                     bracelet=(514, 590, 902, 853), ensemble=(257, 892, 686, 1621)).items():
+    coupe(cp_, box, "carte_" + nom, 30, 1)
