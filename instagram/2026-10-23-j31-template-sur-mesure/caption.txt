@@ -1,0 +1,11 @@
+Un template peut être le choix le plus intelligent. Le sur-mesure aussi. Le problème commence quand on choisit avant d’avoir défini le besoin.
+
+Pour un site simple, avec peu de pages, peu d’intégrations et un lancement rapide, un bon template permet d’aller droit au but sans reconstruire ce qui existe déjà.
+
+Le sur-mesure devient pertinent lorsque le site doit suivre un parcours particulier, gérer des règles métier, connecter plusieurs outils ou automatiser une partie du travail. Dans ce cas, forcer l’activité dans un modèle standard crée souvent une accumulation de contournements.
+
+Le vrai coût n’est donc pas seulement celui de la création. Il faut aussi compter les extensions, les outils séparés, la maintenance et le risque de devoir tout refaire trop tôt.
+
+Avant de choisir, demandez-vous si vous changez seulement l’apparence du site ou son fonctionnement. Enregistrez ce test et envoyez-le à la personne qui prépare votre refonte.
+
+#SiteSurMesure #TemplateWeb #RefonteSite
