@@ -59,6 +59,38 @@ au début il faut que ça soit fort et rapide, toujours ». L'intonation peut va
 `voix.py` lance `outils/hook_rapide.py` après `resserrer.py` : sur la première phrase, silences internes ramenés à 0,05 s
 (la virgule d'« Aujourd'hui, » ne fait plus de trou), débit relevé à 5,2 mots/s minimum, +1,5 dB. `--sans-hook` pour l'éviter.
 
+**Piège vu sur MQ-M08 (27/10/2026) : `hook_rapide.py` mesure le débit HORS SILENCES.** Sur une attaque
+courte — « Regardez vos cartons. », 3 mots — il trouve 5,40 mots/s, se croit déjà au-dessus de la cible
+et n'accélère rien, alors que le temps réel donne 4,63 mots/s et que l'attaque sonne molle. Ce qui traîne,
+ce sont les blancs entre les mots, pas la diction de Tomy ; et la règle ne serre que la PREMIÈRE PHRASE,
+qui peut ne faire que trois mots.
+
+Quand une attaque sonne lente alors que la sortie de `hook_rapide` annonce 5,2 mots/s, refaire depuis la
+prise brute (gratuit, aucune regénération ElevenLabs) :
+
+```
+python3 ../moteur/outils/voix.py --debit 4.2 --sans-hook
+python3 ../moteur/outils/hook_rapide.py --mots 9 --debit 6.5
+```
+
+`--mots 9` couvre les deux premières phrases, c'est-à-dire le hook entier ; `--debit 6.5` force
+l'accélération jusqu'au plafond ×1,25. Sur MQ-M08 : attaque 4,63 → 5,15 mots/s, hook 5,01 → 6,16 mots/s,
+0,48 s gagnées. **Ne jamais relancer `hook_rapide.py` sur une voix.mp3 qui l'a déjà subi** : il s'applique
+deux fois. Toujours repartir de `media/voix-brut.mp3`.
+
+Après toute reprise de la voix, le minutage change : **régénérer `sfx.json` avant `mixer.py`**, sinon les
+bruitages restent calés sur l'ancien timing (121 sons décalés de 0,5 s sur MQ-M08) :
+
+```
+python3 -c "import json, scenes; json.dump(sorted(scenes.SFX), open('sfx.json', 'w'))"
+```
+
+Mesurer plutôt que croire la sortie du script — le débit réel du hook, blancs compris :
+
+```
+python3 -c "import json; m=json.load(open('timing.json'))['mots']; print(round(9/m[8]['t1'],2),'mots/s')"
+```
+
 ## Client GSX — Global SINO Export (19/10/2026)
 
 Deuxième société du client MONARQUE (sourcing / accompagnement en Chine). Même grammaire claire que MONARQUE + les éléments
@@ -137,7 +169,7 @@ contient que son script, sa voix, son minutage, ses médias et son `scenes.py`.
    pas ChinaBook à chaque vidéo).
 2. **Voix** : `motion/<ID>/script.txt`, puis `python3 ../moteur/outils/voix.py` depuis ce
    dossier. ElevenLabs (voix Tomy, `eleven_v4`, clé dans `~/.config/dyou/elevenlabs.json`,
-   offre Starter : 30 000 crédits par mois, ~1 crédit par caractère) renvoie le temps de
+   offre Creator : 131 000 crédits sur le compte au 27/10, ~1 crédit par caractère) renvoie le temps de
    chaque caractère : `timing.json` sort directement, sans transcription. L'outil accélère
    ensuite la prise à **3,5 mots par seconde** (débit TikTok rapide). Une prise n'est
    jamais regénérée sans `--forcer` : c'est du crédit. Vérifier avec `--etat` avant.
@@ -248,3 +280,45 @@ Réf. : DA-M17-EN (motion), DA-M18-EN (sites). Partir de là pour les prochaines
 `REPRISE.md` (dans ce dossier, section « Niveau actuel » en tête) est le prompt à donner à un autre Claude ou à ChatGPT. Les vidéos finies et les médias
 de chaque vidéo (rushes, voix, captures) sont dans le dépôt **privé** `dyou-assets` (`motion-videos/`, `motion-medias/<ID>/`),
 jamais dans ce dépôt public.
+
+## Compte ElevenLabs et rendu — à jour au 27/10/2026
+
+**Les voix ont changé de compte.** Le Starter `dropandyou` est abandonné au profit de
+**youssef@dyou-agency.com (Creator)**. ElevenLabs n'autorise aucun transfert de compte à compte pour les
+clones instantanés et les voix dessinées (seuls les clones professionnels se partagent) : toutes les voix
+ont été recréées, donc **tous les voice_id ont changé**.
+
+| Voix | Ancien id | Nouvel id |
+|---|---|---|
+| Tomy (motion) | `Lt0unAbeM6JystrA2RTv` | `BBiN2YrSqm8dBdXxsFlJ` |
+| Léo (aigu, accent espagnol) | `haslyGsX7Yvfg11C5acm` | `WlCMkszs6Oz7vBhdUzrd` |
+| Léo (premier clone) | `aL1wJJpipWiIPjPi1jzZ` | `nkNOioEZLcZVKhVdB4sk` |
+| Seedance cagoule moto | `IbgOdhbKXd3uBjUO8aHA` | `NBH3DyOfYwDIjZZRj2Og` |
+| Seedance boucle moto | `fDOPUqPwDA8tr9PAy2xw` | `9IXe47HGvRNshQI7nJT0` |
+| Avital | `ceEUAp9GlR900XIwMTq2` | `jXVZY30NbecT0ooKH1Ba` |
+| Avital vlog | `zchjMHCgSyHNevwHbPa9` | `24zyhi85Y3hHyfTkAtE2` |
+| Bernard | `pRnWjjXVgCRKGXWLMSks` | `HUFukTz6xld4M8wkzhzE` |
+
+Tomy et les trois autres voix dessinées n'avaient aucun échantillon : elles ont été **reclonées depuis leur
+propre audio d'historique**. Comparé sur le script de DY-M19 passé deux fois dans le moteur : ancien 24,57 s,
+nouveau 25,04 s, débit naturel 3,46 contre 3,39 mots/s — l'atempo de `voix.py` recale, l'écart ne s'entend pas.
+`~/.config/dyou/elevenlabs.json` porte déjà la nouvelle clé et le nouveau Tomy ; sauvegarde complète des
+échantillons et de l'audio source dans `~/elevenlabs-backup/` (hors dépôt).
+
+**Comparer deux voix se fait avec le moteur, jamais à la main** : une prise brute ElevenLabs sort à
+~3,4 mots/s et sonne molle. Copier le `script.txt` et le `media/voix-brut.mp3` d'un projet rendu dans deux
+dossiers, puis `voix.py --debit 4.2` d'un côté (gratuit, il réutilise la prise) et
+`voix.py --forcer --voix <id>` de l'autre.
+
+**Le rendu se lance avec `/usr/bin/python3`.** Le `python3` du PATH est passé à Homebrew 3.15 et n'a ni
+numpy ni skia ; les paquets du moteur sont installés pour le Python 3.9 d'Apple
+(`~/Library/Python/3.9/lib/python/site-packages`).
+
+```
+cd video-factory/motion/MON-ID
+/usr/bin/python3 ../moteur/rendu.py video
+/usr/bin/python3 ../moteur/outils/mixer.py --lufs -13 renders/image.mp4
+```
+
+Les outils qui ne font que du réseau ou du FFmpeg (`voix.py`, `hook_rapide.py`) tournent avec n'importe
+quelle version.
