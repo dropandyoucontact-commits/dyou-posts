@@ -458,6 +458,11 @@ ont été recréées, donc **tous les voice_id ont changé**.
 |---|---|---|
 | Tomy (motion) | `Lt0unAbeM6JystrA2RTv` | `BBiN2YrSqm8dBdXxsFlJ` |
 | Léo (aigu, accent espagnol) | `haslyGsX7Yvfg11C5acm` | `WlCMkszs6Oz7vBhdUzrd` |
+
+**Réglage fixe de Léo — validé le 29/10/2026** : `eleven_turbo_v2_5` + `language_code: "es"`, stabilité 0,45,
+style 0,15, similarité 1,0, sans speaker boost, speed 1,0, **aucun atempo** (il parle tranquillement, un peu
+timide), et **les R triplés dans le texte** (« trrravaille », « prrroblème »). Le réglage énergique
+(0,30 / 0,50 + ×1,15) est abandonné. Scribe sur chaque prise, une sur trois sort écorchée.
 | Léo (premier clone) | `aL1wJJpipWiIPjPi1jzZ` | `nkNOioEZLcZVKhVdB4sk` |
 | Seedance cagoule moto | `IbgOdhbKXd3uBjUO8aHA` | `NBH3DyOfYwDIjZZRj2Og` |
 | Seedance boucle moto | `fDOPUqPwDA8tr9PAy2xw` | `9IXe47HGvRNshQI7nJT0` |
