@@ -275,6 +275,164 @@ Youssef redessinées en clair (`carte_rendu`, `carte_outils`, `carte_onde`, `car
 en tranches 3D, « Tap the link. », bouton cliqué, adresse tapée. Mettre `studio3d.scene_cta` / `sites3d.scene_cta` à vide.
 Réf. : DA-M17-EN (motion), DA-M18-EN (sites). Partir de là pour les prochaines pubs DYOU.
 
+
+## Chaîne d'actu people / cinéma / séries / sport — identité posée le 27/10/2026
+
+Nouvelle chaîne TikTok (projets **AC-M##**), distincte de tout le reste du portefeuille.
+Concurrents étudiés : **@tactik77** (TacMedia, 713 K abonnés, sommets à 7,3 M),
+**@red.hac** (RedHac, 290 K, « Films - Series - People »). Référence de motion : **@Phyzolof**.
+
+**Ce qui a été refusé (AC-M01 v1)** : l'habillage cobalt + orange de ChinaBook.
+Youssef : « t'as utilisé l'identité de DROP&YOU, fallait pas… pour les célébrités faut trouver
+un format visuel et rester dedans ». Et : « pas de fonds sombres : quadrillés, en perspective,
+qu'on voie de la profondeur, et que tu joues avec ça ».
+
+**L'identité, à tenir d'une vidéo à l'autre — `moteur/people.py` :**
+
+- **le décor est une pièce, pas un fond** : sol quadrillé qui fuit vers un point de fuite
+  (`HORIZON` 700, `SOL` 1180), quadrillage de plafond, le tout qui avance lentement vers nous
+  (`fond_grille(c, t, vitesse=…)`, accéléré sur les bascules) ;
+- **la profondeur raconte** : ce qui arrive vient du point de fuite et grandit, ce qui disparaît
+  y repart (`carte_photo(..., u, z0)`, `echelle_z`, `pose_sol` pour la lueur rouge qui ancre) ;
+- **noir `#08080A`, blanc `#FFFFFF`, un seul rouge `#E8252D`.** Aucun dégradé de couleur, aucun verre,
+  aucun violet : le reste du portefeuille est sombre et VIOLET, cette chaîne est noire et ROUGE ;
+  le sol quadrillé est rouge, le plafond blanc, et le point de fuite porte un halo rouge qui bat ;
+- **sur noir, une ombre ne dit rien** : ce qui ancre un objet au sol, c'est une LUEUR rouge
+  (`pose_sol`), et les cartes portent un halo rouge au lieu d'une ombre portée (`_halo`) ;
+- **pavé BLANC → texte noir, pavé ROUGE → texte blanc** (`bloc` choisit seul) ; les coupures de
+  presse (`document`) restent du vrai papier blanc, c'est ce qui crève l'écran sur le noir ;
+- **typo énorme en capitales** (`titre`), un seul mot surligné en rouge par écran (`surlignage`),
+  mots barrés quand on corrige une idée reçue (`barre_rouge`) ;
+- briques éditoriales : `rubrique` (DÉCODER / …), `bloc`, `document` (coupure de presse en 3D),
+  `donut` + `compteur` + `legende` (la data animée de @Phyzolof), `bandes` (split-screen) ;
+- **signature de fin maison** (`signature_people`) : le logo arrive du fond de la pièce, filet rouge,
+  baseline, ondes rouges au sol. Celle de DROP&YOU (`signature.py`) ne s'utilise pas ici :
+  elle raconte une autre marque, et le logo de la chaîne est blanc et rouge (`logo_people.py`).
+
+**La chaîne est @recto_cerveau** (37,7 K abonnés, « Films 🎥 Séries 📺 Actu people 🍿 »).
+Youssef produit, son associé publie. `people.NOM_CHAINE = "RECTO CERVEAU"` ;
+`/usr/bin/python3 moteur/outils/logo_people.py "AUTRE NOM"` refabrique logo et signature.
+
+**Habillage FIGÉ le 28/10/2026 — fond noir (AC-M01 v4).** La v3 sur papier crème a été validée sur
+tout le reste (« c'est parfait, la dernière vidéo, la voix, tout ») : script, voix, montage et repères
+temporels n'ont pas bougé d'un centième. Son associé, qui tient @recto_cerveau, a tranché l'habillage :
+« fond noir, la grille qui bouge, accent en rouge et blanc, le texte et les médias plus grands,
+juste en changeant la signature visuelle, comme ça on la fige ». C'est désormais LE format de la chaîne :
+on part de `AC-M01/scenes.py` et on ne rediscute plus les couleurs. La version papier reste en
+`moteur/people-papier.py.bak` et `AC-M01/scenes-v3-papier.py.bak` si jamais.
+
+**« Plus grand » : où ça se gagne vraiment.** Les titres hauts sont déjà bornés par `LARG_T = 950`
+(au-delà, les bords partent dans le rognage ~96 px de TikTok) : augmenter leur `taille` ne change
+rien, `ajuste` les rabote. Le gain réel est ailleurs — plafond des pavés `bloc` porté de 470 à 630 px
+(WOODY WOODPECKER 42 → 57, SUPER MARIO BROS 49 → 66, DIS-LE EN COMMENTAIRE 38 → 51), sous-titres
+propres à la chaîne à 60 px (`people.sous_titres_people`, et non `studio.sous_titres` à 50),
+médias élargis (extraits 880×495 → 900×506, portraits +15 %), et les punchlines remontées
+AU-DESSUS de y 775 pour qu'elles prennent `LARG_T` au lieu de `LARG_BAS` (« T'A ÉLEVÉ, TOI ? »
+86 → 126 px rien qu'en la passant de y 770 à y 700).
+**Mesurer avant de rendre**, jamais à l'œil sur la planche :
+`ajuste(txt, larg, taille, "noir", -0.022)` puis `largeur(...)` → vérifier x ∈ [96, 984] en haut,
+et x ∈ [140, 858] sous y 816 (colonne de boutons).
+
+**Livraison : canal Telegram « Tiktok » (28/10/2026).** Youssef produit, son associé publie.
+Une vidéo finie et vérifiée part dans le canal privé où ils sont tous les deux (le bot média y est
+administrateur), **toujours en FICHIER** :
+
+    cd video-factory/motion/AC-M01
+    /usr/bin/python3 ../moteur/outils/livrer.py video/AC-M01.mp4 --legende "…"
+
+`sendDocument`, jamais `sendVideo` : Telegram ré-encode tout ce qui part en vidéo. En document
+l'octet envoyé est l'octet reçu, et le fichier se range quand même dans la galerie du téléphone.
+Le jeton reste sur le VPS ; `livrer.py` copie, envoie, efface, et compare ce qui est reçu à ce qui
+est envoyé. **Au-dessus de 49 Mo** (plafond de 50 Mo de l'API des bots) il bascule seul sur un
+**lien** : le master va dans `/srv/livraisons/<jeton>/` sur le VPS, servi par
+`https://videos.108-61-187-118.sslip.io` sans index, et le bot poste l'adresse. Empreintes SHA-256
+comparées des deux côtés. **Jamais de recompression automatique** : une vidéo livrée l'est en
+qualité maximale, sans exception. L'hôte s'installe une fois avec
+`moteur/outils/installer-livraisons.sh` — à faire lancer par Youssef, les écritures dans `/etc/`
+du VPS sont refusées côté Claude Code. Détail : mémoire `canal-livraison-recto`.
+
+**AC-M02 EST LA RÉFÉRENCE DE LA CHAÎNE** — « parfait la vidéo », Youssef, 28/10/2026.
+Toute nouvelle AC- part de `motion/AC-M02/scenes.py`, pas d'AC-M01. Ce qui y est acquis :
+hook visuel sans texte, deux cartes empilées pour poser un face-à-face, briques `podium`
+(un classement dont la 1re marche est VIDE), `puce` (réactions de réseau), `camp`
+(le débat en deux colonnes séparées d'un filet rouge), `ondes_sol`, et la structure
+« on montre la preuve, puis on arme les deux camps, puis on fait trancher ».
+
+**Trois règles de plus, posées le 28/10/2026 (AC-M02) — valables pour toute la chaîne :**
+
+1. **Le hook est un VISUEL, pas du texte.** L'image 0 est un plan choc, plein cadre ; aucun titre
+   avant le 4e mot. Sur AC-M02 : le visage de Kane qui fonce sur nous, puis il monte et celui de
+   Henry arrive du fond en dessous — le face-à-face est à l'écran avant qu'un mot ne soit écrit.
+   « Plutôt qu'avoir du texte, direct avoir un visuel choc. »
+2. **L'attaque de la voix doit être impactante**, pas seulement rapide :
+   `voix.py --debit 4.0 --sans-hook` puis `hook_rapide.py --mots 11 --debit 6.0`
+   (`--mots 11` couvre la première phrase entière ; ici 5,68 mots/s sur l'attaque).
+3. **Débit général légèrement relevé : 4,66 mots/s** (AC-M01 était à 4,33). `--debit 4.0` y mène ;
+   `--debit 4.6` monte à 5,02, c'est trop. Le paramètre n'est pas le résultat : `resserrer.py`
+   enlève encore ~10 s de blancs derrière, **mesurer timing.json** avant de valider.
+
+**Deux pièges de production vus sur AC-M02 :**
+- **`renders/cache-videos` n'est pas invalidé quand on recoupe un plan.** Un extrait remplacé
+  continue de sortir en ancienne version dans les aperçus comme dans le rendu. `rm -rf
+  renders/cache-videos` après toute retouche de `media/videos/`.
+- **Un extrait de plateau alterne les visages.** Avant de caler `t0`, sortir une planche fine
+  (`ffmpeg -ss X -t Y -vf "fps=1/1.5,scale=160:-1,tile=9x2"`) et choisir un segment où la bonne
+  personne est à l'image tout du long — au besoin concaténer deux segments.
+
+**Trois contraintes de format (27/10/2026)** :
+- **1 minute 02 minimum** par vidéo — seuil de monétisation. Viser 63-70 s de voix (≈ 270 mots).
+- **Phrases complètes, courtes et simples** : 8-9 mots. Quelqu'un qui ne connaît pas le sujet
+  doit comprendre. Les titres à l'écran restent télégraphiques, pas la voix off.
+- **De vraies vidéos de la personne**, récentes, sans texte incrusté. `people.carte_video()` les pose
+  en cadre 16:9 large. YouTube ne sort plus que du 360p via
+  `yt-dlp --extractor-args "youtube:player_client=android"` : d'où le cadre large, pas de portrait.
+  Vérifier les vignettes avant de monter — une bande-démo contient des plans sans la personne.
+
+**Voix : TOUF** (`x5uzA0wWgLQFZXEL4MbL`) depuis le 28/10/2026 — **Kael est abandonnée**.
+C'est le clone de la voix off des ANCIENNES vidéos de @recto_cerveau (celles d'avant nous), fait sur
+3 vidéos isolées de leur musique, 186 s. Youssef : « c'est la nouvelle voix pour recto cerveau ».
+Réglages fixes, mesurés comme les plus fidèles (écart mel 1,68 dB contre la vraie voix, F0 154 vs 152) :
+
+    voix.py --voix x5uzA0wWgLQFZXEL4MbL --modele eleven_multilingual_v2 \
+            --stabilite 0.5 --style 0.0 --similarite 1.0 --sans-boost --debit 4.3 --sans-hook
+    hook_rapide.py --mots 11 --debit 6.0
+
+`--modele`, `--similarite` et `--sans-boost` ont été ajoutés à `voix.py` pour ça (un clone instantané
+veut multilingual_v2, similarité 1,0 et PAS de speaker boost — le boost ajoute de la résonance).
+Son débit naturel est lent (3,05 mots/s) : `--debit 4.3` donne ×1,408, sous le plafond ×1,45. Viser
+4,3 et pas plus, sinon le plafond écrête et le débit visé n'est pas atteint.
+**« Il parle plus fort » n'est pas un problème de niveau** : les anciennes vidéos sortent à −18 LUFS,
+les nôtres à −13. C'est la PROJECTION de la voix qui change, et elle vient du clone.
+
+**FORMAT « LETTRE » (@darkearth) — demandé le 28/10/2026, référence : `motion/AC-M04/scenes.py`.**
+Youssef a envoyé une vidéo de @darkearth sur LE SUJET D'AC-M02 (le Ballon d'Or de Kane), traité
+autrement : « je te parle pas du design du montage, je te parle du FOND, comment il parle, comment
+il a réussi à entraîner les gens ». Ce qu'il fait, mesuré sur sa transcription :
+- **on parle AU sujet, pas DU sujet** : « Cher Harry, toi qu'on a si longtemps sous-estimé… ».
+  Les titres à l'écran passent au **tutoiement** eux aussi, sinon l'illusion casse ;
+- **3,25 mots/s** (nous étions à 4,47) : `voix.py --debit 3.45 --sans-hook --sans-resserrer`.
+  **La règle « attaque toujours rapide » est suspendue sur ce format**, l'attaque d'une lettre est lente ;
+- anaphore (« toi qu'on… toi qu'on… ») puis renversement ; le « on » collectif rend le spectateur complice ;
+- **zéro chiffre jeté pour le chiffre**, une phrase à capturer par vidéo, **pas de CTA ni de question
+  finale** : ça se termine sur une image ;
+- chez lui il y a de la musique douce du début à la fin — on n'en met pas, c'est la pièce qui nous manque.
+
+**MONTAGE MOINS DYNAMIQUE — règle du 28/10/2026, après l'échec d'AC-M01 et AC-M02.**
+« Faut être moins dynamique. Pour notre format faut plus un truc où les gens soient immersés
+totalement, où ils peuvent suivre, où t'as calculé chaque mouvement et animation de façon à
+captiver le cerveau. » Référence de mise en œuvre : **`motion/AC-M03/scenes.py`**.
+- 9 scènes pour 68 s (AC-M02 en avait 12) : un plan tient 8 à 10 s ;
+- **un seul élément à la fois** : un pavé n'arrive qu'une fois le précédent sorti (alpha `av`) ;
+- `effet="masque"` partout, plus de `"ressort"` ; **un seul `surlignage` dans toute la vidéo**,
+  posé sur la phrase qui fait mal ;
+- grille à vitesse constante (0,42) avec 3 respirations douces (×1,1) au lieu de 6 à ×2,6 ;
+- 2 éclairs au lieu de 11, ~28 bruitages au lieu de 51, aucun confetti ni éclat sur un sujet grave ;
+- les blocs de `rapide()` (flou de mouvement) se limitent aux vraies bascules.
+
+`conformite.py` ne vise que les projets CB- et DY- : sur cette chaîne on **nomme** les films, les
+studios et les marques, c'est de l'information. En revanche la **vérification à la source** est
+obligatoire avant d'écrire un script (voir `~/dyou-veille-people/README.md`).
+
 ## Reprendre ailleurs
 
 `REPRISE.md` (dans ce dossier, section « Niveau actuel » en tête) est le prompt à donner à un autre Claude ou à ChatGPT. Les vidéos finies et les médias

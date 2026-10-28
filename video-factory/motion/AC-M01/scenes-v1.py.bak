@@ -1,0 +1,509 @@
+"""AC-M01 « Sa voix, tu la connais par cœur » — première vidéo de la chaîne d'actu people / cinéma
+(modèle @tactik77, mais en motion design 3D). Sujet : Eric Bauza, voix moderne de Bugs Bunny et Daffy
+Duck, mort le dimanche 25/10/2026 à 46 ans (confirmé NYT, Washington Post, AP/PBS, CNN, People, Fox).
+
+L'angle n'est pas « il est mort » : c'est qu'il a supplié un studio EN PUBLIC, sur scène, avec la voix
+de Daffy, pour qu'un film enterré sorte — il a gagné, le film a passé les 100 millions, et il meurt
+quelques mois plus tard. Appel au commentaire : « quel dessin animé t'a élevé ».
+
+Photos : Wikimedia Commons (CC BY-SA, Gage Skidmore), détourées par rembg isnet-general-use.
+Zone sûre TikTok/Snap respectée : titres ≤ 840 px centrés, contenu sous y 816 entre x 130 et 860.
+"""
+import math, pathlib, sys
+import skia
+
+P = pathlib.Path(__file__).resolve().parent
+sys.path.insert(0, str(P.parent / "moteur"))
+from kit import *
+from agence import *
+import agence
+from studio import lettres, eclats, rayons, sous_titres
+from noir import *
+from cobalt import *
+
+K = Kit(P, 1.0)
+DUREE = round(K.timing["duree_voix"] + 1.9, 2)
+K.duree = DUREE; K.nb_images = round(DUREE * FPS)
+TW, son, rapide, eclair = K.TW, K.son, K.rapide, K.eclair
+NB_IMAGES, SFX, flou_a = K.nb_images, K.SFX, K.flou_a
+
+SOUS = sous_titres(K, fusions={(26, 27): "Bugs Bunny.", (28, 29): "Daffy Duck.",
+                               (31, 32): "Porky Pig.", (48, 49): "Looney Tunes,"})
+
+PORTRAIT = "bauza-portrait-detoure"
+MICRO_PH = "bauza-micro-detoure"
+PH_ANNIE = "photos/bauza-annie"
+PH_MICRO = "photos/bauza-micro"
+
+BLEU_CASE = "#061043"
+OR_C = [ORANGE, ORANGE2]
+AXE = 510                      # axe du contenu, décalé à gauche de la colonne de boutons TikTok
+
+# ───────────────────────────── repères, tous accrochés à un mot
+T_VOIX, T_CONNAIS, T_VISAGE = TW(0), TW(4), TW(7)
+T_NOM, T_MORT, T_AGE = TW(11), TW(14), TW(16)
+T_COEUR, T_PREVENIR = TW(18), TW(23)
+T_PERSOS = [TW(26), TW(28), TW(30), TW(31)]
+NOMS_PERSOS = ["BUGS BUNNY", "DAFFY DUCK", "TITI", "PORKY PIG"]
+T_ROLES, T_EMMY = TW(33), TW(36)
+T_PIVOT = TW(38)
+T_FILM, T_ENTERRE, T_JAMAIS = TW(45), TW(53), TW(54)
+T_SUPPLIE, T_PUBLIC, T_SCENE, T_DAFFY = TW(56), TW(63), TW(65), TW(70)
+T_CEDE, T_SORTI, T_CENT = TW(73), TW(77), TW(78)
+T_GAGNE, T_MOIS, T_VA = TW(84), TW(88), TW(94)
+T_VEILLE, T_SOURIAIT = TW(96), TW(103)
+T_CTA, T_COMMENTAIRE = TW(104), TW(106)
+T_FIN = DUREE
+
+
+# ═════════════════════════════ briques propres à cette chaîne
+def bandeau_actu(c, t, a, libelle="ACTU"):
+    """pastille « direct » en haut : point qui bat + libellé, hors zone de la barre de recherche"""
+    if a <= 0.01: return
+    with Calque(c, a):
+        w = largeur(libelle, 26, "noir", 0.14) + 96
+        rrect(c, AXE - w / 2, 236, w, 56, 28, ORANGE, 1.0, (6, 18, 0.45))
+        disque(c, AXE - w / 2 + 30, 264, 8, BLEU_CASE, 0.35 + 0.65 * (0.5 + 0.5 * math.cos(t * 5)))
+        texte(c, libelle, AXE - w / 2 + 50, 264 - hauteurLigne(26, "noir") / 2, 26, BLEU_CASE, "noir", track=0.14)
+
+
+def micro3d(c, cx, cy, ech, ry=0.0, rx=0.0, a=1.0, lum=1.0):
+    """micro de studio : capsule grillagée, anneau de suspension, pied court. Pas de perche :
+    elle barrait l'image au gros plan du hook."""
+    if a <= 0.01: return
+    with Calque(c, a):
+        with Espace(c, cx, cy, ry=ry, rx=rx, s=ech):
+            ombre_sol(c, cx, cy + 330, 150, 32, 0.34)
+            lueur(c, cx, cy - 20, 330, ORANGE, 0.17 * lum)
+            # pied : tige courte et socle
+            rrect(c, cx - 13, cy + 196, 26, 118, 13, "#0A1138", 1.0)
+            rrect(c, cx - 74, cy + 300, 148, 26, 13, "#121B4E", 1.0, (8, 20, 0.5))
+            # anneau de suspension, fin
+            c.drawOval(skia.Rect.MakeXYWH(cx - 112, cy - 236, 224, 430),
+                       peinture("#32409A", 1.0, Style=skia.Paint.kStroke_Style, StrokeWidth=9))
+            trait(c, cx - 112, cy - 20, cx - 72, cy - 20, "#32409A", 9)
+            trait(c, cx + 72, cy - 20, cx + 112, cy - 20, "#32409A", 9)
+            # capsule
+            rrect(c, cx - 72, cy - 200, 144, 368, 72, "#101A4E", 1.0, (18, 44, 0.55))
+            c.save()
+            c.clipRRect(skia.RRect.MakeRectXY(skia.Rect.MakeXYWH(cx - 72, cy - 200, 144, 368), 72, 72), doAntiAlias=True)
+            for k in range(18):                       # grille : ovales serrés
+                y = cy - 196 + k * 21
+                c.drawOval(skia.Rect.MakeXYWH(cx - 72, y - 10, 144, 20),
+                           peinture("#6076DC", 0.5, Style=skia.Paint.kStroke_Style, StrokeWidth=3))
+            for k in range(9):
+                x = cx - 64 + k * 16
+                trait(c, x, cy - 198, x, cy + 166, "#6076DC", 2.5, 0.28)
+            # reflet vertical
+            g = skia.Paint(AntiAlias=True)
+            g.setShader(skia.GradientShader.MakeLinear(
+                [skia.Point(cx - 72, cy), skia.Point(cx + 72, cy)],
+                [hexa("#FFFFFF", 0.16), hexa("#FFFFFF", 0.0), hexa("#000000", 0.22)], [0.0, 0.42, 1.0]))
+            c.drawRect(skia.Rect.MakeXYWH(cx - 72, cy - 200, 144, 368), g)
+            c.restore()
+            rrect(c, cx - 72, cy - 200, 144, 368, 72, None, 1.0, None, "#4B5CC0", 5)
+            # bague et témoin en bas de la capsule
+            trait(c, cx - 58, cy + 128, cx + 58, cy + 128, "#4B5CC0", 5, 0.8)
+            disque(c, cx, cy + 148, 13, ORANGE, 0.95 * lum)
+            lueur(c, cx, cy + 148, 90, ORANGE, 0.42 * lum)
+
+
+def ondes_vers_camera(c, t, t0, cx, cy, a=1.0, couleur=ORANGE, n=6, vitesse=0.55):
+    """anneaux sonores qui foncent vers l'objectif : le mouvement « qui approche »"""
+    if a <= 0.01: return
+    for k in range(n):
+        u = ((t - t0) * vitesse + k / n) % 1.0
+        r = 90 + 1250 * u ** 1.7
+        al = a * 0.40 * math.sin(math.pi * u) ** 0.8
+        c.drawOval(skia.Rect.MakeXYWH(cx - r, cy - r * 0.62, 2 * r, 1.24 * r),
+                   peinture(couleur, al, Style=skia.Paint.kStroke_Style, StrokeWidth=3 + 9 * u))
+
+
+def spectre(c, cx, cy, larg, t, a=1.0, barres=28, h=120, couleur=ORANGE, graine=0.0):
+    """spectre audio : des barres qui dansent, toujours vivantes"""
+    if a <= 0.01: return
+    pas = larg / barres
+    for k in range(barres):
+        v = 0.30 + 0.70 * abs(math.sin(t * 6.0 + k * 0.7 + graine) * math.cos(t * 2.3 + k * 0.33))
+        hh = h * v
+        rrect(c, cx - larg / 2 + k * pas + pas * 0.18, cy - hh / 2, pas * 0.64, hh, pas * 0.32,
+              couleur, a * (0.45 + 0.55 * v))
+
+
+def plaque(c, label, cx, cy, u, a=1.0, accent=ORANGE, taille=46):
+    """plaque de nom de personnage, qui tombe et rebondit"""
+    if u <= 0.01 or a <= 0.01: return
+    ts = ajuste(label, 400, taille, "noir", -0.02)
+    w, h = largeur(label, ts, "noir", -0.02) + 72, ts * 2.0
+    c.save(); c.translate(cx, cy + mix(-120, 0, u)); c.scale(mix(0.7, 1, u), mix(0.7, 1, u))
+    with Calque(c, a * borne(u * 3)):
+        rrect(c, -w / 2, -h / 2, w, h, 16, BLEU_CASE, 0.92, (10, 26, 0.45), accent, 3)
+        texte(c, label, 0, -hauteurLigne(ts, "noir") / 2, ts, "#FFFFFF", "noir", "centre", -0.02)
+    c.restore()
+
+
+def compteur(c, valeur, suffixe, cx, cy, u, taille=132, a=1.0, couleur=ORANGE):
+    """nombre qui monte de 0 à valeur"""
+    if a <= 0.01: return
+    n = int(round(valeur * sortieExpo(borne(u))))
+    s = f"{n:,}".replace(",", " ") + suffixe
+    with Calque(c, a):
+        texte_centre(c, s, cx, cy, taille, couleur, "noir")
+
+
+def coffre(c, cx, cy, ferme, a=1.0):
+    """caisse de stockage : le couvercle descend quand « ferme » va de 0 à 1"""
+    if a <= 0.01: return
+    with Calque(c, a):
+        w, h = 460, 250
+        rrect(c, cx - w / 2, cy - h / 2, w, h, 22, "#060C2E", 1.0, (16, 40, 0.6))
+        rrect(c, cx - w / 2, cy - h / 2, w, h, 22, None, 1.0, None, "#3A4BA8", 3)
+        for k in range(5):
+            x = cx - w / 2 + 50 + k * 90
+            trait(c, x, cy - h / 2 + 30, x, cy + h / 2 - 30, "#27347F", 6, 0.8)
+        # couvercle
+        cy_c = cy - h / 2 - 86 * (1 - ferme)
+        rot = -15 * (1 - ferme)
+        c.save(); c.translate(cx - w / 2, cy_c); c.rotate(rot); c.translate(-(cx - w / 2), -cy_c)
+        rrect(c, cx - w / 2 - 10, cy_c - 34, w + 20, 44, 14, "#1E2B70", 1.0, (12, 30, 0.6))
+        rrect(c, cx - w / 2 - 10, cy_c - 34, w + 20, 44, 14, None, 1.0, None, ORANGE, 3)
+        c.restore()
+
+
+def bobine(c, cx, cy, r, t, a=1.0, couleur="#E9ECFF"):
+    """bobine de film qui tourne"""
+    if a <= 0.01: return
+    with Calque(c, a):
+        disque(c, cx, cy, r, "#111A4E", 1.0, (10, 26, 0.45))
+        anneau(c, cx, cy, r, couleur, 6, 0.9)
+        anneau(c, cx, cy, r * 0.22, couleur, 5, 0.9)
+        for k in range(6):
+            ang = t * 2.2 + k * math.pi / 3
+            disque(c, cx + math.cos(ang) * r * 0.58, cy + math.sin(ang) * r * 0.58, r * 0.19, couleur, 0.85)
+
+
+def projecteur(c, cx, cy, u, a=1.0):
+    """cône de lumière d'un projecteur de scène"""
+    if a <= 0.01 or u <= 0.01: return
+    p = skia.Path()
+    p.moveTo(cx - 60 * u, cy)
+    p.lineTo(cx + 60 * u, cy)
+    p.lineTo(cx + 420 * u, cy + 820)
+    p.lineTo(cx - 420 * u, cy + 820)
+    p.close()
+    g = skia.Paint(AntiAlias=True)
+    g.setShader(skia.GradientShader.MakeLinear(
+        [skia.Point(cx, cy), skia.Point(cx, cy + 820)],
+        [hexa("#FFE2B8", 0.34 * a), hexa("#FFE2B8", 0.0)]))
+    c.drawPath(p, g)
+
+
+# ═════════════════════════════ grille de mise en page (zone sûre TikTok / Snap)
+#   bandeau 236 · titre1 350 · titre2 470 · visuel 580-1120 · info1 1180 · info2 1300
+#   sous-titres 1410 (réservé) · RIEN sous 1480 : légende et boutons de l'appli
+Y_T1, Y_T2, Y_VIS, H_VIS, Y_I1, Y_I2 = 350, 470, 580, 540, 1180, 1300
+LARG_T = 820
+
+
+def titre(c, txt, y, taille, t, t0, blanc=False, alpha=1.0, effet="ressort", decal=0.026):
+    """titre construit lettre par lettre, toujours ajusté à la zone sûre"""
+    ts = ajuste(txt, LARG_T, taille, "noir", -0.026)
+    lettres(c, txt, AXE, y, ts, t, t0, effet, grad=not blanc,
+            couleur=("#FFFFFF" if blanc else None), cols=OR_C,
+            decal=decal, track=-0.026, alpha=alpha)
+
+
+# ═════════════════════════════ 1. HOOK — le micro remplit l'image 0 et recule
+def hook(c, t):
+    if t > T_NOM + 0.35: return
+    sortie_ = prog(t, T_NOM - 0.12, 0.3, entree)
+    with Calque(c, 1 - sortie_):
+        ondes_vers_camera(c, t, -0.15, AXE, 1000, 1.0)
+        u = prog(t, 0.0, 0.70, sortieExpo)          # image 0 = gros plan, micro entier
+        micro3d(c, AXE, mix(1080, 1020, u), mix(2.05, 0.92, u),
+                ry=mix(-26, -13, u), rx=mix(12, 4, u))
+
+        a1 = 1 - prog(t, T_VISAGE - 0.24, 0.16, entree)
+        if a1 > 0:
+            titre(c, "SA VOIX,", Y_T1, 118, t, T_VOIX - 0.02, alpha=a1, decal=0.028)
+            if t > T_CONNAIS - 0.12:
+                titre(c, "TU LA CONNAIS", Y_T2, 84, t, T_CONNAIS - 0.06, True, a1, "masque", 0.02)
+                titre(c, "PAR CŒUR.", Y_T2 + 104, 84, t, TW(5) - 0.04, True, a1, "masque", 0.02)
+        if t > T_VISAGE - 0.14:
+            titre(c, "SON VISAGE,", Y_T1, 100, t, T_VISAGE - 0.05, True, decal=0.026)
+            titre(c, "JAMAIS.", Y_T2 + 20, 132, t, TW(9) - 0.04, decal=0.03)
+
+
+# ═════════════════════════════ 2. IDENTITÉ — le visage se révèle
+def carte_portrait(c, t, x, y, w, h, u, a=1.0, flou=0.0, accent=ORANGE, nom=PORTRAIT):
+    if a <= 0.01 or u <= 0.01: return
+    cx, cy = x + w / 2, y + h / 2
+    c.save(); c.translate(cx, cy); c.scale(mix(0.86, 1, u), mix(0.86, 1, u)); c.translate(-cx, -cy)
+    with Calque(c, a * borne(u * 2)):
+        case(c, x, y, w, h, 30, 1.0, accent=accent)
+        c.save()
+        c.clipRRect(skia.RRect.MakeRectXY(skia.Rect.MakeXYWH(x + 10, y + 10, w - 20, h - 20), 24, 24), doAntiAlias=True)
+        if flou > 0.02:
+            c.saveLayer(skia.Rect.MakeXYWH(x - 40, y - 40, w + 80, h + 80),
+                        skia.Paint(ImageFilter=skia.ImageFilters.Blur(30 * flou, 30 * flou)))
+        iw, ih0 = taille_img(nom)
+        ih = ih0 / iw * (w - 20)
+        image(c, nom, x + 10, y + h - 10 - ih, w - 20)
+        if flou > 0.02:
+            c.restore()
+        c.restore()
+    c.restore()
+
+
+def identite(c, t):
+    if t < T_NOM - 0.35 or t > T_COEUR + 0.3: return
+    ent = prog(t, T_NOM - 0.3, 0.42, sortieExpo)
+    sor = prog(t, T_COEUR - 0.16, 0.28, entree)
+    with Calque(c, 1 - sor):
+        bandeau_actu(c, t, borne((t - T_NOM + 0.22) * 4), "DISPARITION")
+        carte_portrait(c, t, 265, Y_VIS - 20, 550, 700, ent, 1.0,
+                       flou=1 - prog(t, T_NOM - 0.05, 0.3, sortie))
+        titre(c, "ERIC BAUZA", Y_I1 + 70, 108, t, T_NOM - 0.02, decal=0.026)
+        if t > T_MORT - 0.14:
+            plaque(c, "MORT DIMANCHE", AXE - 160, Y_I2 + 80, entre(t, T_MORT - 0.08), taille=44)
+        if t > T_AGE - 0.12:
+            plaque(c, "46 ANS", AXE + 235, Y_I2 + 80, entre(t, T_AGE - 0.07), taille=44)
+
+
+# ═════════════════════════════ 3. LE CŒUR — la ligne traverse puis s'aplatit
+def ecg(c, t):
+    if t < T_COEUR - 0.2 or t > T_PERSOS[0] - 0.1: return
+    ent = prog(t, T_COEUR - 0.18, 0.28, sortie)
+    sor = prog(t, T_PERSOS[0] - 0.36, 0.26, entree)
+    with Calque(c, ent * (1 - sor)):
+        titre(c, "LE CŒUR.", Y_T1, 104, t, T_COEUR - 0.04, True, decal=0.026)
+        titre(c, "CHEZ LUI.", Y_T2, 104, t, TW(20) - 0.05, True, decal=0.026)
+        y0, x0, x1 = 980, 130, 890
+        u = borne((t - (T_COEUR - 0.02)) / max(0.25, T_PREVENIR - T_COEUR + 0.05))
+        plat = prog(t, T_PREVENIR - 0.02, 0.34, sortie)
+        trait(c, x0, y0, x1, y0, "#2B3A86", 4, 0.55)                     # la ligne vide, toujours visible
+        p = skia.Path(); p.moveTo(x0, y0)
+        n, dernier = 520, x0
+        for k in range(1, n + 1):
+            f = k / n
+            if f > u: break
+            x = mix(x0, x1, f); dernier = x
+            ph = (f * 2.0) % 1.0
+            if   ph < 0.50: dy = 0
+            elif ph < 0.55: dy = -40
+            elif ph < 0.60: dy = 110
+            elif ph < 0.66: dy = -205
+            elif ph < 0.72: dy = 85
+            elif ph < 0.78: dy = -25
+            else:           dy = 0
+            p.lineTo(x, y0 + dy * (1 - plat))
+        c.drawPath(p, peinture(ORANGE, 1.0, Style=skia.Paint.kStroke_Style, StrokeWidth=10))
+        disque(c, dernier, y0, 14, "#FFFFFF", 1.0)
+        lueur(c, dernier, y0, 170, ORANGE, 0.45 * (1 - plat * 0.6))
+        if t > T_PREVENIR - 0.12:
+            titre(c, "SANS PRÉVENIR.", Y_I1 + 60, 96, t, T_PREVENIR - 0.06, decal=0.03)
+
+
+# ═════════════════════════════ 4. LES PERSONNAGES — une plaque par nom, puis les chiffres
+def personnages(c, t):
+    if t < T_PERSOS[0] - 0.3 or t > T_PIVOT + 0.2: return
+    ent = prog(t, T_PERSOS[0] - 0.28, 0.34, sortieExpo)
+    sor = prog(t, T_PIVOT - 0.24, 0.3, entree)
+    with Calque(c, ent * (1 - sor)):
+        titre(c, "C'ÉTAIT LUI.", Y_T1, 96, t, TW(24) - 0.05, True, decal=0.026)
+        carte_portrait(c, t, 320, Y_VIS - 20, 440, 560, 1.0, 1.0, accent=None)
+        # chaque nom prend la place du précédent, bien au centre
+        for k, t0 in enumerate(T_PERSOS):
+            suivant = T_PERSOS[k + 1] if k + 1 < len(T_PERSOS) else T_ROLES
+            if t < t0 - 0.12 or t > suivant - 0.02: continue
+            a = 1 - prog(t, suivant - 0.13, 0.09, entree)
+            plaque(c, NOMS_PERSOS[k], AXE, Y_I1 + 20, entre(t, t0 - 0.08), a, taille=66)
+        if t > T_ROLES - 0.12:
+            u = prog(t, T_ROLES - 0.06, 0.38, lin)
+            compteur(c, 400, " RÔLES", AXE, Y_I1 + 20, u, 112)
+        if t > T_EMMY - 0.12:
+            a = entre(t, T_EMMY - 0.07)
+            c.save(); c.translate(AXE, Y_I2 + 45); c.scale(mix(0.5, 1, a), mix(0.5, 1, a))
+            with Calque(c, borne(a * 3)):
+                lab = "3 EMMY AWARDS"
+                lw = largeur(lab, 58, "noir", -0.025)
+                icone(c, "trophy", -lw / 2 - 56, 0, 72, ORANGE, 2.6)
+                texte_centre(c, lab, 36, 0, 58, "#FFFFFF", "noir")
+            c.restore()
+
+
+# ═════════════════════════════ 5. PIVOT
+def pivot(c, t):
+    if t < T_PIVOT - 0.25 or t > T_FILM + 0.25: return
+    ent = prog(t, T_PIVOT - 0.22, 0.3, sortie)
+    sor = prog(t, T_FILM - 0.2, 0.26, entree)
+    with Calque(c, ent * (1 - sor)):
+        rayons(c, AXE, 920, t, 1100, 0.10, 16, ORANGE)
+        titre(c, "MAIS VOILÀ", 700, 112, t, T_PIVOT - 0.04, True, decal=0.028)
+        if t > TW(40) - 0.1:
+            titre(c, "CE QUE PERSONNE", 830, 82, t, TW(40) - 0.05, True, effet="masque", decal=0.018)
+        if t > TW(43) - 0.1:
+            titre(c, "NE RACONTE.", 950, 110, t, TW(43) - 0.05, decal=0.03)
+
+
+# ═════════════════════════════ 6. LE FILM ENTERRÉ
+def enterre(c, t):
+    if t < T_FILM - 0.3 or t > T_SUPPLIE + 0.2: return
+    ent = prog(t, T_FILM - 0.28, 0.34, sortieExpo)
+    sor = prog(t, T_SUPPLIE - 0.24, 0.28, entree)
+    with Calque(c, ent * (1 - sor)):
+        bandeau_actu(c, t, 0.9, "CE QUE PERSONNE NE DIT")
+        titre(c, "UN FILM", Y_T1, 104, t, T_FILM - 0.04, True, decal=0.028)
+        if t > TW(48) - 0.1:
+            titre(c, "LOONEY TUNES", Y_T2, 96, t, TW(48) - 0.05, effet="masque", decal=0.022)
+        chute = prog(t, T_ENTERRE - 0.5, 0.46, entreeSortie)
+        ferme = prog(t, T_ENTERRE - 0.04, 0.3, sortie)
+        coffre(c, AXE, 1150, ferme)
+        bobine(c, AXE, mix(880, 1130, chute), 120 - 26 * chute, t, 1 - 0.9 * ferme)
+        if t > T_JAMAIS - 0.12:
+            tampon_n(c, "JAMAIS SORTI", AXE, 1150, t, T_JAMAIS - 0.06, ORANGE, -9, 60)
+
+
+# ═════════════════════════════ 7. IL SUPPLIE, EN PUBLIC, AVEC LA VOIX DE DAFFY
+def supplie(c, t):
+    if t < T_SUPPLIE - 0.3 or t > T_CEDE - 0.12: return
+    ent = prog(t, T_SUPPLIE - 0.28, 0.34, sortieExpo)
+    sor = prog(t, T_CEDE - 0.42, 0.28, entree)
+    with Calque(c, ent * (1 - sor)):
+        projecteur(c, AXE, 300, 0.5 + 0.5 * prog(t, T_SCENE - 0.3, 0.4, sortie))
+        titre(c, "IL SUPPLIE LE STUDIO", Y_T1, 92, t, T_SUPPLIE - 0.04, True, decal=0.02)
+        u = prog(t, T_SUPPLIE - 0.2, 0.4, sortieExpo)
+        carte_portrait(c, t, 215, Y_VIS + 40, 590, 515, u, 1.0, accent=ORANGE, nom=MICRO_PH)
+        if t > T_PUBLIC - 0.12:
+            plaque(c, "EN PUBLIC", AXE - 185, Y_I1 + 30, entre(t, T_PUBLIC - 0.08), taille=50)
+        if t > T_SCENE - 0.12:
+            plaque(c, "SUR SCÈNE", AXE + 195, Y_I1 + 30, entre(t, T_SCENE - 0.08), taille=50)
+        if t > T_DAFFY - 0.3:
+            a = prog(t, T_DAFFY - 0.26, 0.26, sortie)
+            spectre(c, AXE, Y_I2 + 10, 660, t, a * 0.55, barres=30, h=130, graine=2.4)
+            titre(c, "AVEC LA VOIX DE DAFFY", Y_I2 - 30, 60, t, T_DAFFY - 0.08, effet="masque", decal=0.012)
+
+
+# ═════════════════════════════ 8. ILS CÈDENT — 100 MILLIONS
+def cedent(c, t):
+    if t < T_CEDE - 0.42 or t > T_GAGNE - 0.16: return
+    ent = prog(t, T_CEDE - 0.4, 0.32, sortieExpo)
+    sor = prog(t, T_GAGNE - 0.46, 0.3, entree)
+    with Calque(c, ent * (1 - sor)):
+        titre(c, "ILS ONT CÉDÉ.", Y_T1, 108, t, T_CEDE - 0.04, decal=0.028)
+        if t > T_SORTI - 0.12:
+            titre(c, "LE FILM EST SORTI", Y_T2, 72, t, T_SORTI - 0.06, True, effet="masque", decal=0.016)
+        ouvre = prog(t, T_CEDE - 0.06, 0.34, sortie)
+        coffre(c, AXE, 1130, 1 - ouvre)
+        monte = prog(t, T_CEDE + 0.06, 0.5, sortieExpo)
+        bobine(c, AXE, mix(1090, 790, monte), mix(92, 130, monte), t, borne(ouvre * 2))
+        eclats(c, AXE, 1060, t, T_CEDE, 14, 340, [ORANGE, ORANGE2, "#FFFFFF"], 5, 0.8)
+        if t > T_CENT - 0.12:
+            u = prog(t, T_CENT - 0.06, 0.36, lin)
+            compteur(c, 100, " MILLIONS", AXE, Y_I1 + 40, u, 116)
+            texte_centre(c, "AU BOX-OFFICE", AXE, Y_I2 + 20, 48, "#C9D3FF", "gras",
+                         borne((t - T_CENT) * 3))
+
+
+# ═════════════════════════════ 9. IL A GAGNÉ — PUIS LA LUMIÈRE BAISSE
+def gagne(c, t):
+    if t < T_GAGNE - 0.36 or t > T_VEILLE - 0.14: return
+    ent = prog(t, T_GAGNE - 0.34, 0.3, sortieExpo)
+    sor = prog(t, T_VEILLE - 0.42, 0.3, entree)
+    eteint = 0.7 * prog(t, T_MOIS - 0.02, 0.55, sortie)
+    with Calque(c, ent * (1 - sor)):
+        with Calque(c, 1 - 0.6 * eteint):
+            a = entre(t, T_GAGNE - 0.12)
+            c.save(); c.translate(AXE, 740); c.scale(mix(0.4, 1, a), mix(0.4, 1, a))
+            with Calque(c, borne(a * 3)):
+                lueur(c, 0, 0, 340, ORANGE, 0.40 * (1 - eteint))
+                icone(c, "trophy", 0, 0, 250, ORANGE, 2.2)
+            c.restore()
+            confettis(c, AXE, 740, t, T_GAGNE, 20, 300, 4, [ORANGE, ORANGE2, "#FFFFFF", "#5FD4FF"])
+            titre(c, "IL A GAGNÉ.", 980, 120, t, T_GAGNE - 0.04, decal=0.03,
+                  alpha=1 - prog(t, T_MOIS - 0.18, 0.16, entree))
+        if t > T_MOIS - 0.12:
+            titre(c, "QUELQUES MOIS", Y_I1, 80, t, T_MOIS - 0.06, True, effet="masque", decal=0.018)
+            titre(c, "PLUS TARD...", Y_I2 - 10, 80, t, TW(90) - 0.05, True, effet="masque", decal=0.018)
+
+
+# ═════════════════════════════ 10. LA VEILLE, IL SOURIAIT
+def veille(c, t):
+    if t < T_VEILLE - 0.36 or t > T_CTA + 0.2: return
+    ent = prog(t, T_VEILLE - 0.34, 0.34, sortieExpo)
+    sor = prog(t, T_CTA - 0.24, 0.28, entree)
+    with Calque(c, ent * (1 - sor)):
+        bandeau_actu(c, t, 0.9, "24 H AVANT")
+        titre(c, "LA VEILLE ENCORE,", Y_T1, 76, t, T_VEILLE - 0.05, True, effet="masque", decal=0.016)
+        u = prog(t, T_VEILLE - 0.26, 0.42, sortieExpo)
+        carte_portrait(c, t, 290, Y_VIS - 90, 500, 620, u, 1.0, accent=ORANGE, nom=PH_ANNIE)
+        if t > TW(99) - 0.1:
+            titre(c, "IL POSTAIT UNE PHOTO.", Y_I1 + 10, 62, t, TW(99) - 0.05, True, effet="masque", decal=0.012)
+        if t > T_SOURIAIT - 0.12:
+            titre(c, "IL SOURIAIT.", Y_I2 - 10, 104, t, T_SOURIAIT - 0.06, decal=0.03)
+
+
+# ═════════════════════════════ 11. L'APPEL AU COMMENTAIRE
+def cta(c, t):
+    if t < T_CTA - 0.3: return
+    ent = prog(t, T_CTA - 0.28, 0.34, sortieExpo)
+    with Calque(c, ent):
+        rayons(c, AXE, 860, t, 1150, 0.11, 18, ORANGE)
+        a = entre(t, T_CTA - 0.12)
+        c.save(); c.translate(AXE, 640); c.scale(mix(0.4, 1, a), mix(0.4, 1, a))
+        with Calque(c, borne(a * 3)):
+            lueur(c, 0, 0, 300, ORANGE, 0.34)
+            icone(c, "message-circle", 0, 0, 210, ORANGE, 2.2)
+        c.restore()
+        titre(c, "QUEL DESSIN ANIMÉ", 880, 92, t, T_CTA - 0.04, True, decal=0.022)
+        if t > TW(110) - 0.12:
+            titre(c, "T'A ÉLEVÉ ?", 1000, 126, t, TW(110) - 0.06, decal=0.03)
+        if t > T_COMMENTAIRE + 0.2:
+            plaque(c, "DIS-LE EN COMMENTAIRE", AXE, Y_I2 - 20, entre(t, T_COMMENTAIRE + 0.25), taille=52)
+
+
+# ═════════════════════════════ sons
+son(0.0, "impact", -3); son(0.0, "whoosh_long", -8); son(0.25, "pop", -10)
+son(T_CONNAIS - 0.08, "swipe", -11); son(T_VISAGE - 0.12, "whoosh_court", -8)
+son(TW(9) - 0.06, "pop", -9)
+son(T_NOM - 0.14, "impact_doux", -5); son(T_NOM + 0.05, "ching", -9)
+son(T_MORT - 0.08, "pop", -9); son(T_AGE - 0.08, "pop", -10)
+son(T_COEUR - 0.15, "whoosh_bas", -8); son(T_PREVENIR - 0.05, "impact", -6)
+son(T_PERSOS[0] - 0.3, "whoosh", -9)
+for t0 in T_PERSOS: son(t0 - 0.08, "pop", -9)
+son(T_ROLES - 0.1, "montee", -11); son(T_EMMY - 0.06, "ching", -8)
+son(T_PIVOT - 0.22, "whoosh_long", -7); son(TW(43) - 0.06, "impact_doux", -6)
+son(T_FILM - 0.2, "whoosh", -9); son(T_ENTERRE - 0.05, "impact", -5)
+son(T_JAMAIS - 0.06, "ching", -8)
+son(T_SUPPLIE - 0.22, "whoosh_long", -8); son(T_PUBLIC - 0.08, "pop", -10)
+son(T_SCENE - 0.08, "pop", -10); son(T_DAFFY - 0.2, "swipe", -10)
+son(T_CEDE - 0.1, "impact", -4); son(T_CEDE + 0.08, "ching", -8)
+son(T_SORTI - 0.06, "check", -9); son(T_CENT - 0.08, "montee", -10)
+son(T_GAGNE - 0.1, "impact", -4); son(T_GAGNE + 0.05, "ching", -7)
+son(T_MOIS - 0.1, "whoosh_bas", -9); son(T_VA - 0.08, "swipe", -11)
+son(T_VEILLE - 0.2, "whoosh", -9); son(T_SOURIAIT - 0.06, "pop", -9)
+son(T_CTA - 0.2, "whoosh_long", -7); son(T_CTA + 0.05, "ching", -8)
+son(T_COMMENTAIRE + 0.25, "pop", -9)
+son(T_FIN - 1.3, "montee", -11); son(T_FIN - 1.1, "impact", -4)
+
+for a, b in [(0.0, 0.5), (T_NOM - 0.15, T_NOM + 0.3), (T_PERSOS[0] - 0.3, T_PERSOS[0] + 0.2),
+             (T_PIVOT - 0.22, T_PIVOT + 0.3), (T_FILM - 0.2, T_FILM + 0.25),
+             (T_ENTERRE - 0.1, T_ENTERRE + 0.3), (T_SUPPLIE - 0.22, T_SUPPLIE + 0.3),
+             (T_CEDE - 0.1, T_CEDE + 0.4), (T_GAGNE - 0.1, T_GAGNE + 0.4),
+             (T_VEILLE - 0.2, T_VEILLE + 0.3), (T_CTA - 0.2, T_CTA + 0.4)]:
+    rapide(a, b)
+for tt, cc_, a_ in [(0.02, "#FFFFFF", 0.10), (T_NOM, ORANGE, 0.12), (T_PREVENIR, "#FFFFFF", 0.13),
+                    (T_ENTERRE, ORANGE, 0.10), (T_CEDE, "#FFFFFF", 0.13), (T_GAGNE, ORANGE, 0.12),
+                    (T_CTA, ORANGE, 0.10)]:
+    eclair(tt, cc_, a_)
+
+
+# ═════════════════════════════ composition
+def dessine(c, t):
+    agence.T_COURANT[0] = t
+    pulse = (battement(t, T_NOM, 1, 0.5) - 1) + (battement(t, T_CEDE, 1, 0.5) - 1) + (battement(t, T_GAGNE, 1, 0.5) - 1)
+    fond_cobalt(c, t, pulse)
+    hook(c, t); identite(c, t); ecg(c, t); personnages(c, t); pivot(c, t)
+    enterre(c, t); supplie(c, t); cedent(c, t); gagne(c, t); veille(c, t); cta(c, t)
+    K.dessine_eclairs(c, t)
+    SOUS.dessine(c, t, "#FFFFFF")

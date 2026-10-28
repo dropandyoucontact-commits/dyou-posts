@@ -92,10 +92,17 @@ def main():
     p.add_argument("--sans-hook", action="store_true", help="ne pas accélérer l'attaque (par défaut : hook_rapide.py, règle du 19/10/2026)")
     p.add_argument("--voix", help="voice_id ElevenLabs, à la place de celui de la configuration")
     p.add_argument("--langue", help="code langue de la prise (fr par défaut) : en pour une version anglaise")
+    p.add_argument("--stabilite", type=float, help="voice_settings.stability (0,42 par défaut) : varier d'une vidéo à l'autre pour ne pas sortir deux fois la même voix")
+    p.add_argument("--style", type=float, help="voice_settings.style (0,30 par défaut)")
+    p.add_argument("--similarite", type=float, help="voice_settings.similarity_boost (0,80 par défaut) : 1,0 sur un clone")
+    p.add_argument("--modele", help="model_id ElevenLabs, à la place de celui de la configuration (eleven_multilingual_v2 sur un clone instantané)")
+    p.add_argument("--sans-boost", action="store_true", help="use_speaker_boost à False : le boost ajoute de la résonance sur un clone")
     a = p.parse_args()
     c = conf()
     if a.voix:
         c = {**c, "voice_id": a.voix}
+    if a.modele:
+        c = {**c, "model_id": a.modele}
     if a.langue:
         c = {**c, "language_code": a.langue}
     texte = (ICI / "script.txt").read_text(encoding="utf-8").strip()
@@ -110,7 +117,10 @@ def main():
             sys.exit(f"Crédits insuffisants : {len(texte)} nécessaires, {reste} restants.")
         r = appel(f"text-to-speech/{c['voice_id']}/with-timestamps?output_format=mp3_44100_128", c, {
             "text": texte, "model_id": c.get("model_id", "eleven_v4"), "language_code": c.get("language_code", "fr"),
-            "voice_settings": c.get("voice_settings", {"stability": 0.42, "similarity_boost": 0.80, "style": 0.30, "use_speaker_boost": True})})
+            "voice_settings": {**c.get("voice_settings", {"stability": 0.42, "similarity_boost": 0.80, "style": 0.30, "use_speaker_boost": True}),
+                               **({"stability": a.stabilite} if a.stabilite is not None else {}), **({"style": a.style} if a.style is not None else {}),
+                               **({"similarity_boost": a.similarite} if a.similarite is not None else {}),
+                               **({"use_speaker_boost": False} if a.sans_boost else {})}})
         brut.parent.mkdir(exist_ok=True)
         brut.write_bytes(base64.b64decode(r["audio_base64"]))
         (ICI / "media" / "voix-alignement.json").write_text(json.dumps(r.get("normalized_alignment") or r["alignment"], ensure_ascii=False))

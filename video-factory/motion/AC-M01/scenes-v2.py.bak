@@ -1,0 +1,395 @@
+"""AC-M01 v2 « Sa voix, tu la connais par cœur » — première vidéo de la chaîne d'actu people.
+
+v1 était habillée aux couleurs de ChinaBook : refusée par Youssef (« t'as utilisé l'identité de
+DROP&YOU, fallait pas ; pour les célébrités faut trouver un format visuel et rester dedans »).
+v2 pose l'identité de la chaîne — `moteur/people.py` : pièce quadrillée en perspective, papier
+crème, encre, un seul rouge, typo énorme, data animée, documents posés en 3D, signature de fin.
+
+Le principe de mise en scène, à garder dans toutes les vidéos : **la profondeur raconte**.
+Ce qui arrive vient du point de fuite et grandit ; ce qui disparaît y repart. Le film enterré
+recule au fond de la pièce, il revient quand le studio cède, et à la fin c'est lui qui s'éloigne.
+
+Sujet : Eric Bauza, voix moderne de Bugs Bunny et Daffy Duck, mort le dimanche 25/10/2026 à 46 ans
+(NYT, Washington Post, AP/PBS, CNN, People, Fox). L'angle : il a supplié un studio EN PUBLIC, avec
+la voix de Daffy, pour qu'un film enterré sorte — il a gagné, 100 M au box-office, il meurt après.
+Photos : Wikimedia Commons (CC BY-SA, Gage Skidmore), détourées par rembg isnet-general-use.
+"""
+import math, pathlib, sys
+import skia
+
+P = pathlib.Path(__file__).resolve().parent
+sys.path.insert(0, str(P.parent / "moteur"))
+from kit import *
+from studio import lettres, eclats, entre, sous_titres
+from people import *
+import people
+
+K = Kit(P, 1.0)
+DUREE = round(K.timing["duree_voix"] + 3.0, 2)
+K.duree = DUREE; K.nb_images = round(DUREE * FPS)
+TW, son, rapide, eclair = K.TW, K.son, K.rapide, K.eclair
+NB_IMAGES, SFX, flou_a = K.nb_images, K.SFX, K.flou_a
+
+SOUS = sous_titres(K, fusions={(26, 27): "Bugs Bunny.", (28, 29): "Daffy Duck.",
+                               (31, 32): "Porky Pig.", (48, 49): "Looney Tunes,"})
+
+PORTRAIT = "bauza-portrait-detoure"
+MICRO = "bauza-micro-detoure"
+GALA = "photos/bauza-annie"
+MEDIAS = [(PORTRAIT, False), (MICRO, False), (GALA, True)]
+
+# ───────────────────────────── repères, tous accrochés à un mot
+T_VOIX, T_CONNAIS, T_VISAGE, T_JAMAIS1 = TW(0), TW(4), TW(7), TW(9)
+T_NOM, T_MORT, T_AGE = TW(11), TW(14), TW(16)
+T_COEUR, T_PREVENIR = TW(18), TW(23)
+T_LUI = TW(24)
+T_PERSOS = [TW(26), TW(28), TW(30), TW(31)]
+NOMS = ["BUGS BUNNY", "DAFFY DUCK", "TITI", "PORKY PIG"]
+T_ROLES, T_EMMY = TW(33), TW(36)
+T_PIVOT, T_RACONTE = TW(38), TW(43)
+T_FILM, T_LOONEY, T_ENTERRE, T_JAMAIS2, T_SORTI1 = TW(45), TW(48), TW(53), TW(54), TW(55)
+T_SUPPLIE, T_PUBLIC, T_SCENE, T_DAFFY = TW(56), TW(63), TW(65), TW(70)
+T_CEDE, T_SORTI2, T_CENT = TW(73), TW(77), TW(78)
+T_GAGNE, T_MOIS, T_VA = TW(84), TW(88), TW(94)
+T_VEILLE, T_PHOTO, T_SOURIAIT = TW(96), TW(99), TW(103)
+T_CTA, T_COMMENT, T_ELEVE = TW(104), TW(106), TW(110)
+T_SIGN = round(K.timing["duree_voix"] - 0.05, 2)
+T_FIN = DUREE
+
+
+# ═════════════════════════════ la pièce bouge au rythme du propos
+def vitesse_grille(t):
+    """le décor avance toujours un peu ; il accélère sur les bascules et se fige quand il s'en va"""
+    v = 0.5
+    for t0 in (T_PIVOT, T_CEDE, T_GAGNE, T_CTA):
+        v += 2.6 * max(0.0, 1 - abs(t - t0) / 0.55) ** 2
+    if t > T_MOIS - 0.1:
+        v *= 1 - 0.85 * prog(t, T_MOIS - 0.1, 1.0, sortie) * (1 - prog(t, T_VEILLE - 0.2, 0.4, sortie))
+    return v
+
+
+def ondes_sol(c, t, t0, a=1.0, n=5, vitesse=0.75):
+    """la voix : des anneaux qui partent du point de fuite et viennent vers nous, à même le sol"""
+    if a <= 0.01: return
+    for k in range(n):
+        u = ((t - t0) * vitesse + k / n) % 1.0
+        z = mix(7.0, 0.55, u ** 1.5)
+        y = HORIZON + SOL / z
+        rx = 1500 / z
+        al = a * 0.62 * math.sin(math.pi * min(1.0, u * 1.08)) ** 0.7
+        if y > H + 500 or al <= 0.01: continue
+        c.drawOval(skia.Rect.MakeXYWH(AXE - rx, y - rx * 0.20, 2 * rx, 0.40 * rx),
+                   peinture(ROUGE, al, Style=skia.Paint.kStroke_Style, StrokeWidth=4 + 22 * (1 - z / 7)))
+
+
+def bobine(c, t, cx, cy, r, u):
+    """la bobine de film, posée dans la pièce ; u = 0 au point de fuite, 1 au premier plan"""
+    if u <= 0.01: return
+    z = mix(6.0, 1.0, sortieExpo(borne(u)))
+    s = echelle_z(z)
+    px, py = mix(AXE, cx, sortieExpo(borne(u))), mix(HORIZON, cy, sortieExpo(borne(u)))
+    c.save(); c.translate(px, py); c.scale(s, s); c.translate(-cx, -cy)
+    with Calque(c, borne(u * 4)):
+        pose_sol(c, cx, cy + r, r * 2.1, 0.3)
+        disque(c, cx, cy, r, PAPIER3, 1.0)
+        anneau(c, cx, cy, r, ENCRE, 7)
+        anneau(c, cx, cy, r * 0.21, ENCRE, 6)
+        for k in range(6):
+            a = t * 1.6 + k * math.pi / 3
+            disque(c, cx + math.cos(a) * r * 0.58, cy + math.sin(a) * r * 0.58, r * 0.185, ENCRE, 0.9)
+    c.restore()
+
+
+# ═════════════════════════════ 1. HOOK — sa voix traverse la pièce
+def hook(c, t):
+    if t > T_NOM + 0.3: return
+    sor = prog(t, T_NOM - 0.14, 0.3, entree)
+    with Calque(c, 1 - sor):
+        ondes_sol(c, t, -0.1, 1.0)
+        # la silhouette au fond de la pièce : on entend quelqu'un, on ne le voit pas
+        av = prog(t, T_VISAGE - 0.3, 0.9, sortieExpo)
+        carte_photo(c, t, PORTRAIT, 265, Y_VIS - 50, 490, 650, max(0.02, av * 0.55),
+                    1.0, flou=1.0, detoure=True, z0=7.0)
+        a1 = 1 - prog(t, T_VISAGE - 0.26, 0.16, entree)
+        if a1 > 0:
+            titre(c, "SA VOIX,", Y_T1, 142, t, T_VOIX - 0.34, rouge=True, alpha=a1,
+                  effet="ressort", decal=0.022)
+            if t > T_CONNAIS - 0.14:
+                titre(c, "TU LA CONNAIS", Y_T2 + 10, 92, t, T_CONNAIS - 0.07, alpha=a1, decal=0.018)
+                titre(c, "PAR CŒUR.", Y_T2 + 122, 92, t, TW(5) - 0.05, alpha=a1, decal=0.018)
+        if t > T_VISAGE - 0.16:
+            titre(c, "SON VISAGE,", Y_T1 + 10, 110, t, T_VISAGE - 0.06, decal=0.024)
+            u = prog(t, T_JAMAIS1 - 0.14, 0.2, sortieExpo)
+            surlignage(c, "JAMAIS.", Y_T2 + 40, 134, u)
+            titre(c, "JAMAIS.", Y_T2 + 40, 134, t, T_JAMAIS1 - 0.05, couleur=PAPIER3,
+                  effet="ressort", decal=0.03)
+
+
+# ═════════════════════════════ 2. IDENTITÉ — il arrive au premier plan, net
+def identite(c, t):
+    if t < T_NOM - 0.4 or t > T_COEUR + 0.28: return
+    sor = prog(t, T_COEUR - 0.16, 0.26, entree)
+    with Calque(c, 1 - sor):
+        rubrique(c, t, borne((t - T_NOM + 0.25) * 4), "DISPARITION")
+        u = prog(t, T_NOM - 0.34, 0.5, lin)
+        carte_photo(c, t, PORTRAIT, 295, 480, 430, 560, borne(u),
+                    flou=1 - prog(t, T_NOM - 0.04, 0.26, sortie), detoure=True, z0=3.2)
+        titre(c, "ERIC BAUZA", 1070, 112, t, T_NOM - 0.02, effet="ressort", decal=0.024)
+        if t > T_MORT - 0.14:
+            bloc(c, "MORT DIMANCHE", AXE - 170, 1290, entre(t, T_MORT - 0.08), taille=46, rot=-1.5)
+        if t > T_AGE - 0.12:
+            bloc(c, "46 ANS", AXE + 230, 1290, entre(t, T_AGE - 0.07), taille=46,
+                 couleur=ROUGE, rot=1.5)
+
+
+# ═════════════════════════════ 3. LE CŒUR — tracé à l'encre sur le papier
+def ecg(c, t):
+    if t < T_COEUR - 0.22 or t > T_LUI - 0.12: return
+    ent = prog(t, T_COEUR - 0.2, 0.26, sortie)
+    sor = prog(t, T_LUI - 0.38, 0.26, entree)
+    with Calque(c, ent * (1 - sor)):
+        rubrique(c, t, 1.0, "DISPARITION")
+        titre(c, "LE CŒUR.", Y_T1, 112, t, T_COEUR - 0.04, decal=0.024)
+        titre(c, "CHEZ LUI.", Y_T2, 112, t, TW(20) - 0.05, decal=0.024)
+        y0, x0, x1 = 980, 130, 890
+        u = borne((t - (T_COEUR - 0.02)) / max(0.25, T_PREVENIR - T_COEUR + 0.05))
+        plat = prog(t, T_PREVENIR - 0.02, 0.32, sortie)
+        trait(c, x0, y0, x1, y0, SABLE, 4, 0.8)
+        p = skia.Path(); p.moveTo(x0, y0)
+        n, dernier = 520, x0
+        for k in range(1, n + 1):
+            f = k / n
+            if f > u: break
+            x = mix(x0, x1, f); dernier = x
+            ph = (f * 2.0) % 1.0
+            if   ph < 0.50: dy = 0
+            elif ph < 0.55: dy = -40
+            elif ph < 0.60: dy = 110
+            elif ph < 0.66: dy = -205
+            elif ph < 0.72: dy = 85
+            elif ph < 0.78: dy = -25
+            else:           dy = 0
+            p.lineTo(x, y0 + dy * (1 - plat))
+        c.drawPath(p, peinture(ROUGE, 1.0, Style=skia.Paint.kStroke_Style, StrokeWidth=10))
+        disque(c, dernier, y0, 13, ENCRE)
+        if t > T_PREVENIR - 0.14:
+            titre(c, "SANS PRÉVENIR.", Y_I1 + 50, 104, t, T_PREVENIR - 0.06,
+                  rouge=True, effet="ressort", decal=0.03)
+
+
+# ═════════════════════════════ 4. LES PERSONNAGES — ils arrivent du fond, un par un
+def personnages(c, t):
+    if t < T_LUI - 0.3 or t > T_PIVOT + 0.18: return
+    ent = prog(t, T_LUI - 0.28, 0.3, sortieExpo)
+    sor = prog(t, T_PIVOT - 0.26, 0.28, entree)
+    with Calque(c, ent * (1 - sor)):
+        rubrique(c, t, 1.0, "QUI C'ÉTAIT")
+        titre(c, "C'ÉTAIT LUI.", Y_T1, 104, t, T_LUI - 0.05, decal=0.024)
+        petit = prog(t, T_ROLES - 0.26, 0.3, sortie)
+        carte_photo(c, t, PORTRAIT, mix(300, 340, petit), Y_VIS - 60,
+                    mix(420, 340, petit), mix(530, 430, petit), 1.0,
+                    1.0 - 0.15 * petit, detoure=True)
+        for k, t0 in enumerate(T_PERSOS):
+            suivant = T_PERSOS[k + 1] if k + 1 < len(T_PERSOS) else T_ROLES
+            if t < t0 - 0.14 or t > suivant - 0.02: continue
+            a = 1 - prog(t, suivant - 0.13, 0.09, entree)
+            bloc(c, NOMS[k], AXE, Y_I1 + 40, entre(t, t0 - 0.09), a, taille=68,
+                 couleur=ROUGE if k % 2 else ENCRE, rot=-1.5 if k % 2 else 1.5)
+        if t > T_ROLES - 0.14:
+            u = prog(t, T_ROLES - 0.06, 0.4, lin)
+            donut(c, AXE, Y_I1 - 10, 96, u, [(0.86, ROUGE)], t, ep=30, graduations=20)
+            compteur(c, 400, "", AXE, Y_I1 - 10, u, 88, sous="rôles")
+        if t > T_EMMY - 0.14:
+            a = entre(t, T_EMMY - 0.08)
+            legende(c, [(ROUGE, "3 EMMY AWARDS"), (ENCRE, "20 ANS DE CARRIÈRE")],
+                    AXE - 230, Y_I2 + 30, a, 36)
+
+
+# ═════════════════════════════ 5. PIVOT — la pièce accélère
+def pivot(c, t):
+    if t < T_PIVOT - 0.26 or t > T_FILM + 0.22: return
+    ent = prog(t, T_PIVOT - 0.24, 0.28, sortie)
+    sor = prog(t, T_FILM - 0.2, 0.24, entree)
+    with Calque(c, ent * (1 - sor)):
+        titre(c, "MAIS VOILÀ", 690, 122, t, T_PIVOT - 0.04, effet="ressort", decal=0.028)
+        if t > TW(40) - 0.12:
+            titre(c, "CE QUE", 830, 88, t, TW(40) - 0.06, decal=0.018)
+        if t > TW(42) - 0.12:
+            u = prog(t, TW(42) - 0.14, 0.2, sortieExpo)
+            surlignage(c, "PERSONNE", 930, 112, u)
+            titre(c, "PERSONNE", 930, 112, t, TW(42) - 0.06, couleur=PAPIER3, decal=0.022)
+        if t > T_RACONTE - 0.12:
+            titre(c, "NE RACONTE.", 1060, 112, t, T_RACONTE - 0.06, effet="ressort", decal=0.026)
+
+
+# ═════════════════════════════ 6. LE FILM ENTERRÉ — il recule au fond de la pièce
+def enterre(c, t):
+    if t < T_FILM - 0.3 or t > T_SUPPLIE + 0.18: return
+    ent = prog(t, T_FILM - 0.28, 0.3, sortieExpo)
+    sor = prog(t, T_SUPPLIE - 0.24, 0.26, entree)
+    with Calque(c, ent * (1 - sor)):
+        rubrique(c, t, 1.0, "LE DOSSIER")
+        titre(c, "UN FILM", Y_T1, 112, t, T_FILM - 0.04, decal=0.026)
+        if t > T_LOONEY - 0.12:
+            titre(c, "LOONEY TUNES", Y_T2, 104, t, T_LOONEY - 0.06, rouge=True, decal=0.022)
+        # la bobine arrive, puis recule jusqu'au point de fuite sur « enterré »
+        arrive = prog(t, T_FILM - 0.1, 0.5, sortieExpo)
+        recul = prog(t, T_ENTERRE + 0.04, 0.46, entreeSortie)
+        bobine(c, t, AXE, Y_VIS + 250, 265, arrive * (1 - 0.92 * recul))
+        if t > T_ENTERRE + 0.06:
+            document(c, t, ["Le studio a retiré le film de son calendrier.",
+                            "Aucune sortie prévue, nulle part."],
+                     AXE, Y_I1 + 40, 840, entre(t, T_ENTERRE + 0.12), "archive")
+            ub = borne((t - T_SORTI1 + 0.1) * 3.2)
+            titre(c, "JAMAIS SORTI", Y_I2 + 160, 86, t, T_JAMAIS2 - 0.04, decal=0.024)
+            barre_rouge(c, "JAMAIS SORTI", Y_I2 + 160, 86, ub)
+
+
+# ═════════════════════════════ 7. IL SUPPLIE — en public, sur scène
+def supplie(c, t):
+    if t < T_SUPPLIE - 0.3 or t > T_CEDE - 0.14: return
+    ent = prog(t, T_SUPPLIE - 0.28, 0.3, sortieExpo)
+    sor = prog(t, T_CEDE - 0.42, 0.26, entree)
+    with Calque(c, ent * (1 - sor)):
+        rubrique(c, t, 1.0, "CE QU'IL A FAIT")
+        titre(c, "IL SUPPLIE LE STUDIO", Y_T1, 96, t, T_SUPPLIE - 0.04, decal=0.016)
+        u = prog(t, T_SUPPLIE - 0.2, 0.45, lin)
+        carte_photo(c, t, MICRO, 215, Y_VIS - 30, 590, 495, borne(u), detoure=True, z0=3.0)
+        if t > T_PUBLIC - 0.14:
+            bloc(c, "EN PUBLIC", AXE - 190, Y_I1 + 20, entre(t, T_PUBLIC - 0.08), taille=52, rot=-2)
+        if t > T_SCENE - 0.14:
+            bloc(c, "SUR SCÈNE", AXE + 195, Y_I1 + 20, entre(t, T_SCENE - 0.08), taille=52,
+                 couleur=ROUGE, rot=2)
+        if t > T_DAFFY - 0.3:
+            a = prog(t, T_DAFFY - 0.26, 0.24, sortie)
+            ondes_sol(c, t, T_DAFFY - 0.3, a * 0.8, 4, 0.9)
+            titre(c, "AVEC LA VOIX DE DAFFY", Y_I2 + 10, 66, t, T_DAFFY - 0.08,
+                  rouge=True, decal=0.012, alpha=a)
+
+
+# ═════════════════════════════ 8. ILS CÈDENT — la bobine revient vers nous
+def cedent(c, t):
+    if t < T_CEDE - 0.44 or t > T_GAGNE - 0.18: return
+    ent = prog(t, T_CEDE - 0.42, 0.3, sortieExpo)
+    sor = prog(t, T_GAGNE - 0.46, 0.28, entree)
+    with Calque(c, ent * (1 - sor)):
+        rubrique(c, t, 1.0, "CE QUI S'EST PASSÉ")
+        titre(c, "ILS ONT CÉDÉ.", Y_T1, 118, t, T_CEDE - 0.04, rouge=True,
+              effet="ressort", decal=0.028)
+        if t > T_SORTI2 - 0.14:
+            titre(c, "LE FILM EST SORTI", Y_T2, 76, t, T_SORTI2 - 0.06, decal=0.014)
+        bobine(c, t, AXE, Y_VIS + 240, 230, prog(t, T_CEDE - 0.1, 0.55, sortieExpo))
+        eclats(c, AXE, Y_VIS + 250, t, T_CEDE, 14, 360, [ROUGE, ENCRE, SABLE], 5, 0.8)
+        if t > T_CENT - 0.14:
+            u = prog(t, T_CENT - 0.06, 0.36, lin)
+            compteur(c, 100, " M$", AXE, Y_I1 + 40, u, 118, sous="au box-office")
+
+
+# ═════════════════════════════ 9. IL A GAGNÉ — puis il repart au fond
+def gagne(c, t):
+    if t < T_GAGNE - 0.38 or t > T_VEILLE - 0.16: return
+    ent = prog(t, T_GAGNE - 0.36, 0.3, sortieExpo)
+    sor = prog(t, T_VEILLE - 0.44, 0.3, entree)
+    with Calque(c, ent * (1 - sor)):
+        a_g = 1 - prog(t, T_MOIS - 0.34, 0.16, entree)
+        if a_g > 0:
+            u = prog(t, T_GAGNE - 0.15, 0.2, sortieExpo)
+            surlignage(c, "IL A GAGNÉ.", 700, 132, u)
+            titre(c, "IL A GAGNÉ.", 700, 132, t, T_GAGNE - 0.04, couleur=PAPIER3,
+                  effet="ressort", decal=0.03, alpha=a_g)
+            confettis(c, AXE, 760, t, T_GAGNE, 20, 320, 4, [ROUGE, ENCRE, SABLE, ROUGE2])
+        if t > T_MOIS - 0.14:
+            titre(c, "QUELQUES MOIS", Y_T1 + 20, 86, t, T_MOIS - 0.06, decal=0.018)
+            titre(c, "PLUS TARD...", Y_T2 + 20, 86, t, TW(90) - 0.05, decal=0.018)
+            # il s'éloigne : la carte repart vers le point de fuite
+            dep = prog(t, T_VA - 0.5, 1.0, douce)
+            carte_photo(c, t, PORTRAIT, 310, Y_VIS + 130, 400, 500, mix(0.95, 0.06, dep),
+                        1.0, detoure=True, z0=1.05)
+
+
+# ═════════════════════════════ 10. LA VEILLE — il souriait
+def veille(c, t):
+    if t < T_VEILLE - 0.38 or t > T_CTA + 0.18: return
+    ent = prog(t, T_VEILLE - 0.36, 0.3, sortieExpo)
+    sor = prog(t, T_CTA - 0.24, 0.26, entree)
+    with Calque(c, ent * (1 - sor)):
+        rubrique(c, t, 1.0, "24 H AVANT")
+        titre(c, "LA VEILLE ENCORE,", Y_T1, 80, t, T_VEILLE - 0.05, decal=0.014)
+        u = prog(t, T_VEILLE - 0.28, 0.45, lin)
+        carte_photo(c, t, GALA, 290, Y_VIS - 80, 440, 580, borne(u), zoom=1.05, fy=0.34, z0=3.2)
+        if t > T_PHOTO - 0.12:
+            titre(c, "IL POSTAIT UNE PHOTO.", Y_I1 + 30, 64, t, T_PHOTO - 0.06, decal=0.01)
+        if t > T_SOURIAIT - 0.14:
+            titre(c, "IL SOURIAIT.", Y_I2 - 50, 96, t, T_SOURIAIT - 0.06, rouge=True,
+                  effet="ressort", decal=0.03)
+
+
+# ═════════════════════════════ 11. L'APPEL AU COMMENTAIRE
+def cta(c, t):
+    if t < T_CTA - 0.3 or t > T_SIGN + 0.08: return
+    ent = prog(t, T_CTA - 0.28, 0.3, sortieExpo)
+    sor = prog(t, T_SIGN - 0.2, 0.22, entree)
+    with Calque(c, ent * (1 - sor)):
+        ondes_sol(c, t, T_CTA - 0.3, 0.7, 4, 0.8)
+        titre(c, "QUEL DESSIN ANIMÉ", 700, 100, t, T_CTA - 0.04, decal=0.018)
+        if t > T_ELEVE - 0.14:
+            u = prog(t, T_ELEVE - 0.15, 0.2, sortieExpo)
+            surlignage(c, "T'A ÉLEVÉ ?", 830, 128, u)
+            titre(c, "T'A ÉLEVÉ ?", 830, 128, t, T_ELEVE - 0.06, couleur=PAPIER3,
+                  effet="ressort", decal=0.03)
+        if t > T_COMMENT + 0.18:
+            bloc(c, "DIS-LE EN COMMENTAIRE", AXE, Y_I1 + 60, entre(t, T_COMMENT + 0.22),
+                 taille=54, rot=-1.5)
+
+
+# ═════════════════════════════ sons
+son(0.0, "impact", -3); son(0.0, "whoosh_long", -8)
+son(T_CONNAIS - 0.09, "swipe", -11); son(T_VISAGE - 0.13, "whoosh_court", -8)
+son(T_JAMAIS1 - 0.07, "tampon", -8)
+son(T_NOM - 0.16, "impact_doux", -5); son(T_NOM + 0.06, "ching", -10)
+son(T_MORT - 0.09, "pop", -9); son(T_AGE - 0.08, "pop", -10)
+son(T_COEUR - 0.16, "whoosh_bas", -8); son(T_PREVENIR - 0.05, "impact", -6)
+son(T_LUI - 0.3, "whoosh", -9)
+for t0 in T_PERSOS: son(t0 - 0.09, "pop", -9)
+son(T_ROLES - 0.1, "montee", -11); son(T_EMMY - 0.07, "check", -10)
+son(T_PIVOT - 0.24, "whoosh_long", -7); son(TW(42) - 0.08, "tampon", -8)
+son(T_RACONTE - 0.06, "impact_doux", -6)
+son(T_FILM - 0.22, "whoosh", -9); son(T_ENTERRE - 0.1, "whoosh_bas", -7)
+son(T_JAMAIS2 - 0.08, "verre", -9); son(T_SORTI1 - 0.04, "tampon", -7)
+son(T_SUPPLIE - 0.24, "whoosh_long", -8); son(T_PUBLIC - 0.08, "pop", -10)
+son(T_SCENE - 0.08, "pop", -10); son(T_DAFFY - 0.22, "swipe", -10)
+son(T_CEDE - 0.12, "impact", -4); son(T_CEDE + 0.08, "ching", -8)
+son(T_SORTI2 - 0.06, "check", -9); son(T_CENT - 0.08, "montee", -10)
+son(T_GAGNE - 0.12, "impact", -4); son(T_GAGNE + 0.05, "ching", -7)
+son(T_MOIS - 0.12, "whoosh_bas", -9); son(T_VA - 0.4, "swipe", -11)
+son(T_VEILLE - 0.22, "whoosh", -9); son(T_SOURIAIT - 0.06, "pop", -9)
+son(T_CTA - 0.22, "whoosh_long", -7); son(T_ELEVE - 0.08, "tampon", -8)
+son(T_COMMENT + 0.2, "pop", -9)
+sons_signature_people(son, T_SIGN)
+
+for a, b in [(0.0, 0.5), (T_NOM - 0.18, T_NOM + 0.3), (T_LUI - 0.3, T_LUI + 0.2),
+             (T_PIVOT - 0.26, T_PIVOT + 0.3), (T_FILM - 0.22, T_FILM + 0.25),
+             (T_ENTERRE - 0.12, T_ENTERRE + 0.4), (T_SUPPLIE - 0.24, T_SUPPLIE + 0.3),
+             (T_CEDE - 0.12, T_CEDE + 0.45), (T_GAGNE - 0.12, T_GAGNE + 0.4),
+             (T_VA - 0.4, T_VA + 0.3), (T_VEILLE - 0.22, T_VEILLE + 0.3),
+             (T_CTA - 0.22, T_CTA + 0.4), (T_SIGN + 0.4, T_SIGN + 0.9)]:
+    rapide(a, b)
+for tt, cc_, a_ in [(0.02, ROUGE, 0.08), (T_NOM, ENCRE, 0.10), (T_PREVENIR, ROUGE, 0.12),
+                    (T_ENTERRE, ENCRE, 0.10), (T_CEDE, ROUGE, 0.12), (T_GAGNE, ROUGE, 0.12),
+                    (T_CTA, ROUGE, 0.09)]:
+    eclair(tt, cc_, a_)
+
+
+# ═════════════════════════════ composition
+def dessine(c, t):
+    pulse = (battement(t, T_NOM, 1, 0.5) - 1) + (battement(t, T_CEDE, 1, 0.5) - 1) \
+          + (battement(t, T_GAGNE, 1, 0.5) - 1)
+    fond_grille(c, t, pulse, vitesse=vitesse_grille(t))
+    hook(c, t); identite(c, t); ecg(c, t); personnages(c, t); pivot(c, t)
+    enterre(c, t); supplie(c, t); cedent(c, t); gagne(c, t); veille(c, t); cta(c, t)
+    if t >= T_SIGN - 0.12:
+        signature_people(c, t, T_SIGN, MEDIAS)
+    filigrane(c, 0.22 * (1 - prog(t, T_SIGN - 0.2, 0.2, entree)))
+    K.dessine_eclairs(c, t)
+    if t < T_SIGN - 0.02:
+        SOUS.dessine(c, t, ENCRE)
