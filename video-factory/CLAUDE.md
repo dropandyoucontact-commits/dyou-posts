@@ -425,6 +425,15 @@ il a réussi à entraîner les gens ». Ce qu'il fait, mesuré sur sa transcript
   finale** : ça se termine sur une image ;
 - chez lui il y a de la musique douce du début à la fin — on n'en met pas, c'est la pièce qui nous manque.
 
+**Référence qui a percé sur le même sujet — @scarfoott, « Cher Kylian », 27/10/2026, 700 K vues
+(29/10, Youssef : « c'est une vidéo comme ça que je t'aurais dû faire… entraîne-toi »).** Même lettre,
+mais : sujet UNIVERSEL (le favori éternel qui perd, pas la polémique en Chine), sortie en 24 h, et
+surtout **100 % archives réelles plein cadre** (lui enfant, la cérémonie, ses buts), une coupe
+toutes les 2 s, musique douce, UNE ligne de sous-titre — **aucun titre, aucun pavé, aucun graphisme**.
+AC-M04 posait la lettre dans la pièce noire avec titres et coupures : un habillage d'info sur un
+texte d'émotion. La lettre appelle un **second format visuel** (archives + musique + sous-titre), à
+faire valider avant de le coder. Détail : mémoire `reference-scarfoott-cher-kylian`.
+
 **MONTAGE MOINS DYNAMIQUE — règle du 28/10/2026, après l'échec d'AC-M01 et AC-M02.**
 « Faut être moins dynamique. Pour notre format faut plus un truc où les gens soient immersés
 totalement, où ils peuvent suivre, où t'as calculé chaque mouvement et animation de façon à
