@@ -388,21 +388,29 @@ hook visuel sans texte, deux cartes empilées pour poser un face-à-face, brique
   `yt-dlp --extractor-args "youtube:player_client=android"` : d'où le cadre large, pas de portrait.
   Vérifier les vignettes avant de monter — une bande-démo contient des plans sans la personne.
 
-**Voix : TOUF** (`x5uzA0wWgLQFZXEL4MbL`) depuis le 28/10/2026 — **Kael est abandonnée**.
-C'est le clone de la voix off des ANCIENNES vidéos de @recto_cerveau (celles d'avant nous), fait sur
-3 vidéos isolées de leur musique, 186 s. Youssef : « c'est la nouvelle voix pour recto cerveau ».
-Réglages fixes, mesurés comme les plus fidèles (écart mel 1,68 dB contre la vraie voix, F0 154 vs 152) :
+**Voix : TOUF** (`2AU180IkVdtYRbAj8egD`) — VALIDÉE le 28/10/2026 au soir, prise C.
+Touf est l'ami de Youssef : il a cloné sa propre voix et envoyé un fichier ElevenLabs de 76 s
+(`…Voix_2_eleven_v4…`). On l'a recloné depuis cet audio. Ce qui a marché, et qui est LA technique
+à réutiliser pour toute voix qu'il enverra (« je vais t'envoyer d'autres voix à cloner en utilisant
+la même technique ») :
 
-    voix.py --voix x5uzA0wWgLQFZXEL4MbL --modele eleven_multilingual_v2 \
-            --stabilite 0.5 --style 0.0 --similarite 1.0 --sans-boost --debit 4.3 --sans-hook
-    hook_rapide.py --mots 11 --debit 6.0
+    clone-voix --nom "Touf" --propre fichier.mp3      # ni isolation, ni débruitage
+    voix.py --voix 2AU180IkVdtYRbAj8egD --modele eleven_v4 --stabilite 0.65 --style 0.0 \
+            --similarite 1.0 --sans-boost --debit 3.3 --sans-hook --sans-resserrer
 
-`--modele`, `--similarite` et `--sans-boost` ont été ajoutés à `voix.py` pour ça (un clone instantané
-veut multilingual_v2, similarité 1,0 et PAS de speaker boost — le boost ajoute de la résonance).
-Son débit naturel est lent (3,05 mots/s) : `--debit 4.3` donne ×1,408, sous le plafond ×1,45. Viser
-4,3 et pas plus, sinon le plafond écrête et le débit visé n'est pas atteint.
-**« Il parle plus fort » n'est pas un problème de niveau** : les anciennes vidéos sortent à −18 LUFS,
-les nôtres à −13. C'est la PROJECTION de la voix qui change, et elle vient du clone.
+- **Générer avec le MÊME modèle que la source** (le nom du fichier le dit : `eleven_v4`) : v4 divise
+  l'écart par deux par rapport à multilingual_v2 (0,75 dB contre 1,51).
+- **Jamais de `remove_background_noise` sur une source propre** : le débruiteur lisse le timbre
+  quand il n'a rien à nettoyer. (Sur une vraie prise bruitée, la règle kyks — brut + débruitage — tient.)
+- Tester sur le MÊME texte que l'original, mesurer F0 + 40 bandes mel (`~/recto-voix/outils/compare.py`),
+  envoyer deux prises calées au niveau de l'original. Au-delà de 1 dB d'écart, demander plus d'audio.
+- Débit naturel 3,19 mots/s = déjà le rythme du format lettre. Sur un format d'info, `--debit 4.0`.
+L'ancien clone des vieilles vidéos (`x5uzA0wWgLQFZXEL4MbL`, « Touf ancien ») ne sert plus. Kael non plus.
+`--modele`, `--similarite` et `--sans-boost` existent dans `voix.py` pour ça.
+
+**Le canal Telegram « Tiktok » ne reçoit QUE les AC-** (Youssef, 28/10 : « les autres vidéos, publie
+pas dans le canal quand c'est DROP&YOU ou autre »). `livrer.py` a l'identifiant du canal en dur :
+ne jamais l'appeler sur une DY-, CB-, DA-, MQ-, GSX- ou vidéo client.
 
 **FORMAT « LETTRE » (@darkearth) — demandé le 28/10/2026, référence : `motion/AC-M04/scenes.py`.**
 Youssef a envoyé une vidéo de @darkearth sur LE SUJET D'AC-M02 (le Ballon d'Or de Kane), traité
