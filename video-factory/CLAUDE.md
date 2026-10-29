@@ -434,7 +434,34 @@ AC-M04 posait la lettre dans la pièce noire avec titres et coupures : un habill
 texte d'émotion. La lettre appelle un **second format visuel** (archives + musique + sous-titre), à
 faire valider avant de le coder. Détail : mémoire `reference-scarfoott-cher-kylian`.
 
-**FORMAT « BONHOMME » — LA NOUVELLE BASE DE LA CHAÎNE (29/10/2026).** Youssef, après AC-M01→M04 :
+**FORMAT « ARCHIVES » — LA BASE DE LA CHAÎNE DEPUIS LE 30/10/2026. Il annule le format bonhomme.**
+Youssef : « **moins de motion + de vidéo et photo brut**, donc le gros du travail tu dois le faire
+sur **récupérer les bons passages de vidéo**, et voilà, car ce format qu'on propose **ne fonctionne
+pas jusqu'à preuve du contraire**. » C'est ce que montrait déjà le décorticage de la vidéo à 2,7 M :
+100 % d'archives réelles plein cadre, zéro graphisme. **Mode d'emploi complet :
+`motion/outils-archives.md`.** En résumé :
+
+- **La source est archive.org, pas YouTube** (YouTube refuse tous les clients yt-dlp sur ce Mac,
+  revérifié le 30/10). archive.org donne des fonds entiers : le procès O.J. Simpson complet
+  (`OJ_Simpson_Trial_Compilation`, 492 fichiers, 195 Go, 480p), la couverture ABC du 17/06/1994…
+- **Ne jamais télécharger un fichier entier** : `-ss` AVANT `-i` sur l'URL = requête de plage HTTP.
+  Une image prise à 1 h 40 dans un fichier de 510 Mo coûte 10 s. **Le disque est plein à 97 %.**
+- **Trouver le passage** : `moteur/outils/scan_archive.sh "<URL>" dossier debut fin pas` — balayage
+  large, puis resserré deux fois. C'est là qu'est le travail.
+- **Découpe verticale, deux traitements choisis au plan** : *plein cadre* pour un gros plan (tranche
+  verticale `crop=205:362:<x>:0` puis `scale=1080:1920`, ~5× de grossissement, doux mais c'est ce
+  que fait la référence) ; *pleine largeur nette + fond flou de la même image* pour un plan large.
+- **Toujours couper l'incrustation** : le timecode des archives du procès est à **76-82 % de
+  hauteur**, pas en bas — `crop=640:362:0:0`.
+- **L'ffmpeg de ce Mac n'a ni `drawtext` ni `subtitles`** (pas de libass). Les sous-titres se rendent
+  en PNG transparents avec Skia — `moteur/outils/soustitres_png.py`, **un seul mot à l'écran à la
+  fois** — puis se superposent. **Ne pas faire passer l'archive dans le moteur Skia** :
+  `prepare_video` ferait ~1 Go de cache pour 70 s.
+- Démo : `motion/AC-M08/video/AC-M08-demo.mp4` (17 s d'AC-M07 refaites en archives, voix TOUF).
+- **À trancher par Youssef** : la musique (la référence en a du début à la fin, notre règle dit non)
+  et la signature de fin (la référence n'a aucune marque ; la démo garde un filigrane discret).
+
+**FORMAT « BONHOMME » — ÉCARTÉ LE 30/10/2026, gardé au cas où (29/10/2026).** Youssef, après AC-M01→M04 :
 « notre format visuel n'accroche pas et en plus il met trop de temps à produire, faut aller plus
 simple… un bonhomme animé 2D, quand tu parles de quelqu'un tu peux animer un bonhomme ».
 `moteur/bonhomme.py` (skill `~/.claude/skills/bonhomme-2d/`) : fond noir, une ligne de sol, des
