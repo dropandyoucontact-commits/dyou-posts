@@ -434,6 +434,22 @@ AC-M04 posait la lettre dans la pièce noire avec titres et coupures : un habill
 texte d'émotion. La lettre appelle un **second format visuel** (archives + musique + sous-titre), à
 faire valider avant de le coder. Détail : mémoire `reference-scarfoott-cher-kylian`.
 
+**FORMAT « BONHOMME » — LA NOUVELLE BASE DE LA CHAÎNE (29/10/2026).** Youssef, après AC-M01→M04 :
+« notre format visuel n'accroche pas et en plus il met trop de temps à produire, faut aller plus
+simple… un bonhomme animé 2D, quand tu parles de quelqu'un tu peux animer un bonhomme ».
+`moteur/bonhomme.py` (skill `~/.claude/skills/bonhomme-2d/`) : fond noir, une ligne de sol, des
+bonhommes en bâtons blancs dont la tête est **la vraie photo du visage** dans un disque cerclé de
+rouge, bulles, étiquettes, chiffres géants, accessoires dessinés (casque, flammes, billets, livre,
+barreaux…), sous-titres de la chaîne. Rig articulé porté de GitHub (`stick-motion` : bras en
+cinématique directe, jambes en cinématique inverse, marche sans glissement ; `stickman-story-reels` :
+poses et playbook). **Plus de pièce 3D, plus de grille, plus de pavés** sur les AC- : rendu flat en
+quelques minutes. Références : `motion/AC-M05/scenes.py` (deux bonhommes, Hanouna/Obispo) et
+`motion/AC-M06/scenes.py` (une vie, le bonhomme grandit avec `taille`, fin sur le cercle rouge vide).
+Règles : un bonhomme de gauche parle vers la gauche (`cote=-1`), celui de droite vers la droite ;
+chiffres et titres en haut (y 300-420), têtes à y 475-725, étiquettes à y 1338 ; têtes recadrées
+carré sur le visage dans `media/<nom>.jpg`, `B.SENS_PHOTO[nom]` = sens du regard. Voix Touf
+`--debit 3.5` (≈ 3,8 mots/s réels) + `hook_rapide --mots 11 --debit 6.0` : 60 s de voix → 1:03.
+
 **MONTAGE MOINS DYNAMIQUE — règle du 28/10/2026, après l'échec d'AC-M01 et AC-M02.**
 « Faut être moins dynamique. Pour notre format faut plus un truc où les gens soient immersés
 totalement, où ils peuvent suivre, où t'as calculé chaque mouvement et animation de façon à
