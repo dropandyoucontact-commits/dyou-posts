@@ -221,6 +221,11 @@ class Balance:
 
 
 # ─────────────────────────────────────────── fin : « We make your business take off »
+# les trois textes du décollage : en dur en anglais à l'origine (pubs US), rendus modifiables
+# pour que la version française n'affiche pas « WE MAKE / TAKE OFF » (sites3d_fr.francais()).
+MOTS_DECOLLAGE = dict(l1="WE MAKE", pill="Your business", l2="TAKE OFF", taille2=170)
+
+
 def scene_decollage(c, t, M):
     t0, t1 = M["decolle"] - 0.15, M["devis"] - 0.1
     if t < t0 or t > t1 + 0.45: return
@@ -272,10 +277,10 @@ def scene_decollage(c, t, M):
                 eclats(c, cam.proj((bx, by, bz))[0], cam.proj((bx, by, bz))[1], t, tk, 14, 380, graine=13)
     # titres posés devant la scène
     with Calque(c, 1 - sortie_):
-        lettres(c, "WE MAKE", 540, 200, 92, t, M["decolle"] - 0.05, "ressort", decal=0.03, grad=False, couleur=S["encre"])
+        lettres(c, MOTS_DECOLLAGE["l1"], 540, 200, 92, t, M["decolle"] - 0.05, "ressort", decal=0.03, grad=False, couleur=S["encre"])
         b = entre(t, M["business"] - 0.1, 0.4, 2.2)
-        pill(c, "Your business", 540, 360, 38, "encre", "store", borne(b * 3), mix(0.4, 1, b), rot=-3)
-        lettres(c, "TAKE OFF", 540, 440, 170, t, tk - 0.08, "ressort", decal=0.04, onde_t=tk + 0.6)
+        pill(c, MOTS_DECOLLAGE["pill"], 540, 360, 38, "encre", "store", borne(b * 3), mix(0.4, 1, b), rot=-3)
+        lettres(c, MOTS_DECOLLAGE["l2"], 540, 440, MOTS_DECOLLAGE["taille2"], t, tk - 0.08, "ressort", decal=0.04, onde_t=tk + 0.6)
         d = entre(t, M["ceci"] - 0.12, 0.4, 2.4) if "ceci" in M else 0
         if d > 0:
             pill(c, "With videos like this one", 540, 1290, 32, "grad", "play", borne(d * 3), mix(0.4, 1, d), rot=2)
