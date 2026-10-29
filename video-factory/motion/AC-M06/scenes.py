@@ -89,7 +89,7 @@ def s2(c, t):
     a = fondu(t, T_HIER, T_PUB)
     if a <= 0.01: return
     with Calque(c, a):
-        photo_plein(c, t, "rouge-plein", prog(t, T_HIER, 0.6, sortie), 1.0, y=130, h=980, zoom=1.0, fy=0.35)
+        photo_plein(c, t, "rouge-plein", prog(t, T_HIER, 0.6, sortie), 1.0, y=310, h=810, zoom=1.0, fy=0.3)
         rubrique(c, t, prog(t, T_HAYDEN - 0.1, 0.4, sortie), "HAYDEN PANETTIERE", "DISPARITION")
         if t >= T_ACCIDENT - 0.05:
             etiquette(c, 540, 1180, "ACCIDENT · DOSSIER FERMÉ", prog(t, T_ACCIDENT - 0.05, 0.3, lambda v: rebond(v, 1.3)), taille=38)
