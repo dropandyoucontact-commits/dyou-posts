@@ -569,3 +569,67 @@ def telephone_main(c, pt, t, u=1.0, alpha=1.0, contenu=None):
     rrect(c, -w / 2, -h / 2, w, h, 12, FOND, alpha)
     if contenu: contenu(c, -w / 2, -h / 2, w, h)
     c.restore()
+
+
+def gant(c, cx, cy, w, alpha=1.0, rot=0.0, couleur=NOIR, contour=BLANC, ep=6):
+    """un gant en cuir vu de face, pouce à gauche. (cx, cy) = centre de la paume, w = largeur."""
+    if alpha <= 0.01: return
+    h = w * 1.25
+    with Calque(c, alpha):
+        c.save(); c.translate(cx, cy); c.rotate(rot)
+        pt_f = peinture(couleur)
+        pt_c = peinture(contour, Style=skia.Paint.kStroke_Style, StrokeWidth=ep,
+                        StrokeCap=skia.Paint.kRound_Cap, StrokeJoin=skia.Paint.kRound_Join)
+        # les quatre doigts : des capsules qui montent de la paume
+        doigts = ((-0.21, 0.52), (-0.04, 0.60), (0.13, 0.55), (0.29, 0.42))
+        for dx, lg in doigts:
+            x, dw = w * dx, w * 0.175
+            y0, y1 = -h * 0.08, -h * lg
+            rr = skia.RRect.MakeRectXY(skia.Rect.MakeLTRB(x - dw / 2, y1, x + dw / 2, y0), dw / 2, dw / 2)
+            c.drawRRect(rr, pt_f); c.drawRRect(rr, pt_c)
+        # le pouce, en biais à gauche
+        c.save(); c.translate(-w * 0.40, h * 0.02); c.rotate(-38)
+        rr = skia.RRect.MakeRectXY(skia.Rect.MakeLTRB(-w * 0.10, -h * 0.34, w * 0.10, h * 0.08), w * 0.10, w * 0.10)
+        c.drawRRect(rr, pt_f); c.drawRRect(rr, pt_c); c.restore()
+        # la paume, par-dessus les attaches
+        paume = skia.RRect.MakeRectXY(skia.Rect.MakeLTRB(-w * 0.38, -h * 0.18, w * 0.40, h * 0.34), w * 0.13, w * 0.13)
+        c.drawRRect(paume, pt_f); c.drawRRect(paume, pt_c)
+        # la bande de poignet
+        band = skia.RRect.MakeRectXY(skia.Rect.MakeLTRB(-w * 0.34, h * 0.26, w * 0.36, h * 0.50), w * 0.07, w * 0.07)
+        c.drawRRect(band, pt_f); c.drawRRect(band, pt_c)
+        c.restore()
+
+
+def banc(c, x0, x1, y, n=6, t=0.0, u=1.0, alpha=1.0, taille=0.30, ep=7):
+    """une rangée de petits bonhommes sans visage, en fond : le jury, le public, une foule."""
+    if u <= 0.005 or alpha <= 0.01: return
+    for k in range(n):
+        v = borne((u - 0.05 * k) / 0.5)
+        if v <= 0: continue
+        x = x0 + (x1 - x0) * (k + 0.5) / n
+        bonhomme(c, x, respire(STAND, t + k * 0.7, 0.6), 1 if k % 2 else -1, None, "neutre",
+                 u=v, alpha=alpha, taille=taille, sol=y, ep=ep, r_tete=R_TETE * 0.78)
+
+
+def voiture(c, cx, cy, w, alpha=1.0, couleur=BLANC, encre=FOND, ep=6):
+    """un 4x4 de profil, tourné vers la droite. (cx, cy) = milieu, au niveau des roues."""
+    if alpha <= 0.01: return
+    h = w * 0.46
+    with Calque(c, alpha):
+        caisse = skia.RRect.MakeRectXY(skia.Rect.MakeLTRB(cx - w / 2, cy - h * 0.52, cx + w / 2, cy), w * 0.05, w * 0.05)
+        c.drawRRect(caisse, peinture(couleur))
+        toit = skia.RRect.MakeRectXY(skia.Rect.MakeLTRB(cx - w * 0.34, cy - h * 1.02, cx + w * 0.30, cy - h * 0.46), w * 0.05, w * 0.05)
+        c.drawRRect(toit, peinture(couleur))
+        for x0, x1 in ((-0.30, -0.03), (0.02, 0.26)):          # les vitres
+            rr = skia.RRect.MakeRectXY(skia.Rect.MakeLTRB(cx + w * x0, cy - h * 0.94, cx + w * x1, cy - h * 0.56), w * 0.02, w * 0.02)
+            c.drawRRect(rr, peinture(encre))
+        for rx in (-0.28, 0.29):                               # les roues
+            c.drawCircle(cx + w * rx, cy, h * 0.30, peinture(couleur))
+            c.drawCircle(cx + w * rx, cy, h * 0.13, peinture(encre))
+
+
+def coche(c, cx, cy, r, t, t0, couleur=BLANC, ep=16):
+    """une coche qui se trace en deux temps"""
+    u1 = prog(t, t0, 0.14, sortie); u2 = prog(t, t0 + 0.12, 0.2, sortie)
+    if u1 > 0: trait(c, cx - r, cy, cx - r + r * 0.75 * u1, cy + r * 0.72 * u1, couleur, ep)
+    if u2 > 0: trait(c, cx - r * 0.25, cy + r * 0.72, cx - r * 0.25 + r * 1.3 * u2, cy + r * 0.72 - r * 1.5 * u2, couleur, ep)

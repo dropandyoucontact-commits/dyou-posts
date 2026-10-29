@@ -450,6 +450,28 @@ chiffres et titres en haut (y 300-420), têtes à y 475-725, étiquettes à y 13
 carré sur le visage dans `media/<nom>.jpg`, `B.SENS_PHOTO[nom]` = sens du regard. Voix Touf
 `--debit 3.5` (≈ 3,8 mots/s réels) + `hook_rapide --mots 11 --debit 6.0` : 60 s de voix → 1:03.
 
+**RÉFÉRENCE @darkearth À 2,7 M — « le gant d'O.J. Simpson » (envoyée le 29/10/2026 : « fais-moi la
+même mais à une autre façon »).** C'est le carton de la chaîne de référence : 2 700 000 vues,
+219 900 j'aime, 82 s, postée le 14/07/2026. Décorticage dans `~/darkearth/ref3/`. Mesuré :
+- **les 10 premières secondes n'ont AUCUNE voix** : archives plein cadre, musique, et UNE phrase
+  écrite tenue à l'écran (« Ils étaient certains de le condamner… jusqu'à ce qu'il enfile ce gant ») ;
+- 229 mots à **3,23 mots/s**, 24 plans, **0,28 coupe/s**, le plan du gant tient 13 s d'affilée ;
+- **sous-titres UN MOT à la fois**, capitales blanches ; zéro titre, zéro pavé, zéro graphisme,
+  zéro logo, zéro CTA ; fin sur une image ;
+- **les mots sensibles sont censurés à l'écran** (« M*RTS. ») : la modération lit par OCR. Chez nous
+  ça se fait sans toucher à la voix — `sous_titres_bonhomme(K, fusions={(34,): "m*rt"})`.
+
+**La leçon de fond, plus importante que la forme : ce n'est pas de l'actu.** C'est une histoire de
+1995 que tout le monde connaît à moitié, avec un retournement. AC-M01→M06 sont toutes des news du
+jour ; le plus gros succès de la référence est un RÉCIT. À tester régulièrement sur la chaîne.
+
+**Notre réponse = `motion/AC-M07/scenes.py`** : même affaire, angle inverse. Lui raconte « un gant a
+fait basculer le procès » ; nous racontons **comment le procureur s'est fait pousser à la faute**,
+avec le détail qu'il a raté (le fabricant rapporte la même paire, neuve : elle va parfaitement).
+Nouvelles briques dans `bonhomme.py` : `gant`, `banc` (le jury), `voiture`, `coche`.
+⚠ @darkearth date l'essai du gant du 3 octobre 1995 : c'est la date du verdict, l'essai est du
+**15 juin 1995**. Vérifier les dates d'une vidéo de référence avant de la reprendre.
+
 **MONTAGE MOINS DYNAMIQUE — règle du 28/10/2026, après l'échec d'AC-M01 et AC-M02.**
 « Faut être moins dynamique. Pour notre format faut plus un truc où les gens soient immersés
 totalement, où ils peuvent suivre, où t'as calculé chaque mouvement et animation de façon à
