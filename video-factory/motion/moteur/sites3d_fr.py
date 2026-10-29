@@ -331,9 +331,9 @@ def scene_test(c, t, M):
         if ch > 0:
             s = borne((t - M["compte"]) / (M["client"] - M["compte"])) * 7.0
             with Calque(c, borne(ch * 3)):
-                carte_s(c, 330, 1330, 420, 170, 50, "#FFFFFF", None, 0.2)
-                icone(c, "timer", 420, 1415, 60, S["rouge"], 2.4)
-                texte(c, f"{s:.1f} s", 490, 1415 - hauteurLigne(72, "noir") / 2, 72, S["rouge"], "noir", track=-0.03)
+                carte_s(c, 330, 410, 420, 160, 50, "#FFFFFF", None, 0.2)
+                icone(c, "timer", 418, 490, 58, S["rouge"], 2.4)
+                texte(c, f"{s:.1f} s", 486, 490 - hauteurLigne(68, "noir") / 2, 68, S["rouge"], "noir", track=-0.03)
 
 
 # ─────────────────────────────────────────── C8 : la nuit qui cherche (nouveau)
@@ -412,6 +412,17 @@ def sons_fr(K, M):
         rapide(a, b)
 
 
+def voile_bas(c, alpha=0.82):
+    """dégradé blanc très doux sous la bande des sous-titres (y 1410) : sur DA-M19 le texte passait
+    par-dessus les tuiles d'un faux site et le chronomètre. Ce n'est pas un surlignage — rien ne
+    change de couleur, le fond s'éclaircit seulement là où le texte se pose."""
+    pa = skia.Paint()
+    pa.setShader(skia.GradientShader.MakeLinear(
+        points=[(0.0, 1230.0), (0.0, 1560.0)],
+        colors=[skia.Color4f(1, 1, 1, 0.0), skia.Color4f(1, 1, 1, alpha)]))
+    c.drawRect(skia.Rect.MakeXYWH(0, 1230, 1080, 430), pa)
+
+
 def compose_fr(c, t, M, hook, T_B1, SOUS, K, pulse=0.0):
     fond_studio(c, t, pulse)
     with Balance(c, t):
@@ -425,7 +436,9 @@ def compose_fr(c, t, M, hook, T_B1, SOUS, K, pulse=0.0):
             hook(c, t)
         c.restore()
     K.dessine_eclairs(c, t)
-    if t < M["devis"] - 0.25: SOUS.dessine(c, t, S["encre"])
+    if t < M["devis"] - 0.25:
+        voile_bas(c)
+        SOUS.dessine(c, t, S["encre"])
 
 
 def francais():

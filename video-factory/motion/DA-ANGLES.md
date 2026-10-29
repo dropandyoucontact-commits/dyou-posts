@@ -1,15 +1,23 @@
-# Hooks déjà joués — pubs « sites » françaises (une par jour)
+# Journal des vidéos quotidiennes DYOU — sujets et hooks déjà joués
 
-Un hook par vidéo, jamais deux fois le même. La phrase doit choquer, sortir de son contexte,
-et n'être comprise que quelques secondes plus tard.
+Une vidéo par jour, 30 à 40 s, en français. Du contenu qui donne de la valeur aux coachs sportifs
+et aux indépendants, pas une pub frontale. Hook choc décontextualisé, CTA « Enregistre la vidéo »,
+prix 490 € en fin. Jamais deux fois le même sujet.
 
-| Date | Projet | Hook | Ce qu'on croit | Révélation |
+| Date | Projet | Durée | Sujet | Hook |
 |---|---|---|---|---|
-| 29/10/2026 | DA-M19 | « Il y a quelqu'un qui travaille contre toi. Chaque nuit, pendant que tu dors. Tu le paies tous les mois. Et c'est toi qui l'as choisi. » | un employé — une fiche de personnel s'assemble, visage masqué, horaires de nuit, prélèvement mensuel, tampon « choisi par toi » | la fiche pivote : c'est un navigateur ouvert sur ton vieux site |
+| 29/10/2026 | DA-M19 | 0'59 | les sites qui font fuir les clients (essai au format 1 minute, abandonné) | « Il y a quelqu'un qui travaille contre toi. Chaque nuit, pendant que tu dors. Tu le paies tous les mois. Et c'est toi qui l'as choisi. » → la fiche de personnel pivote et devient un navigateur |
+| 29/10/2026 | DA-M20 | 0'36 | 3 raisons pour lesquelles un coach perd des élèves sans le savoir — réponse tardive, encaissement à la main, aucun écrit ; démo du site de Floris (muay thaï) | « T'as déjà perdu des élèves sans jamais le savoir. » |
 
-## Pistes non encore utilisées
-- « Ton meilleur vendeur est mort il y a quatre ans. Personne ne te l'a dit. » → le site figé depuis 2022.
-- « Tu as un local ouvert 24h/24, et la porte est fermée à clé. » → le site illisible sur téléphone.
-- « Chaque mois tu offres des clients à quelqu'un que tu n'as jamais rencontré. » → le concurrent mieux référencé.
-- « Il y a une pièce de ton entreprise où tu n'es jamais entré. » → ton site vu depuis un téléphone.
-- « Trois secondes. C'est tout ce que tu as eu. Et tu ne le sauras jamais. » → le temps de chargement.
+## Sujets en réserve (valeur réelle pour un coach)
+- Le contrat et le règlement intérieur acceptés en ligne : ce qui compte le jour d'un litige.
+- Le délai de rétractation de 14 jours sur un abonnement vendu à distance — **à vérifier à la source le jour même**.
+- La résiliation en ligne : ce que la loi impose depuis 2023 — **à vérifier avant de l'affirmer**.
+- Ce qu'un prospect regarde en premier sur un téléphone, dans l'ordre.
+- Le référencement local : pourquoi une fiche Google sans site plafonne.
+- Les relances d'impayés : le coût caché du paiement à la main.
+- Le créneau réservé en ligne contre dix messages d'aller-retour.
+- La preuve sociale : où placer les avis pour qu'ils servent vraiment.
+
+**Règle :** ne jamais inventer un chiffre, un seuil fiscal, un taux ou une obligation légale.
+Vérifier à la source le jour du script, sinon rester sur du concret non chiffré.
