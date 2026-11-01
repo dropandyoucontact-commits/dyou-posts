@@ -9,12 +9,12 @@ prix 490 € en fin. Jamais deux fois le même sujet.
 | 29/10/2026 | DA-M19 | 0'59 | les sites qui font fuir les clients (essai au format 1 minute, abandonné) | « Il y a quelqu'un qui travaille contre toi. Chaque nuit, pendant que tu dors. Tu le paies tous les mois. Et c'est toi qui l'as choisi. » → la fiche de personnel pivote et devient un navigateur |
 | 29/10/2026 | DA-M20 | 0'36 | 3 raisons pour lesquelles un coach perd des élèves sans le savoir — réponse tardive, encaissement à la main, aucun écrit ; démo du site de Floris (muay thaï) | « T'as déjà perdu des élèves sans jamais le savoir. » |
 | 31/10/2026 | DA-M21 | 0'36 | les 3 réponses qu'un prospect cherche sur son téléphone avant de contacter un coach — c'est pour moi / où-quand-combien / je peux te croire ; démo du site de Floris (accueil, inscription, qui suis-je) | « Personne ne te contacte pour te poser des questions. » |
+| 02/11/2026 | DA-M22 | 0'37 | les 3 critères du classement local de Google — pertinence, distance, notoriété (vérifiés le jour même sur support.google.com/business/answer/7091) ; la fiche seule n'a rien à relier, le site oui ; démo du site de Floris | « Il y a un critère de Google que tu ne pourras jamais changer. » |
 
 ## Sujets en réserve (valeur réelle pour un coach)
 - Le contrat et le règlement intérieur acceptés en ligne : ce qui compte le jour d'un litige.
 - Le délai de rétractation de 14 jours sur un abonnement vendu à distance — **à vérifier à la source le jour même**.
 - La résiliation en ligne : ce que la loi impose depuis 2023 — **à vérifier avant de l'affirmer**.
-- Le référencement local : pourquoi une fiche Google sans site plafonne.
 - Les relances d'impayés : le coût caché du paiement à la main.
 - Le créneau réservé en ligne contre dix messages d'aller-retour.
 - La preuve sociale : où placer les avis pour qu'ils servent vraiment.
