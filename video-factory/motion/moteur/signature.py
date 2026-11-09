@@ -53,7 +53,8 @@ def _balayage_logo(c, w, h, x0, larg, u):
     c.drawRect(skia.Rect.MakeWH(w, h), p)
 
 
-def signature(c, t, t0, produits, logo=LOGO_DY, cx=510, cy=880, phrase="Ton équipe sur place, en Chine", accent="#8FB4FF"):
+def signature(c, t, t0, produits, logo=LOGO_DY, cx=510, cy=880, phrase="Ton équipe sur place, en Chine", accent="#8FB4FF", encre="#FFFFFF", extrusion=(0.08, 0.16, 0.42)):
+    """encre : couleur de la phrase et du noyau (blanc sur fond sombre ; encre #211B33 sur le papier clair, DY-M18)"""
     u = t - t0
     if u < -0.05: return
     rng, rng2 = np.random.default_rng(7), np.random.default_rng(8)
@@ -77,7 +78,7 @@ def signature(c, t, t0, produits, logo=LOGO_DY, cx=510, cy=880, phrase="Ton équ
     # noyau de lumière qui gonfle avant l'explosion
     nv = prog(t, t0 + 0.2, T_BOUM - 0.2, entree) * (1 - prog(t, boum, 0.25))
     if nv > 0:
-        lueur_s(c, cx, cy, 80 + 260 * nv, "#FFFFFF", 0.9 * nv)
+        lueur_s(c, cx, cy, 80 + 260 * nv, "#FFFFFF" if encre == "#FFFFFF" else accent, 0.9 * nv)
         disque(c, cx, cy, 10 + 40 * nv, "#FFFFFF", nv)
 
     # 2. explosion
@@ -130,6 +131,7 @@ def signature(c, t, t0, produits, logo=LOGO_DY, cx=510, cy=880, phrase="Ton équ
                     if photo: image_cover(cc, nom, 0, 0, w, h, 1.0, 0.5, 0.5, w * 0.12)
                     else: image(cc, nom, 0, 0, w)
                 cache = 1 - 0.6 * borne(1 - abs(pos[0]) / 260)                 # pâlit quand il passe derrière le logo
+                if encre != "#FFFFFF": cache = borne((abs(pos[0]) - 330) / 60)   # fond clair : visible sur les côtés seulement (sinon il salit le logo)
                 plans.append(Plan(coins(pos, w_, h_, ay=-math.degrees(ang) + 90), w_, h_, dess, 0.85 * ann * cache, recto=False))
         # sigle DY extrudé (couches empilées en profondeur) qui fait un tour et claque
         SW = 270.0; SH = SW * 179 / 285
@@ -140,7 +142,7 @@ def signature(c, t, t0, produits, logo=LOGO_DY, cx=510, cy=880, phrase="Ton équ
                 tint = mix(0.25, 0.9, k / 12)
                 def couche(cc, w, h, k=k, tint=tint):
                     p = skia.Paint(AntiAlias=True)
-                    if k > 0: p.setColorFilter(skia.ColorFilters.Blend(skia.Color4f(0.08 * tint, 0.16 * tint, 0.42 + 0.2 * tint, 1).toColor(), skia.BlendMode.kSrcIn))
+                    if k > 0: p.setColorFilter(skia.ColorFilters.Blend(skia.Color4f(extrusion[0] * tint, extrusion[1] * tint, extrusion[2] + 0.2 * tint, 1).toColor(), skia.BlendMode.kSrcIn))
                     cc.saveLayer(None)
                     _crop(cc, logo, SIGLE[0], SIGLE[1], w, h, p)
                     if k == 0: _balayage_logo(cc, w, h, 0, w, prog(t, boum + 1.05, 0.55, douce))
@@ -169,7 +171,7 @@ def signature(c, t, t0, produits, logo=LOGO_DY, cx=510, cy=880, phrase="Ton équ
         # phrase de marque
         b = prog(t, boum + 0.85, 0.45, sortie)
         if b > 0:
-            texte(c, phrase, cx, cy + 270 + 24 * (1 - b), 46, "#FFFFFF", "titre", "centre", -0.02, b)
+            texte(c, phrase, cx, cy + 270 + 24 * (1 - b), 46, encre, "titre", "centre", -0.02, b)
             lw = largeur(phrase, 46, "titre", -0.02) * b
             rrect(c, cx - lw / 2, cy + 342, lw, 4, 2, accent, 0.9 * b)
     c.restore()

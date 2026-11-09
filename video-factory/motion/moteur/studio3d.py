@@ -69,7 +69,27 @@ def plaque(c, cam, pl):
     ok = m.setPolyToPoly([skia.Point(0, 0), skia.Point(pl.w, 0), skia.Point(pl.w, pl.h), skia.Point(0, pl.h)],
                          [skia.Point(x, y) for x, y, _ in P])
     if not ok: return False
-    c.save(); c.concat(m)
+    # Garde-fou (30/10/2026, VORIX) : quand le quadrilatère projeté est presque plat ou qu'un de ses côtés s'effondre
+    # (éventail d'un disque, bande vue par la tranche), l'homographie envoie la marge de la carte au-delà de l'horizon :
+    # un trait gris file jusqu'au bord de l'image. On rogne alors la carte à son quadrilatère.
+    # 1. l'horizon de l'homographie (w = 0) traverse la carte, marge comprise : la bande est vue par la tranche,
+    #    sa part « derrière l'horizon » serait projetée à l'infini → on ne la dessine pas (elle fait 1 à 2 px)
+    p6, p7, p8 = m.get(6), m.get(7), m.get(8)
+    ws = [p6 * sx + p7 * sy + p8 for sx, sy in ((-2.0, -2.0), (pl.w + 2.0, -2.0), (pl.w + 2.0, pl.h + 2.0), (-2.0, pl.h + 2.0))]
+    if min(ws) <= 1e-6 or max(ws) <= 1e-6 and min(ws) < 0: return False
+    if (min(ws) > 0) != (max(ws) > 0): return False
+    # 2. un coin de la carte s'envole quand même loin du quadrilatère : on rogne au quadrilatère
+    xs = [q[0] for q in P]; ys = [q[1] for q in P]
+    x0, x1, y0, y1 = min(xs) - 14, max(xs) + 14, min(ys) - 14, max(ys) + 14
+    rogne = False
+    for sx, sy in ((-2.0, -2.0), (pl.w + 2.0, -2.0), (pl.w + 2.0, pl.h + 2.0), (-2.0, pl.h + 2.0)):
+        q = m.mapXY(sx, sy)
+        if not (x0 <= q.x() <= x1 and y0 <= q.y() <= y1): rogne = True; break
+    c.save()
+    if rogne:
+        chemin = skia.Path(); chemin.addPoly([skia.Point(x, y) for x, y, _ in P], True)
+        c.clipPath(chemin, doAntiAlias=True)
+    c.concat(m)
     with Calque(c, pl.alpha):
         pl.dessin(c, pl.w, pl.h)
     c.restore()

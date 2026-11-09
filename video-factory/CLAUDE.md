@@ -52,6 +52,30 @@ Fin : `moteur/signature.py` (produits aspirés → explosion → DROP&YOU recomp
 Toute correction validée par Youssef devient la base des vidéos suivantes (moteur ou règle ici), sans qu'il la redemande.
 Pubs DYOU Agency : garder les dernières, mais leur fin passe à une signature du même genre, aux couleurs de l'agence.
 
+## Deux voix sur un montage = deux rendus (Youssef, 30/10/2026, VORIX)
+
+Une deuxième voix (version pub Tomy sur le montage fait pour le cagoulé) ne se pose JAMAIS sur l'image coupée
+pour la première : ses phrases sont plus courtes ou plus longues → trous de silence, ou voix en avance sur le
+motion (« je me fous la honte si j'envoie ça au client »). Recaler par phrases, ralentir, poser la prise complète :
+trois tentatives, trois refus. **La règle : un projet par voix** (`VX-M02/` et `VX-M02-pub/`), mêmes scènes,
+`timing.json` et `voix.mp3` de la voix concernée, repères cherchés par les mots de SON script (`trouve("mot", après)`),
+hook à l'échelle de sa première phrase, rendu séparé. Une voix enchaînée d'un seul tenant, pas de montage audio.
+
+## Bruitages : plus aucun bruit de transition (Youssef, 30/10/2026, VORIX) — toutes les vidéos
+
+« Arrête le bruit des transitions à chaque image qui change. Tu les mets trop fort, ça gâche la voix et t'en mets trop
+pour rien. Le petit bruit que t'as mis à chaque bénéfice qui apparaît, ça c'est bien. Mais le reste du temps, tu changes
+d'image, il y a un gros bruit de transition qui gâche tout. Et en plus il est pas beau. »
+
+1. **Aucun `whoosh`, `impact`, `swipe`, `montee` sur un changement de plan, une entrée de carte, un titre, une
+   secousse.** Un changement d'image se fait en silence ; `rapide()` (flou) et `eclair()` restent, pas le son.
+2. **Un seul bruitage autorisé : le petit `pop` sur chaque bénéfice / pastille / chiffre qui apparaît**, plus un
+   `clic` sur un vrai bouton pressé et un `ding` sur la signature. Gains à **−8 dB** dans `son()`.
+3. **Les bruitages restent sous la voix : `mixer.py --lufs -13 --ecart 9`** (9 LU en dessous, puis effacés sous
+   chaque mot). Jamais `ecart -1` (le mode « fort » de DY-M02 est abandonné) : ils prenaient le dessus sur la voix.
+4. Vérifier `sfx.json` après régénération : il ne doit contenir que des `pop`, un `clic`, un `ding`, un son de
+   matière éventuel (`verre` pour de l'eau, à −12 dB).
+
 ## Hook toujours rapide et fort (19/10/2026) — toutes les vidéos voix off
 
 Youssef : « dans le hook, tout le temps faut parler rapide… les premiers mots qui vont sortir, faut jamais que ce soit en lent ;
